@@ -23,3 +23,7 @@ window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[autoload]
+
+Comandos="*res://Scripts/comandos.gd"
