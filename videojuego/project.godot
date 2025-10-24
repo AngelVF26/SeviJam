@@ -18,9 +18,6 @@ config/icon="res://icon.svg"
 
 Comandos="*res://Scripts/comandos.gd"
 
-[dotnet]
-
-project/assembly_name="VIDEOJUEGO"
 [display]
 
 window/size/viewport_width=1920
@@ -29,3 +26,7 @@ window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="VIDEOJUEGO"
