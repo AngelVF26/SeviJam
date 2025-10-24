@@ -1,0 +1,343 @@
+[gd_scene load_steps=5 format=3 uid="uid://da01jtt78ktfw"]
+
+[ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
+[ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
+[ext_resource type="PackedScene" uid="uid://cronljxn02hkw" path="res://Escenas/Area.tscn" id="3_a8uw4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fl6v7"]
+
+[node name="PhysicsScene" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_le04a")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(0, -100)
+motion_mode = 1
+script = ExtResource("2_a8uw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_fl6v7")
+
+[node name="Area" parent="." instance=ExtResource("3_a8uw4")]
+
+[node name="Area2" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(100, 0)
+
+[node name="Area3" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(0, 100)
+
+[node name="Area4" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(100, 100)
+
+[node name="Area5" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(200, 100)
+
+[node name="Area6" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(200, 0)
+
+[node name="Area7" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(200, -100)
+
+[node name="Area8" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(100, -100)
+
+[node name="Area9" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(0, -100)
+
+[node name="Area10" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, -100)
+
+[node name="Area11" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, 0)
+
+[node name="Area12" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, 100)
+
+[node name="Area13" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(400, 0)
+
+[node name="Area14" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(500, 0)
+
+[node name="Area15" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(400, 100)
+
+[node name="Area16" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(500, 100)
+
+[node name="Area17" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(600, 100)
+
+[node name="Area18" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(600, 0)
+
+[node name="Area19" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(600, -100)
+
+[node name="Area20" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(500, -100)
+
+[node name="Area21" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(400, -100)
+
+[node name="Area22" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(300, -100)
+
+[node name="Area23" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(300, 0)
+
+[node name="Area24" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(300, 100)
+
+[node name="Area25" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, 0)
+
+[node name="Area26" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, 0)
+
+[node name="Area27" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, 100)
+
+[node name="Area28" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, 100)
+
+[node name="Area29" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, 100)
+
+[node name="Area30" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, 0)
+
+[node name="Area31" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, -100)
+
+[node name="Area32" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, -100)
+
+[node name="Area33" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, -100)
+
+[node name="Area34" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-500, -100)
+
+[node name="Area35" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-500, 0)
+
+[node name="Area36" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-500, 100)
+
+[node name="Area37" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, -300)
+
+[node name="Area38" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, -300)
+
+[node name="Area39" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, -200)
+
+[node name="Area40" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, -200)
+
+[node name="Area41" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, -200)
+
+[node name="Area42" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, -300)
+
+[node name="Area43" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, -400)
+
+[node name="Area44" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, -400)
+
+[node name="Area45" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, -400)
+
+[node name="Area46" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-500, -400)
+
+[node name="Area47" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-500, -300)
+
+[node name="Area48" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-500, -200)
+
+[node name="Area49" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(0, -300)
+
+[node name="Area50" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(100, -300)
+
+[node name="Area51" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(0, -200)
+
+[node name="Area52" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(100, -200)
+
+[node name="Area53" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(200, -200)
+
+[node name="Area54" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(200, -300)
+
+[node name="Area55" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(200, -400)
+
+[node name="Area56" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(100, -400)
+
+[node name="Area57" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(0, -400)
+
+[node name="Area58" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, -400)
+
+[node name="Area59" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, -300)
+
+[node name="Area60" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, -200)
+
+[node name="Area61" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(400, -300)
+
+[node name="Area62" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(500, -300)
+
+[node name="Area63" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(400, -200)
+
+[node name="Area64" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(500, -200)
+
+[node name="Area65" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(600, -200)
+
+[node name="Area66" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(600, -300)
+
+[node name="Area67" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(600, -400)
+
+[node name="Area68" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(500, -400)
+
+[node name="Area69" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(400, -400)
+
+[node name="Area70" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(300, -400)
+
+[node name="Area71" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(300, -300)
+
+[node name="Area72" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(300, -200)
+
+[node name="Area73" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(400, 300)
+
+[node name="Area74" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(500, 300)
+
+[node name="Area75" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(400, 400)
+
+[node name="Area76" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(500, 400)
+
+[node name="Area77" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(600, 400)
+
+[node name="Area78" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(600, 300)
+
+[node name="Area79" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(600, 200)
+
+[node name="Area80" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(500, 200)
+
+[node name="Area81" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(400, 200)
+
+[node name="Area82" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(300, 200)
+
+[node name="Area83" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(300, 300)
+
+[node name="Area84" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(300, 400)
+
+[node name="Area85" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(0, 300)
+
+[node name="Area86" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(100, 300)
+
+[node name="Area87" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(0, 400)
+
+[node name="Area88" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(100, 400)
+
+[node name="Area89" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(200, 400)
+
+[node name="Area90" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(200, 300)
+
+[node name="Area91" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(200, 200)
+
+[node name="Area92" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(100, 200)
+
+[node name="Area93" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(0, 200)
+
+[node name="Area94" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, 200)
+
+[node name="Area95" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, 300)
+
+[node name="Area96" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, 400)
+
+[node name="Area97" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, 300)
+
+[node name="Area98" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, 300)
+
+[node name="Area99" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, 400)
+
+[node name="Area100" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, 400)
+
+[node name="Area101" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, 400)
+
+[node name="Area102" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, 300)
+
+[node name="Area103" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, 200)
+
+[node name="Area104" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, 200)
+
+[node name="Area105" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, 200)
+
+[node name="Area106" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-500, 200)
+
+[node name="Area107" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-500, 300)
+
+[node name="Area108" parent="." instance=ExtResource("3_a8uw4")]
+position = Vector2(-500, 400)

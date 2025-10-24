@@ -1,22 +1,71 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=7 format=3 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
+[ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
 [ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_hrt1k"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
+[ext_resource type="Shader" uid="uid://dmn1w1hk2bo6q" path="res://Assets/Shader/CRT.gdshader" id="4_5b8ei"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nj3o3"]
+resource_local_to_scene = true
+shader = ExtResource("4_5b8ei")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
 [node name="Interfaz" type="Node2D"]
+script = ExtResource("1_caa1v")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(573.5, 324.5)
-scale = Vector2(8.9921875, 5.0546875)
+visible = false
+position = Vector2(958.5002, 523.50006)
+scale = Vector2(14.914064, 8.242188)
 texture = ExtResource("1_4flj7")
 
 [node name="Terminal" type="Sprite2D" parent="."]
-position = Vector2(576.5, 319.00003)
-scale = Vector2(0.5904948, 0.6666667)
+visible = false
+position = Vector2(965, 538.5)
+scale = Vector2(1.2526041, 1.2395834)
 texture = ExtResource("2_hrt1k")
 
 [node name="ImagenExplorada" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(581, 319.24997)
 scale = Vector2(0.5058594, 0.6684028)
 texture = ExtResource("1_hrt1k")
+
+[node name="TerminalComandos" type="TextEdit" parent="."]
+offset_left = 11.0
+offset_top = 953.0
+offset_right = 920.0
+offset_bottom = 1072.0
+
+[node name="InformacionComandos" type="Label" parent="."]
+offset_left = 119.0
+offset_top = 32.0
+offset_right = 586.0
+offset_bottom = 372.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_nj3o3")
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
