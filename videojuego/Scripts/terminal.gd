@@ -15,7 +15,7 @@ func _ready() -> void:
 func _texto_pa_comandos(texto: String) -> void:	
 	if Comandos.COMANDOS.has(texto) :
 		infoComandos.text = Comandos.COMANDOS[texto].commanddescription
-	else :
+	else : # podemos poner este texto en rojo?
 		infoComandos.text = "> ERROR: Comando no reconocido. Escribe AYUDA para obtener lista de comandos."
 	
 	
