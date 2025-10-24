@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqh7b2rugnj0h"]
+
+[ext_resource type="Script" uid="uid://8tj2rrhck5d" path="res://Scripts/ComandController.cs" id="1_rvp4y"]
+[ext_resource type="Script" uid="uid://bb3ccfstnnpnu" path="res://Scripts/comandos.gd" id="2_oll3h"]
+
+[node name="ComandController" type="Node"]
+script = ExtResource("1_rvp4y")
+
+[node name="Comandos" type="Node" parent="."]
+script = ExtResource("2_oll3h")
+
+[node name="MOVER" type="Node" parent="."]
+
+[node name="Mover" type="Node" parent="."]
