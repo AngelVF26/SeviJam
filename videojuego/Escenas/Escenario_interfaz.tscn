@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1n3qgi0rsl1l"]
+
+[ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_hrt1k"]
+[ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
+
+[node name="Interfaz" type="Node2D"]
+
+[node name="Oscuridad" type="Sprite2D" parent="."]
+position = Vector2(578.75, 325)
+scale = Vector2(0.75032556, 0.75231475)
+texture = ExtResource("2_hrt1k")
+
+[node name="Oscuridad2" type="Sprite2D" parent="."]
+position = Vector2(576.49994, 326.5)
+scale = Vector2(0.5058594, 0.7465278)
+texture = ExtResource("1_hrt1k")
