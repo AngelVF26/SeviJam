@@ -17,3 +17,4 @@
 > ERROR: Comando no reconocido. Escribe AYUDA para obtener lista de comandos.
 > ERROR: Perdona, me he distraído. #me haría gracia soltar este error de forma aleatoria.
 
+> “Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.“
