@@ -1,4 +1,6 @@
 extends Node2D
+@onready var typing_fx: AudioStreamPlayer2D = $TypingFX
+@onready var submit_fx: AudioStreamPlayer2D = $SubmitFX
 
 @onready var terminal: LineEdit = $TerminalComandos
 @onready var infoComandos: TextEdit =$InformacionComandos
@@ -20,7 +22,9 @@ func _texto_pa_comandos(texto: String) -> void:
 	
 	
 func _process(delta: float) -> void:
+
 	pass
+	
 
 
 func _on_terminal_comandos_text_submitted(comando: String) -> void:
@@ -28,3 +32,10 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	emit_signal("señalControl", comando)
 	print(comando)
 	terminal.clear()
+
+
+func _on_terminal_comandos_text_changed(new_text: String) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		submit_fx.play()
+	else:
+		typing_fx.play()
