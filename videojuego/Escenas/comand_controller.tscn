@@ -12,3 +12,13 @@ script = ExtResource("2_oll3h")
 [node name="Mover" type="Node" parent="."]
 
 [node name="Procesar" type="Node" parent="."]
+
+[node name="Interactuar" type="Node" parent="."]
+
+[node name="Salir" type="Node" parent="."]
+
+[node name="Minimapa" type="Node" parent="."]
+
+[node name="Ayuda" type="Node" parent="."]
+
+[node name="AnalisisADN" type="Node" parent="."]
