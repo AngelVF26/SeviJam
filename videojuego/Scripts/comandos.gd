@@ -1,8 +1,9 @@
 extends Node
 
 const COMANDOS = {
-  "comando": {
-	"MOVER": {
+	"mover": {
+		"commandname": "MOVER",
+		"nombre_nodo": "MoverNodo",
 		"commanddescription": "El robot avanza hacia delante",
 		"commandaction": "",
 		"type": "terminal",

@@ -11,14 +11,16 @@ config_version=5
 [application]
 
 config/name="VIDEOJUEGO"
-run/main_scene="uid://dp72y1cpplub5"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Comandos="*res://Scripts/comandos.gd"
 
+[dotnet]
+
+project/assembly_name="VIDEOJUEGO"
 [display]
 
 window/size/viewport_width=1920

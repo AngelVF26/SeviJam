@@ -1,0 +1,8 @@
+***********************************************************
+***                     MISIÓN EDÉN                     ***
+***********************************************************
+> Aterrizaje exitoso del rover XX-XXX en el planeta XXX.
+> Iniciando reconocimiento del terreno.
+> Introduzca un comando:
+> ...
+
