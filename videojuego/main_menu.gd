@@ -8,7 +8,6 @@ extends Control
 @onready var audio_fx: AudioStreamPlayer2D = $AudioFX
 @onready var audio_ambient: AudioStreamPlayer2D = $AudioAmbient
 
-var playback:AudioStreamPlaybackPolyphonic
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +21,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	volume_update()
+	
+	
+
+func volume_update():
+	var music_volume = $ColorRect/MenuOpciones/MusicaBar
+	var sfx_volume = $ColorRect/MenuOpciones/FXBar
+	AudioGlobal.music_volume = music_volume
+	AudioGlobal.sfx_volume = sfx_volume
 
 
 func _on_lanzar_rover_pressed() -> void:
