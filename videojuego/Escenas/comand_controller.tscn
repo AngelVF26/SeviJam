@@ -10,3 +10,5 @@ script = ExtResource("1_rvp4y")
 script = ExtResource("2_oll3h")
 
 [node name="Mover" type="Node" parent="."]
+
+[node name="Procesar" type="Node" parent="."]
