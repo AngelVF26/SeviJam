@@ -22,7 +22,7 @@ func _texto_pa_comandos(texto: String) -> void:
 	
 	
 func _process(delta: float) -> void:
-
+	update_volume()
 	pass
 	
 
@@ -39,3 +39,10 @@ func _on_terminal_comandos_text_changed(new_text: String) -> void:
 		submit_fx.play()
 	else:
 		typing_fx.play()
+
+func update_volume():
+	var music_index = AudioServer.get_bus_index("Music")
+	var sfx_index = AudioServer.get_bus_index("Sound Effects")
+	
+	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
+	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)

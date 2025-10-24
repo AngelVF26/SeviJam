@@ -28,8 +28,8 @@ func _process(delta: float) -> void:
 func volume_update():
 	var music_volume = $ColorRect/MenuOpciones/MusicaBar
 	var sfx_volume = $ColorRect/MenuOpciones/FXBar
-	AudioGlobal.music_volume = music_volume
-	AudioGlobal.sfx_volume = sfx_volume
+	AudioGlobal.music_volume = music_volume.value
+	AudioGlobal.sfx_volume = sfx_volume.value
 
 
 func _on_lanzar_rover_pressed() -> void:
