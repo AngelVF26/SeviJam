@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp72y1cpplub5"]
+[gd_scene load_steps=8 format=3 uid="uid://dp72y1cpplub5"]
 
 [ext_resource type="Shader" uid="uid://dmn1w1hk2bo6q" path="res://Assets/Shader/CRT.gdshader" id="1_hjcy7"]
 [ext_resource type="Script" uid="uid://wcadk5khr5xk" path="res://main_menu.gd" id="1_qn7j5"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="1_r8uxs"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_qn7j5"]
+[ext_resource type="AudioStream" uid="uid://cepot80jektm4" path="res://Assets/FX/HoverMenu.mp3" id="5_7ms0u"]
+[ext_resource type="AudioStream" uid="uid://ba5mxiuhdc3ja" path="res://Assets/FX/ESTO PUEDE ESTAR BIEN MAIN MENUmp3.mp3" id="6_xgkoo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qn7j5"]
 resource_local_to_scene = true
@@ -104,5 +106,19 @@ theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "ABORTAR MISIÓN"
 flat = true
 
+[node name="AudioFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7ms0u")
+volume_db = 8.0
+
+[node name="AudioAmbient" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_xgkoo")
+volume_db = 4.0
+autoplay = true
+stream_paused = true
+
+[connection signal="mouse_entered" from="ColorRect/GridContainer/LanzarRover" to="." method="_on_lanzar_rover_mouse_entered"]
 [connection signal="pressed" from="ColorRect/GridContainer/LanzarRover" to="." method="_on_lanzar_rover_pressed"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/Configuracion" to="." method="_on_configuracion_mouse_entered"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/Creditos" to="." method="_on_creditos_mouse_entered"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/AbortarMision" to="." method="_on_abortar_mision_mouse_entered"]
 [connection signal="pressed" from="ColorRect/GridContainer/AbortarMision" to="." method="_on_abortar_mision_pressed"]
