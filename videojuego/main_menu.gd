@@ -30,6 +30,10 @@ func volume_update():
 	var sfx_volume = $ColorRect/MenuOpciones/FXBar
 	AudioGlobal.music_volume = music_volume.value
 	AudioGlobal.sfx_volume = sfx_volume.value
+	var music_index = AudioServer.get_bus_index("Music")
+	var sfx_index = AudioServer.get_bus_index("Sound Effects")
+	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
+	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
 
 
 func _on_lanzar_rover_pressed() -> void:
