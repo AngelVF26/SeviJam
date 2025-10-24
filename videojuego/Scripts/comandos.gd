@@ -4,7 +4,7 @@ const COMANDOS = {
 	"mover": {
 		"commandname": "MOVER",
 		"nombre_nodo": "MoverNodo",
-		"commanddescription": "El robot avanza hacia delante",
+		"commanddescription": "El robot avanza",
 		"commandaction": "",
 		"type": "terminal",
 		"distancia" : "",

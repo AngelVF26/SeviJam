@@ -38,8 +38,8 @@ public partial class ComandController : Node
 			{
 				// Existe el comando
 				Comando comando = GetComando(line);
-            }
-        }
+			}
+		}
 
 	}
 
