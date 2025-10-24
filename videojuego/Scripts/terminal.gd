@@ -1,9 +1,7 @@
 extends Node2D
-@onready var ambient_music: AudioStreamPlayer2D = $AmbientMusic
 @onready var typing_fx: AudioStreamPlayer2D = $TypingFX
 @onready var submit_fx: AudioStreamPlayer2D = $SubmitFX
 
-@onready var intro_console_fx: AudioStreamPlayer2D = $IntroConsoleFX
 @onready var terminal: LineEdit = $TerminalComandos
 @onready var infoComandos: TextEdit =$InformacionComandos
 signal señalControl(String)

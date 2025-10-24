@@ -106,17 +106,37 @@ theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "ABORTAR MISIÓN"
 flat = true
 
+[node name="MenuOpciones" type="GridContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5.1824474, 3.0472307)
+columns = 2
+
+[node name="HSlider" type="HSlider" parent="ColorRect/MenuOpciones"]
+layout_mode = 2
+
 [node name="AudioFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_7ms0u")
 volume_db = 8.0
+bus = &"Sound Effects"
 
 [node name="AudioAmbient" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 0)
 stream = ExtResource("6_xgkoo")
 volume_db = 4.0
 autoplay = true
-
+bus = &"Music"
 parameters/looping = true
-
 
 [connection signal="mouse_entered" from="ColorRect/GridContainer/LanzarRover" to="." method="_on_lanzar_rover_mouse_entered"]
 [connection signal="pressed" from="ColorRect/GridContainer/LanzarRover" to="." method="_on_lanzar_rover_pressed"]
