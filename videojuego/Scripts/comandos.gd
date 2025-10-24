@@ -31,4 +31,3 @@ const COMANDOS = {
 	  "type": "terminal"
 	}
   }
-}
