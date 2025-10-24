@@ -29,7 +29,5 @@ func _process(delta: float) -> void:
 
 func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	#terminal.text_submitted.connect(_texto_pa_comandos)
-	print(comando)
 	emit_signal("señalControl", comando)
-	
 	terminal.clear()
