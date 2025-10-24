@@ -14,3 +14,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_lanzar_rover_pressed() -> void:
+	get_tree().change_scene_to_file("res://Escenas/Escenario_interfaz.tscn")
+
+
+
+
+func _on_abortar_mision_pressed() -> void:
+	get_tree().quit()
