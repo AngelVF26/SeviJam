@@ -13,7 +13,7 @@ func _on_prueba(valor: String) -> void:
 
 func _exit():
 	print("holaholaholivecinito")
-	get_tree().change_scene_to_file("res://Escenas/Escenario_interfaz.tscn")
+	#get_tree().change_scene_to_file("res://Escenas/Escenario_interfaz.tscn")
 
 func _process(delta: float) -> void:
 	pass
