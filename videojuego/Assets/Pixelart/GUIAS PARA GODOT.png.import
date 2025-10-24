@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdbfrcvftvh3r"
-path="res://.godot/imported/GUIAS PARA GODOT.png-444b7c58937d807c0688681ffb565e51.ctex"
+path="res://.godot/imported/GUIAS PARA GODOT.png-06e83ecb56f5295f73140c8a55f43798.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GUIAS PARA GODOT.png"
-dest_files=["res://.godot/imported/GUIAS PARA GODOT.png-444b7c58937d807c0688681ffb565e51.ctex"]
+source_file="res://Assets/Pixelart/GUIAS PARA GODOT.png"
+dest_files=["res://.godot/imported/GUIAS PARA GODOT.png-06e83ecb56f5295f73140c8a55f43798.ctex"]
 
 [params]
 
