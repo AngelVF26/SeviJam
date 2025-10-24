@@ -1,33 +1,39 @@
 extends Node
 
 const COMANDOS = {
-	"mover": {
+	["mover", "HOLA"]: {
 		"commandname": "MOVER",
-		"nombre_nodo": "MoverNodo",
-		"commanddescription": "El robot avanza",
+		"nombre_nodo": "Mover",
+		"commanddescription": "Avanzando en la dirección indicada...",
 		"commandaction": "",
 		"type": "terminal",
 		"distancia" : "",
 		"direccion" : "",
 	},
-	"PROCESAR": {
-	  "commanddescription": "El robot procesa la información",
+	["PROCESAR"]: {
+	  "commanddescription": "Procesando interfaz óptica...",
 	  "commandaction": "",
 	  "type": "terminal"
 	},
-	"INTERACTUAR": {
-	  "commanddescription": "El robot interactúa con el entorno",
+	["INTERACTUAR"]: {
+	  "commanddescription": "Recopilando muestra...",
 	  "commandaction": "",
 	  "type": "terminal"
 	},
-	"SALIR": {
-	  "commanddescription": "El robot sale del terminal",
+	["SALIR"]: {
+	  "commanddescription": " ", #A: este no necesita que devuelva texto, no?
 	  "commandaction": "",
 	  "type": "terminal"
 	},
-	"AYUDA": {
-	  "commanddescription": "El robot muestra la ayuda",
+	["AYUDA"]: {
+	  "commanddescription": " ", #A: este tampoco
+	  "commandaction": "",
+	  "type": "terminal"
+	},
+	["YoVictore"]: {
+	  "commanddescription": "A rockear siempre",
 	  "commandaction": "",
 	  "type": "terminal"
 	}
+	
   }

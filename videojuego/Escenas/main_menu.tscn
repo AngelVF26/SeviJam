@@ -114,7 +114,9 @@ volume_db = 8.0
 stream = ExtResource("6_xgkoo")
 volume_db = 4.0
 autoplay = true
+
 parameters/looping = true
+
 
 [connection signal="mouse_entered" from="ColorRect/GridContainer/LanzarRover" to="." method="_on_lanzar_rover_mouse_entered"]
 [connection signal="pressed" from="ColorRect/GridContainer/LanzarRover" to="." method="_on_lanzar_rover_pressed"]

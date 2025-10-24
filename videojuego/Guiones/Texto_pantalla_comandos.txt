@@ -2,11 +2,18 @@
 ***********************************************************
 ***                     MISIÓN EDÉN                     ***
 ***********************************************************
-> Aterrizaje exitoso del rover XX-XXX en el planeta XXX.
+> Aterrizaje exitoso del rover C01umb0 en el planeta [7191].
+> OBJETIVO: Recopilación de material genético. 
+> MATERIAL VÁLIDO: Tejidos orgánicos, folículos capilares.
 > Iniciando reconocimiento del terreno.
 > Introduzca un comando:
 > ...
 
 
-# Mensajes de error
-> ERROR: 
+# Mensajes de error (estos salen en rojo)
+> ERROR: No se puede avanzar en esta dirección.
+> ERROR: No hay material genético a analizar.
+> ERROR: No hay nada de interés aquí.
+> ERROR: Comando no reconocido. Escribe AYUDA para obtener lista de comandos.
+> ERROR: Perdona, me he distraído. #me haría gracia soltar este error de forma aleatoria.
+
