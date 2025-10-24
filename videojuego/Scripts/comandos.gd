@@ -4,29 +4,29 @@ const COMANDOS = {
 	["mover", "HOLA"]: {
 		"commandname": "MOVER",
 		"nombre_nodo": "Mover",
-		"commanddescription": "El robot avanza",
+		"commanddescription": "Avanzando en la dirección indicada...",
 		"commandaction": "",
 		"type": "terminal",
 		"distancia" : "",
 		"direccion" : "",
 	},
 	["PROCESAR"]: {
-	  "commanddescription": "El robot procesa la información",
+	  "commanddescription": "Procesando interfaz óptica...",
 	  "commandaction": "",
 	  "type": "terminal"
 	},
 	["INTERACTUAR"]: {
-	  "commanddescription": "El robot interactúa con el entorno",
+	  "commanddescription": "Recopilando muestra...",
 	  "commandaction": "",
 	  "type": "terminal"
 	},
 	["SALIR"]: {
-	  "commanddescription": "El robot sale del terminal",
+	  "commanddescription": " ", #A: este no necesita que devuelva texto, no?
 	  "commandaction": "",
 	  "type": "terminal"
 	},
 	["AYUDA"]: {
-	  "commanddescription": "El robot muestra la ayuda",
+	  "commanddescription": " ", #A: este tampoco
 	  "commandaction": "",
 	  "type": "terminal"
 	},

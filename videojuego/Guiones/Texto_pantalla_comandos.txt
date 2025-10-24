@@ -16,3 +16,4 @@
 > ERROR: No hay nada de interés aquí.
 > ERROR: Comando no reconocido. Escribe AYUDA para obtener lista de comandos.
 > ERROR: Perdona, me he distraído. #me haría gracia soltar este error de forma aleatoria.
+

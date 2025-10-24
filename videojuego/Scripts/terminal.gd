@@ -16,7 +16,7 @@ func _texto_pa_comandos(texto: String) -> void:
 	if Comandos.COMANDOS.has(texto) :
 		infoComandos.text = Comandos.COMANDOS[texto].commanddescription
 	else :
-		infoComandos.text = "POR FAVOR, INTRODUZCA UN COMANDO VÁLIDO, EN CASO DE NO RECORDAR CUALES ERAN, ESCRIBA AYUDA"
+		infoComandos.text = "> ERROR: Comando no reconocido. Escribe AYUDA para obtener lista de comandos."
 	
 	
 func _process(delta: float) -> void:
