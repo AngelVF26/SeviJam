@@ -9,6 +9,4 @@ script = ExtResource("1_rvp4y")
 [node name="Comandos" type="Node" parent="."]
 script = ExtResource("2_oll3h")
 
-[node name="MOVER" type="Node" parent="."]
-
 [node name="Mover" type="Node" parent="."]

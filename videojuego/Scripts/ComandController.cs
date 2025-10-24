@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public partial class ComandController : Node
 {
+	[Signal]
+	public delegate void ReturnErrorEventHandler();
 	private Node comandos;
 	private Godot.Collections.Dictionary<String, Godot.Collections.Dictionary<String, String>> fCommandDict;
 
@@ -30,14 +32,14 @@ public partial class ComandController : Node
 			if (fCommandDict[line] == null)
 			{
 				// No existe el comando
-				ReturnError();
+				EmitSignal("ReturnError");
 			}
 			else
 			{
 				// Existe el comando
 				Comando comando = GetComando(line);
-			}
-		}
+            }
+        }
 
 	}
 
