@@ -1,7 +1,7 @@
 extends Node
 
 const COMANDOS = {
-	["mover", "HOLA"]: {
+	["mover", "desplazar"]: {
 		"commandname": "MOVER",
 		"nombre_nodo": "Mover",
 		"commanddescription": "El robot avanza",
@@ -23,11 +23,13 @@ const COMANDOS = {
 	["SALIR"]: {
 	  "commanddescription": "El robot sale del terminal",
 	  "commandaction": "",
+	  "nombre_nodo": "Salir",
 	  "type": "terminal"
 	},
 	["AYUDA"]: {
 	  "commanddescription": "El robot muestra la ayuda",
 	  "commandaction": "",
+	  "nombre_nodo": "Ayuda",
 	  "type": "terminal"
 	},
 	["YoVictore"]: {
