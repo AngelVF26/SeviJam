@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="1_r8uxs"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_qn7j5"]
 [ext_resource type="AudioStream" uid="uid://cepot80jektm4" path="res://Assets/FX/HoverMenu.mp3" id="5_7ms0u"]
-[ext_resource type="AudioStream" uid="uid://ba5mxiuhdc3ja" path="res://Assets/FX/ESTO PUEDE ESTAR BIEN MAIN MENUmp3.mp3" id="6_xgkoo"]
+[ext_resource type="AudioStream" uid="uid://lwe74jym2lxn" path="res://Assets/FX/MainMusic.mp3" id="6_xgkoo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qn7j5"]
 resource_local_to_scene = true
@@ -114,7 +114,7 @@ volume_db = 8.0
 stream = ExtResource("6_xgkoo")
 volume_db = 4.0
 autoplay = true
-stream_paused = true
+parameters/looping = true
 
 [connection signal="mouse_entered" from="ColorRect/GridContainer/LanzarRover" to="." method="_on_lanzar_rover_mouse_entered"]
 [connection signal="pressed" from="ColorRect/GridContainer/LanzarRover" to="." method="_on_lanzar_rover_pressed"]
