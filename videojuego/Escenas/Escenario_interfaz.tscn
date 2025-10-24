@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
 [ext_resource type="Shader" uid="uid://dmn1w1hk2bo6q" path="res://Assets/Shader/CRT.gdshader" id="4_5b8ei"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="5_caa1v"]
-[ext_resource type="Texture2D" uid="uid://bdbfrcvftvh3r" path="res://Assets/Pixelart/GUIAS PARA GODOT.png" id="7_dxyxx"]
+[ext_resource type="Texture2D" uid="uid://c4yjlxmoyaxk6" path="res://Assets/Pixelart/GUIAS_SIN_FONDO.png" id="8_dxyxx"]
 [ext_resource type="AudioStream" uid="uid://cbj2smit0rqww" path="res://Assets/FX/typing2.mp3" id="8_vpig8"]
 [ext_resource type="AudioStream" uid="uid://bw637kyt5rjjx" path="res://Assets/FX/typing.mp3" id="9_sjuwg"]
 
@@ -72,11 +72,6 @@ offset_bottom = 880.0
 theme_override_fonts/font = ExtResource("5_caa1v")
 theme_override_font_sizes/font_size = 80
 
-[node name="GuiasParaGodot" type="Sprite2D" parent="."]
-position = Vector2(962.00006, 541)
-scale = Vector2(0.6803978, 0.6729798)
-texture = ExtResource("7_dxyxx")
-
 [node name="TerminalComandos" type="LineEdit" parent="."]
 offset_top = 880.0
 offset_right = 1920.0
@@ -94,6 +89,11 @@ offset_top = 204.0
 offset_right = 1374.0
 offset_bottom = 813.0
 color = Color(0, 0, 0, 1)
+
+[node name="GuiasParaGodot" type="Sprite2D" parent="."]
+position = Vector2(962.00006, 541)
+scale = Vector2(0.6803978, 0.6729798)
+texture = ExtResource("8_dxyxx")
 
 [node name="TypingFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_vpig8")

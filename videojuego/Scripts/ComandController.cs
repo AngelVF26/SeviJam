@@ -2,14 +2,22 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 public partial class ComandController : Node
 {
 	[Signal]
 	public delegate void ReturnErrorEventHandler();
+	[Signal]
+	public delegate void AyudaSeñalEventHandler();
+	[Signal]
+	public delegate void SalirSeñalEventHandler();
+	[Signal]
+	public delegate void MoverSeñalEventHandler(int distancia, string direccion);
 	private Node comandos;
 	private Godot.Collections.Dictionary<String[], Godot.Collections.Dictionary<String, String>> fCommandDict;
 	private Node2D fPadre;
+	private Godot.Collections.Dictionary<String, String> fCommandToProcess;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -29,56 +37,92 @@ public partial class ComandController : Node
 
 	public void ParseCommandLine(String line)
 	{
+		var value = Regex.Match(line, @"^([\w\-]+)"); // Devuelve la primera palabra de la cadena. Esperamos que eso sea el comando per se
+		String result = value.Value;
+
 		if (fCommandDict != null)
 		{
 			foreach (KeyValuePair<String[], Godot.Collections.Dictionary<String, String>> cmd in fCommandDict)
 			{
-				if (!cmd.Key.Contains(line))
+				if (!cmd.Key.Contains(result))
 				{
 					EmitSignal("ReturnError");
 					//TODO: Hacerlo
 				}
 				else
 				{
-					GD.Print("FUNCIONO");
+					// Encontrado el comando. 
+					// Llamar al nodo. Señal. Etc.
+					fCommandToProcess = cmd.Value;
+					String nombreNodo = fCommandToProcess["nombre_nodo"];
+
+					switch (nombreNodo)
+					{
+						case string val when val == "Mover":
+							ProcesarNodoMover(line);
+							break;
+						case string val when val == "Ayuda":
+							ProcesarNodoAyuda(line);
+							break;
+						case string val when val == "Salir":
+							ProcesarNodoSalir(line);
+							break;
+						default:
+							GD.Print("ERROR: NO NODO1?");
+							break;
+					}
 				}
 			}
-
 		}
 
 	}
 
-	// Recibe un "comando1" "comando2" "comando3"... etc
-	private Godot.Collections.Dictionary<String, String> GetComando(String comando)
+	private void ProcesarNodoSalir(String linea)
+    {
+        var value = Regex.Match(linea, @"^(\w+)");
+		if (!value.Success)
+		{
+			EmitSignal("ReturnError");
+		}
+		else
+		{
+			EmitSignal("SalirSeñal");
+			GD.Print("SALGO.");
+		}
+    }
+	
+	private void ProcesarNodoAyuda(String linea)
 	{
-		/*Godot.Collections.Dictionary<String, String> res = new Godot.Collections.Dictionary<String, String>();	
-		String commandName = fCommandDict[comando]["commandname"];
-		String commandDescription = fCommandDict[comando]["commanddescription"];
-		String commandAction = fCommandDict[comando]["commandaction"];
-		String type = fCommandDict[comando]["type"];
-
-		return res; */
-
-		return null;
+		var value = Regex.Match(linea, @"^(\w+)");
+		if (!value.Success)
+		{
+			EmitSignal("ReturnError");
+		}
+		else
+		{
+			EmitSignal("AyudaSeñal");
+			GD.Print("AYUDAAAA");
+		}
 	}
 
-
-
-}
-
-public partial class Comando
-{
-	public String fCommandName;
-	public String fCommandDescription;
-	public String fCommandAction;
-	public String fType;
-
-	public Comando(String commandName, String commandDescription, String commandAction, String type)
+	private void ProcesarNodoMover(String linea)
 	{
-		fCommandAction = commandAction;
-		fCommandDescription = commandDescription;
-		fCommandName = commandName;
-		fType = type;
+		// Procesamos si el comando está mal escrito. Si no, mandamos error.
+		var value = Regex.Match(linea, @"^(\w+)\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n)|(e)|(o)|(s))");
+		if (!value.Success)
+		{
+			EmitSignal("ReturnError");
+		}
+		else
+		{
+			var arg1 = Regex.Match(linea, @"(\d+)");
+			var arg2 = Regex.Match(linea, @"((norte)|(sur)|(este)|(oeste)|\sn$|\se$|\so$|\ss$)");
+
+			int distancia = Int32.Parse(arg1.Value);
+			String direccion = arg2.Value.Trim();
+			EmitSignal("MoverSeñal", distancia, direccion);
+		}
 	}
+
 
 }
