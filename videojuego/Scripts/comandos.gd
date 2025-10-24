@@ -29,5 +29,11 @@ const COMANDOS = {
 	  "commanddescription": "El robot muestra la ayuda",
 	  "commandaction": "",
 	  "type": "terminal"
+	},
+	"YoVictore": {
+	  "commanddescription": "A rockear siempre",
+	  "commandaction": "",
+	  "type": "terminal"
 	}
+	
   }
