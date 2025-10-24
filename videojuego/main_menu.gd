@@ -8,7 +8,6 @@ extends Control
 @onready var audio_fx: AudioStreamPlayer2D = $AudioFX
 @onready var audio_ambient: AudioStreamPlayer2D = $AudioAmbient
 
-var playback:AudioStreamPlaybackPolyphonic
 
 
 # Called when the node enters the scene tree for the first time.
