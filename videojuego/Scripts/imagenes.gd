@@ -24,3 +24,8 @@ func _on_interfaz_señal_imagen(bool: Variant) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	print("patatas que hay de comer")
 	%Scanner.stop()
+
+
+func _on_interfaz_señal_parar(parar: Variant) -> void:
+	animation_player.stop(parar)
+	%Scanner.stop()
