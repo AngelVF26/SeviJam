@@ -28,12 +28,16 @@ public partial class ComandController : Node
 	public delegate void NoSeñalEventHandler();
 	[Signal]
 	public delegate void ComandoEnviadoEventHandler();
+	[Signal]
+	public delegate void CerrarVentanaEventHandler();
 	private Node comandos;
 	private Godot.Collections.Dictionary<String[], Godot.Collections.Dictionary<String, String>> fCommandDict;
 	private Node2D fPadre;
 	private Godot.Collections.Dictionary<String, String> fCommandToProcess;
 	private Analizar analizar;
 	private bool isPeticion = false;
+	private bool fIsActividad = false;
+	private Node minimapa;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -42,7 +46,9 @@ public partial class ComandController : Node
 		fCommandDict= dict.AsGodotDictionary<String[], Godot.Collections.Dictionary<String, String>>();
 		fPadre = (Node2D)this.GetParent();
 		analizar = GetNode<Analizar>("Analizar");
+		minimapa = GetNode<Node>("Minimapa");
 
+		minimapa.Connect(("actividad_del_mapa"), new Callable(this, nameof(OnActividadDelMapa)));
 		analizar.Connect(("PeticionSeñal"), new Callable(this, nameof(OnPeticionSeñal)));
 		fPadre.Connect("señalControl", new Callable(this, nameof(this.ParseCommandLine)));
 
@@ -58,9 +64,14 @@ public partial class ComandController : Node
 		isPeticion = true;
 	}
 
+	private void OnActividadDelMapa(bool isActividad)
+	{
+		fIsActividad = isActividad;
+	}
+
 	public void ParseCommandLine(String line)
 	{
-		var value = Regex.Match(line, @"^([\w\-]+)"); // Devuelve la primera palabra de la cadena. Esperamos que eso sea el comando per se
+		var value = Regex.Match(line, @"^(\/[\w\-]+)|([\w\-]+)"); // Devuelve la primera palabra de la cadena. Esperamos que eso sea el comando per se
 		String result = value.Value.ToLower();
 
 		if (fCommandDict != null)
@@ -84,12 +95,21 @@ public partial class ComandController : Node
 					else
 					{
 						EmitSignal("ReturnError");
-						isPeticion = false;
 					}
 					//TODO: Hacerlo
 				}
+				else if(fIsActividad)
+				{
+					if (line.ToLower() == "salir" || line.ToLower() == "cerrar")
+					{
+						fIsActividad = false;
+						EmitSignal("CerrarVentana");
+						break;
+					}
+				}
 				else
 				{
+					GD.Print("entro aqui 2");
 					// Encontrado el comando. 
 					// Llamar al nodo. Señal. Etc.
 					fCommandToProcess = cmd.Value;
@@ -102,6 +122,7 @@ public partial class ComandController : Node
 							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Ayuda":
+							GD.Print("Entro aqui 1");
 							ProcesarNodoAyuda(line);
 							EmitSignal("ComandoEnviado");
 							break;
@@ -142,7 +163,7 @@ public partial class ComandController : Node
 
 	private void ProcesarNodoSalir(String linea)
 	{
-		var value = Regex.Match(linea, @"^(\w+)");
+		var value = Regex.Match(linea, @"^(\/[\w\-]+)|([\w\-]+)");
 		if (!value.Success)
 		{
 			EmitSignal("ReturnError");
@@ -164,7 +185,7 @@ public partial class ComandController : Node
 
 	private void ProcesarNodoAyuda(String linea)
 	{
-		var value = Regex.Match(linea, @"^(\w+)");
+		var value = Regex.Match(linea, @"^(\/[\w\-]+)|([\w\-]+)");
 		if (!value.Success)
 		{
 			EmitSignal("ReturnError");

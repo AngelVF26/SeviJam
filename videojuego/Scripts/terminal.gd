@@ -8,6 +8,7 @@ extends Node2D
 @export var player: CharacterBody2D 
 @onready var imagen_explorada: Sprite2D = $ImagenExplorada
 var listaComandos: Array
+var pruebas: Array
 var comandosPosition: int
 @onready var infoComandos: RichTextLabel = $InfoComandos
 var visible_characters = 0
@@ -70,6 +71,9 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	listaComandos.append(comando)
 	comandosPosition = 0
 	terminal.clear()
+	
+	
+	
 
 
 func _on_terminal_comandos_text_changed(new_text: String) -> void:
@@ -81,8 +85,15 @@ func _on_terminal_comandos_text_changed(new_text: String) -> void:
 
 func _on_ayuda_help(ayuda: Variant) -> void:
 	infoComandos.clear()
-	print("ayudame que tengo muchos quereseres")
-	infoComandos.add_text("\n\n\n prueba probando")
+	print(Comandos.COMANDOS[["mover", "desplazar", "avanzar"]].commanddescription)
+	
+	infoComandos.add_text("\n\n\n mover: " + Comandos.COMANDOS[["interactuar"]].commandaction + "\n" + 
+							" procesar: " + Comandos.COMANDOS[["procesar", "imagen", "captura"]].commandaction + "\n" +
+							" interactuar: " + Comandos.COMANDOS[["interactuar"]].commandaction + "\n" +
+							" salir: " + Comandos.COMANDOS[["salir"]].commandaction+ "\n" +
+							" mapa: " + Comandos.COMANDOS[["mapa","minimapa"]].commanddescription + "\n" +
+							" /help: " + Comandos.COMANDOS[["ayuda", "help", "/help", "!help"]].commandaction + "\n" +
+							" analizar: " + Comandos.COMANDOS[["analizar", "adn"]].comanddescription)
 	
 	
 
@@ -101,5 +112,4 @@ func _on_salir_ocultar() -> void:
 
 
 func _on_interactuar_interact(interactuar: Variant) -> void:
-	infoComandos.clear()
-	infoComandos.add_text("\n\n\n " + Comandos.OBJETOS["NADA"]["OBJECTMSG"])
+	infoComandos.text = interactuar

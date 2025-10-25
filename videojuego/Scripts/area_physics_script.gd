@@ -2,7 +2,7 @@ extends Area2D
 
 @export var obstaculo:StaticBody2D
 
-@export var info : String 
+@export var objeto : String = "nada" 
 
 @export var imagen:CompressedTexture2D
 

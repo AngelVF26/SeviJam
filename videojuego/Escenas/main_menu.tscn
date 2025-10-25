@@ -258,19 +258,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.1824474, 3.0472307)
 
-[node name="SalirConfig" type="Button" parent="ColorRect/MenuCreditos"]
-texture_filter = 2
-layout_mode = 0
-offset_left = 20.260702
-offset_top = 185.41426
-offset_right = 103.260704
-offset_bottom = 210.41426
-theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
-theme_override_fonts/font = ExtResource("1_r8uxs")
-text = "Volver
-"
-flat = true
-
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MenuCreditos"]
 layout_mode = 0
 offset_left = -120.985306
@@ -298,6 +285,19 @@ GAME DESIGN
 [left]
 						Andrea	(Gato Condensado)"
 
+[node name="SalirConfig" type="Button" parent="ColorRect/MenuCreditos"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 17.945206
+offset_top = 108.62323
+offset_right = 100.945206
+offset_bottom = 133.62323
+theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
+theme_override_fonts/font = ExtResource("1_r8uxs")
+text = "Volver
+"
+flat = true
+
 [node name="AudioFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_7ms0u")
 volume_db = 8.0
@@ -313,7 +313,6 @@ parameters/looping = true
 
 [node name="AudioFXStart" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_s5s4m")
-volume_db = 14.644
 bus = &"Sound Effects"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
