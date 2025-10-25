@@ -67,7 +67,6 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	print("este es el comando:", comando)
 	listaComandos.append(comando)
 	comandosPosition = 0
-	
 	terminal.clear()
 
 
@@ -79,7 +78,10 @@ func _on_terminal_comandos_text_changed(new_text: String) -> void:
 
 
 func _on_ayuda_help(ayuda: Variant) -> void:
-	infoComandos.text = ayuda
+	infoComandos.clear()
+	print("ayudame que tengo muchos quereseres")
+	infoComandos.add_text("\n\n\n prueba probando")
+	
 	
 
 
