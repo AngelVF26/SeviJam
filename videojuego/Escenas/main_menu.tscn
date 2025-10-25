@@ -216,8 +216,8 @@ offset_top = 2.297
 offset_right = 128.0
 offset_bottom = 10.297
 theme = SubResource("Theme_a082v")
-min_value = -30.0
-max_value = 10.0
+min_value = -40.0
+max_value = 15.0
 
 [node name="AceptarConfig" type="Button" parent="ColorRect/MenuOpciones"]
 texture_filter = 2
@@ -239,8 +239,8 @@ offset_top = 29.535
 offset_right = 128.0
 offset_bottom = 37.534996
 theme = SubResource("Theme_a082v")
-min_value = -30.0
-max_value = 10.0
+min_value = -40.0
+max_value = 15.0
 
 [node name="MenuCreditos" type="Control" parent="ColorRect"]
 visible = false
