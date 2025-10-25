@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_hrt1k"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
+[ext_resource type="Script" uid="uid://hbbmllil5qg" path="res://Scripts/Analizar.cs" id="3_d021a"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
 [ext_resource type="Script" uid="uid://dhc7fnrqu4fh8" path="res://Escenas/typewriter.gd" id="7_d021a"]
 [ext_resource type="Shader" uid="uid://mmopkc1x0hew" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
@@ -206,8 +207,8 @@ script = ExtResource("1_caa1v")
 [node name="Mover" parent="ComandController" index="1" node_paths=PackedStringArray("_physics_player")]
 _physics_player = NodePath("../../CanvasLayer/SubViewportContainer/SubViewport/PhysicsScene/Player")
 
-[node name="Analizar" parent="ComandController" index="7"]
-script = SubResource("CSharpScript_a6jcn")
+[node name="Analizar" parent="ComandController" index="7" groups=["analizar"]]
+script = ExtResource("3_d021a")
 
 [node name="Icon" type="Sprite2D" parent="."]
 visible = false
