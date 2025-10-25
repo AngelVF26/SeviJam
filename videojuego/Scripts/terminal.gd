@@ -8,12 +8,14 @@ extends Node2D
 @onready var infoComandos: TextEdit =$InformacionComandos
 @onready var player: CharacterBody2D = $CanvasLayer/SubViewportContainer/SubViewport/PhysicsScene/Player
 @onready var imagen_explorada: Sprite2D = $ImagenExplorada
-
+var listaComandos: Array
+var comandosPosition: int
 
 signal señalControl(String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
 	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
 	AudioServer.set_bus_effect_enabled(master_index,0,false)
@@ -21,9 +23,21 @@ func _ready() -> void:
 	
 	$AnimationPlayer.play("start")
 	terminal.grab_focus()
+	set_process_input(true)
 	#terminal.text_submitted.connect(_texto_pa_comandos)
+	
 
-
+func _input(ev):
+	if Input.is_action_pressed("ui_up") && listaComandos.size()>0 && comandosPosition < listaComandos.size():
+		terminal.clear()
+		comandosPosition +=1
+		terminal.text = listaComandos[listaComandos.size()-comandosPosition]
+		
+	if Input.is_action_pressed("ui_down") && listaComandos.size()>0 && comandosPosition > 1:
+		terminal.clear()
+		comandosPosition -=1
+		terminal.text = listaComandos[listaComandos.size()-comandosPosition]
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _texto_pa_comandos(texto: String) -> void:	
@@ -46,6 +60,9 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	#terminal.text_submitted.connect(_texto_pa_comandos)
 	emit_signal("señalControl", comando)
 	print("este es el comando:", comando)
+	listaComandos.append(comando)
+	comandosPosition = 0
+	
 	terminal.clear()
 
 

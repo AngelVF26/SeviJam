@@ -42,6 +42,11 @@ const COMANDOS = {
 	["analizar", "adn"]: {
 		"nombre_nodo":"Analizar",
 		"comanddescription": "Analizando muestra..."
-	}
+	},
+	["empanadas"]: {
+	  "commanddescription": "EMPANADILLA RUSA DE CHILE",
+	  "commandaction": "",
+	  "type": "terminal"
+	},
 	
   }
