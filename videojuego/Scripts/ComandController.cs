@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Transactions;
 
 public partial class ComandController : Node
 {
@@ -38,6 +39,11 @@ public partial class ComandController : Node
 	private bool isPeticion = false;
 	private bool fIsActividad = false;
 	private Node minimapa;
+	private bool fCanAnalizar = false;
+	private Node interactuar;
+	private RichTextLabel fCommandLabel;
+	private LineEdit terminalInput;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -47,11 +53,14 @@ public partial class ComandController : Node
 		fPadre = (Node2D)this.GetParent();
 		analizar = GetNode<Analizar>("Analizar");
 		minimapa = GetNode<Node>("Minimapa");
+		interactuar = GetNode<Node>("Interactuar");
+		fCommandLabel = GetParent().GetNode<RichTextLabel>("InfoComandos");
+		terminalInput = GetParent().GetNode<LineEdit>("TerminalComandos");
 
 		minimapa.Connect(("actividad_del_mapa"), new Callable(this, nameof(OnActividadDelMapa)));
 		analizar.Connect(("PeticionSeñal"), new Callable(this, nameof(OnPeticionSeñal)));
 		fPadre.Connect("señalControl", new Callable(this, nameof(this.ParseCommandLine)));
-
+		// interactuar.Connect((""), new Callable(this, nameof(this.OnCanAnalizar)));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -64,9 +73,41 @@ public partial class ComandController : Node
 		isPeticion = true;
 	}
 
+	private void OnCanAnalizar()
+	{
+		fCanAnalizar = true;
+	}
+
 	private void OnActividadDelMapa(bool isActividad)
 	{
 		fIsActividad = isActividad;
+	}
+
+	private void ReturnErrorInTerminal(int flag)
+	{
+		String ret = "";
+		if (fCommandLabel != null)
+		{
+			// 1 => no existe comando
+			// 2 => mal puesto salir
+			// 3 => mal puesto ayuda
+			// 4 => malos argumentos en mover
+			GD.Print(flag);
+			ret = flag switch
+			{
+				1 => "\n\n\n> ERROR: El comando proporcionado no existe.",
+				2 => "\n\n\n> ERROR: El comando proporcionado no admite argumentos",
+				3 => "\n\n\n> ERROR: El comando proporcionado no admite argumentos",
+				4 => "\n\n\n> ERROR: El comando proporcionado debe tener 2 argumentos.\n> Ej: mover 2 n",
+				5 => "\n\n\n> ERROR: No hay muestras para analizar.",
+				_ => "\n\n\n > ERROR. El comando proporcionado es incorrecto.",
+			};
+			if (ret != "")
+			{
+				fCommandLabel.Text = ret; 
+			}
+		}
+		
 	}
 
 	public void ParseCommandLine(String line)
@@ -76,6 +117,7 @@ public partial class ComandController : Node
 
 		if (fCommandDict != null)
 		{
+			bool isError = true;
 			foreach (KeyValuePair<String[], Godot.Collections.Dictionary<String, String>> cmd in fCommandDict)
 			{
 				if (!cmd.Key.Contains(result) || isPeticion)
@@ -84,73 +126,102 @@ public partial class ComandController : Node
 					{
 						EmitSignal("SiSeñal");
 						isPeticion = false;
+						isError = false;
 						break;
 					}
 					else if (line.ToLower() == "n")
 					{
 						EmitSignal("NoSeñal");
 						isPeticion = false;
+						isError = false;
 						break;
 					}
-					else
-					{
-						EmitSignal("ReturnError");
-					}
-					//TODO: Hacerlo
 				}
-				else if(fIsActividad)
+				else if (fIsActividad)
 				{
 					if (line.ToLower() == "salir" || line.ToLower() == "cerrar")
 					{
 						fIsActividad = false;
+						isError = false;
 						EmitSignal("CerrarVentana");
+						break;
+					}
+				}
+				else if (!fCanAnalizar)
+				{
+					GD.Print("entro");
+					String nombreNodo = cmd.Value["nombre_nodo"];
+					if (nombreNodo == "Analizar")
+					{
+						ReturnErrorInTerminal(5);
+						isError = false; // ironico
+						EmitSignal("ReturnError");
+						break;
+					}
+				}
+				else if (fCanAnalizar)
+				{
+					String nombreNodo = cmd.Value["nombre_nodo"];
+
+					if (nombreNodo == "Analizar")
+					{
+						fCanAnalizar = false;
+						isError = false;
+						ProcesarNodoAnalizar(line);
+						EmitSignal("ComandoEnviado");
 						break;
 					}
 				}
 				else
 				{
-					GD.Print("entro aqui 2");
 					// Encontrado el comando. 
 					// Llamar al nodo. Señal. Etc.
 					fCommandToProcess = cmd.Value;
 					String nombreNodo = fCommandToProcess["nombre_nodo"];
-
+					GD.Print(nombreNodo);
 					switch (nombreNodo)
 					{
 						case string val when val == "Mover":
 							ProcesarNodoMover(line);
+							isError = false;
 							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Ayuda":
-							GD.Print("Entro aqui 1");
 							ProcesarNodoAyuda(line);
+							isError = false;
 							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Salir":
 							ProcesarNodoSalir(line);
+							isError = false;
 							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Procesar":
 							ProcesarNodoProcesar(line);
+							isError = false;
 							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Interactuar":
 							ProcesarNodoInteractuar(line);
-							EmitSignal("ComandoEnviado");
-							break;
-						case string val when val == "Analizar":
-							ProcesarNodoAnalizar(line);
+							isError = false;
 							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Minimapa":
 							ProcesarNodoMapa(line);
+							isError = false;
 							EmitSignal("ComandoEnviado");
 							break;
 						default:
-							GD.Print("ERROR: NO NODO1?");
+							isError = false;
 							break;
 					}
 				}
+			}
+			
+			if (isError)
+			{
+				ReturnErrorInTerminal(1);
+				EmitSignal("ReturnError");
 			}
 		}
 
@@ -166,6 +237,7 @@ public partial class ComandController : Node
 		var value = Regex.Match(linea, @"^(\/[\w\-]+)|([\w\-]+)");
 		if (!value.Success)
 		{
+			ReturnErrorInTerminal(2);
 			EmitSignal("ReturnError");
 		}
 		else
@@ -188,6 +260,7 @@ public partial class ComandController : Node
 		var value = Regex.Match(linea, @"^(\/[\w\-]+)|([\w\-]+)");
 		if (!value.Success)
 		{
+			ReturnErrorInTerminal(3);
 			EmitSignal("ReturnError");
 		}
 		else
@@ -214,15 +287,17 @@ public partial class ComandController : Node
 	private void ProcesarNodoMover(String linea)
 	{
 		// Procesamos si el comando está mal escrito. Si no, mandamos error.
-		var value = Regex.Match(linea, @"^(\w+)\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n)|(e)|(o)|(s))");
+		String lineaMin = linea.ToLower();
+		var value = Regex.Match(lineaMin, @"^(\w+)\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n)|(e)|(o)|(s))");
 		if (!value.Success)
 		{
+			ReturnErrorInTerminal(4);
 			EmitSignal("ReturnError");
 		}
 		else
 		{
-			var arg1 = Regex.Match(linea, @"(\d+)");
-			var arg2 = Regex.Match(linea, @"((norte)|(sur)|(este)|(oeste)|\sn$|\se$|\so$|\ss$)");
+			var arg1 = Regex.Match(lineaMin, @"(\d+)");
+			var arg2 = Regex.Match(lineaMin, @"((norte)|(sur)|(este)|(oeste)|\sn$|\se$|\so$|\ss$)");
 
 			int distancia = Int32.Parse(arg1.Value);
 			String direccion = arg2.Value.Trim();
