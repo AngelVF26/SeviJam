@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 # Función para mover al jugador un numero determinado de pixeles
 func move_player_x (x:int  = 1):
 	x = clamp(x, -50,50)
-	self.position.x += x
+	self.position.x += x *10
 func move_player_y (y:int = 1):
 	y = clamp(y, -50,50)
-	self.position.y += y
+	self.position.y += y *10
