@@ -21,7 +21,7 @@ func _texto_pa_comandos(texto: String) -> void:
 		infoComandos.text = "> ERROR: Comando no reconocido. Escribe AYUDA para obtener lista de comandos."
 	
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_volume()
 	pass
 	
