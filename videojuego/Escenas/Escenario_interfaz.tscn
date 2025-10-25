@@ -26,24 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://bobgabhmqjxu2" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_11.png" id="20_xrher"]
 [ext_resource type="AudioStream" uid="uid://b4hyci2kon726" path="res://Assets/FX/StartConsole.mp3" id="23_o88m3"]
 
-[sub_resource type="CSharpScript" id="CSharpScript_a6jcn"]
-script/source = "using Godot;
-using System;
-
-public partial class Analizar : Node
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-}
-"
-
 [sub_resource type="Animation" id="Animation_a6jcn"]
 resource_name = "typewriter"
 length = 5.0
