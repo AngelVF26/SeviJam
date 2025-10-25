@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dp72y1cpplub5"]
+[gd_scene load_steps=19 format=3 uid="uid://dp72y1cpplub5"]
 
 [ext_resource type="Shader" uid="uid://dmn1w1hk2bo6q" path="res://Assets/Shader/CRT.gdshader" id="1_hjcy7"]
 [ext_resource type="Script" uid="uid://wcadk5khr5xk" path="res://main_menu.gd" id="1_qn7j5"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="1_r8uxs"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_qn7j5"]
 [ext_resource type="AudioStream" uid="uid://cepot80jektm4" path="res://Assets/FX/HoverMenu.mp3" id="5_7ms0u"]
+[ext_resource type="FontFile" uid="uid://djw2364lw2f8w" path="res://Assets/Fonts/bytebounce/ByteBounce.ttf" id="5_a082v"]
 [ext_resource type="AudioStream" uid="uid://lwe74jym2lxn" path="res://Assets/FX/MainMusic.mp3" id="6_xgkoo"]
 [ext_resource type="AudioStream" uid="uid://dych6lgg2rsxd" path="res://Assets/FX/Start.mp3" id="7_s5s4m"]
 
@@ -242,7 +243,6 @@ min_value = -30.0
 max_value = 10.0
 
 [node name="MenuCreditos" type="Control" parent="ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -272,21 +272,30 @@ flat = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MenuCreditos"]
 layout_mode = 0
-offset_left = -164.01517
+offset_left = -120.985306
 offset_top = -122.734375
-offset_right = 185.98483
-offset_bottom = 177.26563
-text = "												ARTE	
-									-	Dani	(Sodazen)
+offset_right = 246.98756
+offset_bottom = 228.40411
+theme_override_colors/default_color = Color(0.5803922, 1, 0.38431373, 1)
+theme_override_fonts/normal_font = ExtResource("5_a082v")
+bbcode_enabled = true
+text = "[center]
 
-									PROGRAMACION
-									-	Ángel	 	(Azzazzel)
-									-	Jaime		(Psycody)
-									-	Javi			(Cocido Frio)
-									-	Sergio		(050)
+ARTE	
+[left]
+						Dani		(OmegaSoda)
+[center]
 
-											GAME DESIGN		
-									-	Andrea  (Nekodew)"
+PROGRAMACIÓN 
+[left]
+						Ángel		(Azzazzel)
+						Jaime		(Psycody)
+						Javi		(Cocido Frio)
+						Sergio		(050)
+[center]
+GAME DESIGN
+[left]
+						Andrea	(Gato Condensado)"
 
 [node name="AudioFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_7ms0u")
