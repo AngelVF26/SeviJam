@@ -154,3 +154,7 @@ func _on_interactuar_interact(interactuar: Variant) -> void:
 
 func _on_comand_controller_return_error() -> void:
 	$ErrorFX.play()
+
+
+func _on_settings_btn_pressed() -> void:
+	pass # Replace with function body.
