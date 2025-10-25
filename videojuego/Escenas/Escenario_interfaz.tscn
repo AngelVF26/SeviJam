@@ -219,12 +219,13 @@ offset_left = 4.0
 offset_top = -69.0
 offset_right = 1934.0
 offset_bottom = 813.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/default_color = Color(0.007740002, 0.9835575, 5.0055983e-06, 1)
 theme_override_fonts/normal_font = ExtResource("6_rt3l3")
 theme_override_font_sizes/normal_font_size = 75
 bbcode_enabled = true
 text = "
- ********************************************************
+ 
+********************************************************
  ***                             MISIÓN EDÉN                            ***
  ********************************************************
 
@@ -253,7 +254,7 @@ theme_override_font_sizes/font_size = 55
 placeholder_text = "     "
 
 [node name="TerminalComandos" type="LineEdit" parent="."]
-offset_left = 10.0
+offset_left = 16.0
 offset_top = 880.0
 offset_right = 1930.0
 offset_bottom = 1080.0
