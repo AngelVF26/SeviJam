@@ -90,37 +90,37 @@ func _on_ayuda_help(ayuda: Variant) -> void:
 	infoComandos.clear()
 	
 	infoComandos.add_text("\n\n\n   > ")
-	infoComandos.push_color(Color.GREEN)
+	infoComandos.push_color(Color.WHITE)
 	infoComandos.add_text("mover")
 	infoComandos.pop()
 	infoComandos.add_text(": " + Comandos.COMANDOS[["mover", "desplazar", "avanzar", "/mover", "/desplazar", "/avanzar"]].commandaction)
 	
 	infoComandos.add_text("\n   > ")
-	infoComandos.push_color(Color.GREEN)
+	infoComandos.push_color(Color.WHITE)
 	infoComandos.add_text("procesar")
 	infoComandos.pop()
 	infoComandos.add_text(": " + Comandos.COMANDOS[["procesar", "imagen", "captura", "foto","/procesar", "/imagen", "/captura", "/foto"]].commandaction)
 	
 	infoComandos.add_text("\n   > ")
-	infoComandos.push_color(Color.GREEN)
+	infoComandos.push_color(Color.WHITE)
 	infoComandos.add_text("interactuar")
 	infoComandos.pop()
 	infoComandos.add_text(": " + Comandos.COMANDOS[["interactuar", "/interactuar"]].commandaction)
 	
 	infoComandos.add_text("\n   > ")
-	infoComandos.push_color(Color.GREEN)
+	infoComandos.push_color(Color.WHITE)
 	infoComandos.add_text("analizar")
 	infoComandos.pop()
 	infoComandos.add_text(": " + Comandos.COMANDOS[["analizar", "adn", "analisis","análisis","/analizar", "/adn", "/analisis","/análisis"]].commandaction)
 	
 	infoComandos.add_text("\n   > ")
-	infoComandos.push_color(Color.GREEN)
+	infoComandos.push_color(Color.WHITE)
 	infoComandos.add_text("mapa")
 	infoComandos.pop()
 	infoComandos.add_text(": " + Comandos.COMANDOS[["mapa","minimapa","/mapa","/minimapa"]].commanddescription)
 	
 	infoComandos.add_text("\n   > ")
-	infoComandos.push_color(Color.GREEN)
+	infoComandos.push_color(Color.WHITE)
 	infoComandos.add_text("salir")
 	infoComandos.pop()
 	infoComandos.add_text(": " + Comandos.COMANDOS[["salir", "cerrar","/salir", "/cerrar"]].commandaction)
@@ -147,7 +147,7 @@ func _on_interactuar_interact(interactuar: Variant) -> void:
 	print("objeto1: ", player.current_area.objeto1)
 	interactuar = player.current_area.objeto_interactuar
 	print("\n\n\n Interaccion :" + interactuar)
-	infoComandos.text = "\n\n\n " + interactuar
+	infoComandos.add_text("\n\n\n " + player.current_area.objeto_interactuar) 
 	
 
 
