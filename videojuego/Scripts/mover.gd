@@ -2,8 +2,8 @@ extends Node
 
 @export var _physics_player : physics_player
 var points_dict = { 
-	"sur": Vector2(0,-1),"s":Vector2(0,-1),
-	"norte":Vector2(0,1),"n":Vector2(0,1),
+	"sur": Vector2(0,1),"s":Vector2(0,1),
+	"norte":Vector2(0,-1),"n":Vector2(0,-1),
 	"este":Vector2(1,0),"e":Vector2(1,0),
 	"oeste":Vector2(-1,0),"o":Vector2(-1,0) }
 
