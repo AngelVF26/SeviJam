@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dp72y1cpplub5"]
+[gd_scene load_steps=14 format=3 uid="uid://dp72y1cpplub5"]
 
 [ext_resource type="Shader" uid="uid://dmn1w1hk2bo6q" path="res://Assets/Shader/CRT.gdshader" id="1_hjcy7"]
 [ext_resource type="Script" uid="uid://wcadk5khr5xk" path="res://main_menu.gd" id="1_qn7j5"]
@@ -32,17 +32,29 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5s4m"]
-bg_color = Color(0.23521623, 0.69480807, 0.3749096, 1)
-corner_detail = 10
-shadow_color = Color(0, 1, 0, 0.6)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rocb"]
+bg_color = Color(1.3187826e-05, 0.8554816, 0.1885306, 1)
+border_width_left = 4
+border_width_top = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgkoo"]
-bg_color = Color(3.0739503, 4.80579, 3.9491808, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bd8u"]
+bg_color = Color(0, 5.955212, 0, 1)
 
-[sub_resource type="Theme" id="Theme_s5s4m"]
-HScrollBar/styles/grabber = SubResource("StyleBoxFlat_s5s4m")
-HScrollBar/styles/scroll = SubResource("StyleBoxFlat_xgkoo")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrusn"]
+bg_color = Color(0, 0.85490197, 0.1882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsgyl"]
+bg_color = Color(0.21176471, 0.14509805, 0.21176471, 0.6313726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riaih"]
+
+[sub_resource type="Theme" id="Theme_a082v"]
+default_font_size = 0
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_7rocb")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_0bd8u")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_mrusn")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_qsgyl")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_riaih")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -145,17 +157,6 @@ theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "Musica"
 
-[node name="MusicaBar" type="HScrollBar" parent="ColorRect/MenuOpciones"]
-modulate = Color(0, 1, 0, 1)
-layout_mode = 0
-offset_left = 62.51872
-offset_top = 5.578846
-offset_right = 125.42336
-offset_bottom = 13.578846
-theme = SubResource("Theme_s5s4m")
-min_value = -30.0
-max_value = 10.0
-
 [node name="SFX" type="Label" parent="ColorRect/MenuOpciones"]
 texture_filter = 2
 layout_mode = 0
@@ -169,10 +170,11 @@ text = "SFX"
 
 [node name="FXBar" type="HScrollBar" parent="ColorRect/MenuOpciones"]
 layout_mode = 0
-offset_left = 62.1328
-offset_top = 29.86319
-offset_right = 134.6854
-offset_bottom = 37.86319
+offset_left = 61.0
+offset_top = 2.297
+offset_right = 128.0
+offset_bottom = 10.297
+theme = SubResource("Theme_a082v")
 min_value = -30.0
 max_value = 10.0
 
@@ -188,6 +190,16 @@ theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "ACEPTAR
 "
 flat = true
+
+[node name="MusicaBar" type="HScrollBar" parent="ColorRect/MenuOpciones"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 29.535
+offset_right = 128.0
+offset_bottom = 37.534996
+theme = SubResource("Theme_a082v")
+min_value = -30.0
+max_value = 10.0
 
 [node name="AudioFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_7ms0u")
@@ -209,3 +221,5 @@ parameters/looping = true
 [connection signal="mouse_entered" from="ColorRect/GridMain/Creditos" to="." method="_on_creditos_mouse_entered"]
 [connection signal="mouse_entered" from="ColorRect/GridMain/AbortarMision" to="." method="_on_abortar_mision_mouse_entered"]
 [connection signal="pressed" from="ColorRect/GridMain/AbortarMision" to="." method="_on_abortar_mision_pressed"]
+[connection signal="mouse_entered" from="ColorRect/MenuOpciones/AceptarConfig" to="." method="_on_aceptar_config_mouse_entered"]
+[connection signal="pressed" from="ColorRect/MenuOpciones/AceptarConfig" to="." method="_on_aceptar_config_pressed"]

@@ -1,7 +1,7 @@
 extends Node
 
 const COMANDOS = {
-	["mover", "desplazar"]: {
+	["mover", "desplazar", "avanzar"]: {
 		"commandname": "MOVER",
 		"nombre_nodo": "Mover",
 		"commanddescription": "Avanzando en la dirección indicada...",
@@ -10,32 +10,38 @@ const COMANDOS = {
 		"distancia" : "",
 		"direccion" : "",
 	},
-	["PROCESAR"]: {
+	["procesar", "imagen", "captura"]: {
 	  "commanddescription": "Procesando interfaz óptica...",
 	  "commandaction": "",
+	  "nombre_nodo": "Procesar",
 	  "type": "terminal"
 	},
-	["INTERACTUAR"]: {
+	["interactuar"]: {
 	  "commanddescription": "Recopilando muestra...",
 	  "commandaction": "",
+	  "nombre_nodo": "Interactuar",	  
 	  "type": "terminal"
 	},
-	["SALIR"]: {
+	["salir"]: {
 	  "commanddescription": " ", #A: este no necesita que devuelva texto, no?
 	  "commandaction": "",
 	  "nombre_nodo": "Salir",
 	  "type": "terminal"
 	},
-	["AYUDA"]: {
+	["ayuda"]: {
 	  "commanddescription": " ", #A: este tampoco
 	  "commandaction": "",
 	  "nombre_nodo": "Ayuda",
 	  "type": "terminal"
 	},
-	["YoVictore"]: {
+	["yovictore"]: {
 	  "commanddescription": "A rockear siempre",
 	  "commandaction": "",
 	  "type": "terminal"
+	},
+	["analizar", "adn"]: {
+		"nombre_nodo":"Analizar",
+		"comanddescription": "Analizando muestra..."
 	}
 	
   }

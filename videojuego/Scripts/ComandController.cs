@@ -11,7 +11,13 @@ public partial class ComandController : Node
 	[Signal]
 	public delegate void AyudaSeñalEventHandler();
 	[Signal]
+	public delegate void ProcesarSeñalEventHandler();
+	[Signal]
+	public delegate void InteractuarSeñalEventHandler();
+	[Signal]
 	public delegate void SalirSeñalEventHandler();
+	[Signal]
+	public delegate void AnalizarSeñalEventHandler();
 	[Signal]
 	public delegate void MoverSeñalEventHandler(int distancia, string direccion);
 	private Node comandos;
@@ -38,7 +44,7 @@ public partial class ComandController : Node
 	public void ParseCommandLine(String line)
 	{
 		var value = Regex.Match(line, @"^([\w\-]+)"); // Devuelve la primera palabra de la cadena. Esperamos que eso sea el comando per se
-		String result = value.Value;
+		String result = value.Value.ToLower();
 
 		if (fCommandDict != null)
 		{
@@ -67,6 +73,15 @@ public partial class ComandController : Node
 						case string val when val == "Salir":
 							ProcesarNodoSalir(line);
 							break;
+						case string val when val == "Procesar":
+							ProcesarNodoProcesar(line);
+							break;
+						case string val when val == "Interactuar":
+							ProcesarNodoInteractuar(line);
+							break;
+						case string val when val == "Analizar":
+							ProcesarNodoAnalizar(line);
+							break;
 						default:
 							GD.Print("ERROR: NO NODO1?");
 							break;
@@ -90,7 +105,13 @@ public partial class ComandController : Node
 			GD.Print("SALGO.");
 		}
 	}
-	
+
+	private void ProcesarNodoInteractuar(String linea)
+	{
+		GD.Print("Interactuar");
+		EmitSignal("InteractuarSeñal");
+	}
+
 	private void ProcesarNodoAyuda(String linea)
 	{
 		var value = Regex.Match(linea, @"^(\w+)");
@@ -101,8 +122,17 @@ public partial class ComandController : Node
 		else
 		{
 			EmitSignal("AyudaSeñal");
-			GD.Print("AYUDAAAA");
 		}
+	}
+
+	private void ProcesarNodoProcesar(String linea)
+	{
+		EmitSignal("ProcesarSeñal");
+	}
+	
+	private void ProcesarNodoAnalizar(String linea)
+	{
+		EmitSignal("ProcesarAnalizar");
 	}
 
 	private void ProcesarNodoMover(String linea)
