@@ -139,10 +139,12 @@ pivot_offset = Vector2(71.14159, 55.236492)
 [node name="LanzarRover" type="Button" parent="ColorRect/GridMain"]
 texture_filter = 2
 layout_mode = 2
+size_flags_horizontal = 6
 theme_override_colors/font_color = Color(0.57852244, 0.99999994, 0.3850331, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "LANZAR ROVER"
 flat = true
+autowrap_trim_flags = 0
 
 [node name="Configuracion" type="Button" parent="ColorRect/GridMain"]
 texture_filter = 2
@@ -219,9 +221,9 @@ max_value = 10.0
 [node name="AceptarConfig" type="Button" parent="ColorRect/MenuOpciones"]
 texture_filter = 2
 layout_mode = 0
-offset_left = 3.2803032
-offset_top = 108.62322
-offset_right = 86.280304
+offset_left = 17.945206
+offset_top = 108.62323
+offset_right = 100.945206
 offset_bottom = 133.62323
 theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
