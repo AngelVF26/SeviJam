@@ -16,6 +16,7 @@ extends Control
 @onready var grid_main: GridContainer = $ColorRect/GridMain
 @onready var sfx_volume: HScrollBar = $ColorRect/MenuOpciones/FXBar
 @onready var music_volume: HScrollBar = $ColorRect/MenuOpciones/MusicaBar
+@onready var menu_creditos: Control = $ColorRect/MenuCreditos
 
 @onready var music_index = AudioServer.get_bus_index("Music")
 @onready var sfx_index = AudioServer.get_bus_index("Sound Effects")
@@ -100,3 +101,15 @@ func _on_aceptar_config_pressed() -> void:
 
 func _on_aceptar_config_mouse_entered() -> void:
 	audio_fx.play()
+
+
+func _on_creditos_pressed() -> void:
+	grid_main.visible = false
+	menu_creditos.visible = true
+
+
+func _on_salir_config_pressed() -> void:
+	audio_fx.play()
+	grid_main.visible = true
+	menu_creditos.visible = false
+	
