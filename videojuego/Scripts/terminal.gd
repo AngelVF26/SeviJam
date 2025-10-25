@@ -23,6 +23,11 @@ func _ready() -> void:
 	
 	$AnimationPlayer.play("start")
 	terminal.grab_focus()
+	
+	var visible_characters = 0
+	if visible_characters != $InfoComandos.visible_characters:
+		visible_characters = $InfoComandos.visible_characters
+		$TypingDisplayFX.play()
 	set_process_input(true)
 	#terminal.text_submitted.connect(_texto_pa_comandos)
 	

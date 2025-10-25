@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
 [ext_resource type="Script" uid="uid://hbbmllil5qg" path="res://Scripts/Analizar.cs" id="3_d021a"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
-[ext_resource type="Shader" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
+[ext_resource type="Script" uid="uid://dhc7fnrqu4fh8" path="res://Escenas/typewriter.gd" id="7_d021a"]
+[ext_resource type="Shader" uid="uid://mmopkc1x0hew" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
 [ext_resource type="AudioStream" uid="uid://cbj2smit0rqww" path="res://Assets/FX/typing2.mp3" id="8_vpig8"]
 [ext_resource type="Texture2D" uid="uid://ctnu62qhriphi" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_00.png" id="9_o88m3"]
 [ext_resource type="AudioStream" uid="uid://bw637kyt5rjjx" path="res://Assets/FX/typing.mp3" id="9_sjuwg"]
@@ -24,6 +25,61 @@
 [ext_resource type="Texture2D" uid="uid://d4ng42oaegnde" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_10.png" id="19_cs7fs"]
 [ext_resource type="Texture2D" uid="uid://bobgabhmqjxu2" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_11.png" id="20_xrher"]
 [ext_resource type="AudioStream" uid="uid://b4hyci2kon726" path="res://Assets/FX/StartConsole.mp3" id="23_o88m3"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_a6jcn"]
+script/source = "using Godot;
+using System;
+
+public partial class Analizar : Node
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[sub_resource type="Animation" id="Animation_a6jcn"]
+resource_name = "typewriter"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0047393367, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_d021a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0047393367]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hr7f7"]
+_data = {
+&"RESET": SubResource("Animation_d021a"),
+&"typewriter": SubResource("Animation_a6jcn")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tu35c"]
 shader = ExtResource("8_a6jcn")
@@ -174,6 +230,35 @@ texture = ExtResource("1_hrt1k")
 offset_right = 1920.0
 offset_bottom = 200.0
 
+[node name="InfoComandos" type="RichTextLabel" parent="."]
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 1900.0
+offset_bottom = 816.0
+theme_override_fonts/normal_font = ExtResource("6_tu35c")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "
+ ********************************************************
+ ***                   MISIÓN EDÉN                   ***
+ ********************************************************
+
+ > Aterrizaje exitoso del rover C01umb0 en el planeta
+   [7191].
+ > OBJETIVO: Recopilación de material genético humanoide.
+ > Material válido para clonación: FOLÍCULOS CAPILARES.
+ > Iniciando reconocimiento del terreno...
+ > Introduzca un comando:"
+visible_characters = 2
+visible_ratio = 0.0047393367
+
+[node name="AnimationText" type="AnimationPlayer" parent="."]
+root_node = NodePath("../InfoComandos")
+libraries = {
+&"": SubResource("AnimationLibrary_hr7f7")
+}
+script = ExtResource("7_d021a")
+
 [node name="InformacionComandos" type="TextEdit" parent="."]
 offset_top = -1.0
 offset_right = 1920.0
@@ -215,6 +300,10 @@ stream = SubResource("AudioStreamMP3_nj3o3")
 volume_db = 4.0
 autoplay = true
 bus = &"Music"
+parameters/looping = true
+
+[node name="TypingDisplayFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_vpig8")
 parameters/looping = true
 
 [node name="SubmitFX" type="AudioStreamPlayer2D" parent="."]
