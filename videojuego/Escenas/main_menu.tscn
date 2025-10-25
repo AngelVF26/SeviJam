@@ -121,6 +121,7 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="GridMain" type="GridContainer" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -171,7 +172,6 @@ text = "ABORTAR MISIÓN"
 flat = true
 
 [node name="MenuOpciones" type="Control" parent="ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -221,9 +221,9 @@ max_value = 10.0
 [node name="AceptarConfig" type="Button" parent="ColorRect/MenuOpciones"]
 texture_filter = 2
 layout_mode = 0
-offset_left = 3.2803032
-offset_top = 108.62322
-offset_right = 86.280304
+offset_left = 17.945206
+offset_top = 108.62323
+offset_right = 100.945206
 offset_bottom = 133.62323
 theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
