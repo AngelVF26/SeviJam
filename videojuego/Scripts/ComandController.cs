@@ -85,7 +85,7 @@ public partial class ComandController : Node
 					{
 						EmitSignal("ReturnError");
 						isPeticion = false;
-					}					
+					}
 					//TODO: Hacerlo
 				}
 				else
@@ -94,7 +94,7 @@ public partial class ComandController : Node
 					// Llamar al nodo. Señal. Etc.
 					fCommandToProcess = cmd.Value;
 					String nombreNodo = fCommandToProcess["nombre_nodo"];
-					
+
 					switch (nombreNodo)
 					{
 						case string val when val == "Mover":
@@ -121,6 +121,10 @@ public partial class ComandController : Node
 							ProcesarNodoAnalizar(line);
 							EmitSignal("ComandoEnviado");
 							break;
+						case string val when val == "Minimapa":
+							ProcesarNodoMapa(line);
+							EmitSignal("ComandoEnviado");
+							break;
 						default:
 							GD.Print("ERROR: NO NODO1?");
 							break;
@@ -130,6 +134,11 @@ public partial class ComandController : Node
 		}
 
 	}
+	
+	private void ProcesarNodoMapa(String linea)
+    {
+		EmitSignal("MinimapaSeñal");
+    }
 
 	private void ProcesarNodoSalir(String linea)
 	{
