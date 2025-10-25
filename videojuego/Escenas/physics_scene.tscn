@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://da01jtt78ktfw"]
+[gd_scene load_steps=13 format=3 uid="uid://da01jtt78ktfw"]
 
 [ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
 [ext_resource type="PackedScene" uid="uid://cronljxn02hkw" path="res://Escenas/Area.tscn" id="3_a8uw4"]
-[ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="4_fl6v7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um6v8"]
 size = Vector2(64, 64)
@@ -15,6 +14,10 @@ colors = PackedColorArray(0.14776877, 0.5519324, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fl6v7"]
 gradient = SubResource("Gradient_a8uw4")
 fill_to = Vector2(1, 1)
+
+[sub_resource type="GDScript" id="GDScript_6s4fl"]
+script/source = "extends Node2D
+"
 
 [sub_resource type="Gradient" id="Gradient_fl6v7"]
 offsets = PackedFloat32Array(0)
@@ -32,13 +35,16 @@ gradient = SubResource("Gradient_um6v8")
 width = 1000
 height = 1000
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8uw4"]
+size = Vector2(100, 100)
+
 [node name="PhysicsScene" type="Node2D"]
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("1_le04a")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(-4, 317)
+position = Vector2(0, 300)
 disable_mode = 2
 motion_mode = 1
 platform_on_leave = 2
@@ -58,336 +64,736 @@ metadata/_edit_lock_ = true
 
 [node name="Area" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area2" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 0)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area3" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, 100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area4" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, 100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area5" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area6" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, 0)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area7" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area8" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, -100)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area9" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, -100)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area10" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-100, -100)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area11" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 0)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area12" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area13" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 0)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area15" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area21" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area22" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(300, -100)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area23" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(300, 0)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area24" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area25" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 0)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area26" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, 0)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area27" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area28" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, 100)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area29" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area30" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-200, 0)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area31" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-200, -100)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area32" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, -100)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area33" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -100)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area37" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -300)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area38" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, -300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area39" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area40" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, -200)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area41" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area42" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -300)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area43" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area44" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, -400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area45" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area49" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, -300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area50" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, -300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area51" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area52" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area53" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area54" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, -300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area55" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area56" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area57" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area58" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area59" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-100, -300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area60" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area61" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -300)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area63" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area69" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area70" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area71" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(300, -300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area72" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(300, -200)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area73" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 300)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area81" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area82" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Imagen2" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 300)
-imagen = ExtResource("4_fl6v7")
+script = SubResource("GDScript_6s4fl")
 
-[node name="Sprite2D" parent="Areas/Imagen2" index="3"]
+[node name="Sprite2D" parent="Areas/Imagen2" index="2"]
 texture = SubResource("GradientTexture2D_um6v8")
 
 [node name="Area85" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, 300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area86" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area90" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, 300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area91" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area92" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 200)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area93" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, 200)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area94" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-100, 200)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area95" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-100, 300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area97" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 300)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area98" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, 300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area102" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-200, 300)
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area74" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area84" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area87" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, 400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
+
+[node name="Label" parent="Areas/Area87" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Area88" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, 400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area96" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area99" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area100" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area101" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area106" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 400)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Area103" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="Imagen" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 200)
+script = SubResource("GDScript_6s4fl")
 
-[node name="Sprite2D" parent="Areas/Imagen" index="3"]
+[node name="Sprite2D" parent="Areas/Imagen" index="2"]
 texture = SubResource("GradientTexture2D_um6v8")
 
 [node name="Area105" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 200)
-is_wall = true
+script = SubResource("GDScript_6s4fl")
 
 [node name="background" type="Sprite2D" parent="."]
 z_index = -1
 texture = SubResource("GradientTexture2D_em6qh")
 metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+disable_mode = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(349, 351, 351, 248, 149, 251, 151, 147, -151, 149, -152, 255, -253, 251, -252, 49, -151, 53, -149, -48, -53, -52, -51, 44, 349, 51, 347, -349, -149, -351, -151, -248, 248, -252, 250, -46, 147, -50, 145, -152, -252, -151, -252, -353, -349, -351, -347, 347, 345, 352, 351, 450, -445, 455, -450, -450, 448, -450, 455, 450, 349, 448)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-100, 402)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-800, 100)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(800, 300)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(100, 402)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(-400, 402)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D24" type="StaticBody2D" parent="."]
+position = Vector2(-400, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D24"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D25" type="StaticBody2D" parent="."]
+position = Vector2(-400, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D25"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D26" type="StaticBody2D" parent="."]
+position = Vector2(-400, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D26"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D27" type="StaticBody2D" parent="."]
+position = Vector2(-400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D27"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D28" type="StaticBody2D" parent="."]
+position = Vector2(-400, -100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D28"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D29" type="StaticBody2D" parent="."]
+position = Vector2(-400, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D29"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D30" type="StaticBody2D" parent="."]
+position = Vector2(-400, -300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D30"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D31" type="StaticBody2D" parent="."]
+position = Vector2(-400, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D31"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D32" type="StaticBody2D" parent="."]
+position = Vector2(-300, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D32"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D33" type="StaticBody2D" parent="."]
+position = Vector2(-200, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D33"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D34" type="StaticBody2D" parent="."]
+position = Vector2(-200, -300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D34"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D35" type="StaticBody2D" parent="."]
+position = Vector2(-200, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D35"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D36" type="StaticBody2D" parent="."]
+position = Vector2(-100, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D36"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D37" type="StaticBody2D" parent="."]
+position = Vector2(0, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D37"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D38" type="StaticBody2D" parent="."]
+position = Vector2(100, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D38"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D39" type="StaticBody2D" parent="."]
+position = Vector2(200, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D39"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D40" type="StaticBody2D" parent="."]
+position = Vector2(200, -100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D40"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D41" type="StaticBody2D" parent="."]
+position = Vector2(400, -100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D41"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D42" type="StaticBody2D" parent="."]
+position = Vector2(400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D42"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D43" type="StaticBody2D" parent="."]
+position = Vector2(400, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D43"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D44" type="StaticBody2D" parent="."]
+position = Vector2(400, -300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D44"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D45" type="StaticBody2D" parent="."]
+position = Vector2(400, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D45"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D46" type="StaticBody2D" parent="."]
+position = Vector2(300, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D46"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D47" type="StaticBody2D" parent="."]
+position = Vector2(200, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D47"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D48" type="StaticBody2D" parent="."]
+position = Vector2(100, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D48"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D49" type="StaticBody2D" parent="."]
+position = Vector2(0, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D49"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D50" type="StaticBody2D" parent="."]
+position = Vector2(-100, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D50"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D51" type="StaticBody2D" parent="."]
+position = Vector2(-100, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D51"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(-300, 402)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2(-200, 402)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(200, 402)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+position = Vector2(300, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="."]
+position = Vector2(400, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="."]
+position = Vector2(400, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="."]
+position = Vector2(400, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="."]
+position = Vector2(400, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="."]
+position = Vector2(300, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="."]
+position = Vector2(200, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D15"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="."]
+position = Vector2(100, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D16"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="."]
+position = Vector2(0, 100)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D17"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="."]
+position = Vector2(-100, 100)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D18"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="."]
+position = Vector2(-200, 100)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D19"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D20" type="StaticBody2D" parent="."]
+position = Vector2(-200, 200)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D20"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D21" type="StaticBody2D" parent="."]
+position = Vector2(-100, 0)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D21"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D22" type="StaticBody2D" parent="."]
+position = Vector2(200, 200)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D22"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="."]
+position = Vector2(300, 200)
+disable_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D23"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
 
 [editable path="Areas/Imagen2"]
 [editable path="Areas/Area87"]
