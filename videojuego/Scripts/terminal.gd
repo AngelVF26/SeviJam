@@ -24,8 +24,6 @@ signal señalImagen(bool)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
-	AudioGlobal.music_volume = music_volume.value
-	AudioGlobal.sfx_volume = sfx_volume.value
 	transicion.visible =true
 	
 	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
