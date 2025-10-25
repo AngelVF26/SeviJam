@@ -17,6 +17,7 @@ var visible_characters = 0
 @onready var sfx_volume: HScrollBar = $MenuOpciones/FXBar
 @onready var music_volume: HScrollBar = $MenuOpciones/MusicaBar
 
+signal señalParar(bool)
 signal señalAnalizar(bool)
 signal señalControl(String)
 signal señalImagen(bool)
@@ -84,7 +85,8 @@ func _process(_delta: float) -> void:
 
 func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	#terminal.text_submitted.connect(_texto_pa_comandos)
-	emit_signal("señalControl", comando)
+	if imagen_explorada.visible == false || comando in ["salir", "cerrar","/salir", "/cerrar"]:
+		emit_signal("señalControl", comando)
 	print("este es el comando:", comando)
 	listaComandos.append(comando)
 	comandosPosition = 0
@@ -156,6 +158,7 @@ func _on_procesar_proceso() -> void:
 func _on_salir_ocultar() -> void:
 	imagen_explorada.visible = false
 	$SubViewportContainer.visible = false
+	emit_signal("señalParar", true)
 	infoComandos.add_text("\n\n\n   > ...")
 
 
