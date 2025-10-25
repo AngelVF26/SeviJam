@@ -89,6 +89,5 @@ libraries = {
 unique_name_in_owner = true
 position = Vector2(-361, 298)
 stream = ExtResource("3_iemtq")
-autoplay = true
 
 [connection signal="animation_finished" from="TextureRect2/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
