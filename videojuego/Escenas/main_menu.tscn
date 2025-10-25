@@ -121,7 +121,6 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="GridMain" type="GridContainer" parent="ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -172,6 +171,7 @@ text = "ABORTAR MISIÓN"
 flat = true
 
 [node name="MenuOpciones" type="Control" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
