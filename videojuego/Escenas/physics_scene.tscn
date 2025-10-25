@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://da01jtt78ktfw"]
 
-[ext_resource type="Script" path="res://Scripts/logic_script.gd" id="1_le04a"]
+[ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
 [ext_resource type="PackedScene" uid="uid://cronljxn02hkw" path="res://Escenas/Area.tscn" id="3_a8uw4"]
 
@@ -58,6 +58,7 @@ size = Vector2(100, 100)
 script = ExtResource("1_le04a")
 
 [node name="Player" type="CharacterBody2D" parent="."]
+z_index = 1
 position = Vector2(0, 300)
 disable_mode = 2
 motion_mode = 1
@@ -77,38 +78,46 @@ metadata/_edit_lock_ = true
 [node name="Areas" type="Node2D" parent="."]
 
 [node name="Area" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 
 [node name="Area2" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, 100)
 
 [node name="Area3" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(100, 0)
 
 [node name="Area4" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, 100)
 
 [node name="Area5" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(200, 0)
 
 [node name="Area6" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 100)
 
 [node name="Area7" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(0, 200)
 
 [node name="Area8" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(0, 300)
 
 [node name="Area9" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(100, 200)
 
 [node name="Area10" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(100, 300)
 
 [node name="Area11" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 200)
 
 [node name="Area12" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(200, 300)
 
 [node name="Imagen2" parent="Areas" instance=ExtResource("3_a8uw4")]
@@ -120,26 +129,43 @@ texture = SubResource("GradientTexture2D_um6v8")
 [node name="Area14" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 300)
 
+[node name="Sprite2D" parent="Areas/Area14" index="2"]
+visible = false
+
 [node name="Area15" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 200)
 
 [node name="Area16" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 300)
 
+[node name="Sprite2D" parent="Areas/Area16" index="2"]
+visible = false
+
 [node name="Area17" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 200)
+
+[node name="Sprite2D" parent="Areas/Area17" index="2"]
+visible = false
 
 [node name="Area18" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 300)
 
+[node name="Sprite2D" parent="Areas/Area18" index="2"]
+visible = false
+
 [node name="Area19" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-300, 0)
 
 [node name="Area20" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-300, 100)
 
 [node name="Area21" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 0)
+
+[node name="Sprite2D" parent="Areas/Area21" index="2"]
+visible = false
 
 [node name="Area22" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 100)
@@ -151,9 +177,11 @@ position = Vector2(-100, 0)
 position = Vector2(-100, 100)
 
 [node name="Area25" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-300, -200)
 
 [node name="Area26" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-300, -100)
 
 [node name="Area27" parent="Areas" instance=ExtResource("3_a8uw4")]
@@ -162,11 +190,17 @@ position = Vector2(-200, -200)
 [node name="Area28" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -100)
 
+[node name="Sprite2D" parent="Areas/Area28" index="2"]
+visible = false
+
 [node name="Area29" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -200)
 
 [node name="Area30" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -100)
+
+[node name="Sprite2D" parent="Areas/Area30" index="2"]
+visible = false
 
 [node name="Area31" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -200)
@@ -183,6 +217,9 @@ position = Vector2(100, -200)
 [node name="Area34" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -100)
 
+[node name="Sprite2D" parent="Areas/Area34" index="2"]
+visible = false
+
 [node name="Area35" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -200)
 
@@ -197,6 +234,9 @@ texture = SubResource("GradientTexture2D_agaot")
 
 [node name="Area38" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -100)
+
+[node name="Sprite2D" parent="Areas/Area38" index="2"]
+visible = false
 
 [node name="Area39" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -200)
@@ -319,24 +359,28 @@ texture = SubResource("GradientTexture2D_bt6vj")
 position = Vector2(0, -400)
 
 [node name="Area112" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(0, -300)
 
 [node name="Area113" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -400)
 
 [node name="Area114" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(100, -300)
 
 [node name="Area115" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -400)
 
 [node name="Area116" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(200, -300)
 
 [node name="Area117" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -400)
 
 [node name="Area118" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(300, -300)
 
 [node name="Area119" parent="Areas" instance=ExtResource("3_a8uw4")]
