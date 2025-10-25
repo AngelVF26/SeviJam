@@ -18,8 +18,10 @@ func _ready() -> void:
 	
 	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
 	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
-	
 	AudioServer.set_bus_effect_enabled(master_index,0,false)
+	
+	$AnimationPlayer.play("start")
+	
 	terminal.grab_focus()
 	set_process_input(true)
 	#terminal.text_submitted.connect(_texto_pa_comandos)

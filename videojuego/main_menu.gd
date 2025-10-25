@@ -54,12 +54,13 @@ func volume_update():
 func _on_lanzar_rover_pressed() -> void:
 	var master_index = AudioServer.get_bus_index("Master")
 	var reverb_index = AudioServer.get_bus_effect(master_index,0)
-	var effect : AudioEffectReverb = AudioServer.get_bus_effect(master_index,1)
+	var effect : AudioEffectReverb = AudioServer.get_bus_effect(master_index,0)
 	$AudioFXStart.play()
 	AudioServer.set_bus_effect_enabled(master_index,0,true)
 	$ColorRect/GridMain/Configuracion.visible =false
 	$ColorRect/GridMain/Creditos.visible =false
 	$ColorRect/GridMain/AbortarMision.visible = false
+	$AnimationPlayer.play("inicio")
 	await get_tree().create_timer(4.0).timeout # Waits for 4 seconds
 	get_tree().change_scene_to_file("res://Escenas/Escenario_interfaz.tscn")
 
