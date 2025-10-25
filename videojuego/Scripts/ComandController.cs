@@ -26,6 +26,8 @@ public partial class ComandController : Node
 	public delegate void SiSeñalEventHandler();
 	[Signal]
 	public delegate void NoSeñalEventHandler();
+	[Signal]
+	public delegate void ComandoEnviadoEventHandler();
 	private Node comandos;
 	private Godot.Collections.Dictionary<String[], Godot.Collections.Dictionary<String, String>> fCommandDict;
 	private Node2D fPadre;
@@ -97,21 +99,27 @@ public partial class ComandController : Node
 					{
 						case string val when val == "Mover":
 							ProcesarNodoMover(line);
+							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Ayuda":
 							ProcesarNodoAyuda(line);
+							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Salir":
 							ProcesarNodoSalir(line);
+							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Procesar":
 							ProcesarNodoProcesar(line);
+							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Interactuar":
 							ProcesarNodoInteractuar(line);
+							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Analizar":
 							ProcesarNodoAnalizar(line);
+							EmitSignal("ComandoEnviado");
 							break;
 						default:
 							GD.Print("ERROR: NO NODO1?");
