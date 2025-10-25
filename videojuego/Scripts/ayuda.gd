@@ -1,11 +1,10 @@
 extends Node
 
-signal recibir_señal(valor: String)
-signal enviar_mensaje(texto: String)
+signal help(String)
 
 func _ready() -> void:
-	recibir_señal.connect(_on_recibir_señal)
+	pass
 
-func _on_recibir_señal(valor: String) -> void:
-	var mensaje = "Ayuda recibió: " + valor
-	enviar_mensaje.emit(mensaje)
+func _on_comand_controller_ayuda_señal() -> void:
+	help.emit("ESTO ES LA AYUDA, QUE PASA COLEGA")
+	pass # Replace with function body.

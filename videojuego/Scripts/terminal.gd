@@ -46,3 +46,8 @@ func update_volume():
 	
 	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
 	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
+
+
+func _on_ayuda_help(ayuda: Variant) -> void:
+	infoComandos.text = ayuda
+	
