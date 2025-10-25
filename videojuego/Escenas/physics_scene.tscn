@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://da01jtt78ktfw"]
+[gd_scene load_steps=29 format=3 uid="uid://da01jtt78ktfw"]
 
 [ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
@@ -50,8 +50,38 @@ gradient = SubResource("Gradient_um6v8")
 width = 1000
 height = 1000
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agaot"]
+size = Vector2(101, 251)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_actr7"]
+size = Vector2(96, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0sjh"]
+size = Vector2(98, 259)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl6v7"]
+size = Vector2(704, 1463)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8uw4"]
-size = Vector2(100, 100)
+size = Vector2(104.5, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bt6vj"]
+size = Vector2(2368, 470)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_em6qh"]
+size = Vector2(98, 248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egilu"]
+size = Vector2(97, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4kq3"]
+size = Vector2(101, 260)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vxfh"]
+size = Vector2(2355, 587)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1ylp"]
+size = Vector2(958, 1590)
 
 [node name="PhysicsScene" type="Node2D"]
 
@@ -80,49 +110,62 @@ metadata/_edit_lock_ = true
 
 [node name="Area" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
+objeto1 = "NADA"
 
 [node name="Area2" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, 100)
+objeto1 = "NADA"
 
 [node name="Area3" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 0)
+objeto1 = "NADA"
 
 [node name="Area4" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, 100)
+objeto1 = "NADA"
 
 [node name="Area5" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, 0)
+objeto1 = "NADA"
 
 [node name="Area6" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 100)
+objeto1 = "NADA"
 
 [node name="Area7" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, 200)
+objeto1 = "NADA"
 
 [node name="Area8" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, 300)
+objeto1 = "NADA"
 
 [node name="Area9" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 200)
+objeto1 = "NADA"
 
 [node name="Area10" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 300)
+objeto1 = "NADA"
 
 [node name="Area11" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 200)
+objeto1 = "NADA"
 
 [node name="Area12" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, 300)
+objeto1 = "NADA"
 
 [node name="Imagen2" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 200)
+objeto1 = "PLANTA"
 
 [node name="Label" parent="Areas/Imagen2" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -132,6 +175,7 @@ texture = SubResource("GradientTexture2D_um6v8")
 
 [node name="Area14" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 300)
+objeto1 = "NADA"
 
 [node name="Label" parent="Areas/Area14" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -141,9 +185,11 @@ visible = false
 
 [node name="Area15" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 200)
+objeto1 = "NADA"
 
 [node name="Area16" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 300)
+objeto1 = "NADA"
 
 [node name="Label" parent="Areas/Area16" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -153,6 +199,7 @@ visible = false
 
 [node name="Area17" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 200)
+objeto1 = "NADA"
 
 [node name="Label" parent="Areas/Area17" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -162,6 +209,7 @@ visible = false
 
 [node name="Area18" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 300)
+objeto1 = "NADA"
 
 [node name="Label" parent="Areas/Area18" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -172,13 +220,16 @@ visible = false
 [node name="Area19" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, 0)
+objeto1 = "NADA"
 
 [node name="Area20" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, 100)
+objeto1 = "NADA"
 
 [node name="Area21" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 0)
+objeto1 = "NADA"
 
 [node name="Label" parent="Areas/Area21" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -188,26 +239,33 @@ visible = false
 
 [node name="Area22" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 100)
+objeto1 = "NADA"
 
 [node name="Area23" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 0)
+objeto1 = "NADA"
 
 [node name="Area24" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 100)
+objeto1 = "NADA"
 
 [node name="Area25" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, -200)
+objeto1 = "NADA"
 
 [node name="Area26" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, -100)
+objeto1 = "NADA"
 
 [node name="Area27" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -200)
+objeto1 = "NADA"
 
 [node name="Area28" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -100)
+objeto1 = "NADA"
 
 [node name="Label" parent="Areas/Area28" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -217,9 +275,11 @@ visible = false
 
 [node name="Area29" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -200)
+objeto1 = "NADA"
 
 [node name="Area30" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -100)
+objeto1 = "NADA"
 
 [node name="Label" parent="Areas/Area30" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -229,9 +289,11 @@ visible = false
 
 [node name="Area31" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -200)
+objeto1 = "NADA"
 
 [node name="imagen4" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -100)
+objeto1 = "ANIMAL"
 
 [node name="Label" parent="Areas/imagen4" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -241,9 +303,11 @@ texture = SubResource("GradientTexture2D_egilu")
 
 [node name="Area33" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -200)
+objeto1 = "NADA"
 
 [node name="Area34" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -100)
+objeto1 = "NADA"
 
 [node name="Label" parent="Areas/Area34" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -253,12 +317,15 @@ visible = false
 
 [node name="Area35" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -200)
+objeto1 = "NADA"
 
 [node name="Area36" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -100)
+objeto1 = "NADA"
 
 [node name="imagen 6" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -200)
+objeto1 = "ZAPATO"
 
 [node name="Label" parent="Areas/imagen 6" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -268,6 +335,7 @@ texture = SubResource("GradientTexture2D_agaot")
 
 [node name="Area38" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -100)
+objeto1 = "NADA"
 
 [node name="Label" parent="Areas/Area38" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -277,12 +345,15 @@ visible = false
 
 [node name="Area39" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -200)
+objeto1 = "NADA"
 
 [node name="Area40" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -100)
+objeto1 = "NADA"
 
 [node name="Imagen5" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 0)
+objeto1 = "MUSICA"
 
 [node name="Label" parent="Areas/Imagen5" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -292,15 +363,19 @@ texture = SubResource("GradientTexture2D_actr7")
 
 [node name="Area44" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 100)
+objeto1 = "NADA"
 
 [node name="Area45" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 0)
+objeto1 = "NADA"
 
 [node name="Area46" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 100)
+objeto1 = "NADA"
 
 [node name="Area49" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 200)
+objeto1 = "NADA"
 
 [node name="Imagen1" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 300)
@@ -315,72 +390,95 @@ texture = SubResource("GradientTexture2D_d0sjh")
 
 [node name="Area51" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 200)
+objeto1 = "NADA"
 
 [node name="Area52" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 300)
+objeto1 = "NADA"
 
 [node name="Area55" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 400)
+objeto1 = "NADA"
 
 [node name="Area57" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 400)
+objeto1 = "NADA"
 
 [node name="Area61" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, 400)
+objeto1 = "NADA"
 
 [node name="Area63" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, 400)
+objeto1 = "NADA"
 
 [node name="Area65" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 400)
+objeto1 = "NADA"
 
 [node name="Area67" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 400)
+objeto1 = "NADA"
 
 [node name="Area69" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 400)
+objeto1 = "NADA"
 
 [node name="Area71" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 400)
+objeto1 = "NADA"
 
 [node name="Area77" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 400)
+objeto1 = "NADA"
 
 [node name="Area83" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 200)
+objeto1 = "NADA"
 
 [node name="Area84" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 300)
+objeto1 = "NADA"
 
 [node name="Area89" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 0)
+objeto1 = "NADA"
 
 [node name="Area90" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 100)
+objeto1 = "NADA"
 
 [node name="Area95" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -200)
+objeto1 = "NADA"
 
 [node name="Area96" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -100)
+objeto1 = "NADA"
 
 [node name="Area101" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -400)
+objeto1 = "NADA"
 
 [node name="Area102" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -300)
+objeto1 = "NADA"
 
 [node name="Area103" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -400)
+objeto1 = "NADA"
 
 [node name="Area104" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -300)
+objeto1 = "NADA"
 
 [node name="Area105" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, -400)
+objeto1 = "NADA"
 
 [node name="Imagen3" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, -300)
+objeto1 = "LAGO"
 
 [node name="Label" parent="Areas/Imagen3" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -390,15 +488,19 @@ texture = SubResource("GradientTexture2D_k4kq3")
 
 [node name="Area107" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -400)
+objeto1 = "NADA"
 
 [node name="Area108" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -300)
+objeto1 = "NADA"
 
 [node name="Area109" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -400)
+objeto1 = "NADA"
 
 [node name="Imagen7" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -300)
+objeto1 = "ESQUELETO"
 
 [node name="Label" parent="Areas/Imagen7" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -408,37 +510,47 @@ texture = SubResource("GradientTexture2D_bt6vj")
 
 [node name="Area111" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -400)
+objeto1 = "NADA"
 
 [node name="Area112" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, -300)
+objeto1 = "NADA"
 
 [node name="Area113" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -400)
+objeto1 = "NADA"
 
 [node name="Area114" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, -300)
+objeto1 = "NADA"
 
 [node name="Area115" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -400)
+objeto1 = "NADA"
 
 [node name="Area116" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, -300)
+objeto1 = "NADA"
 
 [node name="Area117" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -400)
+objeto1 = "NADA"
 
 [node name="Area118" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(300, -300)
+objeto1 = "NADA"
 
 [node name="Area119" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -400)
+objeto1 = "NADA"
 
 [node name="Area120" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -300)
+objeto1 = "NADA"
 
 [node name="background" type="Sprite2D" parent="."]
 z_index = -1
@@ -457,30 +569,30 @@ position = Vector2(-100, 402)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_a8uw4")
+position = Vector2(-2.5, 69.5)
+shape = SubResource("RectangleShape2D_agaot")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(-800, 100)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(800, 300)
-shape = SubResource("RectangleShape2D_a8uw4")
+position = Vector2(798, 372.5)
+shape = SubResource("RectangleShape2D_actr7")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2(100, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_a8uw4")
+position = Vector2(-3, 75.5)
+shape = SubResource("RectangleShape2D_d0sjh")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
 position = Vector2(-400, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_a8uw4")
+position = Vector2(-300, -529.5)
+shape = SubResource("RectangleShape2D_fl6v7")
 
 [node name="StaticBody2D24" type="StaticBody2D" parent="."]
 position = Vector2(-400, 300)
@@ -675,43 +787,43 @@ shape = SubResource("RectangleShape2D_a8uw4")
 position = Vector2(-100, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D51"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_a8uw4")
+position = Vector2(220, -227)
+shape = SubResource("RectangleShape2D_bt6vj")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]
 position = Vector2(-300, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_a8uw4")
+position = Vector2(-1, 71)
+shape = SubResource("RectangleShape2D_em6qh")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="."]
 position = Vector2(-200, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_a8uw4")
+position = Vector2(-1.5, 70.5)
+shape = SubResource("RectangleShape2D_egilu")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 position = Vector2(200, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_a8uw4")
+position = Vector2(-4.5, 80)
+shape = SubResource("RectangleShape2D_k4kq3")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="."]
 position = Vector2(300, 400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_a8uw4")
+position = Vector2(-160.5, 244.5)
+shape = SubResource("RectangleShape2D_0vxfh")
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="."]
 position = Vector2(400, 400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_a8uw4")
+position = Vector2(431, -467)
+shape = SubResource("RectangleShape2D_o1ylp")
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="."]
 position = Vector2(400, 300)
