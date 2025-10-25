@@ -71,8 +71,6 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	listaComandos.append(comando)
 	comandosPosition = 0
 	terminal.clear()
-	if $SubViewportContainer.visible == true:
-		$SubViewportContainer.visible = false
 	
 	
 	
@@ -87,7 +85,6 @@ func _on_terminal_comandos_text_changed(new_text: String) -> void:
 
 func _on_ayuda_help(ayuda: Variant) -> void:
 	infoComandos.clear()
-	
 	infoComandos.add_text("\n\n\n mover: " + Comandos.COMANDOS[["mover", "desplazar", "avanzar", "/mover", "/desplazar", "/avanzar"]].commandaction + "\n" + 
 							" procesar: " + Comandos.COMANDOS[["procesar", "imagen", "captura", "foto","/procesar", "/imagen", "/captura", "/foto"]].commandaction + "\n" +
 							" interactuar: " + Comandos.COMANDOS[["interactuar", "/interactuar"]].commandaction + "\n" +
@@ -114,5 +111,9 @@ func _on_salir_ocultar() -> void:
 
 func _on_interactuar_interact(interactuar: Variant) -> void:
 	infoComandos.clear()
-	infoComandos.text = "\n\n\n " + player.current_area.objeto_interactuar
+	print("area actual: ", player.current_area)
+	print("objeto1: ", player.current_area.objeto1)
+	interactuar = player.current_area.objeto_interactuar
+	print("\n\n\n Interaccion :" + interactuar)
+	infoComandos.text = "\n\n\n " + interactuar
 	
