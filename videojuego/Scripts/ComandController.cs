@@ -65,9 +65,9 @@ public partial class ComandController : Node
 	}
 
 	private void OnActividadDelMapa(bool isActividad)
-    {
+	{
 		fIsActividad = isActividad;
-    }
+	}
 
 	public void ParseCommandLine(String line)
 	{
@@ -99,13 +99,13 @@ public partial class ComandController : Node
 					//TODO: Hacerlo
 				}
 				else if(fIsActividad)
-                {
-                    if (line.ToLower() == "salir" || line.ToLower() == "cerrar")
+				{
+					if (line.ToLower() == "salir" || line.ToLower() == "cerrar")
 					{
 						EmitSignal("CerrarVentana");
 						break;
 					}
-                }
+				}
 				else
 				{
 					// Encontrado el comando. 
