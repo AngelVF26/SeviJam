@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cronljxn02hkw"]
+[gd_scene load_steps=8 format=3 uid="uid://cronljxn02hkw"]
 
 [ext_resource type="Script" uid="uid://56lkn7ifrsta" path="res://Scripts/area_physics_script.gd" id="1_cgnjx"]
+[ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="2_6s4fl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2vil"]
 size = Vector2(100, 100)
@@ -23,6 +24,7 @@ fill_to = Vector2(0.95111114, 1)
 [node name="Area" type="Area2D" node_paths=PackedStringArray("obstaculo")]
 script = ExtResource("1_cgnjx")
 obstaculo = NodePath("StaticBody2D")
+imagen = ExtResource("2_6s4fl")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0

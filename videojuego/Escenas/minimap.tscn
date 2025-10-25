@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dcq4xf16y3imb"]
+[gd_scene load_steps=0 format=3 uid="uid://dcq4xf16y3imb"]
 
 [node name="Minimap" type="SubViewportContainer"]
 anchors_preset = 3

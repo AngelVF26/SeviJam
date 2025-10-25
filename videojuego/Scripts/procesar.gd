@@ -1,7 +1,7 @@
 extends Node
 
 # Called when the node enters the scene tree for the first time.
-signal proceso(Vector2)
+signal proceso()
 @onready var player: physics_player = $"../../PhysicsScene/Player"
 
 func _ready() -> void:
@@ -14,5 +14,4 @@ func _process(delta: float) -> void:
 	
 
 func _on_comand_controller_procesar_señal() -> void:
-	print("HOLA COLEGA", Vector2(player.position.x, player.position.y))
-	proceso.emit(Vector2(player.position.x, player.position.y))
+	proceso.emit()

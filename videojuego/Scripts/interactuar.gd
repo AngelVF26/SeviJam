@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_comand_controller_interactuar_señal() -> void:
-	print("estas interactuando")
+	emit_signal("interact", "estas interactuando")

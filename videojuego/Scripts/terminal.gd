@@ -5,6 +5,10 @@ extends Node2D
 @onready var sfx_index = AudioServer.get_bus_index("Sound Effects")
 @onready var terminal: LineEdit = $TerminalComandos
 @onready var infoComandos: TextEdit =$InformacionComandos
+@onready var player: physics_player = $CanvasLayer/SubViewportContainer/SubViewport/PhysicsScene/Player
+@onready var imagen_explorada: Sprite2D = $ImagenExplorada
+
+
 signal señalControl(String)
 
 # Called when the node enters the scene tree for the first time.
@@ -49,9 +53,17 @@ func _on_ayuda_help(ayuda: Variant) -> void:
 	
 
 
-func _on_procesar_proceso(ubicacion: Variant) -> void:
-	print("tu ubi: ", ubicacion )
-	var format_string = "We're waiting for %s."
+func _on_procesar_proceso() -> void:
+	infoComandos.clear()
+	imagen_explorada.texture = player.current_imagen
+	imagen_explorada.visible = true
+	print("dim patatas")
 	
-	var actual_string = format_string % ubicacion
-	infoComandos.text = actual_string
+
+
+func _on_salir_ocultar() -> void:
+	imagen_explorada.visible = false
+
+
+func _on_interactuar_interact(interactuar: Variant) -> void:
+	infoComandos.text = interactuar
