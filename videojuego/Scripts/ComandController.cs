@@ -78,8 +78,8 @@ public partial class ComandController : Node
 	}
 
 	private void ProcesarNodoSalir(String linea)
-    {
-        var value = Regex.Match(linea, @"^(\w+)");
+	{
+		var value = Regex.Match(linea, @"^(\w+)");
 		if (!value.Success)
 		{
 			EmitSignal("ReturnError");
@@ -89,7 +89,7 @@ public partial class ComandController : Node
 			EmitSignal("SalirSeñal");
 			GD.Print("SALGO.");
 		}
-    }
+	}
 	
 	private void ProcesarNodoAyuda(String linea)
 	{
