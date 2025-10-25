@@ -6,9 +6,29 @@ extends Node
 @export var animator: AnimationPlayer
 @export var label: RichTextLabel
 
+signal cuadernoSeñal()
+
 func clonar():
-	label.text = texto
+	label.text = " 
+ > Iniciando proceso de electroforesis...
+ > Rompiendo membranas celulares...
+ > Centrifugando muestra...
+ > Identificando ácidos nucleicos...
+ > Aislando moléculas de ADN...
+ > ...
+ > ...
+ > ...
+ > ERROR.
+ > ADN insuficiente. Muestra incompleta.
+ > 
+ > 
+ > Un solo pelo hubiera bastado. 
+ > 
+ > ¿Abrir CUADERNO de bitácora?
+ > S/N" 
+
 	animator.play("typewriter")
+	emit_signal("cuadernoSeñal") 
 
 
 func _on_comand_controller_clonar_señal() -> void:
