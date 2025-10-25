@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="3_5l38x"]
-[ext_resource type="PackedScene" uid="uid://c0ua2761kj73j" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
+[ext_resource type="PackedScene" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
 [ext_resource type="FontFile" uid="uid://djw2364lw2f8w" path="res://Assets/Fonts/bytebounce/ByteBounce.ttf" id="6_rt3l3"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
 [ext_resource type="Script" uid="uid://dhc7fnrqu4fh8" path="res://Scripts/typewriter.gd" id="7_d021a"]
@@ -359,6 +359,9 @@ offset_top = -1.0
 offset_right = 1740.0
 offset_bottom = 1023.0
 
+[node name="Scanner" parent="ImagenExplorada" index="1"]
+bus = &"Sound Effects"
+
 [node name="ImagenExploradaYANO" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(942, 496)
@@ -467,6 +470,7 @@ parameters/looping = true
 [node name="TypingDisplayFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_mou6a")
 volume_db = -18.541
+bus = &"Sound Effects"
 
 [node name="SubmitFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_sjuwg")
