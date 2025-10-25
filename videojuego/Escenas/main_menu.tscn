@@ -133,6 +133,8 @@ offset_left = 57.887684
 offset_top = 9.188671
 offset_right = 101.30345
 offset_bottom = 17.188671
+min_value = -30.0
+max_value = 10.0
 
 [node name="Musica2" type="Label" parent="ColorRect/MenuOpciones"]
 layout_mode = 0
@@ -147,7 +149,8 @@ offset_left = 37.43403
 offset_top = 23.299843
 offset_right = 86.638565
 offset_bottom = 53.163025
-value = 20.0
+min_value = -30.0
+max_value = 10.0
 
 [node name="AudioFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_7ms0u")
