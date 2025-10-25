@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=50 format=4 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://djw2364lw2f8w" path="res://Assets/Fonts/bytebounce/ByteBounce.ttf" id="6_rt3l3"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
 [ext_resource type="Script" uid="uid://dhc7fnrqu4fh8" path="res://Scripts/typewriter.gd" id="7_d021a"]
-[ext_resource type="Shader" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
+[ext_resource type="Shader" uid="uid://mmopkc1x0hew" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
 [ext_resource type="AudioStream" uid="uid://cbj2smit0rqww" path="res://Assets/FX/typing2.mp3" id="8_vpig8"]
 [ext_resource type="Texture2D" uid="uid://ctnu62qhriphi" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_00.png" id="9_o88m3"]
 [ext_resource type="AudioStream" uid="uid://bw637kyt5rjjx" path="res://Assets/FX/typing.mp3" id="9_sjuwg"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://coki2s0irywq6" path="res://Assets/FX/cargarImagen.mp3" id="23_mou6a"]
 [ext_resource type="AudioStream" uid="uid://b4hyci2kon726" path="res://Assets/FX/StartConsole.mp3" id="23_o88m3"]
 [ext_resource type="AudioStream" uid="uid://b3288x0kqbim3" path="res://Assets/FX/error.mp3" id="27_pi6t2"]
+[ext_resource type="AudioStream" uid="uid://cb0nvygmyy4ve" path="res://Assets/FX/melody8x8.mp3" id="29_k7noi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k7noi"]
 shader = ExtResource("8_a6jcn")
@@ -360,6 +361,9 @@ offset_top = -1.0
 offset_right = 1740.0
 offset_bottom = 1023.0
 
+[node name="Scanner" parent="ImagenExplorada" index="1"]
+bus = &"Sound Effects"
+
 [node name="ImagenExploradaYANO" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(942, 496)
@@ -420,17 +424,16 @@ keep_editing_on_text_submit = true
 deselect_on_focus_loss_enabled = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-visible = false
-offset_left = 473.00006
-offset_top = 217.0
-offset_right = 773.00006
-offset_bottom = 417.0
-scale = Vector2(3, 3)
+offset_left = 10.000002
+offset_top = -12.000001
+offset_right = 510.0
+offset_bottom = 208.0
+scale = Vector2(3.7487817, 3.9636772)
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(300, 200)
-render_target_update_mode = 0
+size = Vector2i(500, 220)
+render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(-73, 322)
@@ -468,6 +471,7 @@ parameters/looping = true
 [node name="TypingDisplayFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_mou6a")
 volume_db = -18.541
+bus = &"Sound Effects"
 
 [node name="SubmitFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_sjuwg")
@@ -498,11 +502,15 @@ volume_db = 4.0
 autoplay = true
 bus = &"Sound Effects"
 
+[node name="MelodiaFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_k7noi")
+
 [node name="ErrorFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("27_pi6t2")
 bus = &"Sound Effects"
 
 [node name="SettingClick" type="TextureButton" parent="."]
+visible = false
 modulate = Color(0.9764706, 0.84705883, 0.78039217, 0)
 z_index = 5
 offset_left = 1321.0
@@ -515,6 +523,7 @@ texture_normal = ExtResource("1_hrt1k")
 ignore_texture_size = true
 
 [connection signal="señalImagen" from="." to="ImagenExplorada" method="_on_interfaz_señal_imagen"]
+[connection signal="señalParar" from="." to="ImagenExplorada" method="_on_interfaz_señal_parar"]
 [connection signal="mouse_entered" from="MenuOpciones/AceptarConfig2" to="." method="_on_aceptar_config_2_mouse_entered"]
 [connection signal="pressed" from="MenuOpciones/AceptarConfig2" to="." method="_on_aceptar_config_2_pressed"]
 [connection signal="ReturnError" from="ComandController" to="." method="_on_comand_controller_return_error"]

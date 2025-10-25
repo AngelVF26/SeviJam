@@ -17,33 +17,23 @@ var visible_characters = 0
 @onready var sfx_volume: HScrollBar = $MenuOpciones/FXBar
 @onready var music_volume: HScrollBar = $MenuOpciones/MusicaBar
 
+signal señalParar(bool)
 signal señalAnalizar(bool)
 signal señalControl(String)
 signal señalImagen(bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	AudioGlobal.music_volume = music_volume.value
-	AudioGlobal.sfx_volume = sfx_volume.value
-	transicion.visible =true
-	
-	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
-	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
-	AudioServer.set_bus_effect_enabled(master_index,0,false)
-	inicio_fx.play()
 	$AnimationPlayer.play("start")
+	
+	transicion.visible =true
+	inicio_fx.play()
 	terminal.grab_focus()		
 	
 	set_process_input(true)
 	#terminal.text_submitted.connect(_texto_pa_comandos)
 	
-func volume_update():
 
-	AudioGlobal.music_volume = music_volume.value
-	AudioGlobal.sfx_volume = sfx_volume.value
-	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
-	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
 
 func _input(ev):
 	if Input.is_action_pressed("ui_up") && listaComandos.size()>0 && comandosPosition < listaComandos.size():
@@ -76,15 +66,15 @@ func _process(_delta: float) -> void:
 		$CanvasLayer.visible = false
 	else:
 		$CanvasLayer.visible = true
-	
-	volume_update()
+
 	pass
 	
 
 
 func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	#terminal.text_submitted.connect(_texto_pa_comandos)
-	emit_signal("señalControl", comando)
+	if imagen_explorada.visible == false || comando in ["salir", "cerrar","/salir", "/cerrar"]:
+		emit_signal("señalControl", comando)
 	print("este es el comando:", comando)
 	listaComandos.append(comando)
 	comandosPosition = 0
@@ -156,6 +146,7 @@ func _on_procesar_proceso() -> void:
 func _on_salir_ocultar() -> void:
 	imagen_explorada.visible = false
 	$SubViewportContainer.visible = false
+	emit_signal("señalParar", true)
 	infoComandos.add_text("\n\n\n   > ...")
 
 
@@ -168,6 +159,8 @@ func _on_interactuar_interact(interactuar: Variant) -> void:
 	infoComandos.add_text("\n\n\n " + player.current_area.objeto_interactuar) 
 	if interactuar != Comandos.OBJETOS.NADA["OBJECTMSG"]:
 		emit_signal("señalAnalizar", true)
+	if interactuar == Comandos.OBJETOS.MUSICA["OBJECTMSG"]:
+		$MelodiaFX.play()
 	
 
 

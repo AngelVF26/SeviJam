@@ -7,8 +7,6 @@ extends TextureRect
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	texture_rect_2.size.x = texture_rect.size.x
-	texture_rect_2.size.y = texture_rect.size.y
-	animation_player.play("RESET")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,5 +16,16 @@ func _process(delta: float) -> void:
 
 func _on_interfaz_señal_imagen(bool: Variant) -> void:
 	texture_rect_2.size.x = texture_rect.size.x
-	texture_rect_2.size.y = texture_rect.size.y
+	%Scanner.play()
 	animation_player.play("RESET")
+
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	print("patatas que hay de comer")
+	%Scanner.stop()
+
+
+func _on_interfaz_señal_parar(parar: Variant) -> void:
+	animation_player.stop(parar)
+	%Scanner.stop()

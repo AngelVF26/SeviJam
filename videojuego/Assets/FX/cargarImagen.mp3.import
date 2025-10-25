@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/cargarImagen.mp3-f8f762f80bb04e65947f46891868
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

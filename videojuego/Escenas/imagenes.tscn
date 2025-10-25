@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0ua2761kj73j"]
+[gd_scene load_steps=12 format=3 uid="uid://c0ua2761kj73j"]
 
 [ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_iswl5"]
 [ext_resource type="Script" uid="uid://kc1gxr20eklw" path="res://Scripts/imagenes.gd" id="2_iswl5"]
+[ext_resource type="AudioStream" uid="uid://ct7q6rcgpjvc7" path="res://Assets/FX/scanner.mp3" id="3_iemtq"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y50f3"]
 
@@ -27,7 +28,7 @@ frame_3/duration = 1.0
 frame_4/duration = 1.0
 
 [sub_resource type="Animation" id="Animation_f5prv"]
-length = 1.5
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -35,7 +36,7 @@ tracks/0/path = NodePath(".:texture:frame_0/texture:gradient:offsets")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [PackedFloat32Array(0, 1), PackedFloat32Array(-0.1, 0)]
@@ -83,3 +84,10 @@ texture = SubResource("AnimatedTexture_iqeba")
 libraries = {
 &"": SubResource("AnimationLibrary_r1s17")
 }
+
+[node name="Scanner" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-361, 298)
+stream = ExtResource("3_iemtq")
+
+[connection signal="animation_finished" from="TextureRect2/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
