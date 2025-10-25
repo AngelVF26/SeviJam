@@ -20,7 +20,7 @@ public partial class Analizar : Node
 		canvasLayer = GetParent().GetParent().GetNode<CanvasLayer>("CanvasLayer");
 		player = canvasLayer.GetNode<CharacterBody2D>("SubViewportContainer/SubViewport/PhysicsScene/Player");
 		commandController = GetParent();
-		terminalLabel = commandController.GetParent().GetNode<RichTextLabel>("RichTextLabel");
+		terminalLabel = commandController.GetParent().GetNode<RichTextLabel>("InfoComandos");
 		commandController.Connect(("AnalizarSeñal"), new Callable(this, nameof(OnAnalizarSeñal)));
 	}
 
@@ -29,12 +29,56 @@ public partial class Analizar : Node
 	{
 
 	}
-	
+
 	private void OnAnalizarSeñal()
+	{
+		OnAceptarAnalizarSeñal();
+		terminalLabel.Text = "\n\n\n\n" + GetHuecosParaAnalizar();
+		
+	}
+
+	private String GetHuecosParaAnalizar()
+	{
+		String res = "";
+		String ayudaTexto = "";
+
+		for (int i = 0; i < numMaxDeMuestras; i++)
+		{
+			if (i < numDeMuestras)
+			{
+				res += "  [X]  ";
+			}
+			else
+			{
+				res += "  [ ]  ";
+			}
+		}
+
+		switch (numDeMuestras)
+		{
+			case int val when val == 1:
+				ayudaTexto = "\n > Quedan dos compartimentos de anális.";
+				break;
+			case int val when val == 2:
+				ayudaTexto = "\n > ¡Queda un compartimento de análisis!";
+				break;
+			case int val when val == 3:
+				ayudaTexto = "\n > Todos los compartimentos de análisis ocupados. Abortando.";
+				break;
+			default:
+				break;
+		}
+
+		res += ayudaTexto;
+
+		return res;
+	}	
+	
+	private void OnAceptarAnalizarSeñal()
 	{
 		if (numDeMuestras >= numMaxDeMuestras)
 		{
-			// Do nothing. Error.
+			// TODO: Fin del juego?
 		}
 		else
 		{
