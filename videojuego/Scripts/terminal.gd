@@ -14,7 +14,7 @@ var comandosPosition: int
 var visible_characters = 0
 @onready var transicion: Sprite2D = $Transicion
 @onready var inicio_fx: AudioStreamPlayer2D = $InicioFX
-
+signal señalAnalizar(bool)
 signal señalControl(String)
 
 # Called when the node enters the scene tree for the first time.
@@ -149,6 +149,8 @@ func _on_interactuar_interact(interactuar: Variant) -> void:
 	interactuar = player.current_area.objeto_interactuar
 	print("\n\n\n Interaccion :" + interactuar)
 	infoComandos.add_text("\n\n\n " + player.current_area.objeto_interactuar) 
+	if interactuar != Comandos.OBJETOS.NADA["OBJECTMSG"]:
+		emit_signal("señalAnalizar", true)
 	
 
 
