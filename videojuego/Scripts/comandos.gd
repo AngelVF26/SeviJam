@@ -28,6 +28,10 @@ const COMANDOS = {
 	  "nombre_nodo": "Salir",
 	  "type": "terminal"
 	},
+	["mapa","minimapa"] : {
+		"nombre_nodo":"Minimapa",
+		"commanddescription":""
+	},
 	["ayuda"]: {
 	  "commanddescription": " ", #A: este tampoco
 	  "commandaction": "",
@@ -47,6 +51,5 @@ const COMANDOS = {
 	  "commanddescription": "EMPANADILLA RUSA DE CHILE",
 	  "commandaction": "",
 	  "type": "terminal"
-	},
-	
+	}
   }
