@@ -325,6 +325,7 @@ _physics_player = NodePath("../../SubViewportContainer/SubViewport/PhysicsScene/
 [node name="Analizar" parent="ComandController" index="7" groups=["analizar"]]
 
 [node name="Clonar" parent="ComandController" index="8" node_paths=PackedStringArray("animator", "label")]
+texto = ""
 animator = NodePath("../../AnimationText")
 label = NodePath("../../InfoComandos")
 

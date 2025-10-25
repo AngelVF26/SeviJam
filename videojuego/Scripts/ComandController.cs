@@ -48,6 +48,12 @@ public partial class ComandController : Node
 	[Export]
 	private bool fCanClonar { get; set; } = false;
 
+	[Export]
+	private bool fCanCuaderno { get; set; } = false;
+
+	private Node clonar;
+	private AnimationPlayer animationPlayer;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -60,7 +66,10 @@ public partial class ComandController : Node
 		interactuar = GetNode<Node>("Interactuar");
 		fCommandLabel = GetParent().GetNode<RichTextLabel>("InfoComandos");
 		terminalInput = GetParent().GetNode<LineEdit>("TerminalComandos");
+		clonar = GetNode<Node>("Clonar");
+		animationPlayer = GetParent().GetNode<AnimationPlayer>("AnimationPlayer");
 
+		clonar.Connect(("cuadernoSeñal"), new Callable(this, nameof(OnCuadernoSeñal)));
 		minimapa.Connect(("actividad_del_mapa"), new Callable(this, nameof(OnActividadDelMapa)));
 		analizar.Connect(("PeticionSeñal"), new Callable(this, nameof(OnPeticionSeñal)));
 		analizar.Connect(("CanClonarSeñal"), new Callable(this, nameof(OnCanClonar)));
@@ -84,6 +93,11 @@ public partial class ComandController : Node
 	{
 		fCanAnalizar = canAnalizar;
 		GD.Print("Vamos a ir viendo: " + canAnalizar);
+	}
+
+	private void OnCuadernoSeñal()
+	{
+		fCanCuaderno = true;
 	}
 
 	private void OnCanClonar(bool canClonar)
@@ -134,7 +148,7 @@ public partial class ComandController : Node
 			bool isError = true;
 			foreach (KeyValuePair<String[], Godot.Collections.Dictionary<String, String>> cmd in fCommandDict)
 			{
-				if (!cmd.Key.Contains(result) || isPeticion)
+				if (!cmd.Key.Contains(result) || isPeticion || fCanCuaderno)
 				{
 					if (line.ToLower() == "s" && isPeticion)
 					{
@@ -150,43 +164,26 @@ public partial class ComandController : Node
 						isError = false;
 						break;
 					}
-				}
-				else if (fCanClonar)
-				{
-					String nombreNodo = cmd.Value["nombre_nodo"];
-					
-					if (nombreNodo == "Clonar")
+					else if (line.ToLower() == "s" && fCanCuaderno)
 					{
-						GD.Print("Entro, por lo que fCanClonar es true");
+						String linea1 = "\n  ********************************************************";
+						String linea2 = "\n  ***                   MISIÓN EDÉN                   ***";
+						String linea3 = "\n  > Cuaderno de bitácora, día 2510 de expedición:";
+						String linea4 = "\n  > Realizada la exploración del planeta [7191], o GAIA. Había rastros de vida, pero primitiva y extraña, incompatible con el clonador. He encontrado restos humanos, pero tan antiguos que a duras penas he obtenido unas pocas moléculas de ADN. El resto del páramo estaba desierto. No había ni un pelo...";
+						String linea5 = "\n  > Quizás tenga más suerte en otro planeta. Por ahora, ABORTAMOS MISIÓN.";
+						fCommandLabel.Text = linea1 + linea2 + linea1 + linea3 + linea4 + linea5;
+						animationPlayer.Play("typewriter");
+						fCanCuaderno = false;
 						isError = false;
-						EmitSignal("ClonarSeñal");
-						break;
+					}
+					else if (line.ToLower() == "n" && fCanCuaderno)
+					{
+						fCommandLabel.Text = "\n > Entrada descartada del cuaderno de bitácora.";
+						fCanCuaderno = false;
+						isError = false;
 					}
 				}
-				else if (fIsActividad)
-				{
-					if (line.ToLower() == "salir" || line.ToLower() == "cerrar")
-					{
-						fIsActividad = false;
-						isError = false;
-						EmitSignal("CerrarVentana");
-						break;
-					}
-				}
-				else if (fCanAnalizar)
-				{
-					String nombreNodo = cmd.Value["nombre_nodo"];
-
-					if (nombreNodo == "Analizar")
-					{
-						analizarVisitado = true;
-						fCanAnalizar = false;
-						isError = false;
-						ProcesarNodoAnalizar(line);
-						EmitSignal("ComandoEnviado");
-						break;
-					}
-				}
+				
 				else
 				{
 					// Encontrado el comando. 
@@ -194,6 +191,40 @@ public partial class ComandController : Node
 					fCommandToProcess = cmd.Value;
 					String nombreNodo = fCommandToProcess["nombre_nodo"];
 					GD.Print(nombreNodo);
+
+					if (fCanAnalizar)
+					{
+						if (nombreNodo == "Analizar")
+						{
+							analizarVisitado = true;
+							fCanAnalizar = false;
+							isError = false;
+							ProcesarNodoAnalizar(line);
+							EmitSignal("ComandoEnviado");
+							break;
+						}
+					}
+					else if (fCanClonar)
+					{
+						if (nombreNodo == "Clonar")
+						{
+							fCanClonar = false;
+							isError = false;
+							EmitSignal("ClonarSeñal");
+							break;
+						}
+					}
+					else if (fIsActividad)
+					{
+						if (nombreNodo == "Salir")
+						{
+							fIsActividad = false;
+							isError = false;
+							EmitSignal("CerrarVentana");
+							break;
+						}
+					}
+					
 					switch (nombreNodo)
 					{
 						case string val when val == "Mover":
