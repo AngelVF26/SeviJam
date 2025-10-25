@@ -71,7 +71,7 @@ public partial class ComandController : Node
 
 	public void ParseCommandLine(String line)
 	{
-		var value = Regex.Match(line, @"^([\w\-]+)"); // Devuelve la primera palabra de la cadena. Esperamos que eso sea el comando per se
+		var value = Regex.Match(line, @"^(\/[\w\-]+)|([\w\-]+)"); // Devuelve la primera palabra de la cadena. Esperamos que eso sea el comando per se
 		String result = value.Value.ToLower();
 
 		if (fCommandDict != null)
@@ -108,6 +108,7 @@ public partial class ComandController : Node
 				}
 				else
 				{
+					GD.Print("entro aqui 2");
 					// Encontrado el comando. 
 					// Llamar al nodo. Señal. Etc.
 					fCommandToProcess = cmd.Value;
@@ -120,6 +121,7 @@ public partial class ComandController : Node
 							EmitSignal("ComandoEnviado");
 							break;
 						case string val when val == "Ayuda":
+							GD.Print("Entro aqui 1");
 							ProcesarNodoAyuda(line);
 							EmitSignal("ComandoEnviado");
 							break;
@@ -160,7 +162,7 @@ public partial class ComandController : Node
 
 	private void ProcesarNodoSalir(String linea)
 	{
-		var value = Regex.Match(linea, @"^(\w+)");
+		var value = Regex.Match(linea, @"^(\/[\w\-]+)|([\w\-]+)");
 		if (!value.Success)
 		{
 			EmitSignal("ReturnError");
@@ -182,7 +184,7 @@ public partial class ComandController : Node
 
 	private void ProcesarNodoAyuda(String linea)
 	{
-		var value = Regex.Match(linea, @"^(\w+)");
+		var value = Regex.Match(linea, @"^(\/[\w\-]+)|([\w\-]+)");
 		if (!value.Success)
 		{
 			EmitSignal("ReturnError");
