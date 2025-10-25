@@ -132,7 +132,7 @@ public partial class ComandController : Node
 	
 	private void ProcesarNodoAnalizar(String linea)
 	{
-		EmitSignal("ProcesarAnalizar");
+		EmitSignal("AnalizarSeñal");
 	}
 
 	private void ProcesarNodoMover(String linea)
