@@ -95,7 +95,7 @@ offset_top = -1.0
 offset_right = 1920.0
 offset_bottom = 880.0
 theme_override_fonts/font = ExtResource("6_tu35c")
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 55
 text = "*********************************************
 ***                     			        	MISIÓN EDÉN                                          ***
 *********************************************
