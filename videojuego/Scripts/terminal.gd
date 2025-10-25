@@ -70,6 +70,9 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	listaComandos.append(comando)
 	comandosPosition = 0
 	terminal.clear()
+	
+	if $SubViewportContainer.visible == true:
+		$SubViewportContainer.visible = false
 
 
 func _on_terminal_comandos_text_changed(new_text: String) -> void:
