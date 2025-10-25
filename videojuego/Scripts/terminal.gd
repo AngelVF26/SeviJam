@@ -12,17 +12,19 @@ var pruebas: Array
 var comandosPosition: int
 @onready var infoComandos: RichTextLabel = $InfoComandos
 var visible_characters = 0
+@onready var transicion: Sprite2D = $Transicion
+@onready var inicio_fx: AudioStreamPlayer2D = $InicioFX
 
 signal señalControl(String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	transicion.visible =true
 	
 	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
 	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
 	AudioServer.set_bus_effect_enabled(master_index,0,false)
-
-	
+	inicio_fx.play()
 	$AnimationPlayer.play("start")
 	terminal.grab_focus()		
 	
@@ -113,3 +115,7 @@ func _on_salir_ocultar() -> void:
 func _on_interactuar_interact(interactuar: Variant) -> void:
 	infoComandos.text = "\n\n\n " + player.current_area.objeto
 	
+
+
+func _on_comand_controller_return_error() -> void:
+	$ErrorFX.play()

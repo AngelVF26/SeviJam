@@ -72,6 +72,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 5.468475, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioAmbient:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
 
 [sub_resource type="Animation" id="Animation_s5s4m"]
 resource_name = "inicio"
@@ -87,6 +99,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 5.468475, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioAmbient:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.0, -50.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7rocb"]
@@ -239,7 +263,7 @@ offset_top = 29.535
 offset_right = 128.0
 offset_bottom = 37.534996
 theme = SubResource("Theme_a082v")
-min_value = -40.0
+min_value = -50.0
 max_value = 15.0
 
 [node name="MenuCreditos" type="Control" parent="ColorRect"]
