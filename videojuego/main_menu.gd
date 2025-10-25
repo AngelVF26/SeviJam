@@ -1,9 +1,13 @@
 extends Control
 
-@onready var lanzar_rover: Button = $ColorRect/GridContainer/LanzarRover
-@onready var configuracion: Button = $ColorRect/GridContainer/Configuracion
-@onready var creditos: Button = $ColorRect/GridContainer/Creditos
-@onready var abortar_mision: Button = $ColorRect/GridContainer/AbortarMision
+
+#region Sale un error en el depurador sobre que no encuentras estos nodos
+#@onready var lanzar_rover: Button = $ColorRect/GridContainer/LanzarRover
+#@onready var configuracion: Button = $ColorRect/GridContainer/Configuracion
+#@onready var creditos: Button = $ColorRect/GridContainer/Creditos
+#@onready var abortar_mision: Button = $ColorRect/GridContainer/AbortarMision
+#endregion
+
 
 @onready var audio_fx: AudioStreamPlayer2D = $AudioFX
 @onready var audio_ambient: AudioStreamPlayer2D = $AudioAmbient
