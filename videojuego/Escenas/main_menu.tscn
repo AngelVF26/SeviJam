@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dp72y1cpplub5"]
+[gd_scene load_steps=15 format=3 uid="uid://dp72y1cpplub5"]
 
 [ext_resource type="Shader" uid="uid://dmn1w1hk2bo6q" path="res://Assets/Shader/CRT.gdshader" id="1_hjcy7"]
 [ext_resource type="Script" uid="uid://wcadk5khr5xk" path="res://main_menu.gd" id="1_qn7j5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_qn7j5"]
 [ext_resource type="AudioStream" uid="uid://cepot80jektm4" path="res://Assets/FX/HoverMenu.mp3" id="5_7ms0u"]
 [ext_resource type="AudioStream" uid="uid://lwe74jym2lxn" path="res://Assets/FX/MainMusic.mp3" id="6_xgkoo"]
+[ext_resource type="AudioStream" uid="uid://dych6lgg2rsxd" path="res://Assets/FX/Start.mp3" id="7_s5s4m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qn7j5"]
 resource_local_to_scene = true
@@ -213,6 +214,11 @@ volume_db = 4.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true
+
+[node name="AudioFXStart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_s5s4m")
+volume_db = 14.644
+bus = &"Sound Effects"
 
 [connection signal="mouse_entered" from="ColorRect/GridMain/LanzarRover" to="." method="_on_lanzar_rover_mouse_entered"]
 [connection signal="pressed" from="ColorRect/GridMain/LanzarRover" to="." method="_on_lanzar_rover_pressed"]
