@@ -12,17 +12,19 @@ var pruebas: Array
 var comandosPosition: int
 @onready var infoComandos: RichTextLabel = $InfoComandos
 var visible_characters = 0
+@onready var transicion: Sprite2D = $Transicion
+@onready var inicio_fx: AudioStreamPlayer2D = $InicioFX
 
 signal señalControl(String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	transicion.visible =true
 	
 	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
 	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
 	AudioServer.set_bus_effect_enabled(master_index,0,false)
-
-	
+	inicio_fx.play()
 	$AnimationPlayer.play("start")
 	terminal.grab_focus()		
 	
@@ -72,8 +74,6 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	listaComandos.append(comando)
 	comandosPosition = 0
 	terminal.clear()
-	if $SubViewportContainer.visible == true:
-		$SubViewportContainer.visible = false
 	
 	
 	
@@ -143,5 +143,13 @@ func _on_salir_ocultar() -> void:
 
 func _on_interactuar_interact(interactuar: Variant) -> void:
 	infoComandos.clear()
-	infoComandos.text = "\n\n\n " + player.current_area.objeto_interactuar
+	print("area actual: ", player.current_area)
+	print("objeto1: ", player.current_area.objeto1)
+	interactuar = player.current_area.objeto_interactuar
+	print("\n\n\n Interaccion :" + interactuar)
+	infoComandos.text = "\n\n\n " + interactuar
 	
+
+
+func _on_comand_controller_return_error() -> void:
+	$ErrorFX.play()
