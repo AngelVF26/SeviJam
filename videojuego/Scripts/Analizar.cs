@@ -23,6 +23,8 @@ public partial class Analizar : Node
 		commandController = GetParent();
 		terminalLabel = commandController.GetParent().GetNode<RichTextLabel>("InfoComandos");
 		commandController.Connect(("AnalizarSeñal"), new Callable(this, nameof(OnAnalizarSeñal)));
+		commandController.Connect(("SiSeñal"), new Callable(this, nameof(OnSiSeñal)));
+		commandController.Connect(("NoSeñal"), new Callable(this, nameof(OnNoSeñal)));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,13 +33,38 @@ public partial class Analizar : Node
 
 	}
 
+	private void OnSiSeñal()
+	{
+		if (numDeMuestras >= numMaxDeMuestras)
+		{
+			// TODO: Fin del juego?
+			String loDeAntes = terminalLabel.Text;
+			String fallo = "\n\n > Todas las muestras han sido recogidas";
+			terminalLabel.Text = loDeAntes + fallo;
+		}
+		else
+		{
+			numDeMuestras++;
+			String loDeAntes = terminalLabel.Text;
+			String analizandoMuestra = "\n\n > La muestra está siendo analizada en segundo plano.";
+			terminalLabel.Text = loDeAntes + analizandoMuestra;
+		}
+	}
+
+	private void OnNoSeñal()
+	{
+		String loDeAntes = terminalLabel.Text;
+		String fallo = "\n\n > Muestra rechazada.";
+		terminalLabel.Text = loDeAntes + fallo;			
+	}
+
 	private void OnAnalizarSeñal()
 	{
 		String inicio = "\n\n\n\n > Necesito el input y tal";
 		String peticion = "\n\n > ¿Deseas analizar la muestra?";
 		String warning = "\n\n > Huecos disponibles: " + GetHuecosParaAnalizar();
 		String sn = "\n\n > S/N";
-		terminalLabel.Text = inicio + peticion + warning+sn;
+		terminalLabel.Text = inicio + peticion + warning + sn;
 		EmitSignal("PeticionSeñal");
 		//OnAceptarAnalizarSeñal();
 		//terminalLabel.Text = "\n\n\n\n" + GetHuecosParaAnalizar();
@@ -78,18 +105,5 @@ public partial class Analizar : Node
 		res += ayudaTexto;
 
 		return res;
-	}	
-	
-	private void OnAceptarAnalizarSeñal()
-	{
-		if (numDeMuestras >= numMaxDeMuestras)
-		{
-			// TODO: Fin del juego?
-		}
-		else
-		{
-			numDeMuestras++;
-		}		
-		GD.Print(numDeMuestras);
 	}
 }
