@@ -8,7 +8,7 @@ var current_area:Area2D:
 		current_area = t
 		if current_area.imagen != null:
 			current_imagen = current_area.imagen
-		print(current_area.name)
+		print("Current area: "+current_area.name)
 func _process(delta: float) -> void:
 	
 	move_and_slide()

@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_hrt1k"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
+[ext_resource type="Script" uid="uid://hbbmllil5qg" path="res://Scripts/Analizar.cs" id="3_d021a"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
-[ext_resource type="Shader" uid="uid://mmopkc1x0hew" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
+[ext_resource type="Shader" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
 [ext_resource type="AudioStream" uid="uid://cbj2smit0rqww" path="res://Assets/FX/typing2.mp3" id="8_vpig8"]
 [ext_resource type="Texture2D" uid="uid://ctnu62qhriphi" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_00.png" id="9_o88m3"]
 [ext_resource type="AudioStream" uid="uid://bw637kyt5rjjx" path="res://Assets/FX/typing.mp3" id="9_sjuwg"]
@@ -22,24 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://b8m0utddlyok6" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_09.png" id="18_1yp6p"]
 [ext_resource type="Texture2D" uid="uid://d4ng42oaegnde" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_10.png" id="19_cs7fs"]
 [ext_resource type="Texture2D" uid="uid://bobgabhmqjxu2" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_11.png" id="20_xrher"]
-
-[sub_resource type="CSharpScript" id="CSharpScript_a6jcn"]
-script/source = "using Godot;
-using System;
-
-public partial class Analizar : Node
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-}
-"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tu35c"]
 shader = ExtResource("8_a6jcn")
@@ -130,8 +113,8 @@ script = ExtResource("1_caa1v")
 [node name="Mover" parent="ComandController" index="1" node_paths=PackedStringArray("_physics_player")]
 _physics_player = NodePath("../../CanvasLayer/SubViewportContainer/SubViewport/PhysicsScene/Player")
 
-[node name="Analizar" parent="ComandController" index="7"]
-script = SubResource("CSharpScript_a6jcn")
+[node name="Analizar" parent="ComandController" index="7" groups=["analizar"]]
+script = ExtResource("3_d021a")
 
 [node name="Icon" type="Sprite2D" parent="."]
 visible = false
