@@ -2,7 +2,7 @@ extends Area2D
 
 @export var obstaculo:StaticBody2D
 
-@export var objeto : String = "nada" 
+#@export var objeto_interactuar:string = Comandos.COMANDOS["NADA"]["OBJECTMSG"]
 
 @export var imagen:CompressedTexture2D
 
