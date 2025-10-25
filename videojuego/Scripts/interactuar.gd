@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_comand_controller_interactuar_señal() -> void:
-	pass # Replace with function body.
+	print("estas interactuando")

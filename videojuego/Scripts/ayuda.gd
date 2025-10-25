@@ -7,4 +7,4 @@ func _ready() -> void:
 
 func _on_comand_controller_ayuda_señal() -> void:
 	help.emit("ESTO ES LA AYUDA, QUE PASA COLEGA")
-	pass # Replace with function body.
+	
