@@ -25,6 +25,7 @@ func _on_comand_controller_minimapa_señal() -> void:
 
 
 func _on_comand_controller_cerrar_ventana() -> void:
+	print(\"mapa cerrado\")
 	$\"../../SubViewportContainer\".visible = false
 "
 
@@ -56,6 +57,7 @@ script = ExtResource("4_e4tgb")
 script = ExtResource("8_sri4k")
 
 [connection signal="AyudaSeñal" from="." to="Ayuda" method="_on_comand_controller_ayuda_señal"]
+[connection signal="CerrarVentana" from="." to="Minimapa" method="_on_comand_controller_cerrar_ventana"]
 [connection signal="InteractuarSeñal" from="." to="Interactuar" method="_on_comand_controller_interactuar_señal"]
 [connection signal="MinimapaSeñal" from="." to="Minimapa" method="_on_comand_controller_minimapa_señal"]
 [connection signal="MoverSeñal" from="." to="Mover" method="_on_comand_controller_mover_señal"]
