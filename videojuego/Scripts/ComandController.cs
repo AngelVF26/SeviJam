@@ -17,6 +17,8 @@ public partial class ComandController : Node
 	[Signal]
 	public delegate void SalirSeñalEventHandler();
 	[Signal]
+	public delegate void AnalizarSeñalEventHandler();
+	[Signal]
 	public delegate void MoverSeñalEventHandler(int distancia, string direccion);
 	private Node comandos;
 	private Godot.Collections.Dictionary<String[], Godot.Collections.Dictionary<String, String>> fCommandDict;
@@ -42,7 +44,7 @@ public partial class ComandController : Node
 	public void ParseCommandLine(String line)
 	{
 		var value = Regex.Match(line, @"^([\w\-]+)"); // Devuelve la primera palabra de la cadena. Esperamos que eso sea el comando per se
-		String result = value.Value;
+		String result = value.Value.ToLower();
 
 		if (fCommandDict != null)
 		{
@@ -60,7 +62,7 @@ public partial class ComandController : Node
 					fCommandToProcess = cmd.Value;
 					String nombreNodo = fCommandToProcess["nombre_nodo"];
 
-					switch (nombreNodo.ToLower())
+					switch (nombreNodo)
 					{
 						case string val when val == "Mover":
 							ProcesarNodoMover(line);
@@ -76,6 +78,9 @@ public partial class ComandController : Node
 							break;
 						case string val when val == "Interactuar":
 							ProcesarNodoInteractuar(line);
+							break;
+						case string val when val == "Analizar":
+							ProcesarNodoAnalizar(line);
 							break;
 						default:
 							GD.Print("ERROR: NO NODO1?");
@@ -103,6 +108,7 @@ public partial class ComandController : Node
 
 	private void ProcesarNodoInteractuar(String linea)
 	{
+		GD.Print("Interactuar");
 		EmitSignal("InteractuarSeñal");
 	}
 
@@ -121,8 +127,12 @@ public partial class ComandController : Node
 
 	private void ProcesarNodoProcesar(String linea)
 	{
-		// Recibe algo como PROCESAR /rover/stream/imagen.png
-		EmitSignal("ProcesarSeñal");	
+		EmitSignal("ProcesarSeñal");
+	}
+	
+	private void ProcesarNodoAnalizar(String linea)
+	{
+		EmitSignal("ProcesarAnalizar");
 	}
 
 	private void ProcesarNodoMover(String linea)

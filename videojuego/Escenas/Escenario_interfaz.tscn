@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=16 format=4 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
@@ -14,6 +14,26 @@
 [ext_resource type="PackedScene" uid="uid://da01jtt78ktfw" path="res://Escenas/physics_scene.tscn" id="12_d021a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tu35c"]
+[sub_resource type="CSharpScript" id="CSharpScript_a6jcn"]
+script/source = "using Godot;
+using System;
+
+public partial class Analizar : Node
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nj3o3"]
+resource_local_to_scene = true
 shader = ExtResource("4_5b8ei")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.4
@@ -47,6 +67,9 @@ script = ExtResource("1_caa1v")
 
 [node name="Mover" parent="ComandController" index="1" node_paths=PackedStringArray("_physics_player")]
 _physics_player = NodePath("../../PhysicsScene/Player")
+
+[node name="Analizar" parent="ComandController" index="7"]
+script = SubResource("CSharpScript_a6jcn")
 
 [node name="Icon" type="Sprite2D" parent="."]
 visible = false
