@@ -96,8 +96,8 @@ func _on_procesar_proceso() -> void:
 
 
 func _on_salir_ocultar() -> void:
-	#imagen_explorada.visible = false
-	pass
+	imagen_explorada.visible = false
+	$SubViewportContainer.visible = false
 
 
 func _on_interactuar_interact(interactuar: Variant) -> void:

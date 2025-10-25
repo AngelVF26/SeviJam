@@ -22,6 +22,10 @@ public partial class ComandController : Node
 	public delegate void MinimapaSeñalEventHandler();
 	[Signal]
 	public delegate void MoverSeñalEventHandler(int distancia, string direccion);
+	[Signal]
+	public delegate void SiSeñalEventHandler();
+	[Signal]
+	public delegate void NoSeñalEventHandler();
 	private Node comandos;
 	private Godot.Collections.Dictionary<String[], Godot.Collections.Dictionary<String, String>> fCommandDict;
 	private Node2D fPadre;
@@ -65,13 +69,21 @@ public partial class ComandController : Node
 				{
 					if (line.ToLower() == "s")
 					{
-
+						EmitSignal("SiSeñal");
+						isPeticion = false;
+						break;
 					}
 					else if (line.ToLower() == "n")
 					{
-						
+						EmitSignal("NoSeñal");
+						isPeticion = false;
+						break;
 					}
-					EmitSignal("ReturnError");
+					else
+					{
+						EmitSignal("ReturnError");
+						isPeticion = false;
+					}					
 					//TODO: Hacerlo
 				}
 				else
