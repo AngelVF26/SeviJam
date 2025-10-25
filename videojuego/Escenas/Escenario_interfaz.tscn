@@ -201,8 +201,8 @@ scale = Vector2(14.914064, 8.242188)
 texture = ExtResource("1_4flj7")
 
 [node name="Terminal" type="Sprite2D" parent="."]
-position = Vector2(965, 538.5)
-scale = Vector2(1.2526041, 1.2395834)
+position = Vector2(980, 525)
+scale = Vector2(1.253, 1.253)
 texture = ExtResource("2_hrt1k")
 
 [node name="ImagenExplorada" type="Sprite2D" parent="."]
@@ -211,6 +211,7 @@ position = Vector2(942, 496)
 texture = ExtResource("1_hrt1k")
 
 [node name="TextEdit" type="TextEdit" parent="."]
+visible = false
 offset_right = 1920.0
 offset_bottom = 200.0
 
