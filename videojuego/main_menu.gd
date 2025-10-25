@@ -12,7 +12,7 @@ extends Control
 @onready var audio_fx: AudioStreamPlayer2D = $AudioFX
 @onready var audio_ambient: AudioStreamPlayer2D = $AudioAmbient
 @onready var grid_opciones: Control = $ColorRect/MenuOpciones
-
+@onready var creditos: Button = $ColorRect/GridMain/Creditos
 @onready var grid_main: GridContainer = $ColorRect/GridMain
 @onready var sfx_volume: HScrollBar = $ColorRect/MenuOpciones/FXBar
 @onready var music_volume: HScrollBar = $ColorRect/MenuOpciones/MusicaBar

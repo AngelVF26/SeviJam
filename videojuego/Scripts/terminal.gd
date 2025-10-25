@@ -5,11 +5,12 @@ extends Node2D
 @onready var master_index = AudioServer.get_bus_index("Master")
 @onready var sfx_index = AudioServer.get_bus_index("Sound Effects")
 @onready var terminal: LineEdit = $TerminalComandos
-@onready var infoComandos: TextEdit =$InformacionComandos
 @onready var player: CharacterBody2D = $CanvasLayer/SubViewportContainer/SubViewport/PhysicsScene/Player
 @onready var imagen_explorada: Sprite2D = $ImagenExplorada
 var listaComandos: Array
 var comandosPosition: int
+@onready var infoComandos: RichTextLabel = $InfoComandos
+var visible_characters = 0
 
 signal señalControl(String)
 
@@ -22,12 +23,8 @@ func _ready() -> void:
 
 	
 	$AnimationPlayer.play("start")
-	terminal.grab_focus()
+	terminal.grab_focus()		
 	
-	var visible_characters = 0
-	if visible_characters != $InfoComandos.visible_characters:
-		visible_characters = $InfoComandos.visible_characters
-		$TypingDisplayFX.play()
 	set_process_input(true)
 	#terminal.text_submitted.connect(_texto_pa_comandos)
 	
@@ -53,6 +50,11 @@ func _texto_pa_comandos(texto: String) -> void:
 	
 	
 func _process(_delta: float) -> void:
+		#esto es lo que hace que haya una animación de texto
+	if visible_characters != $InfoComandos.visible_characters:
+		visible_characters = $InfoComandos.visible_characters
+		$TypingDisplayFX.play()
+	
 	if $AnimationPlayer.is_playing():
 		$CanvasLayer.visible = false
 	else:
@@ -67,7 +69,6 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	print("este es el comando:", comando)
 	listaComandos.append(comando)
 	comandosPosition = 0
-	
 	terminal.clear()
 
 
@@ -79,7 +80,10 @@ func _on_terminal_comandos_text_changed(new_text: String) -> void:
 
 
 func _on_ayuda_help(ayuda: Variant) -> void:
-	infoComandos.text = ayuda
+	infoComandos.clear()
+	print("ayudame que tengo muchos quereseres")
+	infoComandos.add_text("\n\n\n prueba probando")
+	
 	
 
 
@@ -92,7 +96,8 @@ func _on_procesar_proceso() -> void:
 
 
 func _on_salir_ocultar() -> void:
-	imagen_explorada.visible = false
+	#imagen_explorada.visible = false
+	pass
 
 
 func _on_interactuar_interact(interactuar: Variant) -> void:

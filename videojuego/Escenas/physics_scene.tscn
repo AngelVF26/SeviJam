@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://da01jtt78ktfw"]
 
-[ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
+[ext_resource type="Script" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
 [ext_resource type="PackedScene" uid="uid://cronljxn02hkw" path="res://Escenas/Area.tscn" id="3_a8uw4"]
 

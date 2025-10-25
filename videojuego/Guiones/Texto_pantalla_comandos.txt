@@ -1,10 +1,11 @@
 # Print inicio con espacios medidos para la pantalla
 
- ************************************************************
- ***                    MISIÓN EDÉN                     	***
- ************************************************************
+ ********************************************************
+ ***                   MISIÓN EDÉN                   ***
+ ********************************************************
 
- > Aterrizaje exitoso del rover C01umb0 en el planeta [7191].
+ > Aterrizaje exitoso del rover C01umb0 en el planeta
+   [7191].
  > OBJETIVO: Recopilación de material genético humanoide.
  > Material válido para clonación: FOLÍCULOS CAPILARES.
  > Iniciando reconocimiento del terreno...

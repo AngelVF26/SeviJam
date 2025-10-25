@@ -1,10 +1,11 @@
-[gd_scene load_steps=36 format=4 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=37 format=4 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
 [ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_hrt1k"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
+[ext_resource type="FontFile" uid="uid://djw2364lw2f8w" path="res://Assets/Fonts/bytebounce/ByteBounce.ttf" id="6_rt3l3"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
 [ext_resource type="Script" path="res://Escenas/typewriter.gd" id="7_d021a"]
 [ext_resource type="Shader" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
@@ -23,25 +24,23 @@
 [ext_resource type="Texture2D" uid="uid://b8m0utddlyok6" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_09.png" id="18_1yp6p"]
 [ext_resource type="Texture2D" uid="uid://d4ng42oaegnde" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_10.png" id="19_cs7fs"]
 [ext_resource type="Texture2D" uid="uid://bobgabhmqjxu2" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_11.png" id="20_xrher"]
+[ext_resource type="AudioStream" uid="uid://coki2s0irywq6" path="res://Assets/FX/cargarImagen.mp3" id="23_mou6a"]
 [ext_resource type="AudioStream" uid="uid://b4hyci2kon726" path="res://Assets/FX/StartConsole.mp3" id="23_o88m3"]
 
-[sub_resource type="CSharpScript" id="CSharpScript_a6jcn"]
-script/source = "using Godot;
-using System;
-
-public partial class Analizar : Node
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+[sub_resource type="Animation" id="Animation_d021a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0047393367]
 }
-"
 
 [sub_resource type="Animation" id="Animation_d021a"]
 length = 0.001
@@ -206,8 +205,7 @@ script = ExtResource("1_caa1v")
 [node name="Mover" parent="ComandController" index="1" node_paths=PackedStringArray("_physics_player")]
 _physics_player = NodePath("../../CanvasLayer/SubViewportContainer/SubViewport/PhysicsScene/Player")
 
-[node name="Analizar" parent="ComandController" index="7"]
-script = SubResource("CSharpScript_a6jcn")
+[node name="Analizar" parent="ComandController" index="7" groups=["analizar"]]
 
 [node name="Icon" type="Sprite2D" parent="."]
 visible = false
@@ -230,24 +228,24 @@ offset_right = 1920.0
 offset_bottom = 200.0
 
 [node name="InfoComandos" type="RichTextLabel" parent="."]
-offset_left = 6.0
-offset_top = 3.0
-offset_right = 1900.0
-offset_bottom = 816.0
-theme_override_fonts/normal_font = ExtResource("6_tu35c")
-theme_override_font_sizes/normal_font_size = 60
+offset_left = 4.0
+offset_top = -69.0
+offset_right = 1934.0
+offset_bottom = 813.0
+theme_override_fonts/normal_font = ExtResource("6_rt3l3")
+theme_override_font_sizes/normal_font_size = 75
 bbcode_enabled = true
 text = "
  ********************************************************
- ***                   MISIÓN EDÉN                   ***
+ ***                             MISIÓN EDÉN                            ***
  ********************************************************
 
- > Aterrizaje exitoso del rover C01umb0 en el planeta
-   [7191].
+ > Aterrizaje exitoso del rover C01umb0 en el planeta [7191].
  > OBJETIVO: Recopilación de material genético humanoide.
  > Material válido para clonación: FOLÍCULOS CAPILARES.
  > Iniciando reconocimiento del terreno...
- > Introduzca un comando:"
+ > Introduzca un comando:
+ > ..."
 visible_characters = 2
 visible_ratio = 0.0047393367
 
@@ -277,10 +275,10 @@ deselect_on_focus_loss_enabled = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_tu35c")
-offset_left = 455.0
-offset_top = 139.0
-offset_right = 1476.0
-offset_bottom = 811.0
+offset_left = 454.0
+offset_top = 130.0
+offset_right = 1494.0
+offset_bottom = 802.0
 color = Color(0, 0, 0, 1)
 
 [node name="GuiasParaGodot" type="AnimatedSprite2D" parent="."]
@@ -302,8 +300,8 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="TypingDisplayFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_vpig8")
-parameters/looping = true
+stream = ExtResource("23_mou6a")
+volume_db = -10.142
 
 [node name="SubmitFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_sjuwg")
