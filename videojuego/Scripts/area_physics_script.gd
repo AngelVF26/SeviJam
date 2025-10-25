@@ -2,6 +2,7 @@ extends Area2D
 
 @export var obstaculo:StaticBody2D
 
+@export var info : String 
 
 @export var imagen:CompressedTexture2D
 
@@ -18,4 +19,5 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
+		print(body)
 		(body as CharacterBody2D).current_area = self

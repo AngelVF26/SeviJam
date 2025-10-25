@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=36 format=4 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
-[ext_resource type="Script" uid="uid://dhc7fnrqu4fh8" path="res://Escenas/typewriter.gd" id="7_d021a"]
-[ext_resource type="Shader" uid="uid://mmopkc1x0hew" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
+[ext_resource type="Script" path="res://Escenas/typewriter.gd" id="7_d021a"]
+[ext_resource type="Shader" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
 [ext_resource type="AudioStream" uid="uid://cbj2smit0rqww" path="res://Assets/FX/typing2.mp3" id="8_vpig8"]
 [ext_resource type="Texture2D" uid="uid://ctnu62qhriphi" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_00.png" id="9_o88m3"]
 [ext_resource type="AudioStream" uid="uid://bw637kyt5rjjx" path="res://Assets/FX/typing.mp3" id="9_sjuwg"]
@@ -43,6 +43,21 @@ public partial class Analizar : Node
 }
 "
 
+[sub_resource type="Animation" id="Animation_d021a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0047393367]
+}
+
 [sub_resource type="Animation" id="Animation_a6jcn"]
 resource_name = "typewriter"
 length = 5.0
@@ -57,21 +72,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0047393367, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_d021a"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0047393367]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hr7f7"]
@@ -161,6 +161,21 @@ func _process(delta: float) -> void:
 	self.position = $\"../PhysicsScene/Player\".position
 "
 
+[sub_resource type="Animation" id="Animation_o88m3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_3sxkm"]
 resource_name = "start"
 length = 3.0
@@ -175,21 +190,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_o88m3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fvact"]
@@ -338,6 +338,7 @@ libraries = {
 }
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 7.3073163, 0, 1)
 z_index = 99

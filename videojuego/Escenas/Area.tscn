@@ -13,9 +13,8 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_cgnjx")
 fill_to = Vector2(0.95111114, 1)
 
-[node name="Area" type="Area2D" node_paths=PackedStringArray("obstaculo")]
+[node name="Area" type="Area2D"]
 script = ExtResource("1_cgnjx")
-obstaculo = NodePath("")
 imagen = ExtResource("2_6s4fl")
 
 [node name="Label" type="Label" parent="."]
