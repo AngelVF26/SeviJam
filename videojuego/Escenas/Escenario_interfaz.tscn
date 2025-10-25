@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="5_caa1v"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
-[ext_resource type="Shader" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
+[ext_resource type="Shader" uid="uid://mmopkc1x0hew" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
 [ext_resource type="AudioStream" uid="uid://cbj2smit0rqww" path="res://Assets/FX/typing2.mp3" id="8_vpig8"]
 [ext_resource type="AudioStream" uid="uid://bw637kyt5rjjx" path="res://Assets/FX/typing.mp3" id="9_sjuwg"]
 [ext_resource type="Texture2D" uid="uid://ccyusidmsyjf1" path="res://Assets/Pixelart/GUIAS PARA GODOT 2.png" id="10_d021a"]
@@ -96,16 +96,7 @@ offset_right = 1920.0
 offset_bottom = 880.0
 theme_override_fonts/font = ExtResource("6_tu35c")
 theme_override_font_sizes/font_size = 55
-text = "*********************************************
-***                     			        	MISIÓN EDÉN                                          ***
-*********************************************
-> Aterrizaje exitoso del rover C01umb0 en el 
- planeta [7191].
-> OBJETIVO: Recopilación de material genético. 
-> MATERIAL VÁLIDO: Folículos capilares.
-> Iniciando reconocimiento del terreno.
-> Introduzca un comando:
-> ..."
+placeholder_text = "     "
 
 [node name="TerminalComandos" type="LineEdit" parent="."]
 offset_top = 880.0
