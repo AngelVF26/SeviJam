@@ -11,7 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://cbj2smit0rqww" path="res://Assets/FX/typing2.mp3" id="8_vpig8"]
 [ext_resource type="AudioStream" uid="uid://bw637kyt5rjjx" path="res://Assets/FX/typing.mp3" id="9_sjuwg"]
 [ext_resource type="Texture2D" uid="uid://ccyusidmsyjf1" path="res://Assets/Pixelart/GUIAS PARA GODOT 2.png" id="10_d021a"]
-[ext_resource type="PackedScene" path="res://Escenas/physics_scene.tscn" id="12_d021a"]
+[ext_resource type="PackedScene" uid="uid://da01jtt78ktfw" path="res://Escenas/physics_scene.tscn" id="12_d021a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nj3o3"]
 resource_local_to_scene = true
@@ -124,9 +124,8 @@ stream = ExtResource("9_sjuwg")
 [node name="PhysicsScene" parent="." instance=ExtResource("12_d021a")]
 visible = false
 
-[connection signal="InteractuarSeñal" from="ComandController" to="ComandController/Interactuar" method="_on_comand_controller_interactuar_señal"]
 [connection signal="MoverSeñal" from="ComandController" to="ComandController/Mover" method="_on_comand_controller_mover_señal"]
-[connection signal="ProcesarSeñal" from="ComandController" to="ComandController/Procesar" method="_on_comand_controller_procesar_señal"]
+[connection signal="proceso" from="ComandController/Procesar" to="." method="_on_procesar_proceso"]
 [connection signal="help" from="ComandController/Ayuda" to="." method="_on_ayuda_help"]
 [connection signal="text_changed" from="TerminalComandos" to="." method="_on_terminal_comandos_text_changed"]
 [connection signal="text_submitted" from="TerminalComandos" to="." method="_on_terminal_comandos_text_submitted"]

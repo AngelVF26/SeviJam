@@ -60,7 +60,7 @@ public partial class ComandController : Node
 					fCommandToProcess = cmd.Value;
 					String nombreNodo = fCommandToProcess["nombre_nodo"];
 
-					switch (nombreNodo.ToLower())
+					switch (nombreNodo)
 					{
 						case string val when val == "Mover":
 							ProcesarNodoMover(line);
@@ -103,6 +103,7 @@ public partial class ComandController : Node
 
 	private void ProcesarNodoInteractuar(String linea)
 	{
+		GD.Print("ES LA INTERACTUA");
 		EmitSignal("InteractuarSeñal");
 	}
 

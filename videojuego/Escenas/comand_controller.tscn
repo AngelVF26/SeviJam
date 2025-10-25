@@ -34,4 +34,6 @@ script = ExtResource("4_e4tgb")
 [node name="AnalisisADN" type="Node" parent="."]
 
 [connection signal="AyudaSeñal" from="." to="Ayuda" method="_on_comand_controller_ayuda_señal"]
+[connection signal="InteractuarSeñal" from="." to="Interactuar" method="_on_comand_controller_interactuar_señal"]
+[connection signal="ProcesarSeñal" from="." to="Procesar" method="_on_comand_controller_procesar_señal"]
 [connection signal="SalirSeñal" from="." to="Salir" method="_on_comand_controller_salir_señal"]
