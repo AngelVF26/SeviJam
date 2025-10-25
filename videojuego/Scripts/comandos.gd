@@ -57,7 +57,7 @@ const COMANDOS = {
 	  "nombre_nodo": "Interactuar",	  
 	  "type": "terminal"
 	},
-	["salir"]: {
+	["salir", "cerrar"]: {
 	  "commanddescription": " ", #A: este no necesita que devuelva texto, no?
 	  "commandaction": "",
 	  "nombre_nodo": "Salir",
@@ -78,7 +78,7 @@ const COMANDOS = {
 	  "commandaction": "",
 	  "type": "terminal"
 	},
-	["analizar", "adn"]: {
+	["analizar", "adn", "analisis"]: {
 		"nombre_nodo":"Analizar",
 		"comanddescription": "Analizando muestra..."
 	},

@@ -28,12 +28,16 @@ public partial class ComandController : Node
 	public delegate void NoSeñalEventHandler();
 	[Signal]
 	public delegate void ComandoEnviadoEventHandler();
+	[Signal]
+	public delegate void CerrarVentanaEventHandler();
 	private Node comandos;
 	private Godot.Collections.Dictionary<String[], Godot.Collections.Dictionary<String, String>> fCommandDict;
 	private Node2D fPadre;
 	private Godot.Collections.Dictionary<String, String> fCommandToProcess;
 	private Analizar analizar;
 	private bool isPeticion = false;
+	private bool fIsActividad = false;
+	private Node minimapa;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -42,7 +46,9 @@ public partial class ComandController : Node
 		fCommandDict= dict.AsGodotDictionary<String[], Godot.Collections.Dictionary<String, String>>();
 		fPadre = (Node2D)this.GetParent();
 		analizar = GetNode<Analizar>("Analizar");
+		minimapa = GetNode<Node>("Minimapa");
 
+		minimapa.Connect(("actividad_del_mapa"), new Callable(this, nameof(OnActividadDelMapa)));
 		analizar.Connect(("PeticionSeñal"), new Callable(this, nameof(OnPeticionSeñal)));
 		fPadre.Connect("señalControl", new Callable(this, nameof(this.ParseCommandLine)));
 
@@ -57,6 +63,11 @@ public partial class ComandController : Node
 	{
 		isPeticion = true;
 	}
+
+	private void OnActividadDelMapa(bool isActividad)
+    {
+		fIsActividad = isActividad;
+    }
 
 	public void ParseCommandLine(String line)
 	{
@@ -84,10 +95,17 @@ public partial class ComandController : Node
 					else
 					{
 						EmitSignal("ReturnError");
-						isPeticion = false;
 					}
 					//TODO: Hacerlo
 				}
+				else if(fIsActividad)
+                {
+                    if (line.ToLower() == "salir" || line.ToLower() == "cerrar")
+					{
+						EmitSignal("CerrarVentana");
+						break;
+					}
+                }
 				else
 				{
 					// Encontrado el comando. 
