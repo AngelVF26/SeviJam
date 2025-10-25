@@ -147,18 +147,6 @@ public partial class ComandController : Node
 						break;
 					}
 				}
-				else if (!fCanAnalizar)
-				{
-					GD.Print("entro");
-					String nombreNodo = cmd.Value["nombre_nodo"];
-					if (nombreNodo == "Analizar")
-					{
-						ReturnErrorInTerminal(5);
-						isError = false; // ironico
-						EmitSignal("ReturnError");
-						break;
-					}
-				}
 				else if (fCanAnalizar)
 				{
 					String nombreNodo = cmd.Value["nombre_nodo"];
@@ -188,6 +176,7 @@ public partial class ComandController : Node
 							break;
 						case string val when val == "Ayuda":
 							ProcesarNodoAyuda(line);
+							GD.Print("no entro aqui");
 							isError = false;
 							EmitSignal("ComandoEnviado");
 							break;
