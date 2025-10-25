@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://da01jtt78ktfw"]
+[gd_scene load_steps=12 format=3 uid="uid://da01jtt78ktfw"]
 
 [ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
 [ext_resource type="PackedScene" uid="uid://cronljxn02hkw" path="res://Escenas/Area.tscn" id="3_a8uw4"]
+[ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="4_fl6v7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fl6v7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_um6v8"]
+size = Vector2(64, 64)
 
 [sub_resource type="Gradient" id="Gradient_a8uw4"]
 offsets = PackedFloat32Array(0)
@@ -36,17 +38,19 @@ height = 1000
 script = ExtResource("1_le04a")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(0, 300)
+position = Vector2(-4, 317)
 disable_mode = 2
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("2_a8uw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CircleShape2D_fl6v7")
+shape = SubResource("RectangleShape2D_um6v8")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = SubResource("GradientTexture2D_fl6v7")
+metadata/_edit_lock_ = true
 
 [node name="obstáculos" type="Node2D" parent="."]
 
@@ -281,6 +285,7 @@ is_wall = true
 
 [node name="Imagen2" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 300)
+imagen = ExtResource("4_fl6v7")
 
 [node name="Sprite2D" parent="Areas/Imagen2" index="3"]
 texture = SubResource("GradientTexture2D_um6v8")
@@ -385,4 +390,5 @@ texture = SubResource("GradientTexture2D_em6qh")
 metadata/_edit_lock_ = true
 
 [editable path="Areas/Imagen2"]
+[editable path="Areas/Area87"]
 [editable path="Areas/Imagen"]
