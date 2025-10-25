@@ -40,34 +40,34 @@ const COMANDOS = {
 		"commandname": "MOVER",
 		"nombre_nodo": "Mover",
 		"commanddescription": "Avanzando en la dirección indicada...",
-		"commandaction": "",
+		"commandaction": "Este comando desplaza el rover en la dirección indicada. Por ejemplo, MOVER 10 NORTE.",
 		"type": "terminal",
 		"distancia" : "",
 		"direccion" : "",
 	},
 	["procesar", "imagen", "captura"]: {
 	  "commanddescription": "Procesando interfaz óptica...",
-	  "commandaction": "",
+	  "commandaction": "Toma una fotografía del entorno.",
 	  "nombre_nodo": "Procesar",
 	  "type": "terminal"
 	},
 	["interactuar"]: {
 	  "commanddescription": "Recopilando muestra...",
-	  "commandaction": "",
+	  "commandaction": "Obtiene una muestra del entorno.",
 	  "nombre_nodo": "Interactuar",	  
 	  "type": "terminal"
 	},
 	["salir", "cerrar"]: {
 	  "commanddescription": " ", #A: este no necesita que devuelva texto, no?
-	  "commandaction": "",
+	  "commandaction": "Vuelve a la pantalla inicial.",
 	  "nombre_nodo": "Salir",
 	  "type": "terminal"
 	},
 	["mapa","minimapa"] : {
 		"nombre_nodo":"Minimapa",
-		"commanddescription":""
+		"commanddescription":"Abre un mapa que muestra el entorno."
 	},
-	["ayuda"]: {
+	["ayuda", "help", "/help", "!help"]: {
 	  "commanddescription": " ", #A: este tampoco
 	  "commandaction": "",
 	  "nombre_nodo": "Ayuda",
