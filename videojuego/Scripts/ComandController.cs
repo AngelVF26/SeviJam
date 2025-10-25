@@ -48,9 +48,9 @@ public partial class ComandController : Node
 	}
 
 	private void OnPeticionSeñal()
-    {
+	{
 		isPeticion = true;
-    }
+	}
 
 	public void ParseCommandLine(String line)
 	{
@@ -68,9 +68,9 @@ public partial class ComandController : Node
 
 					}
 					else if (line.ToLower() == "n")
-                    {
-                        
-                    }
+					{
+						
+					}
 					EmitSignal("ReturnError");
 					//TODO: Hacerlo
 				}
