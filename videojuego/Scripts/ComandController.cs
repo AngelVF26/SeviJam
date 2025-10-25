@@ -60,6 +60,7 @@ public partial class ComandController : Node
 		minimapa.Connect(("actividad_del_mapa"), new Callable(this, nameof(OnActividadDelMapa)));
 		analizar.Connect(("PeticionSeñal"), new Callable(this, nameof(OnPeticionSeñal)));
 		fPadre.Connect("señalControl", new Callable(this, nameof(this.ParseCommandLine)));
+		GetParent().Connect("señalAnalizar", new Callable(this, nameof(this.OnCanAnalizar)));
 		// interactuar.Connect((""), new Callable(this, nameof(this.OnCanAnalizar)));
 	}
 
@@ -73,9 +74,10 @@ public partial class ComandController : Node
 		isPeticion = true;
 	}
 
-	private void OnCanAnalizar()
+	private void OnCanAnalizar(bool canAnalizar)
 	{
-		fCanAnalizar = true;
+		fCanAnalizar = canAnalizar;
+		GD.Print("Vamos a ir viendo: " + canAnalizar);
 	}
 
 	private void OnActividadDelMapa(bool isActividad)
@@ -117,19 +119,20 @@ public partial class ComandController : Node
 
 		if (fCommandDict != null)
 		{
+			bool analizarVisitado = false;
 			bool isError = true;
 			foreach (KeyValuePair<String[], Godot.Collections.Dictionary<String, String>> cmd in fCommandDict)
 			{
 				if (!cmd.Key.Contains(result) || isPeticion)
 				{
-					if (line.ToLower() == "s")
+					if (line.ToLower() == "s" && isPeticion)
 					{
 						EmitSignal("SiSeñal");
 						isPeticion = false;
 						isError = false;
 						break;
 					}
-					else if (line.ToLower() == "n")
+					else if (line.ToLower() == "n" && isPeticion)
 					{
 						EmitSignal("NoSeñal");
 						isPeticion = false;
@@ -147,24 +150,13 @@ public partial class ComandController : Node
 						break;
 					}
 				}
-				else if (!fCanAnalizar)
-				{
-					GD.Print("entro");
-					String nombreNodo = cmd.Value["nombre_nodo"];
-					if (nombreNodo == "Analizar")
-					{
-						ReturnErrorInTerminal(5);
-						isError = false; // ironico
-						EmitSignal("ReturnError");
-						break;
-					}
-				}
 				else if (fCanAnalizar)
 				{
 					String nombreNodo = cmd.Value["nombre_nodo"];
 
 					if (nombreNodo == "Analizar")
 					{
+						analizarVisitado = true;
 						fCanAnalizar = false;
 						isError = false;
 						ProcesarNodoAnalizar(line);
@@ -188,6 +180,7 @@ public partial class ComandController : Node
 							break;
 						case string val when val == "Ayuda":
 							ProcesarNodoAyuda(line);
+							GD.Print("no entro aqui");
 							isError = false;
 							EmitSignal("ComandoEnviado");
 							break;
@@ -215,6 +208,16 @@ public partial class ComandController : Node
 							isError = false;
 							break;
 					}
+				}
+			}
+
+			if (!fCanAnalizar && !analizarVisitado)
+			{
+				if (line.ToLower() == "analizar")
+				{
+					ReturnErrorInTerminal(5);
+					isError = false; // ironico
+					EmitSignal("ReturnError");
 				}
 			}
 			

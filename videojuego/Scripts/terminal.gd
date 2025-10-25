@@ -17,6 +17,7 @@ var visible_characters = 0
 @onready var sfx_volume: HScrollBar = $MenuOpciones/FXBar
 @onready var music_volume: HScrollBar = $MenuOpciones/MusicaBar
 
+signal señalAnalizar(bool)
 signal señalControl(String)
 
 # Called when the node enters the scene tree for the first time.
@@ -159,6 +160,8 @@ func _on_interactuar_interact(interactuar: Variant) -> void:
 	interactuar = player.current_area.objeto_interactuar
 	print("\n\n\n Interaccion :" + interactuar)
 	infoComandos.add_text("\n\n\n " + player.current_area.objeto_interactuar) 
+	if interactuar != Comandos.OBJETOS.NADA["OBJECTMSG"]:
+		emit_signal("señalAnalizar", true)
 	
 
 
