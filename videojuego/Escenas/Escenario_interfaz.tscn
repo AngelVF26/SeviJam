@@ -32,7 +32,7 @@ script/source = "extends Node
 
 
 func _on_comand_controller_minimapa_señal() -> void:
-	pass # Replace with function body.
+	$\"../../SubViewportContainer\".visible = true
 "
 
 [sub_resource type="Animation" id="Animation_d021a"]
@@ -271,15 +271,17 @@ keep_editing_on_text_submit = true
 deselect_on_focus_loss_enabled = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-offset_left = 1516.0
-offset_top = 825.0
-offset_right = 1816.0
-offset_bottom = 1025.0
+visible = false
+offset_left = 473.00006
+offset_top = 217.0
+offset_right = 773.00006
+offset_bottom = 417.0
+scale = Vector2(3, 3)
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(300, 200)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(-73, 322)

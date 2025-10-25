@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://da01jtt78ktfw"]
+[gd_scene load_steps=19 format=3 uid="uid://da01jtt78ktfw"]
 
 [ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
 [ext_resource type="PackedScene" uid="uid://cronljxn02hkw" path="res://Escenas/Area.tscn" id="3_a8uw4"]
+[ext_resource type="Texture2D" uid="uid://bkcb6xkgrevx1" path="res://Assets/RUINAS.png" id="4_fl6v7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um6v8"]
 size = Vector2(64, 64)
@@ -123,11 +124,17 @@ position = Vector2(200, 300)
 [node name="Imagen2" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 200)
 
+[node name="Label" parent="Areas/Imagen2" index="0"]
+metadata/_edit_use_anchors_ = true
+
 [node name="Sprite2D" parent="Areas/Imagen2" index="2"]
 texture = SubResource("GradientTexture2D_um6v8")
 
 [node name="Area14" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 300)
+
+[node name="Label" parent="Areas/Area14" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Area14" index="2"]
 visible = false
@@ -138,17 +145,26 @@ position = Vector2(-200, 200)
 [node name="Area16" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 300)
 
+[node name="Label" parent="Areas/Area16" index="0"]
+metadata/_edit_use_anchors_ = true
+
 [node name="Sprite2D" parent="Areas/Area16" index="2"]
 visible = false
 
 [node name="Area17" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 200)
 
+[node name="Label" parent="Areas/Area17" index="0"]
+metadata/_edit_use_anchors_ = true
+
 [node name="Sprite2D" parent="Areas/Area17" index="2"]
 visible = false
 
 [node name="Area18" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 300)
+
+[node name="Label" parent="Areas/Area18" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Area18" index="2"]
 visible = false
@@ -163,6 +179,9 @@ position = Vector2(-300, 100)
 
 [node name="Area21" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 0)
+
+[node name="Label" parent="Areas/Area21" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Area21" index="2"]
 visible = false
@@ -190,6 +209,9 @@ position = Vector2(-200, -200)
 [node name="Area28" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -100)
 
+[node name="Label" parent="Areas/Area28" index="0"]
+metadata/_edit_use_anchors_ = true
+
 [node name="Sprite2D" parent="Areas/Area28" index="2"]
 visible = false
 
@@ -198,6 +220,9 @@ position = Vector2(-100, -200)
 
 [node name="Area30" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -100)
+
+[node name="Label" parent="Areas/Area30" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Area30" index="2"]
 visible = false
@@ -208,6 +233,9 @@ position = Vector2(0, -200)
 [node name="imagen4" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -100)
 
+[node name="Label" parent="Areas/imagen4" index="0"]
+metadata/_edit_use_anchors_ = true
+
 [node name="Sprite2D" parent="Areas/imagen4" index="2"]
 texture = SubResource("GradientTexture2D_egilu")
 
@@ -216,6 +244,9 @@ position = Vector2(100, -200)
 
 [node name="Area34" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -100)
+
+[node name="Label" parent="Areas/Area34" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Area34" index="2"]
 visible = false
@@ -229,11 +260,17 @@ position = Vector2(200, -100)
 [node name="imagen 6" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -200)
 
+[node name="Label" parent="Areas/imagen 6" index="0"]
+metadata/_edit_use_anchors_ = true
+
 [node name="Sprite2D" parent="Areas/imagen 6" index="2"]
 texture = SubResource("GradientTexture2D_agaot")
 
 [node name="Area38" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -100)
+
+[node name="Label" parent="Areas/Area38" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Area38" index="2"]
 visible = false
@@ -246,6 +283,9 @@ position = Vector2(400, -100)
 
 [node name="Imagen5" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 0)
+
+[node name="Label" parent="Areas/Imagen5" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Imagen5" index="2"]
 texture = SubResource("GradientTexture2D_actr7")
@@ -264,6 +304,10 @@ position = Vector2(300, 200)
 
 [node name="Imagen1" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 300)
+imagen = ExtResource("4_fl6v7")
+
+[node name="Label" parent="Areas/Imagen1" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Imagen1" index="2"]
 texture = SubResource("GradientTexture2D_d0sjh")
@@ -337,6 +381,9 @@ position = Vector2(-300, -400)
 [node name="Imagen3" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, -300)
 
+[node name="Label" parent="Areas/Imagen3" index="0"]
+metadata/_edit_use_anchors_ = true
+
 [node name="Sprite2D" parent="Areas/Imagen3" index="2"]
 texture = SubResource("GradientTexture2D_k4kq3")
 
@@ -351,6 +398,9 @@ position = Vector2(-100, -400)
 
 [node name="Imagen7" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -300)
+
+[node name="Label" parent="Areas/Imagen7" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Imagen7" index="2"]
 texture = SubResource("GradientTexture2D_bt6vj")
