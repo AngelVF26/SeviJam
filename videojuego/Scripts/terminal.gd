@@ -10,6 +10,7 @@ extends Node2D
 var listaComandos: Array
 var comandosPosition: int
 @onready var infoComandos: RichTextLabel = $InfoComandos
+var visible_characters = 0
 
 signal señalControl(String)
 
@@ -22,12 +23,8 @@ func _ready() -> void:
 
 	
 	$AnimationPlayer.play("start")
-	terminal.grab_focus()
+	terminal.grab_focus()		
 	
-	var visible_characters = 0
-	if visible_characters != $InfoComandos.visible_characters:
-		visible_characters = $InfoComandos.visible_characters
-		$TypingDisplayFX.play()
 	set_process_input(true)
 	#terminal.text_submitted.connect(_texto_pa_comandos)
 	
@@ -53,6 +50,11 @@ func _texto_pa_comandos(texto: String) -> void:
 	
 	
 func _process(_delta: float) -> void:
+		#esto es lo que hace que haya una animación de texto
+	if visible_characters != $InfoComandos.visible_characters:
+		visible_characters = $InfoComandos.visible_characters
+		$TypingDisplayFX.play()
+	
 	if $AnimationPlayer.is_playing():
 		$CanvasLayer.visible = false
 	else:
