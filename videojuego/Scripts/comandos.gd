@@ -69,7 +69,7 @@ const COMANDOS = {
 	},
 	["ayuda", "help", "/help", "!help"]: {
 	  "commanddescription": " ", #A: este tampoco
-	  "commandaction": "",
+	  "commandaction": "Muestra los comandos básicos",
 	  "nombre_nodo": "Ayuda",
 	  "type": "terminal"
 	},

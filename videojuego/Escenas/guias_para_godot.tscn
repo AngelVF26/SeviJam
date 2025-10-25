@@ -1,0 +1,100 @@
+[gd_scene load_steps=16 format=3 uid="uid://55meo54nst1x"]
+
+[ext_resource type="Texture2D" uid="uid://ctnu62qhriphi" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_00.png" id="1_vpfae"]
+[ext_resource type="Texture2D" uid="uid://himf1iengbt4" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_01.png" id="2_1x0xf"]
+[ext_resource type="Texture2D" uid="uid://b7reip313or1i" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_02.png" id="3_t1nd5"]
+[ext_resource type="Texture2D" uid="uid://b82vx1mwvkr7e" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_03.png" id="4_txh5i"]
+[ext_resource type="Texture2D" uid="uid://b32dcjifcdci0" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_04.png" id="5_mat1w"]
+[ext_resource type="Texture2D" uid="uid://ppa5dq7t62gh" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_05.png" id="6_adsa3"]
+[ext_resource type="Texture2D" uid="uid://btd2q5vp51j04" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_06.png" id="7_ccwpl"]
+[ext_resource type="Texture2D" uid="uid://dn5o8auk3glwq" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_07.png" id="8_6d4va"]
+[ext_resource type="Texture2D" uid="uid://dpxs46x24j5rp" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_08.png" id="9_awfi1"]
+[ext_resource type="Texture2D" uid="uid://b8m0utddlyok6" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_09.png" id="10_fj3wg"]
+[ext_resource type="Texture2D" uid="uid://d4ng42oaegnde" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_10.png" id="11_tna6w"]
+[ext_resource type="Texture2D" uid="uid://bobgabhmqjxu2" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_11.png" id="12_2uprs"]
+[ext_resource type="Shader" uid="uid://mmopkc1x0hew" path="res://Assets/Shader/CRT2.gdshader" id="13_kinmn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnrd8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vpfae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1x0xf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t1nd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_txh5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mat1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_adsa3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ccwpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6d4va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_awfi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fj3wg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tna6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2uprs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tu35c"]
+shader = ExtResource("13_kinmn")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 5.0
+shader_parameter/roll_size = 90.0
+shader_parameter/roll_variation = 1.6
+shader_parameter/distort_intensity = 0.002
+shader_parameter/noise_opacity = 0.2
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.12
+shader_parameter/aberration = 0.01
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.3
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[node name="GuiasParaGodot" type="AnimatedSprite2D"]
+z_index = -1
+position = Vector2(992, 553.00006)
+scale = Vector2(0.7, 0.693)
+sprite_frames = SubResource("SpriteFrames_nnrd8")
+autoplay = "default"
+frame_progress = 0.57476896
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+material = SubResource("ShaderMaterial_tu35c")
+offset_left = -1412.8572
+offset_top = -787.8789
+offset_right = 1401.4287
+offset_bottom = 786.4358
+color = Color(0, 0, 0, 1)
