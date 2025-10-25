@@ -71,6 +71,8 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	listaComandos.append(comando)
 	comandosPosition = 0
 	terminal.clear()
+	if $SubViewportContainer.visible == true:
+		$SubViewportContainer.visible = false
 	
 	
 	
@@ -111,5 +113,6 @@ func _on_salir_ocultar() -> void:
 
 
 func _on_interactuar_interact(interactuar: Variant) -> void:
-	infoComandos.text = "\n\n\n " + player.current_area.objeto
+	infoComandos.clear()
+	infoComandos.text = "\n\n\n " + player.current_area.objeto_interactuar
 	
