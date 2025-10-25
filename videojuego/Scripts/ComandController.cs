@@ -156,7 +156,8 @@ public partial class ComandController : Node
 					String nombreNodo = cmd.Value["nombre_nodo"];
 
 					if (nombreNodo == "Clonar")
-                    {
+					{
+						isError = false;
 						EmitSignal("ClonarSeñal");
 						break;
                     }
