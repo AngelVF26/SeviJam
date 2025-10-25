@@ -16,11 +16,11 @@ signal actividad_del_mapa (is_mapa_active)
 func _on_comand_controller_minimapa_señal() -> void:
 	
 	if !$\"../../SubViewportContainer\".visible:
-		#emit_signal(\"actividad_del_mapa\", true)
+		emit_signal(\"actividad_del_mapa\", true)
 		$\"../../SubViewportContainer\".visible = true
 		print( \"Mapa visible\")
 	else:
-		#emit_signal(\"actividad_del_mapa\", false)
+		emit_signal(\"actividad_del_mapa\", false)
 		$\"../../SubViewportContainer\".visible = false
 
 
