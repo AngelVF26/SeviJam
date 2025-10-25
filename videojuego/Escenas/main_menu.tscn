@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp72y1cpplub5"]
+[gd_scene load_steps=11 format=3 uid="uid://dp72y1cpplub5"]
 
 [ext_resource type="Shader" uid="uid://dmn1w1hk2bo6q" path="res://Assets/Shader/CRT.gdshader" id="1_hjcy7"]
 [ext_resource type="Script" uid="uid://wcadk5khr5xk" path="res://main_menu.gd" id="1_qn7j5"]
@@ -32,6 +32,18 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5s4m"]
+bg_color = Color(0.23521623, 0.69480807, 0.3749096, 1)
+corner_detail = 10
+shadow_color = Color(0, 1, 0, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgkoo"]
+bg_color = Color(3.0739503, 4.80579, 3.9491808, 0)
+
+[sub_resource type="Theme" id="Theme_s5s4m"]
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_s5s4m")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_xgkoo")
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -58,7 +70,8 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
-[node name="GridContainer" type="GridContainer" parent="ColorRect"]
+[node name="GridMain" type="GridContainer" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -74,32 +87,32 @@ grow_vertical = 2
 scale = Vector2(4.2547836, 4.2091584)
 pivot_offset = Vector2(71.14159, 55.236492)
 
-[node name="LanzarRover" type="Button" parent="ColorRect/GridContainer"]
-texture_filter = 1
+[node name="LanzarRover" type="Button" parent="ColorRect/GridMain"]
+texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.57852244, 0.99999994, 0.3850331, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "LANZAR ROVER"
 flat = true
 
-[node name="Configuracion" type="Button" parent="ColorRect/GridContainer"]
-texture_filter = 1
+[node name="Configuracion" type="Button" parent="ColorRect/GridMain"]
+texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "CONFIGURACIÓN"
 flat = true
 
-[node name="Creditos" type="Button" parent="ColorRect/GridContainer"]
-texture_filter = 1
+[node name="Creditos" type="Button" parent="ColorRect/GridMain"]
+texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "CREDITOS"
 flat = true
 
-[node name="AbortarMision" type="Button" parent="ColorRect/GridContainer"]
-texture_filter = 1
+[node name="AbortarMision" type="Button" parent="ColorRect/GridMain"]
+texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
@@ -113,44 +126,68 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 239.00012
-offset_top = -339.0
-offset_right = 370.59814
-offset_bottom = -219.21912
+offset_left = -326.0
+offset_top = -152.00003
+offset_right = -194.40198
+offset_bottom = -84.06949
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.1824474, 3.0472307)
 
 [node name="Musica" type="Label" parent="ColorRect/MenuOpciones"]
+texture_filter = 2
 layout_mode = 0
-offset_right = 55.0
-offset_bottom = 23.0
+offset_left = -6.174689
+offset_top = 23.628021
+offset_right = 54.82531
+offset_bottom = 40.628025
+theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
+theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "Musica"
 
 [node name="MusicaBar" type="HScrollBar" parent="ColorRect/MenuOpciones"]
+modulate = Color(0, 1, 0, 1)
 layout_mode = 0
-offset_left = 57.887684
-offset_top = 9.188671
-offset_right = 101.30345
-offset_bottom = 17.188671
+offset_left = 62.51872
+offset_top = 5.578846
+offset_right = 125.42336
+offset_bottom = 13.578846
+theme = SubResource("Theme_s5s4m")
 min_value = -30.0
 max_value = 10.0
 
-[node name="Musica2" type="Label" parent="ColorRect/MenuOpciones"]
+[node name="SFX" type="Label" parent="ColorRect/MenuOpciones"]
+texture_filter = 2
 layout_mode = 0
-offset_top = 27.0
-offset_right = 55.0
-offset_bottom = 50.0
+offset_left = -6.9465246
+offset_top = -1.3126574
+offset_right = 26.053474
+offset_bottom = 15.687343
+theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
+theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "SFX"
 
 [node name="FXBar" type="HScrollBar" parent="ColorRect/MenuOpciones"]
 layout_mode = 0
-offset_left = 37.43403
-offset_top = 23.299843
-offset_right = 86.638565
-offset_bottom = 53.163025
+offset_left = 62.1328
+offset_top = 29.86319
+offset_right = 134.6854
+offset_bottom = 37.86319
 min_value = -30.0
 max_value = 10.0
+
+[node name="AceptarConfig" type="Button" parent="ColorRect/MenuOpciones"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 3.2803032
+offset_top = 108.62322
+offset_right = 86.280304
+offset_bottom = 133.62323
+theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
+theme_override_fonts/font = ExtResource("1_r8uxs")
+text = "ACEPTAR
+"
+flat = true
 
 [node name="AudioFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_7ms0u")
@@ -165,9 +202,10 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 
-[connection signal="mouse_entered" from="ColorRect/GridContainer/LanzarRover" to="." method="_on_lanzar_rover_mouse_entered"]
-[connection signal="pressed" from="ColorRect/GridContainer/LanzarRover" to="." method="_on_lanzar_rover_pressed"]
-[connection signal="mouse_entered" from="ColorRect/GridContainer/Configuracion" to="." method="_on_configuracion_mouse_entered"]
-[connection signal="mouse_entered" from="ColorRect/GridContainer/Creditos" to="." method="_on_creditos_mouse_entered"]
-[connection signal="mouse_entered" from="ColorRect/GridContainer/AbortarMision" to="." method="_on_abortar_mision_mouse_entered"]
-[connection signal="pressed" from="ColorRect/GridContainer/AbortarMision" to="." method="_on_abortar_mision_pressed"]
+[connection signal="mouse_entered" from="ColorRect/GridMain/LanzarRover" to="." method="_on_lanzar_rover_mouse_entered"]
+[connection signal="pressed" from="ColorRect/GridMain/LanzarRover" to="." method="_on_lanzar_rover_pressed"]
+[connection signal="mouse_entered" from="ColorRect/GridMain/Configuracion" to="." method="_on_configuracion_mouse_entered"]
+[connection signal="pressed" from="ColorRect/GridMain/Configuracion" to="." method="_on_configuracion_pressed"]
+[connection signal="mouse_entered" from="ColorRect/GridMain/Creditos" to="." method="_on_creditos_mouse_entered"]
+[connection signal="mouse_entered" from="ColorRect/GridMain/AbortarMision" to="." method="_on_abortar_mision_mouse_entered"]
+[connection signal="pressed" from="ColorRect/GridMain/AbortarMision" to="." method="_on_abortar_mision_pressed"]
