@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_hrt1k"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
+[ext_resource type="PackedScene" uid="uid://c0ua2761kj73j" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="3_5l38x"]
 [ext_resource type="FontFile" uid="uid://djw2364lw2f8w" path="res://Assets/Fonts/bytebounce/ByteBounce.ttf" id="6_rt3l3"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
@@ -340,6 +341,7 @@ scale = Vector2(1.253, 1.253)
 texture = ExtResource("2_hrt1k")
 
 [node name="SettingsBtn" type="TextureButton" parent="."]
+visible = false
 modulate = Color(0, 1, 0.03529412, 1)
 self_modulate = Color(0, 1, 1, 1)
 texture_filter = 1
@@ -351,7 +353,14 @@ offset_bottom = 1422.0
 scale = Vector2(0.2, 0.2)
 texture_normal = SubResource("CompressedTexture2D_5l38x")
 
-[node name="ImagenExplorada" type="Sprite2D" parent="."]
+[node name="ImagenExplorada" parent="." instance=ExtResource("5_5l38x")]
+visible = false
+offset_left = 204.0
+offset_top = -1.0
+offset_right = 1740.0
+offset_bottom = 1023.0
+
+[node name="ImagenExploradaYANO" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(942, 496)
 texture = ExtResource("1_hrt1k")
@@ -493,6 +502,7 @@ bus = &"Sound Effects"
 stream = ExtResource("27_pi6t2")
 bus = &"Sound Effects"
 
+[connection signal="señalImagen" from="." to="ImagenExplorada" method="_on_interfaz_señal_imagen"]
 [node name="SettingClick" type="TextureButton" parent="."]
 modulate = Color(0.9764706, 0.84705883, 0.78039217, 0)
 z_index = 5
@@ -518,6 +528,7 @@ ignore_texture_size = true
 [connection signal="pressed" from="SettingClick" to="." method="_on_setting_click_pressed"]
 
 [editable path="ComandController"]
+[editable path="ImagenExplorada"]
 [editable path="SubViewportContainer/SubViewport/PhysicsScene"]
 [editable path="SubViewportContainer/SubViewport/PhysicsScene/Areas/Imagen2"]
 [editable path="SubViewportContainer/SubViewport/PhysicsScene/Areas/Area14"]

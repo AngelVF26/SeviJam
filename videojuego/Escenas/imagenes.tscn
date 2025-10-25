@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0ua2761kj73j"]
+
+[ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_iswl5"]
+[ext_resource type="Script" uid="uid://kc1gxr20eklw" path="res://Scripts/imagenes.gd" id="2_iswl5"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y50f3"]
+
+[sub_resource type="Theme" id="Theme_f5prv"]
+
+[sub_resource type="Gradient" id="Gradient_r1s17"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kynbw"]
+gradient = SubResource("Gradient_r1s17")
+fill_from = Vector2(0.491453, 1)
+fill_to = Vector2(0.491453, 0)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_iqeba"]
+frames = 5
+frame_0/texture = SubResource("GradientTexture2D_kynbw")
+frame_1/texture = SubResource("GradientTexture2D_kynbw")
+frame_1/duration = 1.0
+frame_2/duration = 1.0
+frame_3/duration = 1.0
+frame_4/duration = 1.0
+
+[sub_resource type="Animation" id="Animation_f5prv"]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:frame_0/texture:gradient:offsets")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedFloat32Array(0, 1), PackedFloat32Array(-0.1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y50f3"]
+resource_name = "fade"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:frame_1/texture:gradient:offsets")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [PackedFloat32Array(0, 1), PackedFloat32Array(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r1s17"]
+_data = {
+&"RESET": SubResource("Animation_f5prv"),
+&"fade": SubResource("Animation_y50f3")
+}
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 1024.0
+offset_bottom = 1024.0
+texture = ExtResource("1_iswl5")
+script = ExtResource("2_iswl5")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_y50f3")
+layout_mode = 0
+offset_top = -19.0
+offset_right = 1024.0
+offset_bottom = 1024.0
+theme = SubResource("Theme_f5prv")
+texture = SubResource("AnimatedTexture_iqeba")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect2"]
+libraries = {
+&"": SubResource("AnimationLibrary_r1s17")
+}

@@ -6,7 +6,7 @@ extends Node2D
 @onready var sfx_index = AudioServer.get_bus_index("Sound Effects")
 @onready var terminal: LineEdit = $TerminalComandos
 @export var player: CharacterBody2D 
-@onready var imagen_explorada: Sprite2D = $ImagenExplorada
+@onready var imagen_explorada: TextureRect = $ImagenExplorada
 var listaComandos: Array
 var pruebas: Array
 var comandosPosition: int
@@ -19,6 +19,7 @@ var visible_characters = 0
 
 signal señalAnalizar(bool)
 signal señalControl(String)
+signal señalImagen(bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -144,7 +145,9 @@ func _on_ayuda_help(ayuda: Variant) -> void:
 
 func _on_procesar_proceso() -> void:
 	infoComandos.clear()
+	emit_signal("señalImagen", true)
 	imagen_explorada.texture = player.current_imagen
+
 	imagen_explorada.visible = true
 	print("dim patatas")
 	
