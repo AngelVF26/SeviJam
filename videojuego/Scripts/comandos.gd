@@ -15,11 +15,11 @@ const OBJETOS = {
 	},
 	"LAGO" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado. La muestra de agua contiene 34 tipos de bacterias, amebas, y una especie de animal microscópico\n en forma de cruasán."
+		"OBJECTANL" : "Análisis completado. \n La muestra de agua contiene 34 tipos de bacterias, amebas, y una especie de animal microscópico\n en forma de cruasán."
 	},
 	"ANIMAL" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado. No sé qué animal ha dibujado Dani.\n "
+		"OBJECTANL" : "Análisis completado. \n Muestra orgánica de células animales. Se trata de un espécimen de la familia Canidae.\n El análisis de carbono indica una antiguedad de 500 años."
 	},
 	"MUSICA" : {
 		"OBJECTMSG" : "Procesando audio...",

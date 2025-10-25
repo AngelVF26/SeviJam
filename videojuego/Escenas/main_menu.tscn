@@ -122,7 +122,6 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="GridMain" type="GridContainer" parent="ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -173,6 +172,7 @@ text = "ABORTAR MISIÓN"
 flat = true
 
 [node name="MenuOpciones" type="Control" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -216,8 +216,8 @@ offset_top = 2.297
 offset_right = 128.0
 offset_bottom = 10.297
 theme = SubResource("Theme_a082v")
-min_value = -30.0
-max_value = 10.0
+min_value = -40.0
+max_value = 15.0
 
 [node name="AceptarConfig" type="Button" parent="ColorRect/MenuOpciones"]
 texture_filter = 2
@@ -239,8 +239,8 @@ offset_top = 29.535
 offset_right = 128.0
 offset_bottom = 37.534996
 theme = SubResource("Theme_a082v")
-min_value = -30.0
-max_value = 10.0
+min_value = -40.0
+max_value = 15.0
 
 [node name="MenuCreditos" type="Control" parent="ColorRect"]
 visible = false
@@ -273,25 +273,31 @@ ARTE
 [left]
 						Dani		(OmegaSoda)
 [center]
+MUSICA/SFX
+[left]
+						Ángel		(Azzazel)
+[center]
 
 PROGRAMACIÓN 
 [left]
-						Ángel		(Azzazzel)
+						Ángel		(Azzazel)
 						Jaime		(Psycody)
 						Javi		(Cocido Frio)
 						Sergio		(050)
 [center]
 GAME DESIGN
 [left]
-						Andrea	(Gato Condensado)"
+						Andrea	(Gato Condensado)
+[center]
+"
 
 [node name="SalirConfig" type="Button" parent="ColorRect/MenuCreditos"]
 texture_filter = 2
 layout_mode = 0
 offset_left = 17.945206
-offset_top = 108.62323
+offset_top = 151.6131
 offset_right = 100.945206
-offset_bottom = 133.62323
+offset_bottom = 176.6131
 theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "Volver
