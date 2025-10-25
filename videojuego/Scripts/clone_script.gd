@@ -9,3 +9,7 @@ extends Node
 func clonar():
 	label.text = texto
 	animator.play("typewriter")
+
+
+func _on_comand_controller_clonar_señal() -> void:
+	clonar()

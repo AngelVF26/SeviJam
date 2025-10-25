@@ -87,9 +87,9 @@ public partial class ComandController : Node
 	}
 
 	private void OnCanClonar(bool canClonar)
-    {
+	{
 		fCanClonar = canClonar;
-    }
+	}
 
 	private void OnActividadDelMapa(bool isActividad)
 	{
@@ -152,15 +152,15 @@ public partial class ComandController : Node
 					}
 				}
 				else if (fCanClonar)
-                {
+				{
 					String nombreNodo = cmd.Value["nombre_nodo"];
 
 					if (nombreNodo == "Clonar")
-                    {
+					{
 						EmitSignal("ClonarSeñal");
 						break;
-                    }
-                }
+					}
+				}
 				else if (fIsActividad)
 				{
 					if (line.ToLower() == "salir" || line.ToLower() == "cerrar")
