@@ -304,6 +304,7 @@ position = Vector2(300, 200)
 
 [node name="Imagen1" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 300)
+objeto = ""
 imagen = ExtResource("4_fl6v7")
 
 [node name="Label" parent="Areas/Imagen1" index="0"]

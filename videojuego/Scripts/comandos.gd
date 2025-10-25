@@ -80,7 +80,8 @@ const COMANDOS = {
 	},
 	["analizar", "adn", "analisis","análisis","/analizar", "/adn", "/analisis","/análisis"]: {
 		"nombre_nodo":"Analizar",
-		"comanddescription": "Analizando muestra..."
+		"comanddescription": "Analizando muestra...",
+		"commandaction": ""
 	},
 	["empanadas"]: {
 	  "commanddescription": "EMPANADILLA RUSA DE CHILE",

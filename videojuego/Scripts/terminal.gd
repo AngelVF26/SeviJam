@@ -85,15 +85,14 @@ func _on_terminal_comandos_text_changed(new_text: String) -> void:
 
 func _on_ayuda_help(ayuda: Variant) -> void:
 	infoComandos.clear()
-	print(Comandos.COMANDOS[["mover", "desplazar", "avanzar"]].commanddescription)
 	
-	infoComandos.add_text("\n\n\n mover: " + Comandos.COMANDOS[["interactuar"]].commandaction + "\n" + 
-							" procesar: " + Comandos.COMANDOS[["procesar", "imagen", "captura"]].commandaction + "\n" +
-							" interactuar: " + Comandos.COMANDOS[["interactuar"]].commandaction + "\n" +
-							" salir: " + Comandos.COMANDOS[["salir"]].commandaction+ "\n" +
-							" mapa: " + Comandos.COMANDOS[["mapa","minimapa"]].commanddescription + "\n" +
-							" /help: " + Comandos.COMANDOS[["ayuda", "help", "/help", "!help"]].commandaction + "\n" +
-							" analizar: " + Comandos.COMANDOS[["analizar", "adn"]].comanddescription)
+	infoComandos.add_text("\n\n\n mover: " + Comandos.COMANDOS[["mover", "desplazar", "avanzar", "/mover", "/desplazar", "/avanzar"]].commandaction + "\n" + 
+							" procesar: " + Comandos.COMANDOS[["procesar", "imagen", "captura", "foto","/procesar", "/imagen", "/captura", "/foto"]].commandaction + "\n" +
+							" interactuar: " + Comandos.COMANDOS[["interactuar", "/interactuar"]].commandaction + "\n" +
+							" salir: " + Comandos.COMANDOS[["salir", "cerrar","/salir", "/cerrar"]].commandaction+ "\n" +
+							" mapa: " + Comandos.COMANDOS[["mapa","minimapa","/mapa","/minimapa"]].commanddescription + "\n" +
+							" /help: " + Comandos.COMANDOS[["ayuda", "help", "/help", "/ayuda"]].commandaction + "\n" +
+							" analizar: " + Comandos.COMANDOS[["analizar", "adn", "analisis","análisis","/analizar", "/adn", "/analisis","/análisis"]].commandaction)
 	
 	
 
@@ -112,4 +111,5 @@ func _on_salir_ocultar() -> void:
 
 
 func _on_interactuar_interact(interactuar: Variant) -> void:
-	infoComandos.text = interactuar
+	infoComandos.text = "\n\n\n " + player.current_area.objeto
+	
