@@ -14,7 +14,9 @@ script/source = "extends Node
 
 
 func _on_comand_controller_minimapa_señal() -> void:
-	if $\"../../SubViewportContainer\".visible:
+	
+	if !$\"../../SubViewportContainer\".visible:
+		print(\"Comando mapa introducido\")
 		$\"../../SubViewportContainer\".visible = true
 	else:
 		$\"../../SubViewportContainer\".visible = false
