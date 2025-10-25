@@ -99,9 +99,9 @@ deselect_on_focus_loss_enabled = false
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_nj3o3")
 offset_left = 455.0
-offset_top = 134.0
+offset_top = 139.0
 offset_right = 1476.0
-offset_bottom = 819.0
+offset_bottom = 811.0
 color = Color(0, 0, 0, 1)
 
 [node name="GuiasParaGodot" type="Sprite2D" parent="."]
