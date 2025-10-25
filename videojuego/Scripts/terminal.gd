@@ -101,5 +101,4 @@ func _on_salir_ocultar() -> void:
 
 
 func _on_interactuar_interact(interactuar: Variant) -> void:
-	infoComandos.clear()
-	infoComandos.add_text("\n\n\n " + Comandos.OBJETOS["NADA"]["OBJECTMSG"])
+	infoComandos.text = interactuar
