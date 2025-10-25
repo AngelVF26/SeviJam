@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=40 format=4 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
@@ -27,6 +27,12 @@
 [ext_resource type="AudioStream" uid="uid://coki2s0irywq6" path="res://Assets/FX/cargarImagen.mp3" id="23_mou6a"]
 [ext_resource type="AudioStream" uid="uid://b4hyci2kon726" path="res://Assets/FX/StartConsole.mp3" id="23_o88m3"]
 [ext_resource type="AudioStream" uid="uid://b3288x0kqbim3" path="res://Assets/FX/error.mp3" id="27_pi6t2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pi6t2"]
+light_mode = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5l38x"]
+load_path = "res://.godot/imported/settings.png-43d088617bb068ceb77791e792abf7e6.ctex"
 
 [sub_resource type="Animation" id="Animation_d021a"]
 length = 0.001
@@ -92,7 +98,7 @@ shader_parameter/noise_opacity = 0.0950000045125
 shader_parameter/noise_speed = 4.88
 shader_parameter/static_noise_intensity = 0.07200000342
 shader_parameter/aberration = 0.01
-shader_parameter/brightness = 1.9849999999999999
+shader_parameter/brightness = 1.985
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.3
 shader_parameter/clip_warp = false
@@ -204,6 +210,18 @@ texture = ExtResource("1_4flj7")
 position = Vector2(965, 538.5)
 scale = Vector2(1.2526041, 1.2395834)
 texture = ExtResource("2_hrt1k")
+
+[node name="SettingsBtn" type="TextureButton" parent="."]
+modulate = Color(0, 1, 0.03529412, 1)
+self_modulate = Color(0, 1, 1, 1)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_pi6t2")
+offset_left = 1720.0
+offset_top = 910.0
+offset_right = 2218.0
+offset_bottom = 1422.0
+scale = Vector2(0.2, 0.2)
+texture_normal = SubResource("CompressedTexture2D_5l38x")
 
 [node name="ImagenExplorada" type="Sprite2D" parent="."]
 visible = false
@@ -350,6 +368,7 @@ bus = &"Sound Effects"
 [connection signal="interact" from="ComandController/Interactuar" to="." method="_on_interactuar_interact"]
 [connection signal="ocultar" from="ComandController/Salir" to="." method="_on_salir_ocultar"]
 [connection signal="help" from="ComandController/Ayuda" to="." method="_on_ayuda_help"]
+[connection signal="pressed" from="SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="text_changed" from="TerminalComandos" to="." method="_on_terminal_comandos_text_changed"]
 [connection signal="text_submitted" from="TerminalComandos" to="." method="_on_terminal_comandos_text_submitted"]
 
