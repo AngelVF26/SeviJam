@@ -5,11 +5,11 @@ extends Node2D
 @onready var master_index = AudioServer.get_bus_index("Master")
 @onready var sfx_index = AudioServer.get_bus_index("Sound Effects")
 @onready var terminal: LineEdit = $TerminalComandos
-@onready var infoComandos: TextEdit =$InformacionComandos
 @onready var player: CharacterBody2D = $CanvasLayer/SubViewportContainer/SubViewport/PhysicsScene/Player
 @onready var imagen_explorada: Sprite2D = $ImagenExplorada
 var listaComandos: Array
 var comandosPosition: int
+@onready var infoComandos: RichTextLabel = $InfoComandos
 
 signal señalControl(String)
 
@@ -92,7 +92,8 @@ func _on_procesar_proceso() -> void:
 
 
 func _on_salir_ocultar() -> void:
-	imagen_explorada.visible = false
+	#imagen_explorada.visible = false
+	pass
 
 
 func _on_interactuar_interact(interactuar: Variant) -> void:
