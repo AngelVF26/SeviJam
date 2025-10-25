@@ -61,7 +61,7 @@ public partial class ComandController : Node
 					// Llamar al nodo. Señal. Etc.
 					fCommandToProcess = cmd.Value;
 					String nombreNodo = fCommandToProcess["nombre_nodo"];
-
+					
 					switch (nombreNodo)
 					{
 						case string val when val == "Mover":
