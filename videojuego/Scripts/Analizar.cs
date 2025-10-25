@@ -37,9 +37,9 @@ public partial class Analizar : Node
 			// Do nothing. Error.
 		}
 		else
-        {
+		{
 			numDeMuestras++;
-        }		
+		}		
 		GD.Print(numDeMuestras);
 	}
 }
