@@ -102,6 +102,7 @@ public partial class ComandController : Node
 				{
 					if (line.ToLower() == "salir" || line.ToLower() == "cerrar")
 					{
+						fIsActividad = false;
 						EmitSignal("CerrarVentana");
 						break;
 					}
