@@ -172,7 +172,6 @@ text = "ABORTAR MISIÓN"
 flat = true
 
 [node name="MenuOpciones" type="Control" parent="ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -243,6 +242,7 @@ min_value = -30.0
 max_value = 10.0
 
 [node name="MenuCreditos" type="Control" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -257,7 +257,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.1824474, 3.0472307)
 
-[node name="AceptarConfig" type="Button" parent="ColorRect/MenuCreditos"]
+[node name="SalirConfig" type="Button" parent="ColorRect/MenuCreditos"]
 texture_filter = 2
 layout_mode = 0
 offset_left = 20.260702
@@ -266,7 +266,7 @@ offset_right = 103.260704
 offset_bottom = 210.41426
 theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
-text = "ACEPTAR
+text = "Volver
 "
 flat = true
 
@@ -323,7 +323,9 @@ libraries = {
 [connection signal="mouse_entered" from="ColorRect/GridMain/Configuracion" to="." method="_on_configuracion_mouse_entered"]
 [connection signal="pressed" from="ColorRect/GridMain/Configuracion" to="." method="_on_configuracion_pressed"]
 [connection signal="mouse_entered" from="ColorRect/GridMain/Creditos" to="." method="_on_creditos_mouse_entered"]
+[connection signal="pressed" from="ColorRect/GridMain/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="mouse_entered" from="ColorRect/GridMain/AbortarMision" to="." method="_on_abortar_mision_mouse_entered"]
 [connection signal="pressed" from="ColorRect/GridMain/AbortarMision" to="." method="_on_abortar_mision_pressed"]
 [connection signal="mouse_entered" from="ColorRect/MenuOpciones/AceptarConfig" to="." method="_on_aceptar_config_mouse_entered"]
 [connection signal="pressed" from="ColorRect/MenuOpciones/AceptarConfig" to="." method="_on_aceptar_config_pressed"]
+[connection signal="pressed" from="ColorRect/MenuCreditos/SalirConfig" to="." method="_on_salir_config_pressed"]
