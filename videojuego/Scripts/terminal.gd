@@ -5,7 +5,7 @@ extends Node2D
 @onready var master_index = AudioServer.get_bus_index("Master")
 @onready var sfx_index = AudioServer.get_bus_index("Sound Effects")
 @onready var terminal: LineEdit = $TerminalComandos
-@onready var player: CharacterBody2D = $CanvasLayer/SubViewportContainer/SubViewport/PhysicsScene/Player
+@export var player: CharacterBody2D 
 @onready var imagen_explorada: Sprite2D = $ImagenExplorada
 var listaComandos: Array
 var comandosPosition: int
