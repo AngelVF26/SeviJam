@@ -71,7 +71,7 @@ public partial class ComandController : Node
 
 	public void ParseCommandLine(String line)
 	{
-		var value = Regex.Match(line, @"^([\w\-]+)"); // Devuelve la primera palabra de la cadena. Esperamos que eso sea el comando per se
+		var value = Regex.Match(line, @"^(\/[\w\-]+)|([\w\-]+)"); // Devuelve la primera palabra de la cadena. Esperamos que eso sea el comando per se
 		String result = value.Value.ToLower();
 
 		if (fCommandDict != null)
