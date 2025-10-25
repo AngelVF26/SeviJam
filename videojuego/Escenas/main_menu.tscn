@@ -121,6 +121,7 @@ offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
 
 [node name="GridMain" type="GridContainer" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -242,7 +243,6 @@ min_value = -30.0
 max_value = 10.0
 
 [node name="MenuCreditos" type="Control" parent="ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -257,40 +257,36 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(5.1824474, 3.0472307)
 
-[node name="Musica" type="Label" parent="ColorRect/MenuCreditos"]
-texture_filter = 2
-layout_mode = 0
-offset_left = -6.174689
-offset_top = 23.628021
-offset_right = 54.82531
-offset_bottom = 40.628025
-theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
-theme_override_fonts/font = ExtResource("1_r8uxs")
-text = "Musica"
-
-[node name="SFX" type="Label" parent="ColorRect/MenuCreditos"]
-texture_filter = 2
-layout_mode = 0
-offset_left = -6.9465246
-offset_top = -1.3126574
-offset_right = 26.053474
-offset_bottom = 15.687343
-theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
-theme_override_fonts/font = ExtResource("1_r8uxs")
-text = "SFX"
-
 [node name="AceptarConfig" type="Button" parent="ColorRect/MenuCreditos"]
 texture_filter = 2
 layout_mode = 0
-offset_left = 17.945206
-offset_top = 108.62323
-offset_right = 100.945206
-offset_bottom = 133.62323
+offset_left = 20.260702
+offset_top = 185.41426
+offset_right = 103.260704
+offset_bottom = 210.41426
 theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
 text = "ACEPTAR
 "
 flat = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MenuCreditos"]
+layout_mode = 0
+offset_left = -164.01517
+offset_top = -122.734375
+offset_right = 185.98483
+offset_bottom = 177.26563
+text = "												ARTE	
+									-	Dani	(Sodazen)
+
+									PROGRAMACION
+									-	Ángel	 	(Azzazzel)
+									-	Jaime		(Psycody)
+									-	Javi			(Cocido Frio)
+									-	Sergio		(050)
+
+											GAME DESIGN		
+									-	Andrea  (Nekodew)"
 
 [node name="AudioFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_7ms0u")
