@@ -51,4 +51,7 @@ func _on_ayuda_help(ayuda: Variant) -> void:
 
 func _on_procesar_proceso(ubicacion: Variant) -> void:
 	print("tu ubi: ", ubicacion )
-	infoComandos.text = "(%s,%s)" % [ubicacion]
+	var format_string = "We're waiting for %s."
+	
+	var actual_string = format_string % ubicacion
+	infoComandos.text = actual_string
