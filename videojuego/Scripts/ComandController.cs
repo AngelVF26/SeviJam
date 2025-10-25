@@ -19,12 +19,15 @@ public partial class ComandController : Node
 	[Signal]
 	public delegate void AnalizarSeñalEventHandler();
 	[Signal]
+	public delegate void MinimapaSeñalEventHandler();
+	[Signal]
 	public delegate void MoverSeñalEventHandler(int distancia, string direccion);
 	private Node comandos;
 	private Godot.Collections.Dictionary<String[], Godot.Collections.Dictionary<String, String>> fCommandDict;
 	private Node2D fPadre;
 	private Godot.Collections.Dictionary<String, String> fCommandToProcess;
 	private Analizar analizar;
+	private bool isPeticion = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -33,6 +36,8 @@ public partial class ComandController : Node
 		fCommandDict= dict.AsGodotDictionary<String[], Godot.Collections.Dictionary<String, String>>();
 		fPadre = (Node2D)this.GetParent();
 		analizar = GetNode<Analizar>("Analizar");
+
+		analizar.Connect(("PeticionSeñal"), new Callable(this, nameof(OnPeticionSeñal)));
 		fPadre.Connect("señalControl", new Callable(this, nameof(this.ParseCommandLine)));
 
 	}
@@ -41,6 +46,11 @@ public partial class ComandController : Node
 	public override void _Process(double delta)
 	{
 	}
+
+	private void OnPeticionSeñal()
+    {
+		isPeticion = true;
+    }
 
 	public void ParseCommandLine(String line)
 	{
@@ -51,8 +61,16 @@ public partial class ComandController : Node
 		{
 			foreach (KeyValuePair<String[], Godot.Collections.Dictionary<String, String>> cmd in fCommandDict)
 			{
-				if (!cmd.Key.Contains(result))
+				if (!cmd.Key.Contains(result) || isPeticion)
 				{
+					if (line.ToLower() == "s")
+					{
+
+					}
+					else if (line.ToLower() == "n")
+                    {
+                        
+                    }
 					EmitSignal("ReturnError");
 					//TODO: Hacerlo
 				}
@@ -107,6 +125,8 @@ public partial class ComandController : Node
 		}
 	}
 
+
+
 	private void ProcesarNodoInteractuar(String linea)
 	{
 		GD.Print("Interactuar");
@@ -130,10 +150,15 @@ public partial class ComandController : Node
 	{
 		EmitSignal("ProcesarSeñal");
 	}
-	
+
 	private void ProcesarNodoAnalizar(String linea)
 	{
 		EmitSignal("AnalizarSeñal");
+	}
+	
+	private void MinimapaNodoProcesar(String linea)
+	{
+		EmitSignal("MinimapaNodo");
 	}
 
 	private void ProcesarNodoMover(String linea)
