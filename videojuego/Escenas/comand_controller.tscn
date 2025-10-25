@@ -18,9 +18,14 @@ func _on_comand_controller_minimapa_señal() -> void:
 	if !$\"../../SubViewportContainer\".visible:
 		emit_signal(\"actividad_del_mapa\", true)
 		$\"../../SubViewportContainer\".visible = true
+		print( \"Mapa visible\")
 	else:
 		emit_signal(\"actividad_del_mapa\", false)
 		$\"../../SubViewportContainer\".visible = false
+
+
+func _on_comand_controller_cerrar_ventana() -> void:
+	$\"../../SubViewportContainer\".visible = false
 "
 
 [node name="ComandController" type="Node"]

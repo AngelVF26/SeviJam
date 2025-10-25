@@ -36,7 +36,7 @@ const OBJETOS = {
 }
 
 const COMANDOS = {
-	["mover", "desplazar", "avanzar"]: {
+	["mover", "desplazar", "avanzar", "/mover", "/desplazar", "/avanzar"]: {
 		"commandname": "MOVER",
 		"nombre_nodo": "Mover",
 		"commanddescription": "Avanzando en la dirección indicada...",
@@ -45,29 +45,29 @@ const COMANDOS = {
 		"distancia" : "",
 		"direccion" : "",
 	},
-	["procesar", "imagen", "captura"]: {
+	["procesar", "imagen", "captura", "foto","/procesar", "/imagen", "/captura", "/foto"]: {
 	  "commanddescription": "Procesando interfaz óptica...",
 	  "commandaction": "Toma una fotografía del entorno.",
 	  "nombre_nodo": "Procesar",
 	  "type": "terminal"
 	},
-	["interactuar"]: {
+	["interactuar", "/interactuar"]: {
 	  "commanddescription": "Recopilando muestra...",
 	  "commandaction": "Obtiene una muestra del entorno.",
 	  "nombre_nodo": "Interactuar",	  
 	  "type": "terminal"
 	},
-	["salir"]: {
+	["salir", "cerrar","/salir", "/cerrar"]: {
 	  "commanddescription": " ", #A: este no necesita que devuelva texto, no?
 	  "commandaction": "Vuelve a la pantalla inicial.",
 	  "nombre_nodo": "Salir",
 	  "type": "terminal"
 	},
-	["mapa","minimapa"] : {
+	["mapa","minimapa","/mapa","/minimapa"] : {
 		"nombre_nodo":"Minimapa",
 		"commanddescription":"Abre un mapa que muestra el entorno."
 	},
-	["ayuda", "help", "/help", "!help"]: {
+	["ayuda", "help", "/help", "/ayuda"]: {
 	  "commanddescription": " ", #A: este tampoco
 	  "commandaction": "Muestra los comandos básicos",
 	  "nombre_nodo": "Ayuda",
@@ -78,7 +78,7 @@ const COMANDOS = {
 	  "commandaction": "",
 	  "type": "terminal"
 	},
-	["analizar", "adn"]: {
+	["analizar", "adn", "analisis","análisis","/analizar", "/adn", "/analisis","/análisis"]: {
 		"nombre_nodo":"Analizar",
 		"comanddescription": "Analizando muestra..."
 	},

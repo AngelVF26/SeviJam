@@ -313,7 +313,6 @@ parameters/looping = true
 
 [node name="AudioFXStart" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_s5s4m")
-volume_db = 14.644
 bus = &"Sound Effects"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
