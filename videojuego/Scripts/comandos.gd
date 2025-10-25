@@ -40,7 +40,7 @@ const COMANDOS = {
 		"commandname": "MOVER",
 		"nombre_nodo": "Mover",
 		"commanddescription": "Avanzando en la dirección indicada...",
-		"commandaction": "Este comando desplaza el rover en la dirección indicada. \n Por ejemplo, MOVER 10 NORTE.",
+		"commandaction": "Desplaza el rover en la dirección indicada. \n   Por ejemplo, MOVER 10 NORTE.",
 		"type": "terminal",
 		"distancia" : "",
 		"direccion" : "",
@@ -81,7 +81,7 @@ const COMANDOS = {
 	["analizar", "adn", "analisis","análisis","/analizar", "/adn", "/analisis","/análisis"]: {
 		"nombre_nodo":"Analizar",
 		"comanddescription": "Analizando muestra...",
-		"commandaction": ""
+		"commandaction": "Analiza una muestra de ADN disponible."
 	},
 	["empanadas"]: {
 	  "commanddescription": "EMPANADILLA RUSA DE CHILE",

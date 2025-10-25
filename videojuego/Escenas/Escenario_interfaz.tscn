@@ -78,26 +78,26 @@ func _process(delta: float) -> void:
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tu35c"]
 shader = ExtResource("8_a6jcn")
 shader_parameter/overlay = false
-shader_parameter/scanlines_opacity = 0.4
-shader_parameter/scanlines_width = 0.25
-shader_parameter/grille_opacity = 0.3
+shader_parameter/scanlines_opacity = 0.1200000057
+shader_parameter/scanlines_width = 0.0730000034675
+shader_parameter/grille_opacity = 0.1150000054625
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = true
 shader_parameter/roll = true
-shader_parameter/roll_speed = 5.0
-shader_parameter/roll_size = 90.0
-shader_parameter/roll_variation = 1.6
-shader_parameter/distort_intensity = 0.002
-shader_parameter/noise_opacity = 0.2
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.12
+shader_parameter/roll_speed = 4.82
+shader_parameter/roll_size = 19.03200090402
+shader_parameter/roll_variation = 1.28400005773012
+shader_parameter/distort_intensity = 0.0010000000475
+shader_parameter/noise_opacity = 0.0950000045125
+shader_parameter/noise_speed = 4.88
+shader_parameter/static_noise_intensity = 0.07200000342
 shader_parameter/aberration = 0.01
-shader_parameter/brightness = 1.4
+shader_parameter/brightness = 1.9849999999999999
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.3
 shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_intensity = 0.56
+shader_parameter/vignette_opacity = 0.1290000061275
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nnrd8"]
 animations = [{
@@ -219,6 +219,7 @@ offset_left = 4.0
 offset_top = -69.0
 offset_right = 1934.0
 offset_bottom = 813.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("6_rt3l3")
 theme_override_font_sizes/normal_font_size = 75
 bbcode_enabled = true

@@ -53,6 +53,7 @@ func _texto_pa_comandos(texto: String) -> void:
 	
 	
 func _process(_delta: float) -> void:
+	terminal.grab_focus()
 		#esto es lo que hace que haya una animación de texto
 	if visible_characters != $InfoComandos.visible_characters:
 		visible_characters = $InfoComandos.visible_characters
@@ -73,6 +74,8 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	listaComandos.append(comando)
 	comandosPosition = 0
 	terminal.clear()
+	if $SubViewportContainer.visible == true:
+		$SubViewportContainer.visible = false
 	
 	
 	
@@ -88,15 +91,43 @@ func _on_terminal_comandos_text_changed(new_text: String) -> void:
 func _on_ayuda_help(ayuda: Variant) -> void:
 	infoComandos.clear()
 	
-	infoComandos.add_text("\n\n\n mover: " + Comandos.COMANDOS[["mover", "desplazar", "avanzar", "/mover", "/desplazar", "/avanzar"]].commandaction + "\n" + 
-							" procesar: " + Comandos.COMANDOS[["procesar", "imagen", "captura", "foto","/procesar", "/imagen", "/captura", "/foto"]].commandaction + "\n" +
-							" interactuar: " + Comandos.COMANDOS[["interactuar", "/interactuar"]].commandaction + "\n" +
-							" salir: " + Comandos.COMANDOS[["salir", "cerrar","/salir", "/cerrar"]].commandaction+ "\n" +
-							" mapa: " + Comandos.COMANDOS[["mapa","minimapa","/mapa","/minimapa"]].commanddescription + "\n" +
-							" /help: " + Comandos.COMANDOS[["ayuda", "help", "/help", "/ayuda"]].commandaction + "\n" +
-							" analizar: " + Comandos.COMANDOS[["analizar", "adn", "analisis","análisis","/analizar", "/adn", "/analisis","/análisis"]].commandaction)
+	infoComandos.add_text("\n\n\n   > ")
+	infoComandos.push_color(Color.GREEN)
+	infoComandos.add_text("mover")
+	infoComandos.pop()
+	infoComandos.add_text(": " + Comandos.COMANDOS[["mover", "desplazar", "avanzar", "/mover", "/desplazar", "/avanzar"]].commandaction)
 	
+	infoComandos.add_text("\n   > ")
+	infoComandos.push_color(Color.GREEN)
+	infoComandos.add_text("procesar")
+	infoComandos.pop()
+	infoComandos.add_text(": " + Comandos.COMANDOS[["procesar", "imagen", "captura", "foto","/procesar", "/imagen", "/captura", "/foto"]].commandaction)
 	
+	infoComandos.add_text("\n   > ")
+	infoComandos.push_color(Color.GREEN)
+	infoComandos.add_text("interactuar")
+	infoComandos.pop()
+	infoComandos.add_text(": " + Comandos.COMANDOS[["interactuar", "/interactuar"]].commandaction)
+	
+	infoComandos.add_text("\n   > ")
+	infoComandos.push_color(Color.GREEN)
+	infoComandos.add_text("analizar")
+	infoComandos.pop()
+	infoComandos.add_text(": " + Comandos.COMANDOS[["analizar", "adn", "analisis","análisis","/analizar", "/adn", "/analisis","/análisis"]].commandaction)
+	
+	infoComandos.add_text("\n   > ")
+	infoComandos.push_color(Color.GREEN)
+	infoComandos.add_text("mapa")
+	infoComandos.pop()
+	infoComandos.add_text(": " + Comandos.COMANDOS[["mapa","minimapa","/mapa","/minimapa"]].commanddescription)
+	
+	infoComandos.add_text("\n   > ")
+	infoComandos.push_color(Color.GREEN)
+	infoComandos.add_text("salir")
+	infoComandos.pop()
+	infoComandos.add_text(": " + Comandos.COMANDOS[["salir", "cerrar","/salir", "/cerrar"]].commandaction)
+	
+	infoComandos.add_text("\n\n   [Esta guía no contiene comandos secretos.]")
 
 
 func _on_procesar_proceso() -> void:
@@ -113,7 +144,8 @@ func _on_salir_ocultar() -> void:
 
 
 func _on_interactuar_interact(interactuar: Variant) -> void:
-	infoComandos.text = "\n\n\n " + player.current_area.objeto
+	infoComandos.clear()
+	infoComandos.text = "\n\n\n " + player.current_area.objeto_interactuar
 	
 
 
