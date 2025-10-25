@@ -2,6 +2,7 @@ extends Node2D
 @onready var typing_fx: AudioStreamPlayer2D = $TypingFX
 @onready var submit_fx: AudioStreamPlayer2D = $SubmitFX
 @onready var music_index = AudioServer.get_bus_index("Music")
+@onready var master_index = AudioServer.get_bus_index("Master")
 @onready var sfx_index = AudioServer.get_bus_index("Sound Effects")
 @onready var terminal: LineEdit = $TerminalComandos
 @onready var infoComandos: TextEdit =$InformacionComandos
@@ -12,6 +13,7 @@ func _ready() -> void:
 	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
 	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
 	
+	AudioServer.set_bus_effect_enabled(master_index,0,false)
 	terminal.grab_focus()
 	#terminal.text_submitted.connect(_texto_pa_comandos)
 
