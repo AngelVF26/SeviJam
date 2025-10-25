@@ -1,8 +1,7 @@
 extends Node
 
-@onready var player: physics_player = $PhysicsScene/Player
-# Called when the node enters the scene tree for the first time.
 
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
@@ -12,5 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_comand_controller_procesar_señal() -> void:
+func _on_comand_controller_interactuar_señal() -> void:
 	pass # Replace with function body.

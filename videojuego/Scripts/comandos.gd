@@ -1,7 +1,7 @@
 extends Node
 
 const COMANDOS = {
-	["mover", "desplazar"]: {
+	["mover", "desplazar", "avanzar"]: {
 		"commandname": "MOVER",
 		"nombre_nodo": "Mover",
 		"commanddescription": "Avanzando en la dirección indicada...",
@@ -10,14 +10,16 @@ const COMANDOS = {
 		"distancia" : "",
 		"direccion" : "",
 	},
-	["PROCESAR"]: {
+	["procesar", "imagen", "captura"]: {
 	  "commanddescription": "Procesando interfaz óptica...",
 	  "commandaction": "",
+	  "nombre_nodo": "Procesar",
 	  "type": "terminal"
 	},
 	["INTERACTUAR"]: {
 	  "commanddescription": "Recopilando muestra...",
 	  "commandaction": "",
+	  "nombre_nodo": "Interactuar",	  
 	  "type": "terminal"
 	},
 	["SALIR"]: {
