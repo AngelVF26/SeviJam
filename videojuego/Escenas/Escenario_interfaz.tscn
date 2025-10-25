@@ -338,7 +338,6 @@ stream = ExtResource("23_o88m3")
 autoplay = true
 bus = &"Sound Effects"
 
-[connection signal="SalirSeñal" from="ComandController" to="ComandController/Minimapa" method="_on_comand_controller_salir_señal"]
 [connection signal="proceso" from="ComandController/Procesar" to="." method="_on_procesar_proceso"]
 [connection signal="interact" from="ComandController/Interactuar" to="." method="_on_interactuar_interact"]
 [connection signal="ocultar" from="ComandController/Salir" to="." method="_on_salir_ocultar"]

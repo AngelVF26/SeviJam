@@ -12,18 +12,15 @@
 [sub_resource type="GDScript" id="GDScript_sri4k"]
 script/source = "extends Node
 
-
+signal actividad_del_mapa (is_mapa_active)
 func _on_comand_controller_minimapa_señal() -> void:
 	
 	if !$\"../../SubViewportContainer\".visible:
-		print(\"Comando mapa introducido\")
+		emit_signal(\"actividad_del_mapa\", true)
 		$\"../../SubViewportContainer\".visible = true
 	else:
+		emit_signal(\"actividad_del_mapa\", false)
 		$\"../../SubViewportContainer\".visible = false
-
-
-func _on_comand_controller_salir_señal() -> void:
-	$\"../../SubViewportContainer\".visible = false
 "
 
 [node name="ComandController" type="Node"]
