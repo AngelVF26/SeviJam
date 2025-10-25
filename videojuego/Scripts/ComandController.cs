@@ -11,6 +11,10 @@ public partial class ComandController : Node
 	[Signal]
 	public delegate void AyudaSeñalEventHandler();
 	[Signal]
+	public delegate void ProcesarSeñalEventHandler();
+	[Signal]
+	public delegate void InteractuarSeñalEventHandler();
+	[Signal]
 	public delegate void SalirSeñalEventHandler();
 	[Signal]
 	public delegate void MoverSeñalEventHandler(int distancia, string direccion);
@@ -70,6 +74,9 @@ public partial class ComandController : Node
 						case string val when val == "Procesar":
 							ProcesarNodoProcesar(line);
 							break;
+						case string val when val == "Interactuar":
+							ProcesarNodoInteractuar(line);
+							break;
 						default:
 							GD.Print("ERROR: NO NODO1?");
 							break;
@@ -92,6 +99,11 @@ public partial class ComandController : Node
 			EmitSignal("SalirSeñal");
 			GD.Print("SALGO.");
 		}
+	}
+
+	private void ProcesarNodoInteractuar(String linea)
+	{
+		EmitSignal("InteractuarSeñal");
 	}
 
 	private void ProcesarNodoAyuda(String linea)
