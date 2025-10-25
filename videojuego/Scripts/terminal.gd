@@ -22,6 +22,9 @@ signal señalControl(String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	AudioGlobal.music_volume = music_volume.value
+	AudioGlobal.sfx_volume = sfx_volume.value
 	transicion.visible =true
 	
 	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
@@ -170,12 +173,13 @@ func _on_comand_controller_return_error() -> void:
 
 
 func _on_setting_click_pressed() -> void:
-	print("pito")
+	
+	$InformacionComandos.visible = false
 	$MenuOpciones.visible = true
 
 
 func _on_aceptar_config_2_pressed() -> void:
-	print("culito")
+	$InformacionComandos.visible = true
 	$MenuOpciones.visible = false
 
 
