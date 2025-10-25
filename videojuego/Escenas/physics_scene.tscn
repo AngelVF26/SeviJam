@@ -1,11 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://da01jtt78ktfw"]
+[gd_scene load_steps=12 format=3 uid="uid://da01jtt78ktfw"]
 
 [ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
 [ext_resource type="PackedScene" uid="uid://cronljxn02hkw" path="res://Escenas/Area.tscn" id="3_a8uw4"]
-[ext_resource type="PackedScene" uid="uid://3je54oivyaj2" path="res://Escenas/obstáculo.tscn" id="4_fl6v7"]
+[ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="4_fl6v7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fl6v7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_um6v8"]
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_a8uw4"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.14776877, 0.5519324, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fl6v7"]
+gradient = SubResource("Gradient_a8uw4")
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_fl6v7"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.5198478, 0.024935002, 0.41472366, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_um6v8"]
+gradient = SubResource("Gradient_fl6v7")
+
+[sub_resource type="Gradient" id="Gradient_um6v8"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1.7296989e-07, 0.15180445, 0.018240135, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_em6qh"]
+gradient = SubResource("Gradient_um6v8")
+width = 1000
+height = 1000
 
 [node name="PhysicsScene" type="Node2D"]
 
@@ -13,288 +38,357 @@
 script = ExtResource("1_le04a")
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(0, -100)
+position = Vector2(-4, 317)
+disable_mode = 2
 motion_mode = 1
+platform_on_leave = 2
 script = ExtResource("2_a8uw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CircleShape2D_fl6v7")
+shape = SubResource("RectangleShape2D_um6v8")
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = SubResource("GradientTexture2D_fl6v7")
+metadata/_edit_lock_ = true
 
 [node name="obstáculos" type="Node2D" parent="."]
-
-[node name="obstáculo" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(-102, -64)
-
-[node name="obstáculo2" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(67, -34)
-
-[node name="obstáculo3" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(-87, -172)
-
-[node name="obstáculo4" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(59, -172)
-
-[node name="obstáculo5" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(-6, -261)
-
-[node name="obstáculo6" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(-116, 36)
-
-[node name="obstáculo7" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(-212, -136)
-
-[node name="obstáculo8" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(151, -116)
-
-[node name="obstáculo9" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(33, 53)
-
-[node name="obstáculo10" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(-83, 134)
-
-[node name="obstáculo11" parent="obstáculos" instance=ExtResource("4_fl6v7")]
-position = Vector2(-156, -233)
 
 [node name="Areas" type="Node2D" parent="."]
 
 [node name="Area" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 
 [node name="Area2" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(100, 0)
 
 [node name="Area3" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, 100)
+is_wall = true
 
 [node name="Area4" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, 100)
+is_wall = true
 
 [node name="Area5" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 100)
+is_wall = true
 
 [node name="Area6" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(200, 0)
 
 [node name="Area7" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -100)
+is_wall = true
 
 [node name="Area8" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(100, -100)
 
 [node name="Area9" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(0, -100)
 
 [node name="Area10" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-100, -100)
 
 [node name="Area11" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 0)
+is_wall = true
 
 [node name="Area12" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 100)
+is_wall = true
 
 [node name="Area13" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 0)
+is_wall = true
 
 [node name="Area15" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 100)
+is_wall = true
 
 [node name="Area21" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -100)
+is_wall = true
 
 [node name="Area22" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(300, -100)
 
 [node name="Area23" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(300, 0)
 
 [node name="Area24" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 100)
+is_wall = true
 
 [node name="Area25" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 0)
+is_wall = true
 
 [node name="Area26" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-300, 0)
 
 [node name="Area27" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 100)
+is_wall = true
 
 [node name="Area28" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-300, 100)
 
 [node name="Area29" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 100)
+is_wall = true
 
 [node name="Area30" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-200, 0)
 
 [node name="Area31" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-200, -100)
 
 [node name="Area32" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-300, -100)
 
 [node name="Area33" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -100)
+is_wall = true
 
 [node name="Area37" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -300)
+is_wall = true
 
 [node name="Area38" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-300, -300)
 
 [node name="Area39" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -200)
+is_wall = true
 
 [node name="Area40" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-300, -200)
 
 [node name="Area41" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -200)
+is_wall = true
 
 [node name="Area42" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -300)
+is_wall = true
 
 [node name="Area43" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -400)
+is_wall = true
 
 [node name="Area44" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, -400)
+is_wall = true
 
 [node name="Area45" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, -400)
+is_wall = true
 
 [node name="Area49" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(0, -300)
 
 [node name="Area50" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(100, -300)
 
 [node name="Area51" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -200)
+is_wall = true
 
 [node name="Area52" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -200)
+is_wall = true
 
 [node name="Area53" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -200)
+is_wall = true
 
 [node name="Area54" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(200, -300)
 
 [node name="Area55" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, -400)
+is_wall = true
 
 [node name="Area56" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -400)
+is_wall = true
 
 [node name="Area57" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -400)
+is_wall = true
 
 [node name="Area58" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -400)
+is_wall = true
 
 [node name="Area59" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-100, -300)
 
 [node name="Area60" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -200)
+is_wall = true
 
 [node name="Area61" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -300)
+is_wall = true
 
 [node name="Area63" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -200)
+is_wall = true
 
 [node name="Area69" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, -400)
+is_wall = true
 
 [node name="Area70" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -400)
+is_wall = true
 
 [node name="Area71" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(300, -300)
 
 [node name="Area72" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(300, -200)
 
 [node name="Area73" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 300)
+is_wall = true
 
 [node name="Area81" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 200)
+is_wall = true
 
 [node name="Area82" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 200)
+is_wall = true
 
-[node name="Area83" parent="Areas" instance=ExtResource("3_a8uw4")]
+[node name="Imagen2" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 300)
+imagen = ExtResource("4_fl6v7")
+
+[node name="Sprite2D" parent="Areas/Imagen2" index="3"]
+texture = SubResource("GradientTexture2D_um6v8")
 
 [node name="Area85" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(0, 300)
 
 [node name="Area86" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(100, 300)
 
 [node name="Area90" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(200, 300)
 
 [node name="Area91" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 200)
+is_wall = true
 
 [node name="Area92" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(100, 200)
 
 [node name="Area93" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(0, 200)
 
 [node name="Area94" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-100, 200)
 
 [node name="Area95" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-100, 300)
 
 [node name="Area97" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 300)
+is_wall = true
 
 [node name="Area98" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-300, 300)
 
 [node name="Area102" parent="Areas" instance=ExtResource("3_a8uw4")]
+visible = false
 position = Vector2(-200, 300)
 
 [node name="Area74" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 400)
+is_wall = true
 
 [node name="Area84" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 400)
+is_wall = true
 
 [node name="Area87" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, 400)
+is_wall = true
 
 [node name="Area88" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, 400)
+is_wall = true
 
 [node name="Area96" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(200, 400)
+is_wall = true
 
 [node name="Area99" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 400)
+is_wall = true
 
 [node name="Area100" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 400)
+is_wall = true
 
 [node name="Area101" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 400)
+is_wall = true
 
 [node name="Area106" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 400)
+is_wall = true
 
 [node name="Area103" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 200)
+is_wall = true
 
-[node name="Area104" parent="Areas" instance=ExtResource("3_a8uw4")]
+[node name="Imagen" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 200)
+
+[node name="Sprite2D" parent="Areas/Imagen" index="3"]
+texture = SubResource("GradientTexture2D_um6v8")
 
 [node name="Area105" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-400, 200)
+is_wall = true
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -1
+texture = SubResource("GradientTexture2D_em6qh")
+metadata/_edit_lock_ = true
+
+[editable path="Areas/Imagen2"]
+[editable path="Areas/Area87"]
+[editable path="Areas/Imagen"]

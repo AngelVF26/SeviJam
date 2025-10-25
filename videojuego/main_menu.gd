@@ -20,6 +20,8 @@ extends Control
 @onready var music_index = AudioServer.get_bus_index("Music")
 @onready var sfx_index = AudioServer.get_bus_index("Sound Effects")
 
+@onready var master_index = AudioServer.get_bus_index("Master")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AudioGlobal.music_volume = music_volume.value
@@ -50,7 +52,16 @@ func volume_update():
 
 
 func _on_lanzar_rover_pressed() -> void:
-	audio_fx.play()
+	var master_index = AudioServer.get_bus_index("Master")
+	var reverb_index = AudioServer.get_bus_effect(master_index,0)
+	var effect : AudioEffectReverb = AudioServer.get_bus_effect(master_index,0)
+	$AudioFXStart.play()
+	AudioServer.set_bus_effect_enabled(master_index,0,true)
+	$ColorRect/GridMain/Configuracion.visible =false
+	$ColorRect/GridMain/Creditos.visible =false
+	$ColorRect/GridMain/AbortarMision.visible = false
+	$AnimationPlayer.play("inicio")
+	await get_tree().create_timer(4.0).timeout # Waits for 4 seconds
 	get_tree().change_scene_to_file("res://Escenas/Escenario_interfaz.tscn")
 
 
@@ -59,7 +70,8 @@ func _on_abortar_mision_pressed() -> void:
 
 
 func _on_lanzar_rover_mouse_entered() -> void:
-	audio_fx.play()
+	if $ColorRect/GridMain/Configuracion.is_visible_in_tree():
+		audio_fx.play()
 
 
 

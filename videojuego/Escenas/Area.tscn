@@ -1,12 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://cronljxn02hkw"]
+[gd_scene load_steps=8 format=3 uid="uid://cronljxn02hkw"]
 
-[ext_resource type="Script" path="res://Scripts/area_physics_script.gd" id="1_cgnjx"]
+[ext_resource type="Script" uid="uid://56lkn7ifrsta" path="res://Scripts/area_physics_script.gd" id="1_cgnjx"]
+[ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="2_6s4fl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o2vil"]
 size = Vector2(100, 100)
 
-[node name="Area" type="Area2D"]
+[sub_resource type="GDScript" id="GDScript_cgnjx"]
+resource_name = "Obsatculo"
+script/source = "extends StaticBody2D
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6s4fl"]
+size = Vector2(100, 100)
+
+[sub_resource type="Gradient" id="Gradient_cgnjx"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6s4fl"]
+gradient = SubResource("Gradient_cgnjx")
+fill_to = Vector2(0.95111114, 1)
+
+[node name="Area" type="Area2D" node_paths=PackedStringArray("obstaculo")]
 script = ExtResource("1_cgnjx")
+obstaculo = NodePath("StaticBody2D")
+imagen = ExtResource("2_6s4fl")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
@@ -14,5 +32,17 @@ offset_bottom = 23.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_o2vil")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+disable_mode = 2
+script = SubResource("GDScript_cgnjx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6s4fl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8146973e-06, 3.8146973e-06)
+scale = Vector2(1.5625, 1.5625)
+texture = SubResource("GradientTexture2D_6s4fl")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
