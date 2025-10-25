@@ -5,17 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_hrt1k"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
-[ext_resource type="Shader" uid="uid://dmn1w1hk2bo6q" path="res://Assets/Shader/CRT.gdshader" id="4_5b8ei"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="5_caa1v"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
+[ext_resource type="Shader" uid="uid://mmopkc1x0hew" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
 [ext_resource type="AudioStream" uid="uid://cbj2smit0rqww" path="res://Assets/FX/typing2.mp3" id="8_vpig8"]
 [ext_resource type="AudioStream" uid="uid://bw637kyt5rjjx" path="res://Assets/FX/typing.mp3" id="9_sjuwg"]
 [ext_resource type="Texture2D" uid="uid://ccyusidmsyjf1" path="res://Assets/Pixelart/GUIAS PARA GODOT 2.png" id="10_d021a"]
-[ext_resource type="PackedScene" path="res://Escenas/physics_scene.tscn" id="12_d021a"]
+[ext_resource type="PackedScene" uid="uid://da01jtt78ktfw" path="res://Escenas/physics_scene.tscn" id="12_d021a"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nj3o3"]
-resource_local_to_scene = true
-shader = ExtResource("4_5b8ei")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tu35c"]
+shader = ExtResource("8_a6jcn")
 shader_parameter/overlay = false
 shader_parameter/scanlines_opacity = 0.4
 shader_parameter/scanlines_width = 0.25
@@ -23,17 +22,17 @@ shader_parameter/grille_opacity = 0.3
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = true
 shader_parameter/roll = true
-shader_parameter/roll_speed = 8.0
-shader_parameter/roll_size = 15.0
-shader_parameter/roll_variation = 1.8
-shader_parameter/distort_intensity = 0.05
-shader_parameter/noise_opacity = 0.4
+shader_parameter/roll_speed = 5.0
+shader_parameter/roll_size = 90.0
+shader_parameter/roll_variation = 1.6
+shader_parameter/distort_intensity = 0.002
+shader_parameter/noise_opacity = 0.2
 shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.06
-shader_parameter/aberration = 0.03
+shader_parameter/static_noise_intensity = 0.12
+shader_parameter/aberration = 0.01
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
-shader_parameter/warp_amount = 1.0
+shader_parameter/warp_amount = 0.3
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
@@ -97,7 +96,7 @@ keep_editing_on_text_submit = true
 deselect_on_focus_loss_enabled = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_nj3o3")
+material = SubResource("ShaderMaterial_tu35c")
 offset_left = 455.0
 offset_top = 139.0
 offset_right = 1476.0
@@ -124,9 +123,7 @@ stream = ExtResource("9_sjuwg")
 [node name="PhysicsScene" parent="." instance=ExtResource("12_d021a")]
 visible = false
 
-[connection signal="InteractuarSeñal" from="ComandController" to="ComandController/Interactuar" method="_on_comand_controller_interactuar_señal"]
 [connection signal="MoverSeñal" from="ComandController" to="ComandController/Mover" method="_on_comand_controller_mover_señal"]
-[connection signal="ProcesarSeñal" from="ComandController" to="ComandController/Procesar" method="_on_comand_controller_procesar_señal"]
 [connection signal="help" from="ComandController/Ayuda" to="." method="_on_ayuda_help"]
 [connection signal="text_changed" from="TerminalComandos" to="." method="_on_terminal_comandos_text_changed"]
 [connection signal="text_submitted" from="TerminalComandos" to="." method="_on_terminal_comandos_text_submitted"]
