@@ -11,7 +11,7 @@ var points_dict = {
 func _on_comand_controller_mover_señal(distancia: int, direccion: String) -> void:
 	
 	if !$"../../SubViewportContainer".visible:  
-		var dir:Vector2 = points_dict[direccion]
+		var dir:Vector2 = points_dict[direccion.to_lower()]
 		var displacement:Vector2 = dir * distancia
 		_physics_player.move_player_x(displacement.x)
 		_physics_player.move_player_y(displacement.y)
