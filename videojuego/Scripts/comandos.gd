@@ -1,5 +1,40 @@
 extends Node
 
+const OBJETOS = {
+	"NADA" : {
+		"OBJECTMSG" : "No hay muestra disponible",
+		"OBJECTANL" : ""
+	},
+	"ROCAS" : {
+		"OBJECTMSG" : "PRUEBA1",
+		"OBJECTANL" : ""
+	},
+	"PLANTA" : {
+		"OBJECTMSG" : "PRUEBA2",
+		"OBJECTANL" : ""
+	},
+	"LAGO" : {
+		"OBJECTMSG" : "PRUEBA3",
+		"OBJECTANL" : ""
+	},
+	"ANIMAL" : {
+		"OBJECTMSG" : "PRUEBA4",
+		"OBJECTANL" : ""
+	},
+	"MUSICA" : {
+		"OBJECTMSG" : "PRUEBA5",
+		"OBJECTANL" : ""
+	},
+	"ZAPATO" : {
+		"OBJECTMSG" : "PRUEBA6",
+		"OBJECTANL" : ""
+	},
+	"ESQUELETO" : {
+		"OBJECTMSG" : "PRUEBA7",
+		"OBJECTANL" : ""
+	},
+}
+
 const COMANDOS = {
 	["mover", "desplazar", "avanzar"]: {
 		"commandname": "MOVER",
