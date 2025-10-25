@@ -41,7 +41,14 @@ public partial class Analizar : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		
+		if (isWriting)
+		{
+			terminalLabel.VisibleCharacters += (int)Math.Ceiling(charactersPerSecond * delta);
+			if (terminalLabel.VisibleCharacters >= fullText.Length)
+			{
+				FinishTyping();
+			}
+		}
 	}
 
 	private void OnComandoEnviado()
@@ -63,7 +70,7 @@ public partial class Analizar : Node
 		else
 		{
 			isWriting = true;
-			// terminalLabel.VisibleCharacters = 0;
+			terminalLabel.VisibleCharacters = 0;
 			numDeMuestras++;
 			String analizandoMuestra = "\n\n\n > Analizando muestra. . .\n > Analizando muestra. . .\n > Analizando muestra . . .";
 			String resultado = "\n\n > RESULTADO: ERROR. ADN INCOMPATIBLE O INEXISTENTE";
@@ -90,12 +97,15 @@ public partial class Analizar : Node
 	private void OnAnalizarSeñal()
 	{
 		isWriting = true;
-		
-		String inicio = "\n\n\n\n > Necesito el input y tal";
+
+		Area2D area = (Area2D)player.Get("current_area");
+		String input = (String) area.Get("objeto_analizar");
+
+		String inicio = "\n\n\n\n > "+input;
 		String peticion = "\n\n > ¿Deseas analizar la muestra?";
 		String warning = "\n\n > Huecos disponibles: " + GetHuecosParaAnalizar();
 		String sn = "\n\n > S/N";
-		// terminalLabel.VisibleCharacters = 0;
+		terminalLabel.VisibleCharacters = 0;
 		terminalLabel.Text = inicio + peticion + warning + sn;
 		fullText = terminalLabel.Text;
 		GD.Print("Aqui1");
@@ -129,7 +139,7 @@ public partial class Analizar : Node
 				ayudaTexto = "\n\n > Quedan dos compartimentos de anális.";
 				break;
 			case int val when val == 2:
-				ayudaTexto = "\n\n > AVISO: Queda un compartimento de análisis!";
+				ayudaTexto = "\n\n > AVISO: Queda un solo compartimento de análisis!";
 				break;
 			case int val when val == 3:
 				ayudaTexto = "\n\n > Todos los compartimentos de análisis ocupados. Abortando.";

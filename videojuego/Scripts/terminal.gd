@@ -139,6 +139,7 @@ func _on_procesar_proceso() -> void:
 func _on_salir_ocultar() -> void:
 	imagen_explorada.visible = false
 	$SubViewportContainer.visible = false
+	infoComandos.add_text("\n\n\n   > ...")
 
 
 func _on_interactuar_interact(interactuar: Variant) -> void:
