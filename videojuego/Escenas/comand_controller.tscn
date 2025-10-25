@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://d24nk87i45380" path="res://Scripts/salir.gd" id="3_48px1"]
 [ext_resource type="Script" uid="uid://h8qo0ni6na61" path="res://Scripts/mover.gd" id="3_e4tgb"]
 [ext_resource type="Script" uid="uid://bfdmr4wh0h3qs" path="res://Scripts/ayuda.gd" id="4_e4tgb"]
-[ext_resource type="Script" uid="uid://bneuffojuxwvk" path="res://Scripts/procesar.gd" id="4_fdqa7"]
-[ext_resource type="Script" uid="uid://tkbco0wnhi74" path="res://Scripts/interactuar.gd" id="5_sri4k"]
+[ext_resource type="Script" path="res://Scripts/procesar.gd" id="4_fdqa7"]
+[ext_resource type="Script" path="res://Scripts/interactuar.gd" id="5_sri4k"]
 
 [node name="ComandController" type="Node"]
 script = ExtResource("1_rvp4y")
@@ -34,4 +34,5 @@ script = ExtResource("4_e4tgb")
 [node name="Analizar" type="Node" parent="."]
 
 [connection signal="AyudaSeñal" from="." to="Ayuda" method="_on_comand_controller_ayuda_señal"]
+[connection signal="MoverSeñal" from="." to="Mover" method="_on_comand_controller_mover_señal"]
 [connection signal="SalirSeñal" from="." to="Salir" method="_on_comand_controller_salir_señal"]

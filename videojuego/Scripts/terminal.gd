@@ -6,6 +6,10 @@ extends Node2D
 @onready var sfx_index = AudioServer.get_bus_index("Sound Effects")
 @onready var terminal: LineEdit = $TerminalComandos
 @onready var infoComandos: TextEdit =$InformacionComandos
+@onready var player: physics_player = $CanvasLayer/SubViewportContainer/SubViewport/PhysicsScene/Player
+@onready var imagen_explorada: Sprite2D = $ImagenExplorada
+
+
 signal señalControl(String)
 
 # Called when the node enters the scene tree for the first time.
@@ -35,7 +39,7 @@ func _process(_delta: float) -> void:
 func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	#terminal.text_submitted.connect(_texto_pa_comandos)
 	emit_signal("señalControl", comando)
-	print(comando)
+	print("este es el comando:", comando)
 	terminal.clear()
 
 
@@ -49,3 +53,19 @@ func _on_terminal_comandos_text_changed(new_text: String) -> void:
 func _on_ayuda_help(ayuda: Variant) -> void:
 	infoComandos.text = ayuda
 	
+
+
+func _on_procesar_proceso() -> void:
+	infoComandos.clear()
+	imagen_explorada.texture = player.current_imagen
+	imagen_explorada.visible = true
+	print("dim patatas")
+	
+
+
+func _on_salir_ocultar() -> void:
+	imagen_explorada.visible = false
+
+
+func _on_interactuar_interact(interactuar: Variant) -> void:
+	infoComandos.text = interactuar

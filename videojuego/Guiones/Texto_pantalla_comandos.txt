@@ -1,25 +1,15 @@
-# Print Inicio
-***********************************************************
-***                     MISIÓN EDÉN                     ***
-***********************************************************
-> Aterrizaje exitoso del rover C01umb0 en el planeta [7191].
-> OBJETIVO: Recopilación de material genético. 
-> MATERIAL VÁLIDO: Tejidos orgánicos, folículos capilares.
-> Iniciando reconocimiento del terreno.
-> Introduzca un comando:
-> ...
-
 # Print inicio con espacios medidos para la pantalla
-*********************************************
-***                     			        	MISIÓN EDÉN                                          ***
-*********************************************
-> Aterrizaje exitoso del rover C01umb0 en el 
- planeta [7191].
-> OBJETIVO: Recopilación de material genético. 
-> MATERIAL VÁLIDO: Folículos capilares.
-> Iniciando reconocimiento del terreno.
-> Introduzca un comando:
-> ...
+
+ ************************************************************
+ ***                    MISIÓN EDÉN                     	***
+ ************************************************************
+
+ > Aterrizaje exitoso del rover C01umb0 en el planeta [7191].
+ > OBJETIVO: Recopilación de material genético humanoide.
+ > Material válido para clonación: FOLÍCULOS CAPILARES.
+ > Iniciando reconocimiento del terreno...
+ > Introduzca un comando:
+
 
 # Mensajes de error (estos salen en rojo)
 > ERROR: No se puede avanzar en esta dirección.
