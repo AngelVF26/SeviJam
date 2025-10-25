@@ -51,6 +51,7 @@ func _texto_pa_comandos(texto: String) -> void:
 	
 	
 func _process(_delta: float) -> void:
+	terminal.grab_focus()
 		#esto es lo que hace que haya una animación de texto
 	if visible_characters != $InfoComandos.visible_characters:
 		visible_characters = $InfoComandos.visible_characters

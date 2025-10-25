@@ -77,26 +77,26 @@ func _process(delta: float) -> void:
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tu35c"]
 shader = ExtResource("8_a6jcn")
 shader_parameter/overlay = false
-shader_parameter/scanlines_opacity = 0.4
-shader_parameter/scanlines_width = 0.25
-shader_parameter/grille_opacity = 0.3
+shader_parameter/scanlines_opacity = 0.1200000057
+shader_parameter/scanlines_width = 0.0730000034675
+shader_parameter/grille_opacity = 0.1150000054625
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = true
 shader_parameter/roll = true
-shader_parameter/roll_speed = 5.0
-shader_parameter/roll_size = 90.0
-shader_parameter/roll_variation = 1.6
-shader_parameter/distort_intensity = 0.002
-shader_parameter/noise_opacity = 0.2
-shader_parameter/noise_speed = 5.0
-shader_parameter/static_noise_intensity = 0.12
+shader_parameter/roll_speed = 4.82
+shader_parameter/roll_size = 19.03200090402
+shader_parameter/roll_variation = 1.28400005773012
+shader_parameter/distort_intensity = 0.0010000000475
+shader_parameter/noise_opacity = 0.0950000045125
+shader_parameter/noise_speed = 4.88
+shader_parameter/static_noise_intensity = 0.07200000342
 shader_parameter/aberration = 0.01
-shader_parameter/brightness = 1.4
+shader_parameter/brightness = 1.9849999999999999
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.3
 shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_intensity = 0.56
+shader_parameter/vignette_opacity = 0.1290000061275
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nnrd8"]
 animations = [{
@@ -261,6 +261,7 @@ keep_editing_on_text_submit = true
 deselect_on_focus_loss_enabled = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+visible = false
 offset_left = 473.00006
 offset_top = 217.0
 offset_right = 773.00006
@@ -270,7 +271,7 @@ scale = Vector2(3, 3)
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(300, 200)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(-73, 322)
