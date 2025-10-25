@@ -2,36 +2,36 @@ extends Node
 
 const OBJETOS = {
 	"NADA" : {
-		"OBJECTMSG" : "No hay muestra disponible",
+		"OBJECTMSG" : "No hay muestra disponible para analizar.",
 		"OBJECTANL" : ""
 	},
 	"ROCAS" : {
-		"OBJECTMSG" : "PRUEBA1",
-		"OBJECTANL" : ""
+		"OBJECTMSG" : "Muestra inorgánica obtenida. Inicie ANÁLISIS para examinarla.",
+		"OBJECTANL" : "Análisis completado. \n No hay muestras orgánicas. Se han encontrado trazas de silicio, hierro y níquel."
 	},
 	"PLANTA" : {
-		"OBJECTMSG" : "PRUEBA2",
-		"OBJECTANL" : ""
+		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
+		"OBJECTANL" : "Análisis completado. \n Muestra orgánica de células vegetales. No es válido para la clonación. \n Parece que esta especie de planta absorbe el espectro rojizo de luz solar."
 	},
 	"LAGO" : {
-		"OBJECTMSG" : "PRUEBA3",
-		"OBJECTANL" : ""
+		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
+		"OBJECTANL" : "Análisis completado. La muestra de agua contiene 34 tipos de bacterias, amebas, y una especie de animal microscópico\n en forma de cruasán."
 	},
 	"ANIMAL" : {
-		"OBJECTMSG" : "PRUEBA4",
-		"OBJECTANL" : ""
+		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
+		"OBJECTANL" : "Análisis completado. No sé qué animal ha dibujado Dani.\n "
 	},
 	"MUSICA" : {
-		"OBJECTMSG" : "PRUEBA5",
+		"OBJECTMSG" : "Procesando audio...",
 		"OBJECTANL" : ""
 	},
 	"ZAPATO" : {
-		"OBJECTMSG" : "PRUEBA6",
-		"OBJECTANL" : ""
+		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
+		"OBJECTANL" : "Análisis completado. No sé qué objeto ha dibujado Dani.\n "
 	},
 	"ESQUELETO" : {
-		"OBJECTMSG" : "PRUEBA7",
-		"OBJECTANL" : ""
+		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
+		"OBJECTANL" : "Análisis completado. Restos de células óseas de un homo sapiens. Se puede intentar CLONAR."
 	},
 }
 
