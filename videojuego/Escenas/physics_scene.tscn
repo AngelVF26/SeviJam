@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://da01jtt78ktfw"]
+[gd_scene load_steps=18 format=3 uid="uid://da01jtt78ktfw"]
 
 [ext_resource type="Script" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
@@ -15,15 +15,29 @@ colors = PackedColorArray(0.14776877, 0.5519324, 0, 1)
 gradient = SubResource("Gradient_a8uw4")
 fill_to = Vector2(1, 1)
 
-[sub_resource type="GDScript" id="GDScript_6s4fl"]
-script/source = "extends Node2D
-"
-
 [sub_resource type="Gradient" id="Gradient_fl6v7"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.5198478, 0.024935002, 0.41472366, 1)
+colors = PackedColorArray(0.59268105, 0.0005835372, 0.66203326, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_um6v8"]
+gradient = SubResource("Gradient_fl6v7")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_egilu"]
+gradient = SubResource("Gradient_fl6v7")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_agaot"]
+gradient = SubResource("Gradient_fl6v7")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_actr7"]
+gradient = SubResource("Gradient_fl6v7")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d0sjh"]
+gradient = SubResource("Gradient_fl6v7")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k4kq3"]
+gradient = SubResource("Gradient_fl6v7")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bt6vj"]
 gradient = SubResource("Gradient_fl6v7")
 
 [sub_resource type="Gradient" id="Gradient_um6v8"]
@@ -63,366 +77,273 @@ metadata/_edit_lock_ = true
 [node name="Areas" type="Node2D" parent="."]
 
 [node name="Area" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-script = SubResource("GDScript_6s4fl")
 
 [node name="Area2" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(100, 0)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(0, 100)
 
 [node name="Area3" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(0, 100)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(100, 0)
 
 [node name="Area4" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, 100)
-script = SubResource("GDScript_6s4fl")
 
 [node name="Area5" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, 100)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(200, 0)
 
 [node name="Area6" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(200, 0)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(200, 100)
 
 [node name="Area7" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, -100)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(0, 200)
 
 [node name="Area8" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(100, -100)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(0, 300)
 
 [node name="Area9" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(0, -100)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(100, 200)
 
 [node name="Area10" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-100, -100)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(100, 300)
 
 [node name="Area11" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-100, 0)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(200, 200)
 
 [node name="Area12" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-100, 100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area13" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, 0)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area15" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, 100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area21" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, -100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area22" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(300, -100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area23" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(300, 0)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area24" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(300, 100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area25" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, 0)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area26" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-300, 0)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area27" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, 100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area28" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-300, 100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area29" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, 100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area30" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-200, 0)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area31" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-200, -100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area32" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-300, -100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area33" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, -100)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area37" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, -300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area38" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-300, -300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area39" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, -200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area40" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-300, -200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area41" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, -200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area42" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, -300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area43" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, -400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area44" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-300, -400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area45" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, -400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area49" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(0, -300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area50" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(100, -300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area51" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(0, -200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area52" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(100, -200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area53" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, -200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area54" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(200, -300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area55" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, -400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area56" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(100, -400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area57" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(0, -400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area58" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-100, -400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area59" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-100, -300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area60" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-100, -200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area61" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, -300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area63" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, -200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area69" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, -400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area70" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(300, -400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area71" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(300, -300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area72" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(300, -200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area73" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, 300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area81" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, 200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area82" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(300, 200)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(200, 300)
 
 [node name="Imagen2" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(300, 300)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(-300, 200)
 
 [node name="Sprite2D" parent="Areas/Imagen2" index="2"]
 texture = SubResource("GradientTexture2D_um6v8")
 
-[node name="Area85" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(0, 300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area86" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(100, 300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area90" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(200, 300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area91" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, 200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area92" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(100, 200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area93" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(0, 200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area94" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-100, 200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area95" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
-position = Vector2(-100, 300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area97" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, 300)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area98" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
+[node name="Area14" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 300)
-script = SubResource("GDScript_6s4fl")
 
-[node name="Area102" parent="Areas" instance=ExtResource("3_a8uw4")]
-visible = false
+[node name="Area15" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, 200)
+
+[node name="Area16" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 300)
-script = SubResource("GDScript_6s4fl")
 
-[node name="Area74" parent="Areas" instance=ExtResource("3_a8uw4")]
+[node name="Area17" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, 200)
+
+[node name="Area18" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, 300)
+
+[node name="Area19" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, 0)
+
+[node name="Area20" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, 100)
+
+[node name="Area21" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, 0)
+
+[node name="Area22" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, 100)
+
+[node name="Area23" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, 0)
+
+[node name="Area24" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, 100)
+
+[node name="Area25" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, -200)
+
+[node name="Area26" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, -100)
+
+[node name="Area27" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, -200)
+
+[node name="Area28" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, -100)
+
+[node name="Area29" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, -200)
+
+[node name="Area30" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, -100)
+
+[node name="Area31" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(0, -200)
+
+[node name="imagen4" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(0, -100)
+
+[node name="Sprite2D" parent="Areas/imagen4" index="2"]
+texture = SubResource("GradientTexture2D_egilu")
+
+[node name="Area33" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(100, -200)
+
+[node name="Area34" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(100, -100)
+
+[node name="Area35" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(200, -200)
+
+[node name="Area36" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(200, -100)
+
+[node name="imagen 6" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(300, -200)
+
+[node name="Sprite2D" parent="Areas/imagen 6" index="2"]
+texture = SubResource("GradientTexture2D_agaot")
+
+[node name="Area38" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(300, -100)
+
+[node name="Area39" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(400, -200)
+
+[node name="Area40" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(400, -100)
+
+[node name="Imagen5" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(300, 0)
+
+[node name="Sprite2D" parent="Areas/Imagen5" index="2"]
+texture = SubResource("GradientTexture2D_actr7")
+
+[node name="Area44" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(300, 100)
+
+[node name="Area45" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(400, 0)
+
+[node name="Area46" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(400, 100)
+
+[node name="Area49" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(300, 200)
+
+[node name="Imagen1" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(300, 300)
+
+[node name="Sprite2D" parent="Areas/Imagen1" index="2"]
+texture = SubResource("GradientTexture2D_d0sjh")
+
+[node name="Area51" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(400, 200)
+
+[node name="Area52" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(400, 300)
+
+[node name="Area55" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(300, 400)
+
+[node name="Area57" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(400, 400)
-script = SubResource("GDScript_6s4fl")
+
+[node name="Area61" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(0, 400)
+
+[node name="Area63" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(100, 400)
+
+[node name="Area65" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(200, 400)
+
+[node name="Area67" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, 400)
+
+[node name="Area69" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, 400)
+
+[node name="Area71" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, 400)
+
+[node name="Area77" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, 400)
+
+[node name="Area83" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, 200)
 
 [node name="Area84" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(300, 400)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(-400, 300)
 
-[node name="Area87" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(0, 400)
-script = SubResource("GDScript_6s4fl")
+[node name="Area89" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, 0)
 
-[node name="Label" parent="Areas/Area87" index="0"]
-metadata/_edit_use_anchors_ = true
+[node name="Area90" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, 100)
 
-[node name="Area88" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(100, 400)
-script = SubResource("GDScript_6s4fl")
+[node name="Area95" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, -200)
 
 [node name="Area96" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, 400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area99" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-100, 400)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Area100" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, 400)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(-400, -100)
 
 [node name="Area101" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-300, 400)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(-400, -400)
 
-[node name="Area106" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, 400)
-script = SubResource("GDScript_6s4fl")
+[node name="Area102" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, -300)
 
 [node name="Area103" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, 200)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(-400, -400)
 
-[node name="Imagen" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-300, 200)
-script = SubResource("GDScript_6s4fl")
-
-[node name="Sprite2D" parent="Areas/Imagen" index="2"]
-texture = SubResource("GradientTexture2D_um6v8")
+[node name="Area104" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-400, -300)
 
 [node name="Area105" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, 200)
-script = SubResource("GDScript_6s4fl")
+position = Vector2(-300, -400)
+
+[node name="Imagen3" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-300, -300)
+
+[node name="Sprite2D" parent="Areas/Imagen3" index="2"]
+texture = SubResource("GradientTexture2D_k4kq3")
+
+[node name="Area107" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, -400)
+
+[node name="Area108" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-200, -300)
+
+[node name="Area109" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, -400)
+
+[node name="Imagen7" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(-100, -300)
+
+[node name="Sprite2D" parent="Areas/Imagen7" index="2"]
+texture = SubResource("GradientTexture2D_bt6vj")
+
+[node name="Area111" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(0, -400)
+
+[node name="Area112" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(0, -300)
+
+[node name="Area113" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(100, -400)
+
+[node name="Area114" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(100, -300)
+
+[node name="Area115" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(200, -400)
+
+[node name="Area116" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(200, -300)
+
+[node name="Area117" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(300, -400)
+
+[node name="Area118" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(300, -300)
+
+[node name="Area119" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(400, -400)
+
+[node name="Area120" parent="Areas" instance=ExtResource("3_a8uw4")]
+position = Vector2(400, -300)
 
 [node name="background" type="Sprite2D" parent="."]
 z_index = -1
@@ -796,5 +717,22 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [editable path="Areas/Imagen2"]
-[editable path="Areas/Area87"]
-[editable path="Areas/Imagen"]
+[editable path="Areas/Area14"]
+[editable path="Areas/Area16"]
+[editable path="Areas/Area17"]
+[editable path="Areas/Area18"]
+[editable path="Areas/Area19"]
+[editable path="Areas/Area20"]
+[editable path="Areas/Area21"]
+[editable path="Areas/Area25"]
+[editable path="Areas/Area26"]
+[editable path="Areas/Area28"]
+[editable path="Areas/Area30"]
+[editable path="Areas/imagen4"]
+[editable path="Areas/Area34"]
+[editable path="Areas/imagen 6"]
+[editable path="Areas/Area38"]
+[editable path="Areas/Imagen5"]
+[editable path="Areas/Imagen1"]
+[editable path="Areas/Imagen3"]
+[editable path="Areas/Imagen7"]

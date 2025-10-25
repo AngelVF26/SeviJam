@@ -6,7 +6,9 @@ var current_imagen: CompressedTexture2D
 var current_area:Area2D:
 	set(t):
 		current_area = t
+		print(current_area.name)
 		if current_area.imagen != null:
+			
 			current_imagen = current_area.imagen
 		print(current_area.name)
 
