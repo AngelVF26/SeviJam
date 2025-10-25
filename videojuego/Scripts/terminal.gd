@@ -13,6 +13,11 @@ func _ready() -> void:
 	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
 	
 	terminal.grab_focus()
+	
+	var visible_characters = 0
+	if visible_characters != $InfoComandos.visible_characters:
+		visible_characters = $InfoComandos.visible_characters
+		$TypingDisplayFX.play()
 	#terminal.text_submitted.connect(_texto_pa_comandos)
 
 
