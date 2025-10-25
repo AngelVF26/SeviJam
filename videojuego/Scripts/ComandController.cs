@@ -31,6 +31,8 @@ public partial class ComandController : Node
 	public delegate void ComandoEnviadoEventHandler();
 	[Signal]
 	public delegate void CerrarVentanaEventHandler();
+	[Signal]
+	public delegate void ClonarSeñalEventHandler();
 	private Node comandos;
 	private Godot.Collections.Dictionary<String[], Godot.Collections.Dictionary<String, String>> fCommandDict;
 	private Node2D fPadre;
@@ -43,6 +45,8 @@ public partial class ComandController : Node
 	private Node interactuar;
 	private RichTextLabel fCommandLabel;
 	private LineEdit terminalInput;
+	[Export]
+	private bool fCanClonar { get; set; } = false;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -59,8 +63,10 @@ public partial class ComandController : Node
 
 		minimapa.Connect(("actividad_del_mapa"), new Callable(this, nameof(OnActividadDelMapa)));
 		analizar.Connect(("PeticionSeñal"), new Callable(this, nameof(OnPeticionSeñal)));
+		analizar.Connect(("CanClonarSeñal"), new Callable(this, nameof(OnCanClonar)));
 		fPadre.Connect("señalControl", new Callable(this, nameof(this.ParseCommandLine)));
 		GetParent().Connect("señalAnalizar", new Callable(this, nameof(this.OnCanAnalizar)));
+		
 		// interactuar.Connect((""), new Callable(this, nameof(this.OnCanAnalizar)));
 	}
 
@@ -79,6 +85,11 @@ public partial class ComandController : Node
 		fCanAnalizar = canAnalizar;
 		GD.Print("Vamos a ir viendo: " + canAnalizar);
 	}
+
+	private void OnCanClonar(bool canClonar)
+    {
+		fCanClonar = canClonar;
+    }
 
 	private void OnActividadDelMapa(bool isActividad)
 	{
@@ -140,6 +151,16 @@ public partial class ComandController : Node
 						break;
 					}
 				}
+				else if (fCanClonar)
+                {
+					String nombreNodo = cmd.Value["nombre_nodo"];
+
+					if (nombreNodo == "Clonar")
+                    {
+						EmitSignal("ClonarSeñal");
+						break;
+                    }
+                }
 				else if (fIsActividad)
 				{
 					if (line.ToLower() == "salir" || line.ToLower() == "cerrar")
