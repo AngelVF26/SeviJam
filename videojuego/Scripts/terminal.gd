@@ -168,6 +168,8 @@ func _on_interactuar_interact(interactuar: Variant) -> void:
 	infoComandos.add_text("\n\n\n " + player.current_area.objeto_interactuar) 
 	if interactuar != Comandos.OBJETOS.NADA["OBJECTMSG"]:
 		emit_signal("señalAnalizar", true)
+	if interactuar == Comandos.OBJETOS.MUSICA["OBJECTMSG"]:
+		$MelodiaFX.play()
 	
 
 

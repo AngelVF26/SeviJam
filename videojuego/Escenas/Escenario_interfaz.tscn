@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=50 format=4 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://coki2s0irywq6" path="res://Assets/FX/cargarImagen.mp3" id="23_mou6a"]
 [ext_resource type="AudioStream" uid="uid://b4hyci2kon726" path="res://Assets/FX/StartConsole.mp3" id="23_o88m3"]
 [ext_resource type="AudioStream" uid="uid://b3288x0kqbim3" path="res://Assets/FX/error.mp3" id="27_pi6t2"]
+[ext_resource type="AudioStream" uid="uid://cb0nvygmyy4ve" path="res://Assets/FX/melody8x8.mp3" id="29_k7noi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k7noi"]
 shader = ExtResource("8_a6jcn")
@@ -496,6 +497,9 @@ stream = ExtResource("23_o88m3")
 volume_db = 4.0
 autoplay = true
 bus = &"Sound Effects"
+
+[node name="MelodiaFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_k7noi")
 
 [node name="ErrorFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("27_pi6t2")
