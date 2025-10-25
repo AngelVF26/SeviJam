@@ -87,5 +87,11 @@ const COMANDOS = {
 	  "commanddescription": "EMPANADILLA RUSA DE CHILE",
 	  "commandaction": "",
 	  "type": "terminal"
+	},
+	["clonar"]: {
+		"commanddescription": "Iniciando el proceso de clonación de la muestra obtenida. . .",
+		"commandaction": "",
+		"type": "terminal",
+		"nombre_nodo":"Clonar"
 	}
   }

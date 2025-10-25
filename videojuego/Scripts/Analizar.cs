@@ -5,6 +5,8 @@ public partial class Analizar : Node
 {
 	[Signal]
 	public delegate void PeticionSeñalEventHandler();
+	[Signal]
+	public delegate void CanClonarSeñalEventHandler(bool canClonar);
 	private CharacterBody2D player;
 	private CanvasLayer canvasLayer;
 	private Node commandController;
@@ -56,6 +58,7 @@ public partial class Analizar : Node
 		tiempoEntreComandos++;
 	}
 
+
 	private void OnSiSeñal()
 	{
 		
@@ -72,10 +75,18 @@ public partial class Analizar : Node
 			isWriting = true;
 			terminalLabel.VisibleCharacters = 0;
 			numDeMuestras++;
-			String analizandoMuestra = "\n\n\n > Analizando muestra. . .\n > Analizando muestra. . .\n > Analizando muestra . . .";
-			String resultado = "\n\n > RESULTADO: ERROR. ADN INCOMPATIBLE O INEXISTENTE";
-			terminalLabel.Text = analizandoMuestra + resultado;
+			String analizandoMuestra = "\n\n\n > Analizando muestra. . .\n > Analizando muestra. . .\n > Analizando muestra . . .\n > Analizando muestra. . .";
+			// String resultado = "\n\n > RESULTADO: ERROR. ADN INCOMPATIBLE O INEXISTENTE";
+			Area2D area = (Area2D)player.Get("current_area");
+			String resultado = (String)area.Get("objeto_analizar");
+			String claveDic = (String)area.Get("objecto1");
+			terminalLabel.Text = analizandoMuestra + "\n  > "+resultado;
 			fullText = terminalLabel.Text;
+
+			if (claveDic == "ESQUELETO")
+			{
+				EmitSignal("CanClonarSeñal", true);
+            }
 		}
 	}
 
@@ -98,15 +109,11 @@ public partial class Analizar : Node
 	{
 		isWriting = true;
 
-		Area2D area = (Area2D)player.Get("current_area");
-		String input = (String) area.Get("objeto_analizar");
-
-		String inicio = "\n\n\n\n > "+input;
 		String peticion = "\n\n > ¿Deseas analizar la muestra?";
 		String warning = "\n\n > Huecos disponibles: " + GetHuecosParaAnalizar();
 		String sn = "\n\n > S/N";
 		terminalLabel.VisibleCharacters = 0;
-		terminalLabel.Text = inicio + peticion + warning + sn;
+		terminalLabel.Text = peticion + warning + sn;
 		fullText = terminalLabel.Text;
 		GD.Print("Aqui1");
 		EmitSignal("PeticionSeñal");
@@ -136,10 +143,10 @@ public partial class Analizar : Node
 		switch (numDeMuestras)
 		{
 			case int val when val == 1:
-				ayudaTexto = "\n\n > Quedan dos compartimentos de anális.";
+				ayudaTexto = "\n\n > Quedan dos compartimentos de análisis.";
 				break;
 			case int val when val == 2:
-				ayudaTexto = "\n\n > AVISO: Queda un solo compartimento de análisis!";
+				ayudaTexto = "\n\n > AVISO: ¡Queda un solo compartimento de análisis!";
 				break;
 			case int val when val == 3:
 				ayudaTexto = "\n\n > Todos los compartimentos de análisis ocupados. Abortando.";

@@ -14,12 +14,18 @@ var comandosPosition: int
 var visible_characters = 0
 @onready var transicion: Sprite2D = $Transicion
 @onready var inicio_fx: AudioStreamPlayer2D = $InicioFX
+@onready var sfx_volume: HScrollBar = $MenuOpciones/FXBar
+@onready var music_volume: HScrollBar = $MenuOpciones/MusicaBar
+
 signal señalAnalizar(bool)
 signal señalControl(String)
 signal señalImagen(bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	AudioGlobal.music_volume = music_volume.value
+	AudioGlobal.sfx_volume = sfx_volume.value
 	transicion.visible =true
 	
 	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
@@ -32,6 +38,12 @@ func _ready() -> void:
 	set_process_input(true)
 	#terminal.text_submitted.connect(_texto_pa_comandos)
 	
+func volume_update():
+
+	AudioGlobal.music_volume = music_volume.value
+	AudioGlobal.sfx_volume = sfx_volume.value
+	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
+	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
 
 func _input(ev):
 	if Input.is_action_pressed("ui_up") && listaComandos.size()>0 && comandosPosition < listaComandos.size():
@@ -64,6 +76,8 @@ func _process(_delta: float) -> void:
 		$CanvasLayer.visible = false
 	else:
 		$CanvasLayer.visible = true
+	
+	volume_update()
 	pass
 	
 
@@ -161,5 +175,18 @@ func _on_comand_controller_return_error() -> void:
 	$ErrorFX.play()
 
 
-func _on_settings_btn_pressed() -> void:
-	pass # Replace with function body.
+func _on_setting_click_pressed() -> void:
+	$ColorRect.visible = false
+	$InformacionComandos.visible = false
+	$InfoComandos.visible =false
+	$MenuOpciones.visible = true
+
+func _on_aceptar_config_2_pressed() -> void:
+	$ColorRect.visible = true
+	$InformacionComandos.visible = true
+	$InfoComandos.visible =true
+	$MenuOpciones.visible = false
+
+
+func _on_aceptar_config_2_mouse_entered() -> void:
+	typing_fx.play()

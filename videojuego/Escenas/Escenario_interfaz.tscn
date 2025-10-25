@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=48 format=4 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
 [ext_resource type="PackedScene" uid="uid://c0ua2761kj73j" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
+[ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="3_5l38x"]
 [ext_resource type="FontFile" uid="uid://djw2364lw2f8w" path="res://Assets/Fonts/bytebounce/ByteBounce.ttf" id="6_rt3l3"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
-[ext_resource type="Script" uid="uid://dhc7fnrqu4fh8" path="res://Scripts/typewriter.gd" id="7_d021a"]
+[ext_resource type="Script" path="res://Scripts/typewriter.gd" id="7_d021a"]
 [ext_resource type="Shader" uid="uid://mmopkc1x0hew" path="res://Assets/Shader/CRT2.gdshader" id="8_a6jcn"]
 [ext_resource type="AudioStream" uid="uid://cbj2smit0rqww" path="res://Assets/FX/typing2.mp3" id="8_vpig8"]
 [ext_resource type="Texture2D" uid="uid://ctnu62qhriphi" path="res://Assets/Frames/FONDO ANIMACION_Animation 1_00.png" id="9_o88m3"]
@@ -28,6 +29,54 @@
 [ext_resource type="AudioStream" uid="uid://coki2s0irywq6" path="res://Assets/FX/cargarImagen.mp3" id="23_mou6a"]
 [ext_resource type="AudioStream" uid="uid://b4hyci2kon726" path="res://Assets/FX/StartConsole.mp3" id="23_o88m3"]
 [ext_resource type="AudioStream" uid="uid://b3288x0kqbim3" path="res://Assets/FX/error.mp3" id="27_pi6t2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7noi"]
+shader = ExtResource("8_a6jcn")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 90.0
+shader_parameter/roll_variation = 1.6
+shader_parameter/distort_intensity = 0.002
+shader_parameter/noise_opacity = 0.2
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.12
+shader_parameter/aberration = 0.01
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.1
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rocb"]
+bg_color = Color(1.3187826e-05, 0.8554816, 0.1885306, 1)
+border_width_left = 4
+border_width_top = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bd8u"]
+bg_color = Color(0, 5.955212, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrusn"]
+bg_color = Color(0, 0.85490197, 0.1882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsgyl"]
+bg_color = Color(0.21176471, 0.14509805, 0.21176471, 0.6313726)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riaih"]
+
+[sub_resource type="Theme" id="Theme_11ic2"]
+default_font_size = 0
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_7rocb")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_0bd8u")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_mrusn")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_qsgyl")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_riaih")
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pi6t2"]
 light_mode = 1
@@ -194,12 +243,91 @@ _data = {
 script = ExtResource("1_caa1v")
 player = NodePath("SubViewportContainer/SubViewport/PhysicsScene/Player")
 
+[node name="MenuOpciones" type="Control" parent="."]
+visible = false
+top_level = true
+z_index = 3
+material = SubResource("ShaderMaterial_k7noi")
+layout_mode = 3
+anchors_preset = 0
+offset_left = 750.99994
+offset_top = 412.0
+offset_right = 792.55566
+offset_bottom = 451.02637
+scale = Vector2(4.0668273, 3.484819)
+
+[node name="Sprite2D" type="Sprite2D" parent="MenuOpciones"]
+position = Vector2(8.36031, -24.104586)
+scale = Vector2(1.0000001, 1)
+texture = ExtResource("2_hrt1k")
+
+[node name="Musica" type="Label" parent="MenuOpciones"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.174689
+offset_top = 23.628021
+offset_right = 54.82531
+offset_bottom = 40.628025
+theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
+theme_override_fonts/font = ExtResource("3_5l38x")
+text = "Musica"
+
+[node name="SFX" type="Label" parent="MenuOpciones"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -6.9465246
+offset_top = -1.3126574
+offset_right = 26.053474
+offset_bottom = 15.687343
+theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
+theme_override_fonts/font = ExtResource("3_5l38x")
+text = "SFX"
+
+[node name="FXBar" type="HScrollBar" parent="MenuOpciones"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 2.297
+offset_right = 128.0
+offset_bottom = 10.297
+theme = SubResource("Theme_11ic2")
+min_value = -40.0
+max_value = 15.0
+
+[node name="MusicaBar" type="HScrollBar" parent="MenuOpciones"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 29.535
+offset_right = 128.0
+offset_bottom = 37.534996
+theme = SubResource("Theme_11ic2")
+min_value = -50.0
+max_value = 15.0
+
+[node name="AceptarConfig2" type="Button" parent="MenuOpciones"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 17.945206
+offset_top = 108.62323
+offset_right = 100.945206
+offset_bottom = 133.62323
+theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
+theme_override_fonts/font = ExtResource("3_5l38x")
+action_mode = 0
+text = "ACEPTAR
+"
+flat = true
+
 [node name="ComandController" parent="." instance=ExtResource("2_nj3o3")]
+fCanClonar = true
 
 [node name="Mover" parent="ComandController" index="1" node_paths=PackedStringArray("_physics_player")]
 _physics_player = NodePath("../../SubViewportContainer/SubViewport/PhysicsScene/Player")
 
 [node name="Analizar" parent="ComandController" index="7" groups=["analizar"]]
+
+[node name="Clonar" parent="ComandController" index="8" node_paths=PackedStringArray("animator", "label")]
+animator = NodePath("../../AnimationText")
+label = NodePath("../../InfoComandos")
 
 [node name="Icon" type="Sprite2D" parent="."]
 visible = false
@@ -375,6 +503,20 @@ stream = ExtResource("27_pi6t2")
 bus = &"Sound Effects"
 
 [connection signal="señalImagen" from="." to="ImagenExplorada" method="_on_interfaz_señal_imagen"]
+[node name="SettingClick" type="TextureButton" parent="."]
+modulate = Color(0.9764706, 0.84705883, 0.78039217, 0)
+z_index = 5
+offset_left = 1321.0
+offset_top = 687.0
+offset_right = 2421.0
+offset_bottom = 1349.2456
+scale = Vector2(0.06, 0.098)
+action_mode = 0
+texture_normal = ExtResource("1_hrt1k")
+ignore_texture_size = true
+
+[connection signal="mouse_entered" from="MenuOpciones/AceptarConfig2" to="." method="_on_aceptar_config_2_mouse_entered"]
+[connection signal="pressed" from="MenuOpciones/AceptarConfig2" to="." method="_on_aceptar_config_2_pressed"]
 [connection signal="ReturnError" from="ComandController" to="." method="_on_comand_controller_return_error"]
 [connection signal="proceso" from="ComandController/Procesar" to="." method="_on_procesar_proceso"]
 [connection signal="interact" from="ComandController/Interactuar" to="." method="_on_interactuar_interact"]
@@ -383,6 +525,7 @@ bus = &"Sound Effects"
 [connection signal="pressed" from="SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="text_changed" from="TerminalComandos" to="." method="_on_terminal_comandos_text_changed"]
 [connection signal="text_submitted" from="TerminalComandos" to="." method="_on_terminal_comandos_text_submitted"]
+[connection signal="pressed" from="SettingClick" to="." method="_on_setting_click_pressed"]
 
 [editable path="ComandController"]
 [editable path="ImagenExplorada"]

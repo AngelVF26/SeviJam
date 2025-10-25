@@ -34,29 +34,29 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rocb"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a082v"]
 bg_color = Color(1.3187826e-05, 0.8554816, 0.1885306, 1)
 border_width_left = 4
 border_width_top = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bd8u"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rocb"]
 bg_color = Color(0, 5.955212, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrusn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bd8u"]
 bg_color = Color(0, 0.85490197, 0.1882353, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsgyl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrusn"]
 bg_color = Color(0.21176471, 0.14509805, 0.21176471, 0.6313726)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riaih"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsgyl"]
 
 [sub_resource type="Theme" id="Theme_a082v"]
 default_font_size = 0
-HScrollBar/styles/grabber = SubResource("StyleBoxFlat_7rocb")
-HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_0bd8u")
-HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_mrusn")
-HScrollBar/styles/scroll = SubResource("StyleBoxFlat_qsgyl")
-HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_riaih")
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_a082v")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_7rocb")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_0bd8u")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_mrusn")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_qsgyl")
 
 [sub_resource type="Animation" id="Animation_a082v"]
 length = 0.001
@@ -196,7 +196,6 @@ text = "ABORTAR MISIÓN"
 flat = true
 
 [node name="MenuOpciones" type="Control" parent="ColorRect"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -346,7 +345,6 @@ stream = ExtResource("7_s5s4m")
 bus = &"Sound Effects"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(0, 5.468475, 0, 0)
 self_modulate = Color(0, 7.3073163, 0, 1)
 position = Vector2(508, 197)
