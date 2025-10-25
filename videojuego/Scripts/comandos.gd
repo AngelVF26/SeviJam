@@ -65,7 +65,7 @@ const COMANDOS = {
 	},
 	["mapa","minimapa","/mapa","/minimapa"] : {
 		"nombre_nodo":"Minimapa",
-		"commanddescription":"Abre un mapa que muestra el entorno."
+		"commanddescription":"Abre un mapa que muestra el entorno.\n   No se puede usar comando 'mover' mientras se usa."
 	},
 	["ayuda", "help", "/help", "/ayuda"]: {
 	  "commanddescription": " ", #A: este tampoco

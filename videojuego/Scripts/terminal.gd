@@ -23,12 +23,10 @@ signal señalImagen(bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AnimationPlayer.play("start")
 	
 	transicion.visible =true
-	
-
 	inicio_fx.play()
-	$AnimationPlayer.play("start")
 	terminal.grab_focus()		
 	
 	set_process_input(true)
