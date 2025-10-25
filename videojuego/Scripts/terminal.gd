@@ -10,7 +10,7 @@ signal señalControl(String)
 func _ready() -> void:
 	terminal.grab_focus()
 	#terminal.text_submitted.connect(_texto_pa_comandos)
-	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,7 +21,7 @@ func _texto_pa_comandos(texto: String) -> void:
 		infoComandos.text = "> ERROR: Comando no reconocido. Escribe AYUDA para obtener lista de comandos."
 	
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_volume()
 	pass
 	
