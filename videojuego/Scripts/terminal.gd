@@ -70,6 +70,9 @@ func _on_terminal_comandos_text_submitted(comando: String) -> void:
 	listaComandos.append(comando)
 	comandosPosition = 0
 	terminal.clear()
+	
+	
+	
 
 
 func _on_terminal_comandos_text_changed(new_text: String) -> void:
@@ -101,5 +104,4 @@ func _on_salir_ocultar() -> void:
 
 
 func _on_interactuar_interact(interactuar: Variant) -> void:
-	infoComandos.clear()
-	infoComandos.add_text("\n\n\n " + Comandos.OBJETOS["NADA"]["OBJECTMSG"])
+	infoComandos.text = interactuar
