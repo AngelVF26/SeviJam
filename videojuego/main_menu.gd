@@ -113,3 +113,7 @@ func _on_salir_config_pressed() -> void:
 	grid_main.visible = true
 	menu_creditos.visible = false
 	
+
+
+func _on_salir_config_mouse_entered() -> void:
+	audio_fx.play()
