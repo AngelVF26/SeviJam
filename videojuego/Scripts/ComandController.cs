@@ -56,7 +56,7 @@ public partial class ComandController : Node
 					fCommandToProcess = cmd.Value;
 					String nombreNodo = fCommandToProcess["nombre_nodo"];
 
-					switch (nombreNodo)
+					switch (nombreNodo.ToLower())
 					{
 						case string val when val == "Mover":
 							ProcesarNodoMover(line);
@@ -66,6 +66,9 @@ public partial class ComandController : Node
 							break;
 						case string val when val == "Salir":
 							ProcesarNodoSalir(line);
+							break;
+						case string val when val == "Procesar":
+							ProcesarNodoProcesar(line);
 							break;
 						default:
 							GD.Print("ERROR: NO NODO1?");
@@ -90,7 +93,7 @@ public partial class ComandController : Node
 			GD.Print("SALGO.");
 		}
 	}
-	
+
 	private void ProcesarNodoAyuda(String linea)
 	{
 		var value = Regex.Match(linea, @"^(\w+)");
@@ -101,8 +104,13 @@ public partial class ComandController : Node
 		else
 		{
 			EmitSignal("AyudaSeñal");
-			GD.Print("AYUDAAAA");
 		}
+	}
+
+	private void ProcesarNodoProcesar(String linea)
+	{
+		// Recibe algo como PROCESAR /rover/stream/imagen.png
+		EmitSignal("ProcesarSeñal");	
 	}
 
 	private void ProcesarNodoMover(String linea)

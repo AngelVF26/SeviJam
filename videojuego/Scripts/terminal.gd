@@ -10,7 +10,7 @@ signal señalControl(String)
 func _ready() -> void:
 	terminal.grab_focus()
 	#terminal.text_submitted.connect(_texto_pa_comandos)
-	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
