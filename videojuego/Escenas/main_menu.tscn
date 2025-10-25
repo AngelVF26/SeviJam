@@ -242,6 +242,7 @@ min_value = -30.0
 max_value = 10.0
 
 [node name="MenuCreditos" type="Control" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
