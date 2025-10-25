@@ -16,28 +16,32 @@ const COMANDOS = {
 	  "nombre_nodo": "Procesar",
 	  "type": "terminal"
 	},
-	["INTERACTUAR"]: {
+	["interactuar"]: {
 	  "commanddescription": "Recopilando muestra...",
 	  "commandaction": "",
 	  "nombre_nodo": "Interactuar",	  
 	  "type": "terminal"
 	},
-	["SALIR"]: {
+	["salir"]: {
 	  "commanddescription": " ", #A: este no necesita que devuelva texto, no?
 	  "commandaction": "",
 	  "nombre_nodo": "Salir",
 	  "type": "terminal"
 	},
-	["AYUDA"]: {
+	["ayuda"]: {
 	  "commanddescription": " ", #A: este tampoco
 	  "commandaction": "",
 	  "nombre_nodo": "Ayuda",
 	  "type": "terminal"
 	},
-	["YoVictore"]: {
+	["yovictore"]: {
 	  "commanddescription": "A rockear siempre",
 	  "commandaction": "",
 	  "type": "terminal"
+	},
+	["analizar", "adn"]: {
+		"nombre_nodo":"Analizar",
+		"comanddescription": "Analizando muestra..."
 	}
 	
   }

@@ -31,7 +31,7 @@ script = ExtResource("3_48px1")
 [node name="Ayuda" type="Node" parent="."]
 script = ExtResource("4_e4tgb")
 
-[node name="AnalisisADN" type="Node" parent="."]
+[node name="Analizar" type="Node" parent="."]
 
 [connection signal="AyudaSeñal" from="." to="Ayuda" method="_on_comand_controller_ayuda_señal"]
 [connection signal="SalirSeñal" from="." to="Salir" method="_on_comand_controller_salir_señal"]
