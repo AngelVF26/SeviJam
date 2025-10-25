@@ -147,7 +147,7 @@ func _on_interactuar_interact(interactuar: Variant) -> void:
 	print("objeto1: ", player.current_area.objeto1)
 	interactuar = player.current_area.objeto_interactuar
 	print("\n\n\n Interaccion :" + interactuar)
-	infoComandos.text = "\n\n\n " + interactuar
+	infoComandos.add_text("\n\n\n " + player.current_area.objeto_interactuar) 
 	
 
 
