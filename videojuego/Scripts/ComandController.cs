@@ -136,9 +136,9 @@ public partial class ComandController : Node
 	}
 	
 	private void ProcesarNodoMapa(String linea)
-    {
+	{
 		EmitSignal("MinimapaSeñal");
-    }
+	}
 
 	private void ProcesarNodoSalir(String linea)
 	{
