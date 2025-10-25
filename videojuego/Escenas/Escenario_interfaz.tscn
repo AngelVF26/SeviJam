@@ -242,6 +242,7 @@ libraries = {
 script = ExtResource("7_d021a")
 
 [node name="InformacionComandos" type="TextEdit" parent="."]
+visible = false
 offset_top = -1.0
 offset_right = 1920.0
 offset_bottom = 880.0
@@ -253,7 +254,7 @@ placeholder_text = "     "
 offset_top = 880.0
 offset_right = 1920.0
 offset_bottom = 1080.0
-theme_override_fonts/font = ExtResource("6_tu35c")
+theme_override_fonts/font = ExtResource("6_rt3l3")
 theme_override_font_sizes/font_size = 125
 keep_editing_on_text_submit = true
 deselect_on_focus_loss_enabled = false
