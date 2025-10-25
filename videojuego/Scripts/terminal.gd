@@ -1,13 +1,17 @@
 extends Node2D
 @onready var typing_fx: AudioStreamPlayer2D = $TypingFX
 @onready var submit_fx: AudioStreamPlayer2D = $SubmitFX
-
+@onready var music_index = AudioServer.get_bus_index("Music")
+@onready var sfx_index = AudioServer.get_bus_index("Sound Effects")
 @onready var terminal: LineEdit = $TerminalComandos
 @onready var infoComandos: TextEdit =$InformacionComandos
 signal señalControl(String)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
+	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
+	
 	terminal.grab_focus()
 	#terminal.text_submitted.connect(_texto_pa_comandos)
 
@@ -22,7 +26,6 @@ func _texto_pa_comandos(texto: String) -> void:
 	
 	
 func _process(_delta: float) -> void:
-	update_volume()
 	pass
 	
 
@@ -39,13 +42,6 @@ func _on_terminal_comandos_text_changed(new_text: String) -> void:
 		submit_fx.play()
 	else:
 		typing_fx.play()
-
-func update_volume():
-	var music_index = AudioServer.get_bus_index("Music")
-	var sfx_index = AudioServer.get_bus_index("Sound Effects")
-	
-	AudioServer.set_bus_volume_db(music_index,AudioGlobal.music_volume)
-	AudioServer.set_bus_volume_db(sfx_index,AudioGlobal.sfx_volume)
 
 
 func _on_ayuda_help(ayuda: Variant) -> void:

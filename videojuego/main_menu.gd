@@ -84,3 +84,7 @@ func _on_configuracion_pressed() -> void:
 func _on_aceptar_config_pressed() -> void:
 	grid_main.visible = true
 	grid_opciones.visible = false
+
+
+func _on_aceptar_config_mouse_entered() -> void:
+	audio_fx.play()
