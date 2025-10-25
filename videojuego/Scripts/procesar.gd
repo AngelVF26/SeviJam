@@ -2,7 +2,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 signal proceso(Vector2)
-@onready var player: physics_player = $"../../PhysicsScene/Player"
+@onready var player: CharacterBody2D = $"../../PhysicsScene/Player"
 
 func _ready() -> void:
 	pass # Replace with function body.

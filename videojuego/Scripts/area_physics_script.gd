@@ -1,7 +1,11 @@
 extends Area2D
 
 @export var obstaculo:StaticBody2D
+
+
 @export var imagen:CompressedTexture2D
+
+
 @export var is_wall:bool = false
 
 
@@ -13,5 +17,5 @@ func _ready() -> void:
 		obstaculo.process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is physics_player:
-		(body as physics_player).current_area = self
+	if body is CharacterBody2D:
+		(body as CharacterBody2D).current_area = self
