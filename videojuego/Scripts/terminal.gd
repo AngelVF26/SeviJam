@@ -173,13 +173,15 @@ func _on_comand_controller_return_error() -> void:
 
 
 func _on_setting_click_pressed() -> void:
-	
+	$ColorRect.visible = false
 	$InformacionComandos.visible = false
+	$InfoComandos.visible =false
 	$MenuOpciones.visible = true
 
-
 func _on_aceptar_config_2_pressed() -> void:
+	$ColorRect.visible = true
 	$InformacionComandos.visible = true
+	$InfoComandos.visible =true
 	$MenuOpciones.visible = false
 
 
