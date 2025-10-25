@@ -154,9 +154,10 @@ public partial class ComandController : Node
 				else if (fCanClonar)
 				{
 					String nombreNodo = cmd.Value["nombre_nodo"];
-
+					
 					if (nombreNodo == "Clonar")
 					{
+						GD.Print("Entro, por lo que fCanClonar es true");
 						isError = false;
 						EmitSignal("ClonarSeñal");
 						break;

@@ -86,7 +86,7 @@ public partial class Analizar : Node
 			if (claveDic == "ESQUELETO")
 			{
 				EmitSignal("CanClonarSeñal", true);
-            }
+			}
 		}
 	}
 
