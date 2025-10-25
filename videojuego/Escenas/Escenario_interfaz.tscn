@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
 [ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_hrt1k"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
-[ext_resource type="PackedScene" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
+[ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
 [ext_resource type="Shader" uid="uid://dmn1w1hk2bo6q" path="res://Assets/Shader/CRT.gdshader" id="4_5b8ei"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="5_caa1v"]
 [ext_resource type="Texture2D" uid="uid://c4yjlxmoyaxk6" path="res://Assets/Pixelart/GUIAS_SIN_FONDO.png" id="8_dxyxx"]
@@ -66,11 +66,21 @@ offset_right = 1920.0
 offset_bottom = 200.0
 
 [node name="InformacionComandos" type="TextEdit" parent="."]
-offset_top = 200.0
+offset_top = -1.0
 offset_right = 1920.0
 offset_bottom = 880.0
 theme_override_fonts/font = ExtResource("5_caa1v")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 70
+text = "*********************************************
+***                     			        	MISIÓN EDÉN                                          ***
+*********************************************
+> Aterrizaje exitoso del rover C01umb0 en el 
+ planeta [7191].
+> OBJETIVO: Recopilación de material genético. 
+> MATERIAL VÁLIDO: Folículos capilares.
+> Iniciando reconocimiento del terreno.
+> Introduzca un comando:
+> ..."
 
 [node name="TerminalComandos" type="LineEdit" parent="."]
 offset_top = 880.0
@@ -78,16 +88,15 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_fonts/font = ExtResource("5_caa1v")
 theme_override_font_sizes/font_size = 125
-placeholder_text = "Escribe tus comandos aqui"
 keep_editing_on_text_submit = true
 deselect_on_focus_loss_enabled = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_nj3o3")
-offset_left = 540.0
-offset_top = 204.0
-offset_right = 1374.0
-offset_bottom = 813.0
+offset_left = 518.0
+offset_top = 182.0
+offset_right = 1394.0
+offset_bottom = 831.0
 color = Color(0, 0, 0, 1)
 
 [node name="GuiasParaGodot" type="Sprite2D" parent="."]
