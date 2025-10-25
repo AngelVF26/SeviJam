@@ -7,8 +7,6 @@ extends TextureRect
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	texture_rect_2.size.x = texture_rect.size.x
-	%Scanner.play()
-	animation_player.play("RESET")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
