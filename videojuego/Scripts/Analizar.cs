@@ -3,7 +3,8 @@ using System;
 
 public partial class Analizar : Node
 {
-
+	[Signal]
+	public delegate void PeticionSeñalEventHandler();
 	private CharacterBody2D player;
 	private CanvasLayer canvasLayer;
 	private Node commandController;
@@ -32,9 +33,14 @@ public partial class Analizar : Node
 
 	private void OnAnalizarSeñal()
 	{
-		OnAceptarAnalizarSeñal();
-		terminalLabel.Text = "\n\n\n\n" + GetHuecosParaAnalizar();
-		
+		String inicio = "\n\n\n\n > Necesito el input y tal";
+		String peticion = "\n\n > ¿Deseas analizar la muestra?";
+		String warning = "\n\n > Huecos disponibles: " + GetHuecosParaAnalizar();
+		String sn = "\n\n > S/N";
+		terminalLabel.Text = inicio + peticion + warning+sn;
+		EmitSignal("PeticionSeñal");
+		//OnAceptarAnalizarSeñal();
+		//terminalLabel.Text = "\n\n\n\n" + GetHuecosParaAnalizar();
 	}
 
 	private String GetHuecosParaAnalizar()
@@ -57,13 +63,13 @@ public partial class Analizar : Node
 		switch (numDeMuestras)
 		{
 			case int val when val == 1:
-				ayudaTexto = "\n > Quedan dos compartimentos de anális.";
+				ayudaTexto = "\n\n > Quedan dos compartimentos de anális.";
 				break;
 			case int val when val == 2:
-				ayudaTexto = "\n > ¡Queda un compartimento de análisis!";
+				ayudaTexto = "\n\n > AVISO: Queda un compartimento de análisis!";
 				break;
 			case int val when val == 3:
-				ayudaTexto = "\n > Todos los compartimentos de análisis ocupados. Abortando.";
+				ayudaTexto = "\n\n > Todos los compartimentos de análisis ocupados. Abortando.";
 				break;
 			default:
 				break;

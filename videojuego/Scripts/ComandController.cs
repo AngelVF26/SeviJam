@@ -24,6 +24,7 @@ public partial class ComandController : Node
 	private Godot.Collections.Dictionary<String[], Godot.Collections.Dictionary<String, String>> fCommandDict;
 	private Node2D fPadre;
 	private Godot.Collections.Dictionary<String, String> fCommandToProcess;
+	private Analizar analizar;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -31,7 +32,7 @@ public partial class ComandController : Node
 		Variant dict = (Variant)comandos.Get("COMANDOS");
 		fCommandDict= dict.AsGodotDictionary<String[], Godot.Collections.Dictionary<String, String>>();
 		fPadre = (Node2D)this.GetParent();
-
+		analizar = GetNode<Analizar>("Analizar");
 		fPadre.Connect("señalControl", new Callable(this, nameof(this.ParseCommandLine)));
 
 	}
