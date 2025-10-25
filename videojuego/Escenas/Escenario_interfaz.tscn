@@ -1,10 +1,11 @@
-[gd_scene load_steps=40 format=4 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=41 format=4 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
 [ext_resource type="Texture2D" uid="uid://cv68i0swl8k57" path="res://Placeholders/PLACEHOLDER.png" id="1_hrt1k"]
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
+[ext_resource type="PackedScene" uid="uid://c0ua2761kj73j" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
 [ext_resource type="FontFile" uid="uid://djw2364lw2f8w" path="res://Assets/Fonts/bytebounce/ByteBounce.ttf" id="6_rt3l3"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
 [ext_resource type="Script" uid="uid://dhc7fnrqu4fh8" path="res://Scripts/typewriter.gd" id="7_d021a"]
@@ -212,6 +213,7 @@ scale = Vector2(1.253, 1.253)
 texture = ExtResource("2_hrt1k")
 
 [node name="SettingsBtn" type="TextureButton" parent="."]
+visible = false
 modulate = Color(0, 1, 0.03529412, 1)
 self_modulate = Color(0, 1, 1, 1)
 texture_filter = 1
@@ -223,7 +225,14 @@ offset_bottom = 1422.0
 scale = Vector2(0.2, 0.2)
 texture_normal = SubResource("CompressedTexture2D_5l38x")
 
-[node name="ImagenExplorada" type="Sprite2D" parent="."]
+[node name="ImagenExplorada" parent="." instance=ExtResource("5_5l38x")]
+visible = false
+offset_left = 204.0
+offset_top = -1.0
+offset_right = 1740.0
+offset_bottom = 1023.0
+
+[node name="ImagenExploradaYANO" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(942, 496)
 texture = ExtResource("1_hrt1k")
@@ -365,6 +374,7 @@ bus = &"Sound Effects"
 stream = ExtResource("27_pi6t2")
 bus = &"Sound Effects"
 
+[connection signal="señalImagen" from="." to="ImagenExplorada" method="_on_interfaz_señal_imagen"]
 [connection signal="ReturnError" from="ComandController" to="." method="_on_comand_controller_return_error"]
 [connection signal="proceso" from="ComandController/Procesar" to="." method="_on_procesar_proceso"]
 [connection signal="interact" from="ComandController/Interactuar" to="." method="_on_interactuar_interact"]
@@ -375,6 +385,7 @@ bus = &"Sound Effects"
 [connection signal="text_submitted" from="TerminalComandos" to="." method="_on_terminal_comandos_text_submitted"]
 
 [editable path="ComandController"]
+[editable path="ImagenExplorada"]
 [editable path="SubViewportContainer/SubViewport/PhysicsScene"]
 [editable path="SubViewportContainer/SubViewport/PhysicsScene/Areas/Imagen2"]
 [editable path="SubViewportContainer/SubViewport/PhysicsScene/Areas/Area14"]

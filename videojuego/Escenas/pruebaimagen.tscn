@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx1quf6pkbbvn"]
+
+[ext_resource type="Script" uid="uid://1rvmvo2cavyq" path="res://Scripts/pruebaimagen.gd" id="1_y50f3"]
+[ext_resource type="PackedScene" uid="uid://c0ua2761kj73j" path="res://Escenas/imagenes.tscn" id="2_y50f3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_y50f3")
+
+[node name="TextureRect" parent="." instance=ExtResource("2_y50f3")]
