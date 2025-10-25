@@ -518,6 +518,7 @@ texture_normal = ExtResource("1_hrt1k")
 ignore_texture_size = true
 
 [connection signal="señalImagen" from="." to="ImagenExplorada" method="_on_interfaz_señal_imagen"]
+[connection signal="señalParar" from="." to="ImagenExplorada" method="_on_interfaz_señal_parar"]
 [connection signal="mouse_entered" from="MenuOpciones/AceptarConfig2" to="." method="_on_aceptar_config_2_mouse_entered"]
 [connection signal="pressed" from="MenuOpciones/AceptarConfig2" to="." method="_on_aceptar_config_2_pressed"]
 [connection signal="ReturnError" from="ComandController" to="." method="_on_comand_controller_return_error"]
