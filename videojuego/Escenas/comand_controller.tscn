@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bneuffojuxwvk" path="res://Scripts/procesar.gd" id="4_fdqa7"]
 [ext_resource type="Script" uid="uid://tkbco0wnhi74" path="res://Scripts/interactuar.gd" id="5_sri4k"]
 [ext_resource type="Script" uid="uid://hbbmllil5qg" path="res://Scripts/Analizar.cs" id="8_sri4k"]
-[ext_resource type="Script" uid="uid://bimx8m5erbqr3" path="res://Scripts/clone_script.gd" id="9_uyb7j"]
+[ext_resource type="Script" path="res://Scripts/clone_script.gd" id="9_uyb7j"]
 
 [sub_resource type="GDScript" id="GDScript_sri4k"]
 script/source = "extends Node
