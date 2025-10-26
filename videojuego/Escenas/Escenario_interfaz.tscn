@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="3_5l38x"]
-[ext_resource type="PackedScene" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
+[ext_resource type="PackedScene" uid="uid://c0ua2761kj73j" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
 [ext_resource type="FontFile" uid="uid://djw2364lw2f8w" path="res://Assets/Fonts/bytebounce/ByteBounce.ttf" id="6_rt3l3"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
 [ext_resource type="Script" uid="uid://dhc7fnrqu4fh8" path="res://Scripts/typewriter.gd" id="7_d021a"]
@@ -497,7 +497,6 @@ position = Vector2(957, 535)
 scale = Vector2(0.7, 0.693)
 sprite_frames = SubResource("SpriteFrames_nnrd8")
 autoplay = "default"
-frame_progress = 0.57476896
 
 [node name="TypingFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_vpig8")
