@@ -100,22 +100,6 @@ tracks/0/keys = {
 "values": [0.0047393367]
 }
 
-[sub_resource type="Animation" id="Animation_a6jcn"]
-resource_name = "typewriter"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.99),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0047393367, 1.0]
-}
-
 [sub_resource type="Animation" id="Animation_k7noi"]
 resource_name = "finale"
 length = 15.0
@@ -127,6 +111,22 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0047393367, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_a6jcn"]
+resource_name = "typewriter"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.99),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0047393367, 1.0]
@@ -336,7 +336,6 @@ text = "ACEPTAR
 flat = true
 
 [node name="ComandController" parent="." instance=ExtResource("2_nj3o3")]
-fCanClonar = true
 
 [node name="Mover" parent="ComandController" index="1" node_paths=PackedStringArray("_physics_player")]
 _physics_player = NodePath("../../SubViewportContainer/SubViewport/PhysicsScene/Player")
@@ -460,6 +459,9 @@ script = SubResource("GDScript_a6jcn")
 
 [node name="PhysicsScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_d021a")]
 position = Vector2(-11, 21)
+
+[node name="Sprite2D" parent="SubViewportContainer/SubViewport/PhysicsScene/Player" index="1"]
+visible = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_tu35c")
