@@ -75,7 +75,7 @@ size = Vector2(322, 204.25)
 size = Vector2(815, 120)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl6v7"]
-size = Vector2(714, 1463)
+size = Vector2(723, 1463)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8uw4"]
 size = Vector2(129.6914, 121.125)
@@ -105,7 +105,7 @@ script = ExtResource("1_le04a")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(7, 285)
+position = Vector2(0, 317)
 disable_mode = 2
 motion_mode = 1
 platform_on_leave = 2
@@ -436,7 +436,7 @@ shape = SubResource("RectangleShape2D_d0sjh")
 position = Vector2(-400, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2(-295, -529.5)
+position = Vector2(-290.5, -529.5)
 shape = SubResource("RectangleShape2D_fl6v7")
 
 [node name="StaticBody2D24" type="StaticBody2D" parent="."]
