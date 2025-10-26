@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://da01jtt78ktfw"]
 
-[ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
+[ext_resource type="Script" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
 [ext_resource type="PackedScene" uid="uid://cronljxn02hkw" path="res://Escenas/Area.tscn" id="3_a8uw4"]
 [ext_resource type="Texture2D" uid="uid://clbhia1wx0ii1" path="res://Assets/PARAMO/PARAMO1.png" id="4_em6qh"]
@@ -96,7 +96,7 @@ script = ExtResource("1_le04a")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(10, 293)
+position = Vector2(-32, -311)
 disable_mode = 2
 motion_mode = 1
 platform_on_leave = 2

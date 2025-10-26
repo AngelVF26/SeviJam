@@ -96,7 +96,6 @@ public partial class ComandController : Node
 	private void OnCanAnalizar(bool canAnalizar)
 	{
 		fCanAnalizar = canAnalizar;
-		GD.Print("Vamos a ir viendo: " + canAnalizar);
 	}
 
 	private void OnCuadernoSeñal()
