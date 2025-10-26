@@ -23,7 +23,7 @@ func clonar():
  > 
  > Un solo pelo hubiera bastado. 
  > 
- > ¿Abrir CUADERNO de bitácora?
+ > ¿Abrir cuaderno de bitácora?
  > S/N" 
 
 	animator.play("clonar")
