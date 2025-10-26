@@ -14,6 +14,8 @@ var objeto_analizar:String
 func _ready() -> void:
 	objeto_interactuar = Comandos.OBJETOS[objeto1]["OBJECTMSG"]
 	objeto_analizar = Comandos.OBJETOS[objeto1]["OBJECTANL"]
+
+	
 	#(obstaculo.get_child(0) as CollisionShape2D).shape = $CollisionShape2D.shape
 	#if is_wall:
 		#obstaculo.process_mode = Node.PROCESS_MODE_INHERIT
