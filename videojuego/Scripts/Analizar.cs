@@ -125,6 +125,8 @@ public partial class Analizar : Node
 
 				}
 			}
+
+			area.Visible = false;
 		}
 	}
 
