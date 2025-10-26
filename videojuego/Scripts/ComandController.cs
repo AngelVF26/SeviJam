@@ -125,12 +125,12 @@ public partial class ComandController : Node
 			GD.Print(flag);
 			ret = flag switch
 			{
-				1 => "\n\n\n> ERROR: El comando proporcionado no existe.",
-				2 => "\n\n\n> ERROR: El comando proporcionado no admite argumentos",
-				3 => "\n\n\n> ERROR: El comando proporcionado no admite argumentos",
-				4 => "\n\n\n> ERROR: El comando proporcionado debe tener 2 argumentos.\n> Ej: mover 2 n",
-				5 => "\n\n\n> ERROR: No hay muestras para analizar.",
-				_ => "\n\n\n > ERROR. El comando proporcionado es incorrecto.",
+				1 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado no existe.",
+				2 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado no admite argumentos",
+				3 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado no admite argumentos",
+				4 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado debe tener 2 argumentos.\n> Ej: mover 2 n",
+				5 => "\n\n\n > [color=red]ERROR[/color]: No hay muestras para analizar.",
+				_ => "\n\n\n > [color=red]ERROR[/color]. El comando proporcionado es incorrecto.",
 			};
 			if (ret != "")
 			{
@@ -170,10 +170,10 @@ public partial class ComandController : Node
 					else if (line.ToLower() == "s" && fCanCuaderno)
 					{
 						String linea1 = "\n  ********************************************************";
-						String linea2 = "\n  ***                   MISIÓN EDÉN                   ***";
+						String linea2 = "\n   ******                    MISIÓN EDÉN                ******";
 						String linea3 = "\n  > Cuaderno de bitácora, día 2510 de expedición:";
-						String linea4 = "\n  > Realizada la exploración del planeta [7191], o GAIA. Había";
-						String linea5 = "\n  > rastros de vida, pero primitiva e inusual, incompatible con el clonador.";
+						String linea4 = "\n  > Realizada la exploración del planeta [7191], o [color=blue]GAIA[/color]. Había";
+						String linea5 = "\n  > rastros de vida, pero primitiva e inusual, incompatible con   el clonador.";
 						String linea6 = "\n  > He encontrado restos humanos, pero tan antiguos que a duras penas he obtenido unas pocas moléculas de ADN.";
 						String linea7 = "\n  >  El resto del páramo estaba desierto. No había ni un pelo...";
 						String linea8 = "\n  > Quizás tenga más suerte en otro planeta. Por ahora, lo mejor será ABORTAR MISION.";
@@ -304,7 +304,7 @@ public partial class ComandController : Node
 	
 	private void ProcesarNodoAbortar(String linea)
 	{
-		if (linea.ToLower() == "abortar mision")
+		if (linea.ToLower() == "abortar mision" || linea.ToLower() == "/abortar mision")
 		{
 			EmitSignal("AbortarSeñal");
 		}
@@ -370,7 +370,7 @@ public partial class ComandController : Node
 	{
 		// Procesamos si el comando está mal escrito. Si no, mandamos error.
 		String lineaMin = linea.ToLower();
-		var value = Regex.Match(lineaMin, @"^(\w+)\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n)|(e)|(o)|(s))");
+		var value = Regex.Match(lineaMin, @"^(\w+)\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n)|(e)|(o)|(s)|(izquierda)|(abajo)|(derecha)|(arriba))");
 		if (!value.Success)
 		{
 			ReturnErrorInTerminal(4);
@@ -379,7 +379,7 @@ public partial class ComandController : Node
 		else
 		{
 			var arg1 = Regex.Match(lineaMin, @"(\d+)");
-			var arg2 = Regex.Match(lineaMin, @"((norte)|(sur)|(este)|(oeste)|\sn$|\se$|\so$|\ss$)");
+			var arg2 = Regex.Match(lineaMin, @"((norte)|(sur)|(este)|(oeste)|(izquierda)|(abajo)|(derecha)|(arriba)|\sn$|\se$|\so$|\ss$)");
 
 			int distancia = Int32.Parse(arg1.Value);
 			String direccion = arg2.Value.Trim();

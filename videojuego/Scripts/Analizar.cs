@@ -114,7 +114,7 @@ public partial class Analizar : Node
 				{
 					String linea1 = "\n  > Todos los compartimentos disponibles han sido ocupados.";
 					String linea2 = "\n  > La misión ha fracasado.";
-					String linea3 = "\n  > Se recomienda la desconexión de Sans0n.";
+					String linea3 = "\n  > Se recomienda la desconexión de [color=blue]Sans0n.[/color]";
 
 					numDeMuestras = 0;
 
@@ -184,7 +184,7 @@ public partial class Analizar : Node
 				ayudaTexto = "\n\n > Quedan dos compartimentos de análisis.";
 				break;
 			case int val when val == 2:
-				ayudaTexto = "\n\n > AVISO: ¡Queda un solo compartimento de análisis!";
+				ayudaTexto = "\n\n > [color=yellow]AVISO[/color]: Queda un solo compartimento de análisis";
 				break;
 			case int val when val == 3:
 				ayudaTexto = "\n\n > Todos los compartimentos de análisis ocupados. Abortando.";

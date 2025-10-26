@@ -27,7 +27,7 @@ const OBJETOS = {
 	},
 	"ZAPATO" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado. No sé qué objeto ha dibujado Dani.\n "
+		"OBJECTANL" : "Análisis completado.  Trazas de sangre de. . . [color=red]ESPECIE DESCONOCIDA[/color] localizada sobre la superficie de la muestra.\n "
 	},
 	"ESQUELETO" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
@@ -40,7 +40,7 @@ const COMANDOS = {
 		"commandname": "MOVER",
 		"nombre_nodo": "Mover",
 		"commanddescription": "Avanzando en la dirección indicada...",
-		"commandaction": "Desplaza el rover en la dirección indicada. \n   Por ejemplo, MOVER 10 NORTE. \n   La velocidad máxima es 5. No se moverá más rápido.",
+		"commandaction": "Desplaza el rover en la dirección indicada. \n   Por ejemplo, MOVER 3 NORTE. \n   La velocidad máxima es 5. No se moverá más rápido.",
 		"type": "terminal",
 		"distancia" : "",
 		"direccion" : "",
@@ -88,13 +88,13 @@ const COMANDOS = {
 	  "commandaction": "",
 	  "type": "terminal"
 	},
-	["clonar"]: {
+	["clonar", "/clonar"]: {
 		"commanddescription": "Iniciando el proceso de clonación de la muestra obtenida. . .",
 		"commandaction": "",
 		"type": "terminal",
 		"nombre_nodo":"Clonar"
 	},
-	["abortar"]: {
+	["abortar", "/abortar"]: {
 		"commanddescription":"",
 		"commandaction": "",
 		"type": "terminal",
