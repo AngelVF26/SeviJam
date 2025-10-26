@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clbhia1wx0ii1"
-path="res://.godot/imported/PÁRAMO 1.png-99caa3728d62b3ae13653c05830423ab.ctex"
+uid="uid://bselawyqpr6fh"
+path="res://.godot/imported/CAJA DE MUSICA.png-ad27f6cf1520a7619d96405c47f88aa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PARAMO/PÁRAMO 1.png"
-dest_files=["res://.godot/imported/PÁRAMO 1.png-99caa3728d62b3ae13653c05830423ab.ctex"]
+source_file="res://Assets/OBJETOS/CAJA DE MUSICA.png"
+dest_files=["res://.godot/imported/CAJA DE MUSICA.png-ad27f6cf1520a7619d96405c47f88aa2.ctex"]
 
 [params]
 

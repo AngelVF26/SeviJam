@@ -33,6 +33,8 @@ public partial class ComandController : Node
 	public delegate void CerrarVentanaEventHandler();
 	[Signal]
 	public delegate void ClonarSeñalEventHandler();
+	[Signal]
+	public delegate void AbortarSeñalEventHandler();
 	private Node comandos;
 	private Godot.Collections.Dictionary<String[], Godot.Collections.Dictionary<String, String>> fCommandDict;
 	private Node2D fPadre;
@@ -53,6 +55,7 @@ public partial class ComandController : Node
 
 	private Node clonar;
 	private AnimationPlayer animationPlayer;
+	private Node abortar;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -67,7 +70,8 @@ public partial class ComandController : Node
 		fCommandLabel = GetParent().GetNode<RichTextLabel>("InfoComandos");
 		terminalInput = GetParent().GetNode<LineEdit>("TerminalComandos");
 		clonar = GetNode<Node>("Clonar");
-		animationPlayer = GetParent().GetNode<AnimationPlayer>("AnimationPlayer");
+		animationPlayer = GetParent().GetNode<AnimationPlayer>("AnimationText");
+		abortar = GetNode<Node>("Abortar");
 
 		clonar.Connect(("cuadernoSeñal"), new Callable(this, nameof(OnCuadernoSeñal)));
 		minimapa.Connect(("actividad_del_mapa"), new Callable(this, nameof(OnActividadDelMapa)));
@@ -92,7 +96,6 @@ public partial class ComandController : Node
 	private void OnCanAnalizar(bool canAnalizar)
 	{
 		fCanAnalizar = canAnalizar;
-		GD.Print("Vamos a ir viendo: " + canAnalizar);
 	}
 
 	private void OnCuadernoSeñal()
@@ -169,10 +172,14 @@ public partial class ComandController : Node
 						String linea1 = "\n  ********************************************************";
 						String linea2 = "\n  ***                   MISIÓN EDÉN                   ***";
 						String linea3 = "\n  > Cuaderno de bitácora, día 2510 de expedición:";
-						String linea4 = "\n  > Realizada la exploración del planeta [7191], o GAIA. Había rastros de vida, pero primitiva y extraña, incompatible con el clonador. He encontrado restos humanos, pero tan antiguos que a duras penas he obtenido unas pocas moléculas de ADN. El resto del páramo estaba desierto. No había ni un pelo...";
-						String linea5 = "\n  > Quizás tenga más suerte en otro planeta. Por ahora, ABORTAMOS MISIÓN.";
-						fCommandLabel.Text = linea1 + linea2 + linea1 + linea3 + linea4 + linea5;
-						animationPlayer.Play("typewriter");
+						String linea4 = "\n  > Realizada la exploración del planeta [7191], o GAIA. Había";
+						String linea5 = "\n  > rastros de vida, pero primitiva e inusual, incompatible con el clonador.";
+						String linea6 = "\n  > He encontrado restos humanos, pero tan antiguos que a duras penas he obtenido unas pocas moléculas de ADN.";
+						String linea7 = "\n  >  El resto del páramo estaba desierto. No había ni un pelo...";
+						String linea8 = "\n  > Quizás tenga más suerte en otro planeta. Por ahora, ABORTAMOS   MISIÓN.";
+						fCommandLabel.Text = linea1 + linea2 + linea1 + linea3 + linea4 + linea5 + linea6 + linea7 + linea8;
+
+						animationPlayer.Play("finale");
 						fCanCuaderno = false;
 						isError = false;
 					}
@@ -258,6 +265,12 @@ public partial class ComandController : Node
 							isError = false;
 							EmitSignal("ComandoEnviado");
 							break;
+						case string val when val == "Abortar":
+							GD.Print("a");
+							ProcesarNodoAbortar(line);
+							isError = false;
+							EmitSignal("ComandoEnviado");
+							break;
 						default:
 							isError = false;
 							break;
@@ -283,10 +296,22 @@ public partial class ComandController : Node
 		}
 
 	}
-	
+
 	private void ProcesarNodoMapa(String linea)
 	{
 		EmitSignal("MinimapaSeñal");
+	}
+	
+	private void ProcesarNodoAbortar(String linea)
+	{
+		if (linea.ToLower() == "abortar mision")
+		{
+			EmitSignal("AbortarSeñal");
+		}
+		else
+		{
+			fCommandLabel.Text = "\n\n  > Comando inválido. ¿Has probado con ABORTAR MISION?";
+		}
 	}
 
 	private void ProcesarNodoSalir(String linea)

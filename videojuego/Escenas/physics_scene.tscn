@@ -1,9 +1,15 @@
-[gd_scene load_steps=29 format=3 uid="uid://da01jtt78ktfw"]
+[gd_scene load_steps=35 format=3 uid="uid://da01jtt78ktfw"]
 
 [ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
 [ext_resource type="PackedScene" uid="uid://cronljxn02hkw" path="res://Escenas/Area.tscn" id="3_a8uw4"]
+[ext_resource type="Texture2D" uid="uid://clbhia1wx0ii1" path="res://Assets/PARAMO/PARAMO1.png" id="4_em6qh"]
 [ext_resource type="Texture2D" uid="uid://bkcb6xkgrevx1" path="res://Assets/RUINAS.png" id="4_fl6v7"]
+[ext_resource type="Texture2D" uid="uid://bc5kdqroov8hr" path="res://Assets/PARAMO/PARAMO2.png" id="5_egilu"]
+[ext_resource type="Texture2D" uid="uid://cmwo5a2t5swdi" path="res://Assets/PARAMO/PARAMO3.png" id="6_egilu"]
+[ext_resource type="Texture2D" uid="uid://bredol3v2wdob" path="res://Assets/PARAMO/PARAMO4.png" id="7_agaot"]
+[ext_resource type="Texture2D" uid="uid://btrrgoidrae2a" path="res://Assets/PARAMO/PARAMO5.png" id="8_actr7"]
+[ext_resource type="Texture2D" uid="uid://dnwhv8r4mh10h" path="res://Assets/OBJETOS/PÁRAMO 1.png" id="9_d0sjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um6v8"]
 size = Vector2(64, 64)
@@ -90,7 +96,7 @@ script = ExtResource("1_le04a")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(-163, 18)
+position = Vector2(7, 285)
 disable_mode = 2
 motion_mode = 1
 platform_on_leave = 2
@@ -112,41 +118,49 @@ metadata/_edit_lock_ = true
 [node name="Area" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 objeto1 = "NADA"
+imagen = ExtResource("4_em6qh")
 
 [node name="Area3" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 0)
 objeto1 = "NADA"
+imagen = ExtResource("5_egilu")
 
 [node name="Area5" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, 0)
 objeto1 = "NADA"
+imagen = ExtResource("6_egilu")
 
 [node name="Area7" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, 200)
 objeto1 = "NADA"
+imagen = ExtResource("7_agaot")
 
 [node name="Area8" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, 300)
 objeto1 = "NADA"
+imagen = ExtResource("8_actr7")
 
 [node name="Area9" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 200)
 objeto1 = "NADA"
+imagen = ExtResource("5_egilu")
 
 [node name="Area10" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 300)
 objeto1 = "NADA"
+imagen = ExtResource("7_agaot")
 
 [node name="Area12" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, 300)
 objeto1 = "NADA"
+imagen = ExtResource("9_d0sjh")
 
 [node name="Imagen2" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 200)

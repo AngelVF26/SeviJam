@@ -18,7 +18,7 @@ func clonar():
  > ...
  > ...
  > ...
- > ERROR.
+ > [color=red]ERROR[/color].
  > ADN insuficiente. Muestra incompleta.
  > 
  > 
@@ -27,7 +27,7 @@ func clonar():
  > ¿Abrir CUADERNO de bitácora?
  > S/N" 
 
-	animator.play("typewriter")
+	animator.play("finale")
 	emit_signal("cuadernoSeñal") 
 
 

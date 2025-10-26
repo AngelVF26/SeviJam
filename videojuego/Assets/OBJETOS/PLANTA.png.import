@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btrrgoidrae2a"
-path="res://.godot/imported/PÁRAMO 5.png-753fa2338756eff06dd1969e6ba07ee8.ctex"
+uid="uid://c1jw5jbu5yrsi"
+path="res://.godot/imported/PLANTA.png-eea351f6bcf768e66f7802a99a883178.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PARAMO/PÁRAMO 5.png"
-dest_files=["res://.godot/imported/PÁRAMO 5.png-753fa2338756eff06dd1969e6ba07ee8.ctex"]
+source_file="res://Assets/OBJETOS/PLANTA.png"
+dest_files=["res://.godot/imported/PLANTA.png-eea351f6bcf768e66f7802a99a883178.ctex"]
 
 [params]
 
