@@ -129,7 +129,7 @@ public partial class ComandController : Node
 				2 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado no admite argumentos",
 				3 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado no admite argumentos",
 				4 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado debe tener 2 argumentos.\n> Ej: mover 2 n",
-				5 => "\n\n\n > [color=red]ERROR[/color]: No hay muestras para analizar. Prueba con INTERACTUAR o PROCESAR.",
+				5 => "\n\n\n > [color=red]ERROR[/color]: No hay muestras para analizar.\n    Prueba con INTERACTUAR o PROCESAR.",
 				7 => "\n\n\n > Buen intento, pero no es tan fácil.",
 				_ => "\n\n\n > [color=red]ERROR[/color]. El comando proporcionado es incorrecto.",
 			};
@@ -174,11 +174,11 @@ public partial class ComandController : Node
 						String linea2 = "\n   ******                       MISIÓN EDÉN                    ******";
 						String linea3 = "\n  > Cuaderno de bitácora, día 2510 de expedición:";
 						String linea4 = "\n  > Realizada la exploración del planeta [7191], o [color=blue]GAIA[/color]. Había";
-						String linea6 = "\n  > rastros de vida, pero primitiva e inusual, incompatible con   el clonador.";
+						String linea6 = "\n  > rastros de vida, pero primitiva e inusual, incompatible con";
 						String linea7 = "\n    el clonador.";
 						String linea8 = "\n  > He encontrado restos humanos, pero tan antiguos que a duras";
 						String linea9 = "\n    penas he obtenido unas pocas moléculas de ADN.";
-						String linea10 = "\n  >  El resto del páramo estaba desierto. No había ni un pelo...";
+						String linea10 = "\n  > El resto del páramo estaba desierto. No había ni un pelo...";
 						String linea11 = "\n  > Quizás tenga más suerte en otro planeta. Por ahora, lo mejor";
 						String linea12 = "\n    será [color=white]ABORTAR MISION[/color].";
 						fCommandLabel.Text = linea1 + linea2 + linea1 + linea3 + linea4 + linea6 + linea7 + linea8 + linea9 + linea10 + linea11 + linea12;
