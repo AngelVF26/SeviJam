@@ -130,6 +130,7 @@ public partial class ComandController : Node
 				3 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado no admite argumentos",
 				4 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado debe tener 2 argumentos.\n> Ej: mover 2 n",
 				5 => "\n\n\n > [color=red]ERROR[/color]: No hay muestras para analizar. Prueba con INTERACTUAR o PROCESAR.",
+				7 => "\n\n\n > Buen intento, pero no es tan fácil.",
 				_ => "\n\n\n > [color=red]ERROR[/color]. El comando proporcionado es incorrecto.",
 			};
 			if (ret != "")
@@ -293,8 +294,16 @@ public partial class ComandController : Node
 			
 			if (isError)
 			{
-				ReturnErrorInTerminal(1);
-				EmitSignal("ReturnError");
+				if (line.ToLower() == "secreto")
+				{
+					ReturnErrorInTerminal(7);
+				}
+				else
+				{
+					ReturnErrorInTerminal(1);
+					EmitSignal("ReturnError");
+				}
+				
 			}
 		}
 
