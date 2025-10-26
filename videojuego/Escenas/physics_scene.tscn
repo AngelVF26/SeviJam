@@ -778,32 +778,32 @@ shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 348.0
-offset_top = -450.0
-offset_right = 450.0
-offset_bottom = 450.0
+offset_top = -662.0
+offset_right = 716.0
+offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = 352.93695
 offset_top = 350.36093
-offset_right = 452.576
+offset_right = 644.37317
 offset_bottom = 1153.1154
 rotation = 1.5707964
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 offset_left = 352.0
-offset_top = -450.0
-offset_right = 451.84335
-offset_bottom = 352.81738
+offset_top = -664.3589
+offset_right = 666.2023
+offset_bottom = 138.4585
 rotation = 1.5707964
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="."]
-offset_left = -350.0379
-offset_top = 447.0
-offset_right = -250.0758
-offset_bottom = 1249.8175
+offset_left = -350.03793
+offset_top = 643.82043
+offset_right = 11.052246
+offset_bottom = 1955.2533
 rotation = 3.1415927
 color = Color(0, 0, 0, 1)
 
