@@ -176,7 +176,7 @@ public partial class ComandController : Node
 						String linea5 = "\n  > rastros de vida, pero primitiva e inusual, incompatible con el clonador.";
 						String linea6 = "\n  > He encontrado restos humanos, pero tan antiguos que a duras penas he obtenido unas pocas moléculas de ADN.";
 						String linea7 = "\n  >  El resto del páramo estaba desierto. No había ni un pelo...";
-						String linea8 = "\n  > Quizás tenga más suerte en otro planeta. Por ahora, ABORTAMOS   MISIÓN.";
+						String linea8 = "\n  > Quizás tenga más suerte en otro planeta. Por ahora, lo mejor será ABORTAR MISION.";
 						fCommandLabel.Text = linea1 + linea2 + linea1 + linea3 + linea4 + linea5 + linea6 + linea7 + linea8;
 
 						animationPlayer.Play("finale");
