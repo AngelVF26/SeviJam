@@ -336,7 +336,6 @@ text = "ACEPTAR
 flat = true
 
 [node name="ComandController" parent="." instance=ExtResource("2_nj3o3")]
-fCanClonar = true
 
 [node name="Mover" parent="ComandController" index="1" node_paths=PackedStringArray("_physics_player")]
 _physics_player = NodePath("../../SubViewportContainer/SubViewport/PhysicsScene/Player")
@@ -460,6 +459,9 @@ script = SubResource("GDScript_a6jcn")
 
 [node name="PhysicsScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_d021a")]
 position = Vector2(-11, 21)
+
+[node name="Sprite2D" parent="SubViewportContainer/SubViewport/PhysicsScene/Player" index="1"]
+visible = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_tu35c")
