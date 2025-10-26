@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Text.RegularExpressions;
 
 public partial class Analizar : Node
 {
@@ -26,6 +27,8 @@ public partial class Analizar : Node
 	private String fullText = "";
 	[Export]
 	public double charactersPerSecond = 6f;
+
+	private AnimationPlayer animationPlayer;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -33,6 +36,9 @@ public partial class Analizar : Node
 		AddToGroup("analizar");
 		player = GetParent().GetParent().GetNode<CharacterBody2D>("SubViewportContainer/SubViewport/PhysicsScene/Player");
 		commandController = GetParent();
+
+		animationPlayer = GetParent().GetParent().GetNode<AnimationPlayer>("AnimationText");
+
 		terminalLabel = commandController.GetParent().GetNode<RichTextLabel>("InfoComandos");
 		commandController.Connect(("AnalizarSeñal"), new Callable(this, nameof(OnAnalizarSeñal)));
 		commandController.Connect(("SiSeñal"), new Callable(this, nameof(OnSiSeñal)));
@@ -83,9 +89,23 @@ public partial class Analizar : Node
 			terminalLabel.Text = analizandoMuestra + "\n  > "+resultado;
 			fullText = terminalLabel.Text;
 
-			if (claveDic == "ESQUELETO")
+			GD.Print("Y ESTO QUE ES :" + resultado);
+			var value = Regex.Match(resultado, @"\b(CLONAR+.)$"); 
+		
+			if (value.Success)
 			{
+				GD.Print("oleeee");
 				EmitSignal("CanClonarSeñal", true);
+			}
+			else if (numDeMuestras >= 3)
+			{
+				String linea1 = "\n  > Todos los compartimentos disponibles han sido ocupados.";
+				String linea2 = "\n  > La misión ha fracasado.";
+				String linea3 = "\n  > Se recomienda la desconexión de Sans0n";
+
+				// TODO: Setear esto
+				terminalLabel.Text = linea1 + linea2 + linea3;
+				animationPlayer.Play("finale");
 			}
 		}
 	}
