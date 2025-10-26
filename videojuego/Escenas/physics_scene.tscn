@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://da01jtt78ktfw"]
+[gd_scene load_steps=44 format=3 uid="uid://da01jtt78ktfw"]
 
 [ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
@@ -10,6 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://bredol3v2wdob" path="res://Assets/PARAMO/PARAMO4.png" id="7_agaot"]
 [ext_resource type="Texture2D" uid="uid://btrrgoidrae2a" path="res://Assets/PARAMO/PARAMO5.png" id="8_actr7"]
 [ext_resource type="Texture2D" uid="uid://dnwhv8r4mh10h" path="res://Assets/OBJETOS/PÁRAMO 1.png" id="9_d0sjh"]
+[ext_resource type="Texture2D" uid="uid://c1jw5jbu5yrsi" path="res://Assets/OBJETOS/PLANTA.png" id="10_yfb4c"]
+[ext_resource type="Texture2D" uid="uid://ovhfc4ffnd5x" path="res://Assets/OBJETOS/ANIMAL.png" id="11_ykkwm"]
+[ext_resource type="Texture2D" uid="uid://d151koydi42h8" path="res://Assets/OBJETOS/PÁRAMO 3.png" id="12_5nvvt"]
+[ext_resource type="Texture2D" uid="uid://cscm7vfxj2ha3" path="res://Assets/OBJETOS/OBJETO HUMANO.png" id="13_e82hr"]
+[ext_resource type="Texture2D" uid="uid://bselawyqpr6fh" path="res://Assets/OBJETOS/CAJA DE MUSICA.png" id="14_1iyme"]
+[ext_resource type="Texture2D" uid="uid://bq3figpdwo52c" path="res://Assets/OBJETOS/LAGO.png" id="16_bfge8"]
+[ext_resource type="Texture2D" uid="uid://bnog330yq27c8" path="res://Assets/OBJETOS/ESQUELETO.png" id="17_pjjql"]
+[ext_resource type="Texture2D" uid="uid://7r4wbc0vpx5e" path="res://Assets/OBJETOS/PÁRAMO 2.png" id="18_g4qy1"]
+[ext_resource type="Texture2D" uid="uid://bi7nuhs6bhwj3" path="res://Assets/OBJETOS/PÁRAMO 5.png" id="19_esg7w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um6v8"]
 size = Vector2(64, 64)
@@ -165,6 +174,7 @@ imagen = ExtResource("9_d0sjh")
 [node name="Imagen2" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 200)
 objeto1 = "PLANTA"
+imagen = ExtResource("10_yfb4c")
 
 [node name="Label" parent="Areas/Imagen2" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -175,6 +185,7 @@ texture = SubResource("GradientTexture2D_um6v8")
 [node name="Area14" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 300)
 objeto1 = "NADA"
+imagen = ExtResource("6_egilu")
 
 [node name="Label" parent="Areas/Area14" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -185,6 +196,7 @@ visible = false
 [node name="Area16" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 300)
 objeto1 = "NADA"
+imagen = ExtResource("8_actr7")
 
 [node name="Label" parent="Areas/Area16" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -195,6 +207,7 @@ visible = false
 [node name="Area17" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 200)
 objeto1 = "NADA"
+imagen = ExtResource("7_agaot")
 
 [node name="Label" parent="Areas/Area17" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -205,6 +218,7 @@ visible = false
 [node name="Area18" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, 300)
 objeto1 = "NADA"
+imagen = ExtResource("4_em6qh")
 
 [node name="Label" parent="Areas/Area18" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -216,15 +230,18 @@ visible = false
 visible = false
 position = Vector2(-300, 0)
 objeto1 = "NADA"
+imagen = ExtResource("5_egilu")
 
 [node name="Area20" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, 100)
 objeto1 = "NADA"
+imagen = ExtResource("6_egilu")
 
 [node name="Area21" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 0)
 objeto1 = "NADA"
+imagen = ExtResource("4_em6qh")
 
 [node name="Label" parent="Areas/Area21" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -236,15 +253,18 @@ visible = false
 visible = false
 position = Vector2(-300, -200)
 objeto1 = "NADA"
+imagen = ExtResource("7_agaot")
 
 [node name="Area26" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, -100)
 objeto1 = "NADA"
+imagen = ExtResource("8_actr7")
 
 [node name="Area28" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, -100)
 objeto1 = "NADA"
+imagen = ExtResource("4_em6qh")
 
 [node name="Label" parent="Areas/Area28" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -255,6 +275,7 @@ visible = false
 [node name="Area30" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -100)
 objeto1 = "NADA"
+imagen = ExtResource("5_egilu")
 
 [node name="Label" parent="Areas/Area30" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -265,6 +286,7 @@ visible = false
 [node name="imagen4" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -100)
 objeto1 = "ANIMAL"
+imagen = ExtResource("11_ykkwm")
 
 [node name="Label" parent="Areas/imagen4" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -277,6 +299,7 @@ texture = SubResource("GradientTexture2D_egilu")
 [node name="Area34" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -100)
 objeto1 = "NADA"
+imagen = ExtResource("12_5nvvt")
 
 [node name="Label" parent="Areas/Area34" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -287,6 +310,7 @@ visible = false
 [node name="imagen 6" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -200)
 objeto1 = "ZAPATO"
+imagen = ExtResource("13_e82hr")
 
 [node name="Label" parent="Areas/imagen 6" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -297,6 +321,7 @@ texture = SubResource("GradientTexture2D_agaot")
 [node name="Area38" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -100)
 objeto1 = "NADA"
+imagen = ExtResource("9_d0sjh")
 
 [node name="Label" parent="Areas/Area38" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -307,6 +332,7 @@ visible = false
 [node name="Imagen5" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 0)
 objeto1 = "MUSICA"
+imagen = ExtResource("14_1iyme")
 
 [node name="Label" parent="Areas/Imagen5" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -328,6 +354,7 @@ texture = SubResource("GradientTexture2D_d0sjh")
 [node name="Imagen3" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, -300)
 objeto1 = "LAGO"
+imagen = ExtResource("16_bfge8")
 
 [node name="Label" parent="Areas/Imagen3" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -338,6 +365,7 @@ texture = SubResource("GradientTexture2D_k4kq3")
 [node name="Imagen7" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -300)
 objeto1 = "ESQUELETO"
+imagen = ExtResource("17_pjjql")
 
 [node name="Label" parent="Areas/Imagen7" index="0"]
 metadata/_edit_use_anchors_ = true
@@ -349,21 +377,25 @@ texture = SubResource("GradientTexture2D_bt6vj")
 visible = false
 position = Vector2(0, -300)
 objeto1 = "NADA"
+imagen = ExtResource("9_d0sjh")
 
 [node name="Area114" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, -300)
 objeto1 = "NADA"
+imagen = ExtResource("18_g4qy1")
 
 [node name="Area116" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, -300)
 objeto1 = "NADA"
+imagen = ExtResource("12_5nvvt")
 
 [node name="Area118" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(300, -300)
 objeto1 = "NADA"
+imagen = ExtResource("19_esg7w")
 
 [node name="background" type="Sprite2D" parent="."]
 z_index = -1
@@ -746,32 +778,32 @@ shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 348.0
-offset_top = -450.0
-offset_right = 450.0
-offset_bottom = 450.0
+offset_top = -662.0
+offset_right = 716.0
+offset_bottom = 648.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = 352.93695
 offset_top = 350.36093
-offset_right = 452.576
+offset_right = 644.37317
 offset_bottom = 1153.1154
 rotation = 1.5707964
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 offset_left = 352.0
-offset_top = -450.0
-offset_right = 451.84335
-offset_bottom = 352.81738
+offset_top = -664.3589
+offset_right = 666.2023
+offset_bottom = 138.4585
 rotation = 1.5707964
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="."]
-offset_left = -350.0379
-offset_top = 447.0
-offset_right = -250.0758
-offset_bottom = 1249.8175
+offset_left = -350.03793
+offset_top = 643.82043
+offset_right = 11.052246
+offset_bottom = 1955.2533
 rotation = 3.1415927
 color = Color(0, 0, 0, 1)
 
