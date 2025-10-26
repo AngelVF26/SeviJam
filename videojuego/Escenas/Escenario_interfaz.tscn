@@ -424,6 +424,7 @@ keep_editing_on_text_submit = true
 deselect_on_focus_loss_enabled = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+visible = false
 offset_left = 10.000002
 offset_top = -12.000001
 offset_right = 510.0
@@ -433,7 +434,7 @@ scale = Vector2(3.7487817, 3.9636772)
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(500, 220)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(-73, 322)
