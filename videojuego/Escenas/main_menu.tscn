@@ -184,7 +184,7 @@ texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5803922, 1, 0.38431373, 1)
 theme_override_fonts/font = ExtResource("1_r8uxs")
-text = "CREDITOS"
+text = "CRÉDITOS"
 flat = true
 
 [node name="AbortarMision" type="Button" parent="ColorRect/GridMain"]
@@ -296,7 +296,7 @@ ARTE
 [left]
 						Dani		(OmegaSoda)
 [center]
-MUSICA/SFX
+MÚsaSICA/SFX
 [left]
 						Ángel		(Azzazel)
 [center]

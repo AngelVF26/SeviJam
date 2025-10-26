@@ -7,31 +7,31 @@ const OBJETOS = {
 	},
 	"ROCAS" : {
 		"OBJECTMSG" : "Muestra inorgánica obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado. \n No hay muestras orgánicas. Se han encontrado trazas de silicio, hierro y níquel."
+		"OBJECTANL" : "Análisis completado. \n  No hay muestras orgánicas. Se han encontrado trazas de silicio,\n  hierro y níquel. Parece una formación rocosa artificial."
 	},
 	"PLANTA" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado. \n Muestra orgánica de células vegetales. No es válido para la clonación. \n Parece que esta especie de planta absorbe el espectro rojizo de luz solar."
+		"OBJECTANL" : "Análisis completado. \n  Muestra orgánica de células vegetales. No es válido para la \n  clonación. Parece que esta especie de planta absorbe el espectro\n  rojizo de luz solar."
 	},
 	"LAGO" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado. \n La muestra de agua contiene 34 tipos de bacterias, amebas, y una \n  especie de animal microscópico en forma de cruasán."
+		"OBJECTANL" : "Análisis completado. \n  La muestra de agua contiene 34 tipos de bacterias, amebas, y una \n  especie de animal microscópico en forma de cruasán."
 	},
 	"ANIMAL" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado. \n Muestra orgánica de células animales. Se trata de un espécimen de la familia Canidae.\n El análisis de carbono indica una antiguedad de 50 décadas."
+		"OBJECTANL" : "Análisis completado. \n  Muestra orgánica de células animales. Se trata de un espécimen\n  de la familia Canidae. El análisis de carbono indica una antiguedad\n  de 50 décadas."
 	},
 	"MUSICA" : {
-		"OBJECTMSG" : "Procesando audio...",
+		"OBJECTMSG" : "Dispositivo de audio integrado. Reproduciendo melodía.",
 		"OBJECTANL" : ""
 	},
 	"ZAPATO" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado.  Trazas de sangre de. . . [color=red]ESPECIE DESCONOCIDA[/color] localizada sobre la superficie de la muestra.\n "
+		"OBJECTANL" : "Análisis completado.\n  Trazas de sangre de. . . [color=red]ESPECIE DESCONOCIDA[/color]\n  localizada sobre la superficie de la muestra."
 	},
 	"ESQUELETO" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado. Restos de células óseas de un homo sapiens. Se puede intentar CLONAR."
+		"OBJECTANL" : "Análisis completado. Restos de células óseas de un homo\n  sapiens. Se puede intentar CLONAR."
 	},
 }
 
