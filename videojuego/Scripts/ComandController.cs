@@ -129,7 +129,7 @@ public partial class ComandController : Node
 				2 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado no admite argumentos",
 				3 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado no admite argumentos",
 				4 => "\n\n\n > [color=red]ERROR[/color]: El comando proporcionado debe tener 2 argumentos.\n> Ej: mover 2 n",
-				5 => "\n\n\n > [color=red]ERROR[/color]: No hay muestras para analizar.",
+				5 => "\n\n\n > [color=red]ERROR[/color]: No hay muestras para analizar. Prueba con INTERACTUAR o PROCESAR.",
 				_ => "\n\n\n > [color=red]ERROR[/color]. El comando proporcionado es incorrecto.",
 			};
 			if (ret != "")
@@ -370,7 +370,8 @@ public partial class ComandController : Node
 	{
 		// Procesamos si el comando está mal escrito. Si no, mandamos error.
 		String lineaMin = linea.ToLower();
-		var value = Regex.Match(lineaMin, @"^(\w+)\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n)|(e)|(o)|(s)|(izquierda)|(abajo)|(derecha)|(arriba))");
+		GD.Print(lineaMin);
+		var value = Regex.Match(lineaMin, @"^(\w+)\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n$)|(e$)|(o$)|(s$)|(izquierda)|(abajo)|(derecha)|(arriba))");
 		if (!value.Success)
 		{
 			ReturnErrorInTerminal(4);

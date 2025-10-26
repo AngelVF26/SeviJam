@@ -15,7 +15,7 @@ public partial class Analizar : Node
 	private RichTextLabel terminalLabel;
 	private int numDeMuestras = 0;
 	[Export]
-	private int numMaxDeMuestras { get; set; } = 3;
+	private int numMaxDeMuestras { get; set; } = 5;
 	private int tiempoEntreComandos = 0;
 	private int rndTiempo1;
 	private int rndTiempo2;
@@ -92,7 +92,7 @@ public partial class Analizar : Node
 			isWriting = true;
 			terminalLabel.VisibleCharacters = 0;
 			numDeMuestras++;
-			String analizandoMuestra = "\n\n\n > Analizando muestra. . .\n > Analizando muestra. . .\n > Analizando muestra . . .\n > Analizando muestra. . .";
+			String analizandoMuestra = "\n\n\n > Analizando muestra. . .\n > Analizando muestra. . .\n > Analizando muestra. . .\n > Analizando muestra. . .";
 			// String resultado = "\n\n > RESULTADO: ERROR. ADN INCOMPATIBLE O INEXISTENTE";
 			Area2D area = (Area2D)player.Get("current_area");
 			String resultado = (String)area.Get("objeto_analizar");
@@ -110,7 +110,7 @@ public partial class Analizar : Node
 			}
 			else
 			{
-				if (numDeMuestras >= 3)
+				if (numDeMuestras >= numMaxDeMuestras)
 				{
 					String linea1 = "\n  > Todos los compartimentos disponibles han sido ocupados.";
 					String linea2 = "\n  > La misión ha fracasado.";
@@ -183,12 +183,18 @@ public partial class Analizar : Node
 		switch (numDeMuestras)
 		{
 			case int val when val == 1:
-				ayudaTexto = "\n\n > Quedan dos compartimentos de análisis.";
+				ayudaTexto = "\n\n > Quedan cuatro compartimentos de análisis.";
 				break;
 			case int val when val == 2:
-				ayudaTexto = "\n\n > [color=yellow]AVISO[/color]: Queda un solo compartimento de análisis";
+				ayudaTexto = "\n\n > Quedan tres compartimentos de análisis.";
 				break;
 			case int val when val == 3:
+				ayudaTexto = "\n\n > Quedan dos compartimentos de análisis.";
+				break;
+			case int val when val == 4:
+				ayudaTexto = "\n\n > [color=yellow]AVISO[/color]: Queda un solo compartimento de análisis";
+				break;
+			case int val when val == numMaxDeMuestras:
 				ayudaTexto = "\n\n > Todos los compartimentos de análisis ocupados. Abortando.";
 				break;
 			default:
