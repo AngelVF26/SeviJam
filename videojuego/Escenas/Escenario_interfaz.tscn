@@ -545,6 +545,7 @@ ignore_texture_size = true
 [connection signal="mouse_entered" from="MenuOpciones/AceptarConfig2" to="." method="_on_aceptar_config_2_mouse_entered"]
 [connection signal="pressed" from="MenuOpciones/AceptarConfig2" to="." method="_on_aceptar_config_2_pressed"]
 [connection signal="ReturnError" from="ComandController" to="." method="_on_comand_controller_return_error"]
+[connection signal="señalMovadura" from="ComandController/Mover" to="." method="_on_mover_señal_movadura"]
 [connection signal="proceso" from="ComandController/Procesar" to="." method="_on_procesar_proceso"]
 [connection signal="interact" from="ComandController/Interactuar" to="." method="_on_interactuar_interact"]
 [connection signal="ocultar" from="ComandController/Salir" to="." method="_on_salir_ocultar"]
