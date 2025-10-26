@@ -19,7 +19,7 @@ const OBJETOS = {
 	},
 	"ANIMAL" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado. \n Muestra orgánica de células animales. Se trata de un espécimen de la familia Canidae.\n El análisis de carbono indica una antiguedad de 500 años."
+		"OBJECTANL" : "Análisis completado. \n Muestra orgánica de células animales. Se trata de un espécimen de la familia Canidae.\n El análisis de carbono indica una antiguedad de 50 décadas."
 	},
 	"MUSICA" : {
 		"OBJECTMSG" : "Procesando audio...",
@@ -40,7 +40,7 @@ const COMANDOS = {
 		"commandname": "MOVER",
 		"nombre_nodo": "Mover",
 		"commanddescription": "Avanzando en la dirección indicada...",
-		"commandaction": "Desplaza el rover en la dirección indicada. \n   Por ejemplo, MOVER 10 NORTE.",
+		"commandaction": "Desplaza el rover en la dirección indicada. \n   Por ejemplo, MOVER 10 NORTE. \n   La velocidad máxima es 5. No se moverá más rápido.",
 		"type": "terminal",
 		"distancia" : "",
 		"direccion" : "",
@@ -65,7 +65,7 @@ const COMANDOS = {
 	},
 	["mapa","minimapa","/mapa","/minimapa"] : {
 		"nombre_nodo":"Minimapa",
-		"commanddescription":"Abre un mapa que muestra el entorno.\n   No se puede usar comando 'mover' mientras se usa."
+		"commanddescription":"Abre un mapa que muestra el entorno.\n   No se puede usar comando 'mover' con el mapa abierto."
 	},
 	["ayuda", "help", "/help", "/ayuda"]: {
 	  "commanddescription": " ", #A: este tampoco
