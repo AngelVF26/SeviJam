@@ -183,3 +183,8 @@ func _on_aceptar_config_2_pressed() -> void:
 
 func _on_aceptar_config_2_mouse_entered() -> void:
 	typing_fx.play()
+
+
+func _on_mover_señal_movadura(mensaje: Variant) -> void:
+	infoComandos.clear()
+	infoComandos.add_text(mensaje)

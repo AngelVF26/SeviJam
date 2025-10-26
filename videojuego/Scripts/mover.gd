@@ -1,5 +1,7 @@
 extends Node
 
+signal señalMovadura(String)
+var mensaje : String
 @export var _physics_player : CharacterBody2D
 var points_dict = { 
 	"sur": Vector2(0,1),"s":Vector2(0,1),
@@ -15,4 +17,7 @@ func _on_comand_controller_mover_señal(distancia: int, direccion: String) -> vo
 		var displacement:Vector2 = dir * distancia
 		_physics_player.move_player_x(displacement.x)
 		_physics_player.move_player_y(displacement.y)
+		mensaje = "\n\n\n " + Comandos.COMANDOS[["mover", "desplazar", "avanzar", "/mover", "/desplazar", "/avanzar"]].commanddescription
+		emit_signal("señalMovadura", mensaje)
 		print("Se ha desplzado " ,distancia, " en dirección ", direccion )
+		
