@@ -15,7 +15,7 @@ const OBJETOS = {
 	},
 	"LAGO" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado. \n  La muestra de agua contiene 34 tipos de bacterias, amebas, y una \n  especie de animal microscópico en forma de cruasán."
+		"OBJECTANL" : "Análisis completado. \n  La muestra de agua contiene 34 tipos de bacterias, amebas, y \n  una especie de animal microscópico en forma de cruasán."
 	},
 	"ANIMAL" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
@@ -27,7 +27,7 @@ const OBJETOS = {
 	},
 	"ZAPATO" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
-		"OBJECTANL" : "Análisis completado.\n  Trazas de sangre de. . . [color=red]ESPECIE DESCONOCIDA[/color]\n  localizada sobre la superficie de la muestra."
+		"OBJECTANL" : "Análisis completado.\n  Trazas de sangre de. . . [color=red]ESPECIE DESCONOCIDA[/color] localizada\n  sobre la superficie de la muestra."
 	},
 	"ESQUELETO" : {
 		"OBJECTMSG" : "Muestra de ADN obtenida. Inicie ANÁLISIS para examinarla.",
