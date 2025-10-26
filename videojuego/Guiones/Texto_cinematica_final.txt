@@ -23,9 +23,9 @@
  ***                   MISIÓN EDÉN                   ***
  ********************************************************
 
-Cuaderno de bitácora, día 2510 de expedición:
-Realizada la exploración del planeta [7191], o GAIA. Había rastros de vida, pero primitiva y extraña, incompatible con el clonador. He encontrado restos humanos, pero tan antiguos que a duras penas he obtenido unas pocas moléculas de ADN. El resto del páramo estaba desierto. No había ni un pelo...
-Quizás tenga más suerte en otro planeta. Por ahora, ABORTAMOS MISIÓN.
+> Cuaderno de bitácora, día 2510 de expedición:
+> Realizada la exploración del planeta [7191], o GAIA. Había rastros de vida, pero primitiva y extraña, incompatible con el clonador. He encontrado restos humanos, pero tan antiguos que a duras penas he obtenido unas pocas moléculas de ADN. El resto del páramo estaba desierto. No había ni un pelo...
+> Quizás tenga más suerte en otro planeta. Por ahora, ABORTAMOS MISIÓN.
 
 > ...
 

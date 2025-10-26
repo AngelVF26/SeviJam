@@ -93,5 +93,11 @@ const COMANDOS = {
 		"commandaction": "",
 		"type": "terminal",
 		"nombre_nodo":"Clonar"
+	},
+	["abortar"]: {
+		"commanddescription":"",
+		"commandaction": "",
+		"type": "terminal",
+		"nombre_nodo":"Abortar"
 	}
   }

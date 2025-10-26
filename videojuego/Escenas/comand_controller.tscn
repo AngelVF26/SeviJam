@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqh7b2rugnj0h"]
+[gd_scene load_steps=12 format=3 uid="uid://cqh7b2rugnj0h"]
 
 [ext_resource type="Script" uid="uid://8tj2rrhck5d" path="res://Scripts/ComandController.cs" id="1_rvp4y"]
 [ext_resource type="Script" uid="uid://bb3ccfstnnpnu" path="res://Scripts/comandos.gd" id="2_oll3h"]
@@ -8,7 +8,8 @@
 [ext_resource type="Script" uid="uid://bneuffojuxwvk" path="res://Scripts/procesar.gd" id="4_fdqa7"]
 [ext_resource type="Script" uid="uid://tkbco0wnhi74" path="res://Scripts/interactuar.gd" id="5_sri4k"]
 [ext_resource type="Script" uid="uid://hbbmllil5qg" path="res://Scripts/Analizar.cs" id="8_sri4k"]
-[ext_resource type="Script" path="res://Scripts/clone_script.gd" id="9_uyb7j"]
+[ext_resource type="Script" uid="uid://bimx8m5erbqr3" path="res://Scripts/clone_script.gd" id="9_uyb7j"]
+[ext_resource type="Script" uid="uid://cdiw2bcaueodn" path="res://Escenas/Abortar.cs" id="10_5khfa"]
 
 [sub_resource type="GDScript" id="GDScript_sri4k"]
 script/source = "extends Node
@@ -60,6 +61,9 @@ script = ExtResource("8_sri4k")
 [node name="Clonar" type="Node" parent="."]
 script = ExtResource("9_uyb7j")
 texto = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
+[node name="Abortar" type="Node" parent="."]
+script = ExtResource("10_5khfa")
 
 [connection signal="AyudaSeñal" from="." to="Ayuda" method="_on_comand_controller_ayuda_señal"]
 [connection signal="CerrarVentana" from="." to="Minimapa" method="_on_comand_controller_cerrar_ventana"]
