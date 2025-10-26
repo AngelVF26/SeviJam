@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=53 format=4 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
@@ -100,6 +100,22 @@ tracks/0/keys = {
 "values": [0.0047393367]
 }
 
+[sub_resource type="Animation" id="Animation_wtfd3"]
+resource_name = "badEnding"
+length = 13.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.0333333, 12.99),
+"transitions": PackedFloat32Array(1, 0.678472, 1),
+"update": 0,
+"values": [0.0, 0.7, 1.0]
+}
+
 [sub_resource type="Animation" id="Animation_k7noi"]
 resource_name = "finale"
 length = 15.0
@@ -132,9 +148,9 @@ tracks/0/keys = {
 "values": [0.0047393367, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_wtfd3"]
-resource_name = "badEnding"
-length = 13.0
+[sub_resource type="Animation" id="Animation_vk64y"]
+resource_name = "clonar"
+length = 16.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -142,16 +158,17 @@ tracks/0/path = NodePath(".:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 7.0333333, 12.99),
-"transitions": PackedFloat32Array(1, 0.678472, 1),
+"times": PackedFloat32Array(0, 6.45, 12.022941, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.7, 1.0]
+"values": [0.0, 0.45, 0.7, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hr7f7"]
 _data = {
 &"RESET": SubResource("Animation_d021a"),
 &"badEnding": SubResource("Animation_wtfd3"),
+&"clonar": SubResource("Animation_vk64y"),
 &"finale": SubResource("Animation_k7noi"),
 &"typewriter": SubResource("Animation_a6jcn")
 }
