@@ -130,6 +130,12 @@ func _on_ayuda_help(ayuda: Variant) -> void:
 	infoComandos.pop()
 	infoComandos.add_text(": " + Comandos.COMANDOS[["salir", "cerrar","/salir", "/cerrar"]].commandaction)
 	
+	infoComandos.add_text("\n   > ")
+	infoComandos.push_color(Color.WHITE)
+	infoComandos.add_text("↑ ↓")
+	infoComandos.pop()
+	infoComandos.add_text(": Subes y bajas entre tus últimos comandos usados.")
+	
 	infoComandos.add_text("\n\n   [Esta guía no contiene comandos secretos.]")
 
 
