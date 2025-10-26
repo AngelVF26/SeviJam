@@ -70,11 +70,13 @@ public partial class Analizar : Node
 		
 		if (numDeMuestras >= numMaxDeMuestras)
 		{
-			isWriting = true;
-			// TODO: Fin del juego?
-			String loDeAntes = terminalLabel.Text;
-			String fallo = "\n\n > Todas las muestras han sido recogidas";
-			terminalLabel.Text = loDeAntes + fallo;
+			String linea1 = "\n\n\n  > Todos los compartimentos disponibles han sido ocupados.";
+			String linea2 = "\n  > La misión ha fracasado.";
+			String linea3 = "\n  > Se recomienda la desconexión de Sans0n.";
+
+			// TODO: Setear esto
+			terminalLabel.Text = linea1 + linea2 + linea3;
+			animationPlayer.Play("finale");
 		}
 		else
 		{
@@ -89,9 +91,9 @@ public partial class Analizar : Node
 			terminalLabel.Text = analizandoMuestra + "\n  > "+resultado;
 			fullText = terminalLabel.Text;
 
-			GD.Print("Y ESTO QUE ES :" + resultado);
 			var value = Regex.Match(resultado, @"\b(CLONAR+.)$"); 
-		
+
+			// Estamos en el nodo final. El esqueleto.
 			if (value.Success)
 			{
 				GD.Print("oleeee");
