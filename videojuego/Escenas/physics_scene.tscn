@@ -51,37 +51,37 @@ width = 1000
 height = 1000
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agaot"]
-size = Vector2(101, 251)
+size = Vector2(86.5, 794.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_actr7"]
-size = Vector2(96, 247)
+size = Vector2(322, 204.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0sjh"]
-size = Vector2(98, 259)
+size = Vector2(815, 120)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl6v7"]
-size = Vector2(704, 1463)
+size = Vector2(714, 1463)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8uw4"]
-size = Vector2(104.5, 105)
+size = Vector2(129.6914, 122.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bt6vj"]
-size = Vector2(2368, 470)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_em6qh"]
-size = Vector2(98, 248)
+size = Vector2(2368, 532)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egilu"]
-size = Vector2(97, 247)
+size = Vector2(540, 142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_em6qh"]
+size = Vector2(90, 315)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4kq3"]
-size = Vector2(101, 260)
+size = Vector2(96.5, 799.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vxfh"]
 size = Vector2(2355, 587)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1ylp"]
-size = Vector2(958, 1590)
+size = Vector2(979, 1590)
 
 [node name="PhysicsScene" type="Node2D"]
 
@@ -90,17 +90,19 @@ script = ExtResource("1_le04a")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(0, 300)
+position = Vector2(321, 318)
 disable_mode = 2
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("2_a8uw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_um6v8")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
+visible = false
 texture = SubResource("GradientTexture2D_fl6v7")
 metadata/_edit_lock_ = true
 
@@ -112,26 +114,14 @@ metadata/_edit_lock_ = true
 visible = false
 objeto1 = "NADA"
 
-[node name="Area2" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(0, 100)
-objeto1 = "NADA"
-
 [node name="Area3" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 0)
 objeto1 = "NADA"
 
-[node name="Area4" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(100, 100)
-objeto1 = "NADA"
-
 [node name="Area5" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, 0)
-objeto1 = "NADA"
-
-[node name="Area6" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, 100)
 objeto1 = "NADA"
 
 [node name="Area7" parent="Areas" instance=ExtResource("3_a8uw4")]
@@ -152,10 +142,6 @@ objeto1 = "NADA"
 [node name="Area10" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 300)
-objeto1 = "NADA"
-
-[node name="Area11" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, 200)
 objeto1 = "NADA"
 
 [node name="Area12" parent="Areas" instance=ExtResource("3_a8uw4")]
@@ -182,10 +168,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Area14" index="2"]
 visible = false
-
-[node name="Area15" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, 200)
-objeto1 = "NADA"
 
 [node name="Area16" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-200, 300)
@@ -237,18 +219,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" parent="Areas/Area21" index="2"]
 visible = false
 
-[node name="Area22" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, 100)
-objeto1 = "NADA"
-
-[node name="Area23" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-100, 0)
-objeto1 = "NADA"
-
-[node name="Area24" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-100, 100)
-objeto1 = "NADA"
-
 [node name="Area25" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, -200)
@@ -257,10 +227,6 @@ objeto1 = "NADA"
 [node name="Area26" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(-300, -100)
-objeto1 = "NADA"
-
-[node name="Area27" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, -200)
 objeto1 = "NADA"
 
 [node name="Area28" parent="Areas" instance=ExtResource("3_a8uw4")]
@@ -273,10 +239,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" parent="Areas/Area28" index="2"]
 visible = false
 
-[node name="Area29" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-100, -200)
-objeto1 = "NADA"
-
 [node name="Area30" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -100)
 objeto1 = "NADA"
@@ -286,10 +248,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Area30" index="2"]
 visible = false
-
-[node name="Area31" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(0, -200)
-objeto1 = "NADA"
 
 [node name="imagen4" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(0, -100)
@@ -301,10 +259,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" parent="Areas/imagen4" index="2"]
 texture = SubResource("GradientTexture2D_egilu")
 
-[node name="Area33" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(100, -200)
-objeto1 = "NADA"
-
 [node name="Area34" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(100, -100)
 objeto1 = "NADA"
@@ -314,14 +268,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Area34" index="2"]
 visible = false
-
-[node name="Area35" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, -200)
-objeto1 = "NADA"
-
-[node name="Area36" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, -100)
-objeto1 = "NADA"
 
 [node name="imagen 6" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, -200)
@@ -343,14 +289,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" parent="Areas/Area38" index="2"]
 visible = false
 
-[node name="Area39" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, -200)
-objeto1 = "NADA"
-
-[node name="Area40" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, -100)
-objeto1 = "NADA"
-
 [node name="Imagen5" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 0)
 objeto1 = "MUSICA"
@@ -360,22 +298,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Imagen5" index="2"]
 texture = SubResource("GradientTexture2D_actr7")
-
-[node name="Area44" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(300, 100)
-objeto1 = "NADA"
-
-[node name="Area45" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, 0)
-objeto1 = "NADA"
-
-[node name="Area46" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, 100)
-objeto1 = "NADA"
-
-[node name="Area49" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(300, 200)
-objeto1 = "NADA"
 
 [node name="Imagen1" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(300, 300)
@@ -388,94 +310,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" parent="Areas/Imagen1" index="2"]
 texture = SubResource("GradientTexture2D_d0sjh")
 
-[node name="Area51" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, 200)
-objeto1 = "NADA"
-
-[node name="Area52" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, 300)
-objeto1 = "NADA"
-
-[node name="Area55" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(300, 400)
-objeto1 = "NADA"
-
-[node name="Area57" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, 400)
-objeto1 = "NADA"
-
-[node name="Area61" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(0, 400)
-objeto1 = "NADA"
-
-[node name="Area63" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(100, 400)
-objeto1 = "NADA"
-
-[node name="Area65" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, 400)
-objeto1 = "NADA"
-
-[node name="Area67" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-300, 400)
-objeto1 = "NADA"
-
-[node name="Area69" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, 400)
-objeto1 = "NADA"
-
-[node name="Area71" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-100, 400)
-objeto1 = "NADA"
-
-[node name="Area77" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, 400)
-objeto1 = "NADA"
-
-[node name="Area83" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, 200)
-objeto1 = "NADA"
-
-[node name="Area84" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, 300)
-objeto1 = "NADA"
-
-[node name="Area89" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, 0)
-objeto1 = "NADA"
-
-[node name="Area90" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, 100)
-objeto1 = "NADA"
-
-[node name="Area95" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, -200)
-objeto1 = "NADA"
-
-[node name="Area96" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, -100)
-objeto1 = "NADA"
-
-[node name="Area101" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, -400)
-objeto1 = "NADA"
-
-[node name="Area102" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, -300)
-objeto1 = "NADA"
-
-[node name="Area103" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, -400)
-objeto1 = "NADA"
-
-[node name="Area104" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-400, -300)
-objeto1 = "NADA"
-
-[node name="Area105" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-300, -400)
-objeto1 = "NADA"
-
 [node name="Imagen3" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, -300)
 objeto1 = "LAGO"
@@ -485,18 +319,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/Imagen3" index="2"]
 texture = SubResource("GradientTexture2D_k4kq3")
-
-[node name="Area107" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, -400)
-objeto1 = "NADA"
-
-[node name="Area108" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-200, -300)
-objeto1 = "NADA"
-
-[node name="Area109" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(-100, -400)
-objeto1 = "NADA"
 
 [node name="Imagen7" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-100, -300)
@@ -508,17 +330,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" parent="Areas/Imagen7" index="2"]
 texture = SubResource("GradientTexture2D_bt6vj")
 
-[node name="Area111" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(0, -400)
-objeto1 = "NADA"
-
 [node name="Area112" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, -300)
-objeto1 = "NADA"
-
-[node name="Area113" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(100, -400)
 objeto1 = "NADA"
 
 [node name="Area114" parent="Areas" instance=ExtResource("3_a8uw4")]
@@ -526,30 +340,14 @@ visible = false
 position = Vector2(100, -300)
 objeto1 = "NADA"
 
-[node name="Area115" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(200, -400)
-objeto1 = "NADA"
-
 [node name="Area116" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, -300)
 objeto1 = "NADA"
 
-[node name="Area117" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(300, -400)
-objeto1 = "NADA"
-
 [node name="Area118" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(300, -300)
-objeto1 = "NADA"
-
-[node name="Area119" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, -400)
-objeto1 = "NADA"
-
-[node name="Area120" parent="Areas" instance=ExtResource("3_a8uw4")]
-position = Vector2(400, -300)
 objeto1 = "NADA"
 
 [node name="background" type="Sprite2D" parent="."]
@@ -569,7 +367,7 @@ position = Vector2(-100, 402)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-2.5, 69.5)
+position = Vector2(-274.25, -453.75)
 shape = SubResource("RectangleShape2D_agaot")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -577,21 +375,21 @@ position = Vector2(-800, 100)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(798, 372.5)
+position = Vector2(1088, 69.875)
 shape = SubResource("RectangleShape2D_actr7")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2(100, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
-position = Vector2(-3, 75.5)
+position = Vector2(-60.5, -14)
 shape = SubResource("RectangleShape2D_d0sjh")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
 position = Vector2(-400, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2(-300, -529.5)
+position = Vector2(-295, -529.5)
 shape = SubResource("RectangleShape2D_fl6v7")
 
 [node name="StaticBody2D24" type="StaticBody2D" parent="."]
@@ -657,17 +455,17 @@ position = Vector2(-300, -400)
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_a8uw4")
 
-[node name="StaticBody2D33" type="StaticBody2D" parent="."]
-position = Vector2(-200, -400)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D33"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_a8uw4")
-
 [node name="StaticBody2D34" type="StaticBody2D" parent="."]
 position = Vector2(-200, -300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D34"]
+position = Vector2(0.43359375, -2)
+shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="StaticBody2D33" type="StaticBody2D" parent="."]
+position = Vector2(-200, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D33"]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_a8uw4")
 
@@ -710,7 +508,7 @@ shape = SubResource("RectangleShape2D_a8uw4")
 position = Vector2(200, -100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D40"]
-position = Vector2(0, -2)
+position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D41" type="StaticBody2D" parent="."]
@@ -738,7 +536,7 @@ shape = SubResource("RectangleShape2D_a8uw4")
 position = Vector2(400, -300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D44"]
-position = Vector2(0, -2)
+position = Vector2(0.1328125, -2)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D45" type="StaticBody2D" parent="."]
@@ -787,28 +585,36 @@ shape = SubResource("RectangleShape2D_a8uw4")
 position = Vector2(-100, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D51"]
-position = Vector2(220, -227)
+position = Vector2(220, -196)
 shape = SubResource("RectangleShape2D_bt6vj")
+
+[node name="StaticBody2D52" type="StaticBody2D" parent="."]
+position = Vector2(-400, 804)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D52"]
+position = Vector2(400, -1004)
+shape = SubResource("RectangleShape2D_egilu")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]
 position = Vector2(-300, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
-position = Vector2(-1, 71)
+position = Vector2(291.5, -276)
+rotation = 1.5707964
 shape = SubResource("RectangleShape2D_em6qh")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="."]
 position = Vector2(-200, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
-position = Vector2(-1.5, 70.5)
+position = Vector2(297.75, -851.75)
 shape = SubResource("RectangleShape2D_egilu")
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 position = Vector2(200, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
-position = Vector2(-4.5, 80)
+position = Vector2(179.25, -452.25)
 shape = SubResource("RectangleShape2D_k4kq3")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="."]
@@ -822,14 +628,14 @@ shape = SubResource("RectangleShape2D_0vxfh")
 position = Vector2(400, 400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
-position = Vector2(431, -467)
+position = Vector2(420.5, -467)
 shape = SubResource("RectangleShape2D_o1ylp")
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="."]
 position = Vector2(400, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
-position = Vector2(0, -2)
+position = Vector2(-4.154297, 0)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="."]
@@ -850,21 +656,21 @@ shape = SubResource("RectangleShape2D_a8uw4")
 position = Vector2(300, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14"]
-position = Vector2(0, -2)
+position = Vector2(4, -11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="."]
 position = Vector2(200, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D15"]
-position = Vector2(0, -2)
+position = Vector2(1, -11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="."]
 position = Vector2(100, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D16"]
-position = Vector2(0, -2)
+position = Vector2(-1, -11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D17" type="StaticBody2D" parent="."]
@@ -872,7 +678,7 @@ position = Vector2(0, 100)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D17"]
-position = Vector2(0, -2)
+position = Vector2(-1, -11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D18" type="StaticBody2D" parent="."]
@@ -888,7 +694,7 @@ position = Vector2(-200, 100)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D19"]
-position = Vector2(0, -2)
+position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D20" type="StaticBody2D" parent="."]
@@ -896,7 +702,7 @@ position = Vector2(-200, 200)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D20"]
-position = Vector2(0, -2)
+position = Vector2(0, -4.25)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D21" type="StaticBody2D" parent="."]
@@ -904,7 +710,7 @@ position = Vector2(-100, 0)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D21"]
-position = Vector2(0, -2)
+position = Vector2(0, -11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D22" type="StaticBody2D" parent="."]
@@ -912,7 +718,7 @@ position = Vector2(200, 200)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D22"]
-position = Vector2(0, -2)
+position = Vector2(-4.9375, -2)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D23" type="StaticBody2D" parent="."]
@@ -922,6 +728,93 @@ disable_mode = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D23"]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_a8uw4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 352.0
+offset_top = -450.0
+offset_right = 450.0
+offset_bottom = 450.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 352.93695
+offset_top = 350.36093
+offset_right = 452.576
+offset_bottom = 1153.1154
+rotation = 1.5707964
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 352.0
+offset_top = -450.0
+offset_right = 450.0
+offset_bottom = 352.81738
+rotation = 1.5707964
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = -352.0
+offset_top = 447.0
+offset_right = -254.0
+offset_bottom = 1249.8175
+rotation = 3.1415927
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = -150.99995
+offset_top = -150.2637
+offset_right = -52.999954
+offset_bottom = 150.29007
+rotation = 3.1415927
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = -152.0
+offset_top = 250.0
+offset_right = -54.0
+offset_bottom = 449.64893
+rotation = 3.1415927
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_left = -152.0
+offset_top = 150.05147
+offset_right = -52.333656
+offset_bottom = 667.5609
+rotation = 4.712389
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+offset_left = -51.0
+offset_top = 151.0
+offset_right = 47.0
+offset_bottom = 350.64893
+rotation = 3.1415927
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="."]
+offset_left = 249.0
+offset_top = -50.0
+offset_right = 347.0
+offset_bottom = 149.64893
+rotation = 3.1415927
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="."]
+offset_left = -247.0
+offset_top = -150.0
+offset_right = -147.33365
+offset_bottom = 345.7213
+rotation = 4.712389
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="."]
+offset_left = 150.0
+offset_top = 249.94667
+offset_right = 254.40631
+offset_bottom = 458.40247
+rotation = 4.712389
+color = Color(0, 0, 0, 1)
 
 [editable path="Areas/Imagen2"]
 [editable path="Areas/Area14"]
