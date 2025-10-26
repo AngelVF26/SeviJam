@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="3_5l38x"]
-[ext_resource type="PackedScene" uid="uid://c0ua2761kj73j" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
+[ext_resource type="PackedScene" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
 [ext_resource type="FontFile" uid="uid://djw2364lw2f8w" path="res://Assets/Fonts/bytebounce/ByteBounce.ttf" id="6_rt3l3"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
 [ext_resource type="Script" uid="uid://dhc7fnrqu4fh8" path="res://Scripts/typewriter.gd" id="7_d021a"]
@@ -447,6 +447,7 @@ keep_editing_on_text_submit = true
 deselect_on_focus_loss_enabled = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+visible = false
 offset_left = 10.000002
 offset_top = -12.000001
 offset_right = 510.0
@@ -456,7 +457,7 @@ scale = Vector2(3.7487817, 3.9636772)
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(500, 220)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(-73, 322)
@@ -464,9 +465,6 @@ script = SubResource("GDScript_a6jcn")
 
 [node name="PhysicsScene" parent="SubViewportContainer/SubViewport" instance=ExtResource("12_d021a")]
 position = Vector2(-11, 21)
-
-[node name="Sprite2D" parent="SubViewportContainer/SubViewport/PhysicsScene/Player" index="1"]
-visible = true
 
 [node name="Imagen2" parent="SubViewportContainer/SubViewport/PhysicsScene/Areas" index="8"]
 imagen = ExtResource("13_wtfd3")

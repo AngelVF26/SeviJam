@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc5kdqroov8hr"
-path="res://.godot/imported/PÁRAMO 2.png-ca1e2fc2732b42c7dc29317eab195860.ctex"
+uid="uid://cmwo5a2t5swdi"
+path="res://.godot/imported/PARAMO3.png-dfa785797ddd8f73e1848db982505380.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PARAMO/PÁRAMO 2.png"
-dest_files=["res://.godot/imported/PÁRAMO 2.png-ca1e2fc2732b42c7dc29317eab195860.ctex"]
+source_file="res://Assets/PARAMO/PARAMO3.png"
+dest_files=["res://.godot/imported/PARAMO3.png-dfa785797ddd8f73e1848db982505380.ctex"]
 
 [params]
 

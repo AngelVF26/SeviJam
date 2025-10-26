@@ -1,9 +1,15 @@
-[gd_scene load_steps=29 format=3 uid="uid://da01jtt78ktfw"]
+[gd_scene load_steps=35 format=3 uid="uid://da01jtt78ktfw"]
 
 [ext_resource type="Script" uid="uid://15jpchdbmsj3" path="res://Scripts/logic_script.gd" id="1_le04a"]
 [ext_resource type="Script" uid="uid://cx3dpwcar7p5v" path="res://Scripts/player_script_physics.gd" id="2_a8uw4"]
 [ext_resource type="PackedScene" uid="uid://cronljxn02hkw" path="res://Escenas/Area.tscn" id="3_a8uw4"]
+[ext_resource type="Texture2D" uid="uid://clbhia1wx0ii1" path="res://Assets/PARAMO/PARAMO1.png" id="4_em6qh"]
 [ext_resource type="Texture2D" uid="uid://bkcb6xkgrevx1" path="res://Assets/RUINAS.png" id="4_fl6v7"]
+[ext_resource type="Texture2D" uid="uid://bc5kdqroov8hr" path="res://Assets/PARAMO/PARAMO2.png" id="5_egilu"]
+[ext_resource type="Texture2D" uid="uid://cmwo5a2t5swdi" path="res://Assets/PARAMO/PARAMO3.png" id="6_egilu"]
+[ext_resource type="Texture2D" uid="uid://bredol3v2wdob" path="res://Assets/PARAMO/PARAMO4.png" id="7_agaot"]
+[ext_resource type="Texture2D" uid="uid://btrrgoidrae2a" path="res://Assets/PARAMO/PARAMO5.png" id="8_actr7"]
+[ext_resource type="Texture2D" uid="uid://dnwhv8r4mh10h" path="res://Assets/OBJETOS/PÁRAMO 1.png" id="9_d0sjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um6v8"]
 size = Vector2(64, 64)
@@ -51,7 +57,7 @@ width = 1000
 height = 1000
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agaot"]
-size = Vector2(86.5, 794.5)
+size = Vector2(78.5, 801)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_actr7"]
 size = Vector2(322, 204.25)
@@ -63,16 +69,16 @@ size = Vector2(815, 120)
 size = Vector2(714, 1463)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a8uw4"]
-size = Vector2(129.6914, 122.25)
+size = Vector2(129.6914, 121.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bt6vj"]
-size = Vector2(2368, 532)
+size = Vector2(2368, 393)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egilu"]
-size = Vector2(540, 142)
+size = Vector2(553, 165)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_em6qh"]
-size = Vector2(90, 315)
+size = Vector2(94, 315)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4kq3"]
 size = Vector2(96.5, 799.5)
@@ -81,7 +87,7 @@ size = Vector2(96.5, 799.5)
 size = Vector2(2355, 587)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1ylp"]
-size = Vector2(979, 1590)
+size = Vector2(995, 1590)
 
 [node name="PhysicsScene" type="Node2D"]
 
@@ -90,7 +96,7 @@ script = ExtResource("1_le04a")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(321, 318)
+position = Vector2(7, 285)
 disable_mode = 2
 motion_mode = 1
 platform_on_leave = 2
@@ -102,7 +108,6 @@ shape = SubResource("RectangleShape2D_um6v8")
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-visible = false
 texture = SubResource("GradientTexture2D_fl6v7")
 metadata/_edit_lock_ = true
 
@@ -113,41 +118,49 @@ metadata/_edit_lock_ = true
 [node name="Area" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 objeto1 = "NADA"
+imagen = ExtResource("4_em6qh")
 
 [node name="Area3" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 0)
 objeto1 = "NADA"
+imagen = ExtResource("5_egilu")
 
 [node name="Area5" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, 0)
 objeto1 = "NADA"
+imagen = ExtResource("6_egilu")
 
 [node name="Area7" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, 200)
 objeto1 = "NADA"
+imagen = ExtResource("7_agaot")
 
 [node name="Area8" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(0, 300)
 objeto1 = "NADA"
+imagen = ExtResource("8_actr7")
 
 [node name="Area9" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 200)
 objeto1 = "NADA"
+imagen = ExtResource("5_egilu")
 
 [node name="Area10" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(100, 300)
 objeto1 = "NADA"
+imagen = ExtResource("7_agaot")
 
 [node name="Area12" parent="Areas" instance=ExtResource("3_a8uw4")]
 visible = false
 position = Vector2(200, 300)
 objeto1 = "NADA"
+imagen = ExtResource("9_d0sjh")
 
 [node name="Imagen2" parent="Areas" instance=ExtResource("3_a8uw4")]
 position = Vector2(-300, 200)
@@ -257,6 +270,8 @@ objeto1 = "ANIMAL"
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" parent="Areas/imagen4" index="2"]
+position = Vector2(6.499996, 0.50000334)
+scale = Vector2(1.3593749, 1.578125)
 texture = SubResource("GradientTexture2D_egilu")
 
 [node name="Area34" parent="Areas" instance=ExtResource("3_a8uw4")]
@@ -367,7 +382,7 @@ position = Vector2(-100, 402)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-274.25, -453.75)
+position = Vector2(-278.25, -450.5)
 shape = SubResource("RectangleShape2D_agaot")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -396,70 +411,70 @@ shape = SubResource("RectangleShape2D_fl6v7")
 position = Vector2(-400, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D24"]
-position = Vector2(0, -2)
+position = Vector2(-36, 0)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D25" type="StaticBody2D" parent="."]
 position = Vector2(-400, 200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D25"]
-position = Vector2(0, -2)
+position = Vector2(-23, -6)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D26" type="StaticBody2D" parent="."]
 position = Vector2(-400, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D26"]
-position = Vector2(0, -2)
+position = Vector2(-26, -3)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D27" type="StaticBody2D" parent="."]
 position = Vector2(-400, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D27"]
-position = Vector2(0, -2)
+position = Vector2(-29, -2)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D28" type="StaticBody2D" parent="."]
 position = Vector2(-400, -100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D28"]
-position = Vector2(0, -2)
+position = Vector2(-24, -4)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D29" type="StaticBody2D" parent="."]
 position = Vector2(-400, -200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D29"]
-position = Vector2(0, -2)
+position = Vector2(-40, -1)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D30" type="StaticBody2D" parent="."]
 position = Vector2(-400, -300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D30"]
-position = Vector2(0, -2)
+position = Vector2(-30, -4)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D31" type="StaticBody2D" parent="."]
 position = Vector2(-400, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D31"]
-position = Vector2(0, -2)
+position = Vector2(205, 97)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D32" type="StaticBody2D" parent="."]
 position = Vector2(-300, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D32"]
-position = Vector2(0, -2)
+position = Vector2(1, 11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D34" type="StaticBody2D" parent="."]
 position = Vector2(-200, -300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D34"]
-position = Vector2(0.43359375, -2)
+position = Vector2(-8, -1)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D33" type="StaticBody2D" parent="."]
@@ -550,56 +565,56 @@ shape = SubResource("RectangleShape2D_a8uw4")
 position = Vector2(300, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D46"]
-position = Vector2(0, -2)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D47" type="StaticBody2D" parent="."]
 position = Vector2(200, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D47"]
-position = Vector2(0, -2)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D48" type="StaticBody2D" parent="."]
 position = Vector2(100, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D48"]
-position = Vector2(0, -2)
+position = Vector2(2, 11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D49" type="StaticBody2D" parent="."]
 position = Vector2(0, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D49"]
-position = Vector2(0, -2)
+position = Vector2(-2, 11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D50" type="StaticBody2D" parent="."]
 position = Vector2(-100, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D50"]
-position = Vector2(0, -2)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D51" type="StaticBody2D" parent="."]
 position = Vector2(-100, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D51"]
-position = Vector2(220, -196)
+position = Vector2(220, -265.5)
 shape = SubResource("RectangleShape2D_bt6vj")
 
 [node name="StaticBody2D52" type="StaticBody2D" parent="."]
 position = Vector2(-400, 804)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D52"]
-position = Vector2(400, -1004)
+position = Vector2(394, -993)
 shape = SubResource("RectangleShape2D_egilu")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]
 position = Vector2(-300, 402)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
-position = Vector2(291.5, -276)
+position = Vector2(291.5, -274)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_em6qh")
 
@@ -628,14 +643,14 @@ shape = SubResource("RectangleShape2D_0vxfh")
 position = Vector2(400, 400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
-position = Vector2(420.5, -467)
+position = Vector2(412.5, -467)
 shape = SubResource("RectangleShape2D_o1ylp")
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="."]
 position = Vector2(400, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
-position = Vector2(-4.154297, 0)
+position = Vector2(-9, 0)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="."]
@@ -649,7 +664,7 @@ shape = SubResource("RectangleShape2D_a8uw4")
 position = Vector2(400, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13"]
-position = Vector2(0, -2)
+position = Vector2(-195, -189)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="."]
@@ -686,7 +701,7 @@ position = Vector2(-100, 100)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D18"]
-position = Vector2(0, -2)
+position = Vector2(10, -11)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D19" type="StaticBody2D" parent="."]
@@ -710,7 +725,7 @@ position = Vector2(-100, 0)
 disable_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D21"]
-position = Vector2(0, -11)
+position = Vector2(10, -10)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="StaticBody2D22" type="StaticBody2D" parent="."]
@@ -730,7 +745,7 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_a8uw4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 352.0
+offset_left = 348.0
 offset_top = -450.0
 offset_right = 450.0
 offset_bottom = 450.0
@@ -747,15 +762,15 @@ color = Color(0, 0, 0, 1)
 [node name="ColorRect3" type="ColorRect" parent="."]
 offset_left = 352.0
 offset_top = -450.0
-offset_right = 450.0
+offset_right = 451.84335
 offset_bottom = 352.81738
 rotation = 1.5707964
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="."]
-offset_left = -352.0
+offset_left = -350.0379
 offset_top = 447.0
-offset_right = -254.0
+offset_right = -250.0758
 offset_bottom = 1249.8175
 rotation = 3.1415927
 color = Color(0, 0, 0, 1)
@@ -769,25 +784,25 @@ rotation = 3.1415927
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect6" type="ColorRect" parent="."]
-offset_left = -152.0
+offset_left = -145.6274
 offset_top = 250.0
-offset_right = -54.0
+offset_right = -41.25479
 offset_bottom = 449.64893
 rotation = 3.1415927
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect7" type="ColorRect" parent="."]
 offset_left = -152.0
-offset_top = 150.05147
-offset_right = -52.333656
-offset_bottom = 667.5609
+offset_top = 150.76965
+offset_right = -51.61547
+offset_bottom = 668.2791
 rotation = 4.712389
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect8" type="ColorRect" parent="."]
-offset_left = -51.0
+offset_left = -37.330734
 offset_top = 151.0
-offset_right = 47.0
+offset_right = 56.35234
 offset_bottom = 350.64893
 rotation = 3.1415927
 color = Color(0, 0, 0, 1)
@@ -795,7 +810,7 @@ color = Color(0, 0, 0, 1)
 [node name="ColorRect9" type="ColorRect" parent="."]
 offset_left = 249.0
 offset_top = -50.0
-offset_right = 347.0
+offset_right = 340.77582
 offset_bottom = 149.64893
 rotation = 3.1415927
 color = Color(0, 0, 0, 1)
