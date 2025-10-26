@@ -97,7 +97,7 @@ public partial class Analizar : Node
 			Area2D area = (Area2D)player.Get("current_area");
 			String resultado = (String)area.Get("objeto_analizar");
 			String claveDic = (String)area.Get("objecto1");
-			terminalLabel.Text = analizandoMuestra + "\n  > "+resultado;
+			terminalLabel.Text = analizandoMuestra + "\n > "+resultado;
 			fullText = terminalLabel.Text;
 
 			var value = Regex.Match(resultado, @"\b(CLONAR+.)$");
@@ -192,7 +192,7 @@ public partial class Analizar : Node
 				ayudaTexto = "\n\n > Quedan dos compartimentos de análisis.";
 				break;
 			case int val when val == 4:
-				ayudaTexto = "\n\n > [color=yellow]AVISO[/color]: Queda un solo compartimento de análisis";
+				ayudaTexto = "\n\n > [color=yellow]AVISO[/color]: Queda un solo compartimento de análisis. Se abortará la misión si se ocupan todos los compartimentos de muestras NO clonables.";
 				break;
 			case int val when val == numMaxDeMuestras:
 				ayudaTexto = "\n\n > Todos los compartimentos de análisis ocupados. Abortando.";

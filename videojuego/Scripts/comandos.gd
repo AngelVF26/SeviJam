@@ -39,7 +39,7 @@ const COMANDOS = {
 	["mover", "desplazar", "avanzar", "/mover", "/desplazar", "/avanzar"]: {
 		"commandname": "MOVER",
 		"nombre_nodo": "Mover",
-		"commanddescription": ". . . Movimiento finalizado. Revisar MAPA para comprobar posición.",
+		"commanddescription": ". . . Movimiento finalizado. Revisar MAPA para comprobar \n posición.",
 		"commandaction": "Desplaza el rover en la dirección indicada. \n   Por ejemplo, MOVER 3 NORTE. \n   La velocidad máxima es 5. No se moverá más rápido.",
 		"type": "terminal",
 		"distancia" : "",
