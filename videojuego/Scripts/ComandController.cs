@@ -180,7 +180,7 @@ public partial class ComandController : Node
 						String linea10 = "\n  >  El resto del páramo estaba desierto. No había ni un pelo...";
 						String linea11 = "\n  > Quizás tenga más suerte en otro planeta. Por ahora, lo mejor";
 						String linea12 = "\n    será [color=white]ABORTAR MISION[/color].";
-						fCommandLabel.Text = linea1 + linea2 + linea1 + linea3 + linea4 + linea5 + linea6 + linea7 + linea8 + linea9 + linea10 + linea11 + linea12;
+						fCommandLabel.Text = linea1 + linea2 + linea1 + linea3 + linea4 + linea6 + linea7 + linea8 + linea9 + linea10 + linea11 + linea12;
 
 						animationPlayer.Play("finale");
 						fCanCuaderno = false;
