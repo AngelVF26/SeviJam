@@ -4,6 +4,7 @@ extends Area2D
 @export var objeto1:String
 var objeto_interactuar:String
 var objeto_analizar:String
+var clonar_check:String
 
 @export var imagen:CompressedTexture2D
 
@@ -14,6 +15,7 @@ var objeto_analizar:String
 func _ready() -> void:
 	objeto_interactuar = Comandos.OBJETOS[objeto1]["OBJECTMSG"]
 	objeto_analizar = Comandos.OBJETOS[objeto1]["OBJECTANL"]
+	clonar_check = objeto1
 
 	
 	#(obstaculo.get_child(0) as CollisionShape2D).shape = $CollisionShape2D.shape

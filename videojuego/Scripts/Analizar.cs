@@ -96,14 +96,14 @@ public partial class Analizar : Node
 			// String resultado = "\n\n > RESULTADO: ERROR. ADN INCOMPATIBLE O INEXISTENTE";
 			Area2D area = (Area2D)player.Get("current_area");
 			String resultado = (String)area.Get("objeto_analizar");
-			String claveDic = (String)area.Get("objecto1");
+			String clonarCheck = (String)area.Get("clonar_check");
 			terminalLabel.Text = analizandoMuestra + "\n > "+resultado;
 			fullText = terminalLabel.Text;
 
-			var value = Regex.Match(resultado, @"\b(CLONAR+.)$");
+			var value = Regex.Match(resultado, @"\b(CLONAR+.)");
 			GD.Print("miramos: " + numDeMuestras);
 			// Estamos en el nodo final. El esqueleto.
-			if (value.Success)
+			if (clonarCheck == "ESQUELETO")
 			{
 				GD.Print("oleeee");
 				EmitSignal("CanClonarSeñal", true);
