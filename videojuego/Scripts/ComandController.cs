@@ -48,7 +48,7 @@ public partial class ComandController : Node
 	private RichTextLabel fCommandLabel;
 	private LineEdit terminalInput;
 	[Export]
-	private bool fCanClonar { get; set; } = true;
+	private bool fCanClonar { get; set; } = false;
 
 	[Export]
 	private bool fCanCuaderno { get; set; } = false;
