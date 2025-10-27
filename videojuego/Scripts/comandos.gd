@@ -47,7 +47,7 @@ const COMANDOS = {
 	},
 	["procesar", "imagen", "captura", "foto","/procesar", "/imagen", "/captura", "/foto"]: {
 	  "commanddescription": "Procesando interfaz óptica...",
-	  "commandaction": "Toma una fotografía del entorno.",
+	  "commandaction": "Toma una fotografía del entorno. \n   AVISO: para salir de la fotografia usar comando 'salir'",
 	  "nombre_nodo": "Procesar",
 	  "type": "terminal"
 	},
@@ -65,7 +65,7 @@ const COMANDOS = {
 	},
 	["mapa","minimapa","/mapa","/minimapa"] : {
 		"nombre_nodo":"Minimapa",
-		"commanddescription":"Abre un mapa que muestra el entorno.\n   No se puede usar comando 'mover' con el mapa abierto."
+		"commanddescription":"Abre un mapa que muestra el entorno. Para salir usar    comando 'salir'.\n   No se puede usar comando 'mover' con el mapa abierto."
 	},
 	["ayuda", "help", "/help", "/ayuda"]: {
 	  "commanddescription": " ", #A: este tampoco
