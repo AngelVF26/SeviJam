@@ -7,6 +7,8 @@ extends Node2D
 @onready var terminal: LineEdit = $TerminalComandos
 @export var player: CharacterBody2D 
 @onready var imagen_explorada: TextureRect = $ImagenExplorada
+@onready var patatas: Node2D = $Terminal/Patatas
+
 var listaComandos: Array
 var pruebas: Array
 var comandosPosition: int
@@ -152,6 +154,7 @@ func _on_procesar_proceso() -> void:
 func _on_salir_ocultar() -> void:
 	imagen_explorada.visible = false
 	$SubViewportContainer.visible = false
+	patatas.visible = false
 	emit_signal("señalParar", true)
 	infoComandos.add_text("\n\n\n   > ...")
 
@@ -194,3 +197,8 @@ func _on_aceptar_config_2_mouse_entered() -> void:
 func _on_mover_señal_movadura(mensaje: Variant) -> void:
 	infoComandos.clear()
 	infoComandos.add_text(mensaje)
+
+
+func _on_terminal_comandos_focus_exited() -> void:
+	print("??");
+	terminal.grab_focus()

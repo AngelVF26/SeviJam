@@ -57,6 +57,13 @@ public partial class ComandController : Node
 	private AnimationPlayer animationPlayer;
 	private Node abortar;
 
+	private Node2D patatas;
+	private Boolean fIsImage = false;
+	private SubViewportContainer minimapaNode;
+	private TextureRect imagenExplorada;
+	private LineEdit commandLine;
+	private AudioStreamPlayer2D empanadasAudio;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -72,6 +79,11 @@ public partial class ComandController : Node
 		clonar = GetNode<Node>("Clonar");
 		animationPlayer = GetParent().GetNode<AnimationPlayer>("AnimationText");
 		abortar = GetNode<Node>("Abortar");
+		patatas = GetParent().GetNode<Node2D>("Terminal/Patatas");
+		minimapaNode = GetParent().GetNode<SubViewportContainer>("SubViewportContainer");
+		imagenExplorada = GetParent().GetNode<TextureRect>("ImagenExplorada");
+		commandLine = GetParent().GetNode<LineEdit>("TerminalComandos");
+		empanadasAudio = GetNode<AudioStreamPlayer2D>("Empanadas");
 
 		clonar.Connect(("cuadernoSeñal"), new Callable(this, nameof(OnCuadernoSeñal)));
 		minimapa.Connect(("actividad_del_mapa"), new Callable(this, nameof(OnActividadDelMapa)));
@@ -86,7 +98,20 @@ public partial class ComandController : Node
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-	}
+		//if (Input.IsActionJustPressed("ui_escape") && fIsImage)
+		//{
+		//	CleanConsole();
+		//}
+	} 
+	
+
+	private void CleanConsole()
+    {
+		patatas.Visible = false;
+		minimapaNode.Visible = false;
+		imagenExplorada.Visible = false;
+		fIsImage = false;
+    }
 
 	private void OnPeticionSeñal()
 	{
@@ -183,18 +208,18 @@ public partial class ComandController : Node
 						String linea12 = "\n    será [color=white]ABORTAR MISION[/color].";
 						fCommandLabel.Text = linea1 + linea2 + linea1 + linea3 + linea4 + linea6 + linea7 + linea8 + linea9 + linea10 + linea11 + linea12;
 
-						animationPlayer.Play("finale");
+						PlayAnimation("finale");
 						fCanCuaderno = false;
 						isError = false;
 					}
 					else if (line.ToLower() == "n" && fCanCuaderno)
 					{
-						fCommandLabel.Text = "\n > Entrada descartada del cuaderno de bitácora.";
+						fCommandLabel.Text = "\n\n\n > Entrada descartada del cuaderno de bitácora.";
 						fCanCuaderno = false;
 						isError = false;
 					}
 				}
-				
+
 				else
 				{
 					// Encontrado el comando. 
@@ -235,7 +260,7 @@ public partial class ComandController : Node
 							break;
 						}
 					}
-					
+
 					switch (nombreNodo)
 					{
 						case string val when val == "Mover":
@@ -258,6 +283,7 @@ public partial class ComandController : Node
 							ProcesarNodoProcesar(line);
 							isError = false;
 							EmitSignal("ComandoEnviado");
+							fIsImage = true;
 							break;
 						case string val when val == "Interactuar":
 							ProcesarNodoInteractuar(line);
@@ -268,12 +294,31 @@ public partial class ComandController : Node
 							ProcesarNodoMapa(line);
 							isError = false;
 							EmitSignal("ComandoEnviado");
+							fIsImage = true;
 							break;
 						case string val when val == "Abortar":
 							GD.Print("a");
 							ProcesarNodoAbortar(line);
 							isError = false;
 							EmitSignal("ComandoEnviado");
+							break;
+						case string val when val == "Yovictore":
+							ProcesarComandoYovictore(fCommandToProcess["commanddescription"]);
+							isError = false;
+							break;
+						case string val when val == "Empanadas":
+							ProcesarComandoEmpanadas(fCommandToProcess["commanddescription"]);
+							isError = false;
+							break;
+						case string val when val == "Patatas":
+							ProcesarComandoPatatas(false);
+							isError = false;
+							fIsImage = true;
+							break;
+						case string vale when vale == "Comer":
+							ProcesarComandoPatatas(true);
+							isError = false;
+							fIsImage = true;
 							break;
 						default:
 							isError = false;
@@ -291,7 +336,7 @@ public partial class ComandController : Node
 					EmitSignal("ReturnError");
 				}
 			}
-			
+
 			if (isError)
 			{
 				if (line.ToLower() == "secreto")
@@ -303,11 +348,47 @@ public partial class ComandController : Node
 					ReturnErrorInTerminal(1);
 					EmitSignal("ReturnError");
 				}
-				
+
 			}
 		}
 
 	}
+
+	private void ProcesarComandoPatatas(Boolean isComiendo)
+	{
+		if (isComiendo)
+		{
+			patatas.Visible = false;
+		}
+		else
+        {
+           patatas.Visible = true;
+			fCommandLabel.Text = ""; 
+        }
+		
+	}
+	
+	private void ProcesarComandoEmpanadas(String description)
+    {
+		fCommandLabel.Text = "\n\n > " + description;
+		PlayAnimation("typewriter");
+		empanadasAudio.Play();
+    }
+
+	private void ProcesarComandoYovictore(String description)
+	{
+		fCommandLabel.Text = "\n\n > "+description;
+		PlayAnimation("typewriter");
+	} 
+	
+	private void PlayAnimation(String typeOfAnimation)
+    {
+        if(animationPlayer.IsPlaying())
+        {
+			animationPlayer.Stop();
+        }
+		animationPlayer.Play(typeOfAnimation);
+    }
 
 	private void ProcesarNodoMapa(String linea)
 	{
@@ -383,7 +464,7 @@ public partial class ComandController : Node
 		// Procesamos si el comando está mal escrito. Si no, mandamos error.
 		String lineaMin = linea.ToLower();
 		GD.Print(lineaMin);
-		var value = Regex.Match(lineaMin, @"^(\/[\w\-]+)\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n$)|(e$)|(o$)|(s$)|(izquierda)|(abajo)|(derecha)|(arriba))");
+		var value = Regex.Match(lineaMin, @"^((\/[\w\-]+)|(\w+))\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n$)|(e$)|(o$)|(s$)|(izquierda)|(abajo)|(derecha)|(arriba))");
 		if (!value.Success)
 		{
 			ReturnErrorInTerminal(4);

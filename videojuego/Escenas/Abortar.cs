@@ -20,6 +20,6 @@ public partial class Abortar : Node
 	private void OnAbortarSeñal()
 	{
 		// MORIR!!!
-		GetTree().Quit();
+		GetTree().ChangeSceneToFile("res://Escenas/main_menu.tscn");
 	}
 }

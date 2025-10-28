@@ -73,9 +73,10 @@ const COMANDOS = {
 	  "nombre_nodo": "Ayuda",
 	  "type": "terminal"
 	},
-	["yovictore"]: {
+	["yovictore", "/yovictore"]: {
 	  "commanddescription": "A rockear siempre",
 	  "commandaction": "",
+	  "nombre_nodo": "Yovictore",
 	  "type": "terminal"
 	},
 	["analizar", "adn", "analisis","análisis","/analizar", "/adn", "/analisis","/análisis"]: {
@@ -86,6 +87,7 @@ const COMANDOS = {
 	["empanadas"]: {
 	  "commanddescription": "EMPANADILLA RUSA DE CHILE",
 	  "commandaction": "",
+	  "nombre_nodo": "Empanadas",
 	  "type": "terminal"
 	},
 	["clonar", "/clonar"]: {
@@ -99,5 +101,14 @@ const COMANDOS = {
 		"commandaction": "",
 		"type": "terminal",
 		"nombre_nodo":"Abortar"
+	},
+	["patatas", "/patatas", "comida"]: {
+		"commanddescription":"",
+		"commandaction":"",
+		"type":"terminal",
+		"nombre_nodo":"Patatas"
+	},
+	["comer", "/comer"]: {
+		"nombre_nodo":"Comer"
 	}
   }

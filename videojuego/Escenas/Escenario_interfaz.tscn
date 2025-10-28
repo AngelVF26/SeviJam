@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://c1n3qgi0rsl1l"]
+[gd_scene load_steps=54 format=4 uid="uid://c1n3qgi0rsl1l"]
 
 [ext_resource type="Texture2D" uid="uid://crslxq7jse3ss" path="res://icon.svg" id="1_4flj7"]
 [ext_resource type="Script" uid="uid://dlk1nkwtidjep" path="res://Scripts/terminal.gd" id="1_caa1v"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ctptw4uqlayhj" path="res://Placeholders/oscuridad.png" id="2_hrt1k"]
 [ext_resource type="PackedScene" uid="uid://cqh7b2rugnj0h" path="res://Escenas/comand_controller.tscn" id="2_nj3o3"]
 [ext_resource type="FontFile" uid="uid://56w31xhqvaqt" path="res://Assets/Fonts/pixelmax-font/Pixelmax-vnR7A.otf" id="3_5l38x"]
-[ext_resource type="PackedScene" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
+[ext_resource type="PackedScene" uid="uid://c0ua2761kj73j" path="res://Escenas/imagenes.tscn" id="5_5l38x"]
 [ext_resource type="FontFile" uid="uid://djw2364lw2f8w" path="res://Assets/Fonts/bytebounce/ByteBounce.ttf" id="6_rt3l3"]
 [ext_resource type="FontFile" uid="uid://blwjmxr1nfn4u" path="res://Assets/Fonts/Consolas-Font/CONSOLAB.TTF" id="6_tu35c"]
 [ext_resource type="Script" uid="uid://dhc7fnrqu4fh8" path="res://Scripts/typewriter.gd" id="7_d021a"]
@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://b4hyci2kon726" path="res://Assets/FX/StartConsole.mp3" id="23_o88m3"]
 [ext_resource type="AudioStream" uid="uid://b3288x0kqbim3" path="res://Assets/FX/error.mp3" id="27_pi6t2"]
 [ext_resource type="AudioStream" uid="uid://cb0nvygmyy4ve" path="res://Assets/FX/melody8x8.mp3" id="29_k7noi"]
+[ext_resource type="PackedScene" uid="uid://c226dmoh48vq0" path="res://Escenas/patatas.tscn" id="31_vk64y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k7noi"]
 shader = ExtResource("8_a6jcn")
@@ -392,6 +393,11 @@ position = Vector2(980, 525)
 scale = Vector2(1.253, 1.253)
 texture = ExtResource("2_hrt1k")
 
+[node name="Patatas" parent="Terminal" instance=ExtResource("31_vk64y")]
+visible = false
+position = Vector2(-346.3687, -190.74222)
+scale = Vector2(1.5, 1.5)
+
 [node name="SettingsBtn" type="TextureButton" parent="."]
 visible = false
 modulate = Color(0, 1, 0.03529412, 1)
@@ -465,9 +471,9 @@ theme_override_font_sizes/font_size = 55
 placeholder_text = "     "
 
 [node name="TerminalComandos" type="LineEdit" parent="."]
-offset_left = 16.0
+offset_left = 20.0
 offset_top = 880.0
-offset_right = 1930.0
+offset_right = 1934.0
 offset_bottom = 1080.0
 theme_override_fonts/font = ExtResource("6_rt3l3")
 theme_override_font_sizes/font_size = 125
@@ -586,6 +592,7 @@ ignore_texture_size = true
 [connection signal="ocultar" from="ComandController/Salir" to="." method="_on_salir_ocultar"]
 [connection signal="help" from="ComandController/Ayuda" to="." method="_on_ayuda_help"]
 [connection signal="pressed" from="SettingsBtn" to="." method="_on_settings_btn_pressed"]
+[connection signal="focus_exited" from="TerminalComandos" to="." method="_on_terminal_comandos_focus_exited"]
 [connection signal="text_changed" from="TerminalComandos" to="." method="_on_terminal_comandos_text_changed"]
 [connection signal="text_submitted" from="TerminalComandos" to="." method="_on_terminal_comandos_text_submitted"]
 [connection signal="pressed" from="SettingClick" to="." method="_on_setting_click_pressed"]
