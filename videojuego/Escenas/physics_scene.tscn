@@ -105,7 +105,7 @@ script = ExtResource("1_le04a")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
-position = Vector2(0, 317)
+position = Vector2(-16, -301)
 disable_mode = 2
 motion_mode = 1
 platform_on_leave = 2

@@ -322,7 +322,7 @@ public partial class ComandController : Node
 		}
 		else
 		{
-			fCommandLabel.Text = "\n\n  > Comando inválido. ¿Has probado con ABORTAR MISION?";
+			fCommandLabel.Text = "\n\n  > Comando inválido. ¿Has probado con [color=white]ABORTAR MISION?[/color]";
 		}
 	}
 
