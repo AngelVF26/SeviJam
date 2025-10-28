@@ -383,7 +383,7 @@ public partial class ComandController : Node
 		// Procesamos si el comando está mal escrito. Si no, mandamos error.
 		String lineaMin = linea.ToLower();
 		GD.Print(lineaMin);
-		var value = Regex.Match(lineaMin, @"^(\w+)\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n$)|(e$)|(o$)|(s$)|(izquierda)|(abajo)|(derecha)|(arriba))");
+		var value = Regex.Match(lineaMin, @"^(\/[\w\-]+)\s(\d+)\s((norte)|(sur)|(este)|(oeste)|(n$)|(e$)|(o$)|(s$)|(izquierda)|(abajo)|(derecha)|(arriba))");
 		if (!value.Success)
 		{
 			ReturnErrorInTerminal(4);
