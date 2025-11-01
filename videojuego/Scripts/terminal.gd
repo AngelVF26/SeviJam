@@ -9,6 +9,8 @@ extends Node2D
 @onready var imagen_explorada: TextureRect = $ImagenExplorada
 @onready var patatas: Node2D = $Terminal/Patatas
 
+var tiempo_run = 0.00
+
 var listaComandos: Array
 var pruebas: Array
 var comandosPosition: int
@@ -57,8 +59,9 @@ func _texto_pa_comandos(texto: String) -> void:
 		infoComandos.text = "> ERROR: Comando no reconocido. Escribe AYUDA para obtener lista de comandos."
 	
 	
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	terminal.grab_focus()
+	tiempo_run += delta
 		#esto es lo que hace que haya una animación de texto
 	if visible_characters != $InfoComandos.visible_characters:
 		visible_characters = $InfoComandos.visible_characters
